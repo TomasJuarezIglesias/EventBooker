@@ -73,5 +73,10 @@ namespace UI
         {
             OpenChildForm(new FormGestionUsuarios());
         }
+
+        private void BtnCambiarPassword_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormCambiarPassword());
+        }
     }
 }

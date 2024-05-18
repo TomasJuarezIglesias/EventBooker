@@ -295,7 +295,7 @@
             stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.TxtPassword.OnIdleState = stateProperties4;
             this.TxtPassword.Padding = new System.Windows.Forms.Padding(3);
-            this.TxtPassword.PasswordChar = '*';
+            this.TxtPassword.PasswordChar = '●';
             this.TxtPassword.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.TxtPassword.PlaceholderText = "Password";
             this.TxtPassword.ReadOnly = false;
@@ -313,7 +313,7 @@
             this.TxtPassword.TextMarginLeft = 3;
             this.TxtPassword.TextMarginTop = 0;
             this.TxtPassword.TextPlaceholder = "Password";
-            this.TxtPassword.UseSystemPasswordChar = false;
+            this.TxtPassword.UseSystemPasswordChar = true;
             this.TxtPassword.WordWrap = true;
             // 
             // bunifuLabel3

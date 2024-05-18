@@ -28,6 +28,18 @@ namespace Business
             return new BusinessResponse<EntityUser>(ok, user, mensaje);
         }
 
+        public BusinessResponse<bool> ChangePassword(EntityUser user, string actualPassword, string newPassword, string newPasswordRep)
+        {
+            if (newPassword != newPasswordRep) return new BusinessResponse<bool>(false, false, "Las nuevas contraseñas no coinciden");
+
+            if (user.Password != CryptoManager.EncryptString(actualPassword)) return new BusinessResponse<bool>(false, false, "Contraseñas no coinciden");
+
+            user.Password = CryptoManager.EncryptString(newPassword);
+
+            bool ok = dataAccess.Update(user);
+
+            return new BusinessResponse<bool>(ok, ok, !ok ? "Error al modificar contraseña" : "Contraseña modificada correctamente");
+        }
 
     }
 }
