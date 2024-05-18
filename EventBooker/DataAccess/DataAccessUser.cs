@@ -27,7 +27,6 @@ namespace DataAccess
             DataTable data = conn.Read("SP_GetUser", parameters);
 
             return data.Rows.Count == 0 ? null : SqlMapper.MapUser(data.Rows[0]);
-
         }
     }
 }

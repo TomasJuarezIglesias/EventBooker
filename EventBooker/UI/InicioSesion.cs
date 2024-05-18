@@ -48,7 +48,7 @@ namespace UI
 
             if (inputError) return;
 
-            BusinessResponse<EntityUser> response = _bussinesAuth.Login(TxtUsername.Text, TxtPassword.Text);
+            BusinessResponse<EntityUser> response = _bussinesAuth.VerifyCredentials(TxtUsername.Text, TxtPassword.Text);
 
             RevisarRespuestaServicio(response);
 

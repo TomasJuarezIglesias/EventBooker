@@ -18,12 +18,14 @@ namespace Business
             dataAccess = new DataAccessUser();
         }
 
-        public BusinessResponse<EntityUser> Login(string username, string password)
+        public BusinessResponse<EntityUser> VerifyCredentials(string username, string password)
         {
             EntityUser user = dataAccess.SelectByUsername(username);
             bool ok = user?.Password == CryptoManager.EncryptString(password) && user?.Username == username;
 
-            return new BusinessResponse<EntityUser>(ok, user, !ok ? "Credenciales Incorrectas" : string.Empty);
+            string mensaje = user?.Username != username ? "Usuario Incorrecto" : !ok ? "Contraseña Incorrecta" : string.Empty;
+
+            return new BusinessResponse<EntityUser>(ok, user, mensaje);
         }
 
 
