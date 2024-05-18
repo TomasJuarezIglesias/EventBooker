@@ -14,7 +14,8 @@ namespace DataAccess
         {
             Id = Convert.ToInt32(row["Id"]),
             Username = row["Username"].ToString(),
-            Password = row["Password"].ToString()
+            Password = row["Password"].ToString(),
+            IsBlock = Convert.ToBoolean(row["IsBlock"])
         };
     }
 }

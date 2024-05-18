@@ -17,6 +17,20 @@ namespace DataAccess
             conn = DBConnection.GetInstance();
         }
 
+        public List<EntityUser> SelectAll()
+        {
+            List<EntityUser> users = new List<EntityUser>();
+
+            DataTable data = conn.Read("SP_GetUser");
+
+            foreach (DataRow row in data.Rows)
+            {
+                users.Add(SqlMapper.MapUser(row));   
+            }
+
+            return users;
+        }
+
         public EntityUser SelectByUsername(string username)
         {
             SqlParameter[] parameters = new SqlParameter[] 
@@ -27,6 +41,40 @@ namespace DataAccess
             DataTable data = conn.Read("SP_GetUser", parameters);
 
             return data.Rows.Count == 0 ? null : SqlMapper.MapUser(data.Rows[0]);
+        }
+
+        public bool Insert(EntityUser user)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@In_Username", SqlDbType.NVarChar){ Value = user.Username },
+                new SqlParameter("@In_Password", SqlDbType.Char){ Value = user.Password}
+            };
+
+            return conn.Write("SP_CreateUser", parameters);
+        }
+
+        public bool Update(EntityUser user)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@In_Id", SqlDbType.Int){ Value = user.Id },
+                new SqlParameter("@In_Username", SqlDbType.NVarChar){ Value = user.Username },
+                new SqlParameter("@In_Password", SqlDbType.Char){ Value = user.Password },
+                new SqlParameter("@In_IsBlock", SqlDbType.Bit){ Value = user.IsBlock }
+            };
+
+            return conn.Write("SP_UpdateUser", parameters);
+        }
+
+        public bool Delete(Entity entity)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@In_id", SqlDbType.Int){ Value = entity.Id }
+            };
+
+            return conn.Write("SP_DeleteUser", parameters);
         }
     }
 }

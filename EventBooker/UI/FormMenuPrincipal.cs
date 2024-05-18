@@ -68,5 +68,10 @@ namespace UI
                 this.Hide();
             }
         }
+
+        private void BtnGestionUsuarios_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormGestionUsuarios());
+        }
     }
 }

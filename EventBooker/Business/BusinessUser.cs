@@ -17,11 +17,30 @@ namespace Business
             dataAccess = new DataAccessUser();
         }
 
-
-        public EntityUser GetUserByName(string username)
+        public BusinessResponse<List<EntityUser>> GetAll()
         {
-            return dataAccess.SelectByUsername(username);
+            return new BusinessResponse<List<EntityUser>>(true, dataAccess.SelectAll());
         }
 
+        public BusinessResponse<bool> Create(EntityUser user)
+        {
+            bool ok = dataAccess.Insert(user);
+
+            return new BusinessResponse<bool>(ok, ok, !ok ? "Error al guardar" : string.Empty);
+        }
+
+        public BusinessResponse<bool> Update(EntityUser user)
+        {
+            bool ok = dataAccess.Update(user);
+
+            return new BusinessResponse<bool>(ok, ok, !ok ? "Error al modificar" : string.Empty);
+        }
+
+        public BusinessResponse<bool> Delete(Entity entity)
+        {
+            bool ok = dataAccess.Delete(entity);
+
+            return new BusinessResponse<bool>(ok, ok, !ok ? "No existe" : string.Empty);
+        }
     }
 }

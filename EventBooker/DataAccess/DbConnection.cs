@@ -38,7 +38,7 @@ namespace DataAccess
             _connection.Close();
         }
 
-        public DataTable Read(string sp, SqlParameter[] parameters)
+        public DataTable Read(string sp, SqlParameter[] parameters = null)
         {
             OpenConnection();
 
