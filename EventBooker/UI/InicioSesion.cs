@@ -1,4 +1,5 @@
-﻿using Business;
+﻿using Bunifu.UI.WinForms;
+using Business;
 using Entities;
 using Services;
 using System;
@@ -25,6 +26,12 @@ namespace UI
 
         private void BtnIngresar_Click(object sender, EventArgs e)
         {
+            HideLabelError(new List<BunifuLabel>()
+            {
+                LblErrorUsuario,
+                LblErrorPassword
+            });
+
             bool inputError = false;
 
             if (string.IsNullOrEmpty(TxtUsername.Text))
@@ -49,6 +56,9 @@ namespace UI
             {
                 _sessionManager = SessionManager.Login(response.Data);
 
+                FormMenuPrincipal menuPrincipal = new FormMenuPrincipal();
+                menuPrincipal.Show();
+                this.Hide();
             }
         }
     }

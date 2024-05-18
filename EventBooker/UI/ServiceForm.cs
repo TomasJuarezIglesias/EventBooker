@@ -36,6 +36,14 @@ namespace UI
             label.Visible = true;
         }
 
+        protected void HideLabelError(List<BunifuLabel> labels)
+        {
+            foreach (var label in labels)
+            {
+                label.Visible = false;  
+            }
+        }
+
         protected void RevisarRespuestaServicio<T>(BusinessResponse<T> respuesta)
         {
             if (!respuesta.Ok)
