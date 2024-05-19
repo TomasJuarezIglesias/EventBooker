@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Services
 {
-    public class RegexValidationService
+    public static class RegexValidationService
     {
-        public bool IsValidPassword(string password)
+        public static bool IsValidPassword(string password)
         {
             // Regla de contraseña: mínimo 8 caracteres, al menos una letra y un número
-            string passwordPattern = @"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$";
+            string passwordPattern = @"^(?=.*[A-Z])(?=.*\d).{8,}$";
             return Regex.IsMatch(password, passwordPattern);
         }
     }

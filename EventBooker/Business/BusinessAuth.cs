@@ -32,6 +32,8 @@ namespace Business
         {
             if (newPassword != newPasswordRep) return new BusinessResponse<bool>(false, false, "Las nuevas contraseñas no coinciden");
 
+            if (!RegexValidationService.IsValidPassword(newPassword)) return new BusinessResponse<bool>(false, false, "La contraseña debe contener minimo 8 caracteres, una mayuscula y al menos un numero");
+
             if (user.Password != CryptoManager.EncryptString(actualPassword)) return new BusinessResponse<bool>(false, false, "Contraseñas no coinciden");
 
             user.Password = CryptoManager.EncryptString(newPassword);
