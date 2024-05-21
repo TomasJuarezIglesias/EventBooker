@@ -30,6 +30,8 @@ namespace Services
 
         public static SessionManager Login(EntityUser user)
         {
+            if (_instance != null) throw new Exception("Hay una sesión en curso");
+
             if (_instance is null)
             {
                 _instance = new SessionManager

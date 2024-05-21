@@ -18,6 +18,7 @@ namespace UI
         public FormMenuPrincipal()
         {
             InitializeComponent();
+            CustomView();
             OpenChildForm(new FormInicio());
             _sessionManager = SessionManager.GetInstance();
         }
@@ -41,14 +42,95 @@ namespace UI
             childForm.Show();
         }
 
+        // Personalizar el inicio del form
+        private void CustomView()
+        {
+            PanelAdministrador.Visible = false;
+            PanelMaestros.Visible = false;
+            PanelReportes.Visible = false;
+            PanelUsuario.Visible = false;
+        }
+
+        private void ShowSubmenu(Panel subMenu)
+        {
+            if (subMenu.Visible == false)
+            {
+                HideSubmenu();
+                subMenu.Visible = true;
+            }
+            else
+            {
+                subMenu.Visible = false;
+            }
+        }
+
+        private void HideSubmenu()
+        {
+            if(PanelAdministrador.Visible == true)
+                PanelAdministrador.Visible = false;
+
+            if(PanelMaestros.Visible == true)
+                PanelMaestros.Visible = false;
+
+            if(PanelReportes.Visible == true)
+                PanelReportes.Visible = false;
+
+            if (PanelUsuario.Visible == true)
+                PanelUsuario.Visible = false;
+        }
+
+        private void BtnAdministrador_Click(object sender, EventArgs e)
+        {
+            ShowSubmenu(PanelAdministrador);
+        }
+
+        private void BtnMaestros_Click(object sender, EventArgs e)
+        {
+            ShowSubmenu(PanelMaestros);
+        }
+
+        private void BtnReportes_Click(object sender, EventArgs e)
+        {
+            ShowSubmenu(PanelReportes);
+        }
+
+        private void BtnUsuario_Click(object sender, EventArgs e)
+        {
+            ShowSubmenu(PanelUsuario);
+        }
+
+        // Inicio
+        private void BtnInicio_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormInicio());
+            HideSubmenu();
+        }
+
+        // Administrador
+
+        private void BtnGestionUsuario_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormGestionUsuarios());
+        }
+
+        // Realizar Reserva
+
         private void BtnRealizarReserva_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormRealizarReserva());
         }
 
-        private void BtnInicio_Click(object sender, EventArgs e)
+        // Usuario
+        private void BtnLogin_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormInicio());
+            InicioSesion inicioSesion = new InicioSesion();
+            inicioSesion.Show();
+            this.Close();
+        }
+
+        private void BtnCambiarPassword_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormCambiarPassword());
         }
 
         private void BtnCerrarSesion_Click(object sender, EventArgs e)
@@ -69,14 +151,5 @@ namespace UI
             }
         }
 
-        private void BtnGestionUsuarios_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new FormGestionUsuarios());
-        }
-
-        private void BtnCambiarPassword_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new FormCambiarPassword());
-        }
     }
 }

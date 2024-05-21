@@ -1,5 +1,4 @@
-﻿using Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,12 +12,9 @@ namespace UI
 {
     public partial class FormInicio : ServiceForm
     {
-        private SessionManager _sessionManager;
         public FormInicio()
         {
             InitializeComponent();
-            _sessionManager = SessionManager.GetInstance();
-            LblSaludo.Text = $"Bienvenido {_sessionManager.User.Username}";
         }
     }
 }

@@ -173,7 +173,7 @@
             this.BtnIngresar.IconRightCursor = System.Windows.Forms.Cursors.Default;
             this.BtnIngresar.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
             this.BtnIngresar.IconSize = 25;
-            this.BtnIngresar.IdleBorderColor = System.Drawing.Color.Gray;
+            this.BtnIngresar.IdleBorderColor = System.Drawing.Color.DimGray;
             this.BtnIngresar.IdleBorderRadius = 1;
             this.BtnIngresar.IdleBorderThickness = 1;
             this.BtnIngresar.IdleFillColor = System.Drawing.Color.DimGray;
@@ -198,7 +198,7 @@
             this.BtnIngresar.onHoverState.ForeColor = System.Drawing.Color.White;
             this.BtnIngresar.onHoverState.IconLeftImage = null;
             this.BtnIngresar.onHoverState.IconRightImage = null;
-            this.BtnIngresar.OnIdleState.BorderColor = System.Drawing.Color.Gray;
+            this.BtnIngresar.OnIdleState.BorderColor = System.Drawing.Color.DimGray;
             this.BtnIngresar.OnIdleState.BorderRadius = 1;
             this.BtnIngresar.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.BtnIngresar.OnIdleState.BorderThickness = 1;

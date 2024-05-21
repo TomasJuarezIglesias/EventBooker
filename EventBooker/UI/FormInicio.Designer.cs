@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInicio));
-            this.LblSaludo = new Bunifu.UI.WinForms.BunifuLabel();
+            this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // LblSaludo
+            // bunifuPictureBox1
             // 
-            this.LblSaludo.AllowParentOverrides = false;
-            this.LblSaludo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LblSaludo.AutoEllipsis = false;
-            this.LblSaludo.Cursor = System.Windows.Forms.Cursors.Default;
-            this.LblSaludo.CursorType = System.Windows.Forms.Cursors.Default;
-            this.LblSaludo.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblSaludo.Location = new System.Drawing.Point(357, 283);
-            this.LblSaludo.Name = "LblSaludo";
-            this.LblSaludo.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.LblSaludo.Size = new System.Drawing.Size(187, 45);
-            this.LblSaludo.TabIndex = 2;
-            this.LblSaludo.Text = "Bienvenido ...";
-            this.LblSaludo.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.LblSaludo.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuPictureBox1.AllowFocused = false;
+            this.bunifuPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bunifuPictureBox1.AutoSizeHeight = true;
+            this.bunifuPictureBox1.BorderRadius = 181;
+            this.bunifuPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox1.Image")));
+            this.bunifuPictureBox1.IsCircle = true;
+            this.bunifuPictureBox1.Location = new System.Drawing.Point(269, 124);
+            this.bunifuPictureBox1.Name = "bunifuPictureBox1";
+            this.bunifuPictureBox1.Size = new System.Drawing.Size(363, 363);
+            this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuPictureBox1.TabIndex = 2;
+            this.bunifuPictureBox1.TabStop = false;
+            this.bunifuPictureBox1.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
             // 
             // FormInicio
             // 
@@ -55,17 +55,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(901, 611);
-            this.Controls.Add(this.LblSaludo);
+            this.Controls.Add(this.bunifuPictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormInicio";
             this.Text = "FormInicio";
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private Bunifu.UI.WinForms.BunifuLabel LblSaludo;
+        private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox1;
     }
 }

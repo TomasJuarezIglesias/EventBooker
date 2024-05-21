@@ -48,18 +48,27 @@ namespace UI
 
             if (inputError) return;
 
-            BusinessResponse<EntityUser> response = _bussinesAuth.VerifyCredentials(TxtUsername.Text, TxtPassword.Text);
 
-            RevisarRespuestaServicio(response);
-
-            if (response.Ok)
+            try
             {
-                _sessionManager = SessionManager.Login(response.Data);
+                BusinessResponse<EntityUser> response = _bussinesAuth.VerifyCredentials(TxtUsername.Text, TxtPassword.Text);
 
-                FormMenuPrincipal menuPrincipal = new FormMenuPrincipal();
-                menuPrincipal.Show();
-                this.Hide();
+                RevisarRespuestaServicio(response);
+
+                if (response.Ok)
+                {
+                    _sessionManager = SessionManager.Login(response.Data);
+
+                    FormMenuPrincipal menuPrincipal = new FormMenuPrincipal();
+                    menuPrincipal.Show();
+                    this.Hide();
+                }
             }
+            catch (Exception ex)
+            {
+                RevisarRespuestaServicio(new BusinessResponse<bool>(false,false,ex.Message));
+            }
+            
         }
     }
 }
