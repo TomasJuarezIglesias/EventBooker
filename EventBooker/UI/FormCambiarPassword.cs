@@ -16,13 +16,15 @@ namespace UI
     public partial class FormCambiarPassword : ServiceForm
     {
         private SessionManager _sessionManager;
+        private ServiceForm _formMenuPrincipal;
         private readonly BusinessAuth _businessAuth;
 
-        public FormCambiarPassword()
+        public FormCambiarPassword(ServiceForm formMenuPrincipal)
         {
             InitializeComponent();
             _sessionManager = SessionManager.GetInstance();
             _businessAuth = new BusinessAuth();
+            _formMenuPrincipal = formMenuPrincipal;
         }
 
         private void BtnChangePassword_Click(object sender, EventArgs e)
@@ -63,7 +65,10 @@ namespace UI
 
             if (response.Ok)
             {
-                this.Close();
+                SessionManager.Logout();
+                InicioSesion inicioSesion = new InicioSesion();
+                inicioSesion.Show();
+                _formMenuPrincipal.Close();
             }
         }
     }

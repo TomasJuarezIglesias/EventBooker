@@ -48,7 +48,11 @@ namespace DataAccess
             SqlParameter[] parameters = new SqlParameter[]
             {
                 new SqlParameter("@In_Username", SqlDbType.NVarChar){ Value = user.Username },
-                new SqlParameter("@In_Password", SqlDbType.Char){ Value = user.Password}
+                new SqlParameter("@In_Password", SqlDbType.Char){ Value = user.Password},
+                new SqlParameter("@In_Dni", SqlDbType.Int){ Value = user.Dni },
+                new SqlParameter("@In_Nombre", SqlDbType.NVarChar){ Value = user.Nombre },
+                new SqlParameter("@In_Apellido", SqlDbType.NVarChar){ Value = user.Apellido },
+                new SqlParameter("@In_Mail", SqlDbType.NVarChar){ Value = user.Mail }
             };
 
             return conn.Write("SP_CreateUser", parameters);
@@ -61,7 +65,11 @@ namespace DataAccess
                 new SqlParameter("@In_Id", SqlDbType.Int){ Value = user.Id },
                 new SqlParameter("@In_Username", SqlDbType.NVarChar){ Value = user.Username },
                 new SqlParameter("@In_Password", SqlDbType.Char){ Value = user.Password },
-                new SqlParameter("@In_IsBlock", SqlDbType.Bit){ Value = user.IsBlock }
+                new SqlParameter("@In_IsBlock", SqlDbType.Bit){ Value = user.IsBlock },
+                new SqlParameter("@In_Dni", SqlDbType.Int){ Value = user.Dni },
+                new SqlParameter("@In_Nombre", SqlDbType.NVarChar){ Value = user.Nombre },
+                new SqlParameter("@In_Apellido", SqlDbType.NVarChar){ Value = user.Apellido },
+                new SqlParameter("@In_Mail", SqlDbType.NVarChar){ Value = user.Mail }
             };
 
             return conn.Write("SP_UpdateUser", parameters);

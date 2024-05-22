@@ -18,10 +18,14 @@ namespace UI
     {
         private readonly BusinessAuth _bussinesAuth;
         private SessionManager _sessionManager;
+        private BusinessUser _bussinesUser;
+        private List<EntityUser> _ListaErrorLogeo;
         public InicioSesion()
         {
             InitializeComponent();
             _bussinesAuth = new BusinessAuth();
+            _bussinesUser = new BusinessUser();
+            _ListaErrorLogeo = new List<EntityUser>();  
         }
 
         private void BtnIngresar_Click(object sender, EventArgs e)
@@ -55,6 +59,17 @@ namespace UI
 
                 RevisarRespuestaServicio(response);
 
+                if (!response.Ok && response.Data != null && !response.Data.IsBlock)
+                {
+                    _ListaErrorLogeo.Add(response.Data);
+
+                    if (_ListaErrorLogeo.Where(users => users.Id == response.Data.Id).Count() == 3)
+                    {
+
+                        RevisarRespuestaServicio(_bussinesUser.BlockUser(response.Data));
+                    }
+                }
+
                 if (response.Ok)
                 {
                     _sessionManager = SessionManager.Login(response.Data);
@@ -63,6 +78,7 @@ namespace UI
                     menuPrincipal.Show();
                     this.Hide();
                 }
+
             }
             catch (Exception ex)
             {

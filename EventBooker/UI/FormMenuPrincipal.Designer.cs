@@ -492,7 +492,7 @@
             this.bunifuButton2.BackColor1 = System.Drawing.Color.Gray;
             this.bunifuButton2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton2.BackgroundImage")));
             this.bunifuButton2.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton2.ButtonText = "Algun Boton de reporte";
+            this.bunifuButton2.ButtonText = "Reporte 1";
             this.bunifuButton2.ButtonTextMarginLeft = 0;
             this.bunifuButton2.ColorContrastOnClick = 45;
             this.bunifuButton2.ColorContrastOnHover = 45;
@@ -864,7 +864,7 @@
             this.bunifuButton3.BackColor1 = System.Drawing.Color.Gray;
             this.bunifuButton3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton3.BackgroundImage")));
             this.bunifuButton3.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton3.ButtonText = "Algun Boton";
+            this.bunifuButton3.ButtonText = "Registrar Salón";
             this.bunifuButton3.ButtonTextMarginLeft = 0;
             this.bunifuButton3.ColorContrastOnClick = 45;
             this.bunifuButton3.ColorContrastOnHover = 45;

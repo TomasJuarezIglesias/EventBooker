@@ -15,7 +15,11 @@ namespace DataAccess
             Id = Convert.ToInt32(row["Id"]),
             Username = row["Username"].ToString(),
             Password = row["Password"].ToString(),
-            IsBlock = Convert.ToBoolean(row["IsBlock"])
+            IsBlock = Convert.ToBoolean(row["IsBlock"]),
+            Dni = Convert.ToInt32(row["Dni"]),
+            Nombre = row["Nombre"].ToString(),
+            Apellido = row["Apellido"].ToString(),
+            Mail = row["Mail"].ToString()
         };
     }
 }

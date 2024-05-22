@@ -23,7 +23,11 @@ namespace Business
             EntityUser user = dataAccess.SelectByUsername(username);
             bool ok = user?.Password == CryptoManager.EncryptString(password) && user?.Username == username;
 
-            string mensaje = user?.Username != username ? "Usuario Incorrecto" : !ok ? "Contraseña Incorrecta" : string.Empty;
+            string mensaje = 
+                user?.Username != username ? "Usuario Incorrecto" :
+                user.IsBlock ? "Usuario Bloqueado" :
+                !ok ? "Contraseña Incorrecta" : 
+                string.Empty;
 
             return new BusinessResponse<EntityUser>(ok, user, mensaje);
         }

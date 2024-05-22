@@ -42,5 +42,20 @@ namespace Business
 
             return new BusinessResponse<bool>(ok, ok, !ok ? "No existe" : string.Empty);
         }
+
+        public BusinessResponse<bool> BlockUser(EntityUser user) 
+        {
+            user.IsBlock = !user.IsBlock;
+            bool ok = dataAccess.Update(user);
+
+            string message = "El usuario ha sido bloqueado por exceder numero de intentos fallidos";
+
+            if (!ok)
+            {
+                message = user.IsBlock ? "No se pudo bloquear" : "No se pudo desbloquear";
+            }
+
+            return new BusinessResponse<bool>(false, ok, message);
+        }
     }
 }

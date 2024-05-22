@@ -130,8 +130,7 @@ namespace UI
 
         private void BtnCambiarPassword_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormCambiarPassword());
-        }
+            OpenChildForm(new FormCambiarPassword(this));        }
 
         private void BtnCerrarSesion_Click(object sender, EventArgs e)
         {
