@@ -17,13 +17,13 @@ namespace UI
     {
         private SessionManager _sessionManager;
         private ServiceForm _formMenuPrincipal;
-        private readonly BusinessAuth _businessAuth;
+        private readonly BusinessUser _businessUser;
 
         public FormCambiarPassword(ServiceForm formMenuPrincipal)
         {
             InitializeComponent();
             _sessionManager = SessionManager.GetInstance();
-            _businessAuth = new BusinessAuth();
+            _businessUser = new BusinessUser();
             _formMenuPrincipal = formMenuPrincipal;
         }
 
@@ -59,7 +59,7 @@ namespace UI
             if (inputError) return;
 
 
-            BusinessResponse<bool> response = _businessAuth.ChangePassword(_sessionManager.User, TxtActualPass.Text, TxtNewPass.Text, TxtNewPassRep.Text);
+            BusinessResponse<bool> response = _businessUser.ChangePassword(_sessionManager.User, TxtActualPass.Text, TxtNewPass.Text, TxtNewPassRep.Text);
 
             RevisarRespuestaServicio(response);
 

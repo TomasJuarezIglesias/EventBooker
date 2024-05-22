@@ -52,6 +52,9 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties14 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties15 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties16 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.DataGridViewUsuarios = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.BtnCrear = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -66,7 +69,16 @@
             this.bunifuLabel4 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel5 = new Bunifu.UI.WinForms.BunifuLabel();
             this.TxtDni = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.BtnResetPassword = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.PanelData = new System.Windows.Forms.Panel();
+            this.LblErrorMail = new Bunifu.UI.WinForms.BunifuLabel();
+            this.LblErrorApellido = new Bunifu.UI.WinForms.BunifuLabel();
+            this.LblErrorDni = new Bunifu.UI.WinForms.BunifuLabel();
+            this.LblErrorNombre = new Bunifu.UI.WinForms.BunifuLabel();
+            this.BtnCancelar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.BtnGuardar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewUsuarios)).BeginInit();
+            this.PanelData.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuLabel1
@@ -77,7 +89,7 @@
             this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 20.25F);
-            this.bunifuLabel1.Location = new System.Drawing.Point(213, 12);
+            this.bunifuLabel1.Location = new System.Drawing.Point(12, 12);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel1.Size = new System.Drawing.Size(286, 45);
@@ -142,12 +154,18 @@
             this.DataGridViewUsuarios.HeaderBgColor = System.Drawing.Color.Empty;
             this.DataGridViewUsuarios.HeaderForeColor = System.Drawing.Color.White;
             this.DataGridViewUsuarios.Location = new System.Drawing.Point(12, 78);
+            this.DataGridViewUsuarios.MultiSelect = false;
             this.DataGridViewUsuarios.Name = "DataGridViewUsuarios";
             this.DataGridViewUsuarios.ReadOnly = true;
             this.DataGridViewUsuarios.RowHeadersVisible = false;
+            this.DataGridViewUsuarios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.DataGridViewUsuarios.RowTemplate.Height = 40;
             this.DataGridViewUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridViewUsuarios.Size = new System.Drawing.Size(708, 284);
+            this.DataGridViewUsuarios.ShowCellErrors = false;
+            this.DataGridViewUsuarios.ShowCellToolTips = false;
+            this.DataGridViewUsuarios.ShowEditingIcon = false;
+            this.DataGridViewUsuarios.ShowRowErrors = false;
+            this.DataGridViewUsuarios.Size = new System.Drawing.Size(708, 299);
             this.DataGridViewUsuarios.TabIndex = 1;
             this.DataGridViewUsuarios.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             // 
@@ -290,7 +308,7 @@
             this.BtnModificar.IdleIconLeftImage = null;
             this.BtnModificar.IdleIconRightImage = null;
             this.BtnModificar.IndicateFocus = false;
-            this.BtnModificar.Location = new System.Drawing.Point(739, 159);
+            this.BtnModificar.Location = new System.Drawing.Point(739, 139);
             this.BtnModificar.Name = "BtnModificar";
             this.BtnModificar.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnModificar.OnDisabledState.BorderRadius = 1;
@@ -331,6 +349,7 @@
             this.BtnModificar.TextMarginLeft = 0;
             this.BtnModificar.TextPadding = new System.Windows.Forms.Padding(0);
             this.BtnModificar.UseDefaultRadiusAndThickness = true;
+            this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
             // BtnBloquear
             // 
@@ -380,7 +399,7 @@
             this.BtnBloquear.IdleIconLeftImage = null;
             this.BtnBloquear.IdleIconRightImage = null;
             this.BtnBloquear.IndicateFocus = false;
-            this.BtnBloquear.Location = new System.Drawing.Point(739, 243);
+            this.BtnBloquear.Location = new System.Drawing.Point(739, 205);
             this.BtnBloquear.Name = "BtnBloquear";
             this.BtnBloquear.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnBloquear.OnDisabledState.BorderRadius = 1;
@@ -421,6 +440,7 @@
             this.BtnBloquear.TextMarginLeft = 0;
             this.BtnBloquear.TextPadding = new System.Windows.Forms.Padding(0);
             this.BtnBloquear.UseDefaultRadiusAndThickness = true;
+            this.BtnBloquear.Click += new System.EventHandler(this.BtnBloquear_Click);
             // 
             // BtnEliminar
             // 
@@ -470,7 +490,7 @@
             this.BtnEliminar.IdleIconLeftImage = null;
             this.BtnEliminar.IdleIconRightImage = null;
             this.BtnEliminar.IndicateFocus = false;
-            this.BtnEliminar.Location = new System.Drawing.Point(739, 323);
+            this.BtnEliminar.Location = new System.Drawing.Point(739, 273);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnEliminar.OnDisabledState.BorderRadius = 1;
@@ -511,6 +531,7 @@
             this.BtnEliminar.TextMarginLeft = 0;
             this.BtnEliminar.TextPadding = new System.Windows.Forms.Padding(0);
             this.BtnEliminar.UseDefaultRadiusAndThickness = true;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // TxtNombre
             // 
@@ -541,7 +562,7 @@
             this.TxtNombre.IconRight = null;
             this.TxtNombre.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtNombre.Lines = new string[0];
-            this.TxtNombre.Location = new System.Drawing.Point(12, 404);
+            this.TxtNombre.Location = new System.Drawing.Point(9, 24);
             this.TxtNombre.MaxLength = 32767;
             this.TxtNombre.MinimumSize = new System.Drawing.Size(1, 1);
             this.TxtNombre.Modified = false;
@@ -617,7 +638,7 @@
             this.TxtApellido.IconRight = null;
             this.TxtApellido.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtApellido.Lines = new string[0];
-            this.TxtApellido.Location = new System.Drawing.Point(12, 474);
+            this.TxtApellido.Location = new System.Drawing.Point(10, 118);
             this.TxtApellido.MaxLength = 32767;
             this.TxtApellido.MinimumSize = new System.Drawing.Size(1, 1);
             this.TxtApellido.Modified = false;
@@ -693,7 +714,7 @@
             this.TxtMail.IconRight = null;
             this.TxtMail.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtMail.Lines = new string[0];
-            this.TxtMail.Location = new System.Drawing.Point(426, 474);
+            this.TxtMail.Location = new System.Drawing.Point(424, 118);
             this.TxtMail.MaxLength = 32767;
             this.TxtMail.MinimumSize = new System.Drawing.Size(1, 1);
             this.TxtMail.Modified = false;
@@ -748,7 +769,7 @@
             this.bunifuLabel2.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel2.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bunifuLabel2.Location = new System.Drawing.Point(13, 383);
+            this.bunifuLabel2.Location = new System.Drawing.Point(10, 3);
             this.bunifuLabel2.Name = "bunifuLabel2";
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel2.Size = new System.Drawing.Size(61, 21);
@@ -764,7 +785,7 @@
             this.bunifuLabel3.AutoEllipsis = false;
             this.bunifuLabel3.CursorType = null;
             this.bunifuLabel3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bunifuLabel3.Location = new System.Drawing.Point(12, 447);
+            this.bunifuLabel3.Location = new System.Drawing.Point(10, 91);
             this.bunifuLabel3.Name = "bunifuLabel3";
             this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel3.Size = new System.Drawing.Size(60, 21);
@@ -780,7 +801,7 @@
             this.bunifuLabel4.AutoEllipsis = false;
             this.bunifuLabel4.CursorType = null;
             this.bunifuLabel4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bunifuLabel4.Location = new System.Drawing.Point(426, 383);
+            this.bunifuLabel4.Location = new System.Drawing.Point(424, 3);
             this.bunifuLabel4.Name = "bunifuLabel4";
             this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel4.Size = new System.Drawing.Size(27, 21);
@@ -796,7 +817,7 @@
             this.bunifuLabel5.AutoEllipsis = false;
             this.bunifuLabel5.CursorType = null;
             this.bunifuLabel5.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bunifuLabel5.Location = new System.Drawing.Point(426, 447);
+            this.bunifuLabel5.Location = new System.Drawing.Point(424, 91);
             this.bunifuLabel5.Name = "bunifuLabel5";
             this.bunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel5.Size = new System.Drawing.Size(33, 21);
@@ -834,7 +855,7 @@
             this.TxtDni.IconRight = null;
             this.TxtDni.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtDni.Lines = new string[0];
-            this.TxtDni.Location = new System.Drawing.Point(426, 404);
+            this.TxtDni.Location = new System.Drawing.Point(424, 24);
             this.TxtDni.MaxLength = 32767;
             this.TxtDni.MinimumSize = new System.Drawing.Size(1, 1);
             this.TxtDni.Modified = false;
@@ -881,20 +902,376 @@
             this.TxtDni.UseSystemPasswordChar = false;
             this.TxtDni.WordWrap = true;
             // 
+            // BtnResetPassword
+            // 
+            this.BtnResetPassword.AllowAnimations = true;
+            this.BtnResetPassword.AllowMouseEffects = true;
+            this.BtnResetPassword.AllowToggling = false;
+            this.BtnResetPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnResetPassword.AnimationSpeed = 200;
+            this.BtnResetPassword.AutoGenerateColors = false;
+            this.BtnResetPassword.AutoRoundBorders = false;
+            this.BtnResetPassword.AutoSizeLeftIcon = true;
+            this.BtnResetPassword.AutoSizeRightIcon = true;
+            this.BtnResetPassword.BackColor = System.Drawing.Color.Transparent;
+            this.BtnResetPassword.BackColor1 = System.Drawing.Color.DimGray;
+            this.BtnResetPassword.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnResetPassword.BackgroundImage")));
+            this.BtnResetPassword.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnResetPassword.ButtonText = "Reset Contraseña";
+            this.BtnResetPassword.ButtonTextMarginLeft = 0;
+            this.BtnResetPassword.ColorContrastOnClick = 45;
+            this.BtnResetPassword.ColorContrastOnHover = 45;
+            this.BtnResetPassword.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges5.BottomLeft = true;
+            borderEdges5.BottomRight = true;
+            borderEdges5.TopLeft = true;
+            borderEdges5.TopRight = true;
+            this.BtnResetPassword.CustomizableEdges = borderEdges5;
+            this.BtnResetPassword.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.BtnResetPassword.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.BtnResetPassword.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.BtnResetPassword.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.BtnResetPassword.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.BtnResetPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.BtnResetPassword.ForeColor = System.Drawing.Color.White;
+            this.BtnResetPassword.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnResetPassword.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.BtnResetPassword.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.BtnResetPassword.IconMarginLeft = 11;
+            this.BtnResetPassword.IconPadding = 10;
+            this.BtnResetPassword.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnResetPassword.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.BtnResetPassword.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.BtnResetPassword.IconSize = 25;
+            this.BtnResetPassword.IdleBorderColor = System.Drawing.Color.DimGray;
+            this.BtnResetPassword.IdleBorderRadius = 1;
+            this.BtnResetPassword.IdleBorderThickness = 1;
+            this.BtnResetPassword.IdleFillColor = System.Drawing.Color.DimGray;
+            this.BtnResetPassword.IdleIconLeftImage = null;
+            this.BtnResetPassword.IdleIconRightImage = null;
+            this.BtnResetPassword.IndicateFocus = false;
+            this.BtnResetPassword.Location = new System.Drawing.Point(739, 338);
+            this.BtnResetPassword.Name = "BtnResetPassword";
+            this.BtnResetPassword.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.BtnResetPassword.OnDisabledState.BorderRadius = 1;
+            this.BtnResetPassword.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnResetPassword.OnDisabledState.BorderThickness = 1;
+            this.BtnResetPassword.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.BtnResetPassword.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.BtnResetPassword.OnDisabledState.IconLeftImage = null;
+            this.BtnResetPassword.OnDisabledState.IconRightImage = null;
+            this.BtnResetPassword.onHoverState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BtnResetPassword.onHoverState.BorderRadius = 1;
+            this.BtnResetPassword.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnResetPassword.onHoverState.BorderThickness = 1;
+            this.BtnResetPassword.onHoverState.FillColor = System.Drawing.Color.DarkGray;
+            this.BtnResetPassword.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.BtnResetPassword.onHoverState.IconLeftImage = null;
+            this.BtnResetPassword.onHoverState.IconRightImage = null;
+            this.BtnResetPassword.OnIdleState.BorderColor = System.Drawing.Color.DimGray;
+            this.BtnResetPassword.OnIdleState.BorderRadius = 1;
+            this.BtnResetPassword.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnResetPassword.OnIdleState.BorderThickness = 1;
+            this.BtnResetPassword.OnIdleState.FillColor = System.Drawing.Color.DimGray;
+            this.BtnResetPassword.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.BtnResetPassword.OnIdleState.IconLeftImage = null;
+            this.BtnResetPassword.OnIdleState.IconRightImage = null;
+            this.BtnResetPassword.OnPressedState.BorderColor = System.Drawing.Color.Gray;
+            this.BtnResetPassword.OnPressedState.BorderRadius = 1;
+            this.BtnResetPassword.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnResetPassword.OnPressedState.BorderThickness = 1;
+            this.BtnResetPassword.OnPressedState.FillColor = System.Drawing.Color.DimGray;
+            this.BtnResetPassword.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.BtnResetPassword.OnPressedState.IconLeftImage = null;
+            this.BtnResetPassword.OnPressedState.IconRightImage = null;
+            this.BtnResetPassword.Size = new System.Drawing.Size(150, 39);
+            this.BtnResetPassword.TabIndex = 20;
+            this.BtnResetPassword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BtnResetPassword.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BtnResetPassword.TextMarginLeft = 0;
+            this.BtnResetPassword.TextPadding = new System.Windows.Forms.Padding(0);
+            this.BtnResetPassword.UseDefaultRadiusAndThickness = true;
+            this.BtnResetPassword.Click += new System.EventHandler(this.BtnResetPassword_Click);
+            // 
+            // PanelData
+            // 
+            this.PanelData.Controls.Add(this.LblErrorMail);
+            this.PanelData.Controls.Add(this.LblErrorApellido);
+            this.PanelData.Controls.Add(this.LblErrorDni);
+            this.PanelData.Controls.Add(this.LblErrorNombre);
+            this.PanelData.Controls.Add(this.BtnCancelar);
+            this.PanelData.Controls.Add(this.BtnGuardar);
+            this.PanelData.Controls.Add(this.bunifuLabel2);
+            this.PanelData.Controls.Add(this.TxtNombre);
+            this.PanelData.Controls.Add(this.TxtDni);
+            this.PanelData.Controls.Add(this.TxtApellido);
+            this.PanelData.Controls.Add(this.bunifuLabel5);
+            this.PanelData.Controls.Add(this.TxtMail);
+            this.PanelData.Controls.Add(this.bunifuLabel4);
+            this.PanelData.Controls.Add(this.bunifuLabel3);
+            this.PanelData.Location = new System.Drawing.Point(2, 406);
+            this.PanelData.Name = "PanelData";
+            this.PanelData.Size = new System.Drawing.Size(897, 174);
+            this.PanelData.TabIndex = 21;
+            // 
+            // LblErrorMail
+            // 
+            this.LblErrorMail.AllowParentOverrides = false;
+            this.LblErrorMail.AutoEllipsis = false;
+            this.LblErrorMail.CursorType = null;
+            this.LblErrorMail.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LblErrorMail.ForeColor = System.Drawing.Color.Brown;
+            this.LblErrorMail.Location = new System.Drawing.Point(424, 156);
+            this.LblErrorMail.Name = "LblErrorMail";
+            this.LblErrorMail.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LblErrorMail.Size = new System.Drawing.Size(98, 15);
+            this.LblErrorMail.TabIndex = 26;
+            this.LblErrorMail.Text = "Debe ingresar mail";
+            this.LblErrorMail.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.LblErrorMail.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.LblErrorMail.Visible = false;
+            // 
+            // LblErrorApellido
+            // 
+            this.LblErrorApellido.AllowParentOverrides = false;
+            this.LblErrorApellido.AutoEllipsis = false;
+            this.LblErrorApellido.CursorType = null;
+            this.LblErrorApellido.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LblErrorApellido.ForeColor = System.Drawing.Color.Brown;
+            this.LblErrorApellido.Location = new System.Drawing.Point(10, 156);
+            this.LblErrorApellido.Name = "LblErrorApellido";
+            this.LblErrorApellido.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LblErrorApellido.Size = new System.Drawing.Size(117, 15);
+            this.LblErrorApellido.TabIndex = 25;
+            this.LblErrorApellido.Text = "Debe ingresar apellido";
+            this.LblErrorApellido.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.LblErrorApellido.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.LblErrorApellido.Visible = false;
+            // 
+            // LblErrorDni
+            // 
+            this.LblErrorDni.AllowParentOverrides = false;
+            this.LblErrorDni.AutoEllipsis = false;
+            this.LblErrorDni.CursorType = null;
+            this.LblErrorDni.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LblErrorDni.ForeColor = System.Drawing.Color.Brown;
+            this.LblErrorDni.Location = new System.Drawing.Point(424, 64);
+            this.LblErrorDni.Name = "LblErrorDni";
+            this.LblErrorDni.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LblErrorDni.Size = new System.Drawing.Size(92, 15);
+            this.LblErrorDni.TabIndex = 24;
+            this.LblErrorDni.Text = "Debe ingresar dni";
+            this.LblErrorDni.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.LblErrorDni.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.LblErrorDni.Visible = false;
+            // 
+            // LblErrorNombre
+            // 
+            this.LblErrorNombre.AllowParentOverrides = false;
+            this.LblErrorNombre.AutoEllipsis = false;
+            this.LblErrorNombre.CursorType = null;
+            this.LblErrorNombre.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LblErrorNombre.ForeColor = System.Drawing.Color.Brown;
+            this.LblErrorNombre.Location = new System.Drawing.Point(10, 64);
+            this.LblErrorNombre.Name = "LblErrorNombre";
+            this.LblErrorNombre.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LblErrorNombre.Size = new System.Drawing.Size(129, 15);
+            this.LblErrorNombre.TabIndex = 23;
+            this.LblErrorNombre.Text = "Debe Ingresar el nombre";
+            this.LblErrorNombre.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.LblErrorNombre.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.LblErrorNombre.Visible = false;
+            // 
+            // BtnCancelar
+            // 
+            this.BtnCancelar.AllowAnimations = true;
+            this.BtnCancelar.AllowMouseEffects = true;
+            this.BtnCancelar.AllowToggling = false;
+            this.BtnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnCancelar.AnimationSpeed = 200;
+            this.BtnCancelar.AutoGenerateColors = false;
+            this.BtnCancelar.AutoRoundBorders = false;
+            this.BtnCancelar.AutoSizeLeftIcon = true;
+            this.BtnCancelar.AutoSizeRightIcon = true;
+            this.BtnCancelar.BackColor = System.Drawing.Color.Transparent;
+            this.BtnCancelar.BackColor1 = System.Drawing.Color.DimGray;
+            this.BtnCancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnCancelar.BackgroundImage")));
+            this.BtnCancelar.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnCancelar.ButtonText = "Cancelar";
+            this.BtnCancelar.ButtonTextMarginLeft = 0;
+            this.BtnCancelar.ColorContrastOnClick = 45;
+            this.BtnCancelar.ColorContrastOnHover = 45;
+            this.BtnCancelar.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges6.BottomLeft = true;
+            borderEdges6.BottomRight = true;
+            borderEdges6.TopLeft = true;
+            borderEdges6.TopRight = true;
+            this.BtnCancelar.CustomizableEdges = borderEdges6;
+            this.BtnCancelar.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.BtnCancelar.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.BtnCancelar.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.BtnCancelar.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.BtnCancelar.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.BtnCancelar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.BtnCancelar.ForeColor = System.Drawing.Color.White;
+            this.BtnCancelar.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnCancelar.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.BtnCancelar.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.BtnCancelar.IconMarginLeft = 11;
+            this.BtnCancelar.IconPadding = 10;
+            this.BtnCancelar.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnCancelar.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.BtnCancelar.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.BtnCancelar.IconSize = 25;
+            this.BtnCancelar.IdleBorderColor = System.Drawing.Color.DimGray;
+            this.BtnCancelar.IdleBorderRadius = 1;
+            this.BtnCancelar.IdleBorderThickness = 1;
+            this.BtnCancelar.IdleFillColor = System.Drawing.Color.DimGray;
+            this.BtnCancelar.IdleIconLeftImage = null;
+            this.BtnCancelar.IdleIconRightImage = null;
+            this.BtnCancelar.IndicateFocus = false;
+            this.BtnCancelar.Location = new System.Drawing.Point(737, 116);
+            this.BtnCancelar.Name = "BtnCancelar";
+            this.BtnCancelar.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.BtnCancelar.OnDisabledState.BorderRadius = 1;
+            this.BtnCancelar.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnCancelar.OnDisabledState.BorderThickness = 1;
+            this.BtnCancelar.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.BtnCancelar.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.BtnCancelar.OnDisabledState.IconLeftImage = null;
+            this.BtnCancelar.OnDisabledState.IconRightImage = null;
+            this.BtnCancelar.onHoverState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BtnCancelar.onHoverState.BorderRadius = 1;
+            this.BtnCancelar.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnCancelar.onHoverState.BorderThickness = 1;
+            this.BtnCancelar.onHoverState.FillColor = System.Drawing.Color.DarkGray;
+            this.BtnCancelar.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.BtnCancelar.onHoverState.IconLeftImage = null;
+            this.BtnCancelar.onHoverState.IconRightImage = null;
+            this.BtnCancelar.OnIdleState.BorderColor = System.Drawing.Color.DimGray;
+            this.BtnCancelar.OnIdleState.BorderRadius = 1;
+            this.BtnCancelar.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnCancelar.OnIdleState.BorderThickness = 1;
+            this.BtnCancelar.OnIdleState.FillColor = System.Drawing.Color.DimGray;
+            this.BtnCancelar.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.BtnCancelar.OnIdleState.IconLeftImage = null;
+            this.BtnCancelar.OnIdleState.IconRightImage = null;
+            this.BtnCancelar.OnPressedState.BorderColor = System.Drawing.Color.Gray;
+            this.BtnCancelar.OnPressedState.BorderRadius = 1;
+            this.BtnCancelar.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnCancelar.OnPressedState.BorderThickness = 1;
+            this.BtnCancelar.OnPressedState.FillColor = System.Drawing.Color.DimGray;
+            this.BtnCancelar.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.BtnCancelar.OnPressedState.IconLeftImage = null;
+            this.BtnCancelar.OnPressedState.IconRightImage = null;
+            this.BtnCancelar.Size = new System.Drawing.Size(150, 39);
+            this.BtnCancelar.TabIndex = 22;
+            this.BtnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BtnCancelar.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BtnCancelar.TextMarginLeft = 0;
+            this.BtnCancelar.TextPadding = new System.Windows.Forms.Padding(0);
+            this.BtnCancelar.UseDefaultRadiusAndThickness = true;
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
+            // 
+            // BtnGuardar
+            // 
+            this.BtnGuardar.AllowAnimations = true;
+            this.BtnGuardar.AllowMouseEffects = true;
+            this.BtnGuardar.AllowToggling = false;
+            this.BtnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnGuardar.AnimationSpeed = 200;
+            this.BtnGuardar.AutoGenerateColors = false;
+            this.BtnGuardar.AutoRoundBorders = false;
+            this.BtnGuardar.AutoSizeLeftIcon = true;
+            this.BtnGuardar.AutoSizeRightIcon = true;
+            this.BtnGuardar.BackColor = System.Drawing.Color.Transparent;
+            this.BtnGuardar.BackColor1 = System.Drawing.Color.DimGray;
+            this.BtnGuardar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnGuardar.BackgroundImage")));
+            this.BtnGuardar.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnGuardar.ButtonText = "Guardar";
+            this.BtnGuardar.ButtonTextMarginLeft = 0;
+            this.BtnGuardar.ColorContrastOnClick = 45;
+            this.BtnGuardar.ColorContrastOnHover = 45;
+            this.BtnGuardar.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges7.BottomLeft = true;
+            borderEdges7.BottomRight = true;
+            borderEdges7.TopLeft = true;
+            borderEdges7.TopRight = true;
+            this.BtnGuardar.CustomizableEdges = borderEdges7;
+            this.BtnGuardar.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.BtnGuardar.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.BtnGuardar.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.BtnGuardar.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.BtnGuardar.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.BtnGuardar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.BtnGuardar.ForeColor = System.Drawing.Color.White;
+            this.BtnGuardar.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnGuardar.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.BtnGuardar.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.BtnGuardar.IconMarginLeft = 11;
+            this.BtnGuardar.IconPadding = 10;
+            this.BtnGuardar.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnGuardar.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.BtnGuardar.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.BtnGuardar.IconSize = 25;
+            this.BtnGuardar.IdleBorderColor = System.Drawing.Color.DimGray;
+            this.BtnGuardar.IdleBorderRadius = 1;
+            this.BtnGuardar.IdleBorderThickness = 1;
+            this.BtnGuardar.IdleFillColor = System.Drawing.Color.DimGray;
+            this.BtnGuardar.IdleIconLeftImage = null;
+            this.BtnGuardar.IdleIconRightImage = null;
+            this.BtnGuardar.IndicateFocus = false;
+            this.BtnGuardar.Location = new System.Drawing.Point(737, 36);
+            this.BtnGuardar.Name = "BtnGuardar";
+            this.BtnGuardar.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.BtnGuardar.OnDisabledState.BorderRadius = 1;
+            this.BtnGuardar.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnGuardar.OnDisabledState.BorderThickness = 1;
+            this.BtnGuardar.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.BtnGuardar.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.BtnGuardar.OnDisabledState.IconLeftImage = null;
+            this.BtnGuardar.OnDisabledState.IconRightImage = null;
+            this.BtnGuardar.onHoverState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BtnGuardar.onHoverState.BorderRadius = 1;
+            this.BtnGuardar.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnGuardar.onHoverState.BorderThickness = 1;
+            this.BtnGuardar.onHoverState.FillColor = System.Drawing.Color.DarkGray;
+            this.BtnGuardar.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.BtnGuardar.onHoverState.IconLeftImage = null;
+            this.BtnGuardar.onHoverState.IconRightImage = null;
+            this.BtnGuardar.OnIdleState.BorderColor = System.Drawing.Color.DimGray;
+            this.BtnGuardar.OnIdleState.BorderRadius = 1;
+            this.BtnGuardar.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnGuardar.OnIdleState.BorderThickness = 1;
+            this.BtnGuardar.OnIdleState.FillColor = System.Drawing.Color.DimGray;
+            this.BtnGuardar.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.BtnGuardar.OnIdleState.IconLeftImage = null;
+            this.BtnGuardar.OnIdleState.IconRightImage = null;
+            this.BtnGuardar.OnPressedState.BorderColor = System.Drawing.Color.Gray;
+            this.BtnGuardar.OnPressedState.BorderRadius = 1;
+            this.BtnGuardar.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnGuardar.OnPressedState.BorderThickness = 1;
+            this.BtnGuardar.OnPressedState.FillColor = System.Drawing.Color.DimGray;
+            this.BtnGuardar.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.BtnGuardar.OnPressedState.IconLeftImage = null;
+            this.BtnGuardar.OnPressedState.IconRightImage = null;
+            this.BtnGuardar.Size = new System.Drawing.Size(150, 39);
+            this.BtnGuardar.TabIndex = 21;
+            this.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BtnGuardar.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BtnGuardar.TextMarginLeft = 0;
+            this.BtnGuardar.TextPadding = new System.Windows.Forms.Padding(0);
+            this.BtnGuardar.UseDefaultRadiusAndThickness = true;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
+            // 
             // FormGestionUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(901, 611);
-            this.Controls.Add(this.TxtDni);
-            this.Controls.Add(this.bunifuLabel5);
-            this.Controls.Add(this.bunifuLabel4);
-            this.Controls.Add(this.bunifuLabel3);
-            this.Controls.Add(this.bunifuLabel2);
-            this.Controls.Add(this.TxtMail);
-            this.Controls.Add(this.TxtApellido);
-            this.Controls.Add(this.TxtNombre);
+            this.Controls.Add(this.PanelData);
+            this.Controls.Add(this.BtnResetPassword);
             this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.BtnBloquear);
             this.Controls.Add(this.BtnModificar);
@@ -905,6 +1282,8 @@
             this.Name = "FormGestionUsuarios";
             this.Text = "FormGestionUsuarios";
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewUsuarios)).EndInit();
+            this.PanelData.ResumeLayout(false);
+            this.PanelData.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -926,5 +1305,13 @@
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel5;
         private Bunifu.UI.WinForms.BunifuTextBox TxtDni;
         private Bunifu.UI.WinForms.BunifuTextBox TxtApellido;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton BtnResetPassword;
+        private System.Windows.Forms.Panel PanelData;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton BtnGuardar;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton BtnCancelar;
+        private Bunifu.UI.WinForms.BunifuLabel LblErrorMail;
+        private Bunifu.UI.WinForms.BunifuLabel LblErrorApellido;
+        private Bunifu.UI.WinForms.BunifuLabel LblErrorDni;
+        private Bunifu.UI.WinForms.BunifuLabel LblErrorNombre;
     }
 }
