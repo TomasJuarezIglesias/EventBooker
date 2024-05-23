@@ -58,7 +58,10 @@ namespace UI
 
                 RevisarRespuestaServicio(response);
 
-                if (!response.Ok && response.Data != null && !response.Data.IsBlock)
+                if (response.Data?.IsBlock == true) return;
+
+                // Logica para manejo de intentos fallidos
+                if (!response.Ok && response.Data?.IsBlock == false)
                 {
                     _ListaErrorLogeo.Add(response.Data);
 

@@ -28,10 +28,7 @@ namespace UI
         // Metodo para abrir los formularios hijos en el panel contenedor
         private void OpenChildForm(ServiceForm childForm)
         {
-            if (_activeForm != null)
-            {
-                _activeForm.Close();
-            }
+            _activeForm?.Close();
 
             _activeForm = childForm;
             childForm.TopLevel = false;
@@ -130,7 +127,8 @@ namespace UI
 
         private void BtnCambiarPassword_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormCambiarPassword(this));        }
+            OpenChildForm(new FormCambiarPassword(this));        
+        }
 
         private void BtnCerrarSesion_Click(object sender, EventArgs e)
         {
@@ -146,7 +144,7 @@ namespace UI
                 SessionManager.Logout();
                 InicioSesion inicioSesion = new InicioSesion();
                 inicioSesion.Show();
-                this.Hide();
+                this.Close();
             }
         }
 

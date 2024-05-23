@@ -18,7 +18,7 @@ namespace UI
     public partial class FormGestionUsuarios : ServiceForm
     {
         private BusinessUser _BusinessUser;
-        private List<EntityUser> users;
+
         public FormGestionUsuarios()
         {
             InitializeComponent();
@@ -26,7 +26,7 @@ namespace UI
             FillDataGridView();
             HidePanelData();
         }
-        
+
 
         private void BtnCrear_Click(object sender, EventArgs e)
         {
@@ -66,7 +66,7 @@ namespace UI
                     Dni = Convert.ToInt32(TxtDni.Text),
                     Mail = TxtMail.Text,
                     Username = TxtNombre.Text + TxtApellido.Text,
-                    Password = CryptoManager.EncryptString(TxtDni.Text + TxtApellido.Text)
+                    Password = TxtDni.Text + TxtApellido.Text
                 };
 
                 RevisarRespuestaServicio(_BusinessUser.Create(user));
@@ -89,7 +89,7 @@ namespace UI
             ShowButtons();
             HidePanelData();
         }
-        
+
 
         private void BtnBloquear_Click(object sender, EventArgs e)
         {
@@ -163,6 +163,7 @@ namespace UI
             // Verifica el resultado de la selección del usuario
             if (result == DialogResult.Yes)
             {
+                // Encryptado realizado a nivel de capa usuario por utilizacion de metodo update compartido
                 user.Password = CryptoManager.EncryptString(user.Dni + user.Apellido);
 
                 RevisarRespuestaServicio(_BusinessUser.Update(user));
@@ -185,27 +186,37 @@ namespace UI
 
         private void FillDataGridView()
         {
-            users = _BusinessUser.GetAll().Data;
+            List<EntityUser> users = _BusinessUser.GetAll().Data.Where(user => user.Id != SessionManager.GetInstance().User.Id).ToList();
+
             DataGridViewUsuarios.DataSource = null;
             DataGridViewUsuarios.DataSource = users;
+
+            // Oculto datos
             DataGridViewUsuarios.Columns["Id"].Visible = false;
             DataGridViewUsuarios.Columns["Password"].Visible = false;
+
+            // Cambio de nombre de columnas
+            DataGridViewUsuarios.Columns["Username"].HeaderText = "Usuario";
+            DataGridViewUsuarios.Columns["IsBlock"].HeaderText = "Bloqueado";
+
+            LblCantidadUsuarios.Text = $"Cantidad de usuarios: {users.Count}";
+            LblUsuariosBloqueados.Text = $"Usuarios Bloqueados: {users.Where(user => user.IsBlock).Count()}";
         }
 
         private void ShowPanelData()
         {
             PanelData.Visible = true;
-
-            TxtNombre.Text = string.Empty;
-            TxtApellido.Text = string.Empty;
-            TxtDni.Text = string.Empty;
-            TxtMail.Text = string.Empty;
+            EmptyTextBox();
         }
 
         private void HidePanelData()
         {
             PanelData.Visible = false;
+            EmptyTextBox();
+        }
 
+        private void EmptyTextBox()
+        {
             TxtNombre.Text = string.Empty;
             TxtApellido.Text = string.Empty;
             TxtDni.Text = string.Empty;

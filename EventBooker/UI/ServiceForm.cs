@@ -26,6 +26,7 @@ namespace UI
             ClientSize = new Size(1150, 650);
             Cursor = Cursors.Default;
             FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
             Name = "ServiceForm";
             ResumeLayout(false);
         }

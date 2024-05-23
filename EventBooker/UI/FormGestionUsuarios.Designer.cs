@@ -77,6 +77,8 @@
             this.LblErrorNombre = new Bunifu.UI.WinForms.BunifuLabel();
             this.BtnCancelar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.BtnGuardar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.LblCantidadUsuarios = new Bunifu.UI.WinForms.BunifuLabel();
+            this.LblUsuariosBloqueados = new Bunifu.UI.WinForms.BunifuLabel();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewUsuarios)).BeginInit();
             this.PanelData.SuspendLayout();
             this.SuspendLayout();
@@ -1264,12 +1266,46 @@
             this.BtnGuardar.UseDefaultRadiusAndThickness = true;
             this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
+            // LblCantidadUsuarios
+            // 
+            this.LblCantidadUsuarios.AllowParentOverrides = false;
+            this.LblCantidadUsuarios.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.LblCantidadUsuarios.AutoEllipsis = false;
+            this.LblCantidadUsuarios.CursorType = null;
+            this.LblCantidadUsuarios.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.LblCantidadUsuarios.Location = new System.Drawing.Point(356, 36);
+            this.LblCantidadUsuarios.Name = "LblCantidadUsuarios";
+            this.LblCantidadUsuarios.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LblCantidadUsuarios.Size = new System.Drawing.Size(162, 21);
+            this.LblCantidadUsuarios.TabIndex = 22;
+            this.LblCantidadUsuarios.Text = "Cantidad de usuarios: 0";
+            this.LblCantidadUsuarios.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.LblCantidadUsuarios.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // LblUsuariosBloqueados
+            // 
+            this.LblUsuariosBloqueados.AllowParentOverrides = false;
+            this.LblUsuariosBloqueados.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.LblUsuariosBloqueados.AutoEllipsis = false;
+            this.LblUsuariosBloqueados.CursorType = null;
+            this.LblUsuariosBloqueados.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.LblUsuariosBloqueados.Location = new System.Drawing.Point(558, 36);
+            this.LblUsuariosBloqueados.Name = "LblUsuariosBloqueados";
+            this.LblUsuariosBloqueados.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LblUsuariosBloqueados.Size = new System.Drawing.Size(162, 21);
+            this.LblUsuariosBloqueados.TabIndex = 23;
+            this.LblUsuariosBloqueados.Text = "Usuarios Bloqueados: 0";
+            this.LblUsuariosBloqueados.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.LblUsuariosBloqueados.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
             // FormGestionUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(901, 611);
+            this.Controls.Add(this.LblUsuariosBloqueados);
+            this.Controls.Add(this.LblCantidadUsuarios);
             this.Controls.Add(this.PanelData);
             this.Controls.Add(this.BtnResetPassword);
             this.Controls.Add(this.BtnEliminar);
@@ -1313,5 +1349,7 @@
         private Bunifu.UI.WinForms.BunifuLabel LblErrorApellido;
         private Bunifu.UI.WinForms.BunifuLabel LblErrorDni;
         private Bunifu.UI.WinForms.BunifuLabel LblErrorNombre;
+        private Bunifu.UI.WinForms.BunifuLabel LblCantidadUsuarios;
+        private Bunifu.UI.WinForms.BunifuLabel LblUsuariosBloqueados;
     }
 }

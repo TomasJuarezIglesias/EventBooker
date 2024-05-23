@@ -29,6 +29,8 @@ namespace Business
                 !ok ? "Contraseña Incorrecta" :
                 string.Empty;
 
+            ok = user?.IsBlock == true ? false : ok;
+
             return new BusinessResponse<EntityUser>(ok, user, mensaje);
         }
 
@@ -47,21 +49,21 @@ namespace Business
             return new BusinessResponse<bool>(ok, ok, !ok ? "Error al modificar contraseña" : "Contraseña modificada correctamente");
         }
 
-        public BusinessResponse<bool> BlockUser(EntityUser user, bool isBlockLogin)
+        public BusinessResponse<bool> BlockUser(EntityUser user, bool isLoginBlock)
         {
             user.IsBlock = !user.IsBlock;
             bool ok = dataAccess.Update(user);
 
-            string bloquearMessage = user.IsBlock ? "Desbloquear" : "Bloquear";
+            string bloquearMessage = user.IsBlock ? "Bloqueado" : "Desbloqueado";
 
-            string message = isBlockLogin ? "El usuario ha sido bloqueado por exceder numero de intentos fallidos" : $"{bloquearMessage} Correctamente";
+            string message = isLoginBlock ? "El usuario ha sido bloqueado por exceder numero de intentos fallidos" : $"{bloquearMessage} Correctamente";
 
             if (!ok)
             {
-                message = user.IsBlock ? "No se pudo bloquear" : "No se pudo desbloquear";
+                message = user.IsBlock ? $"No se pudo bloquear" : $"No se pudo desbloquear";
             }
 
-            return new BusinessResponse<bool>(ok && !isBlockLogin, ok, message);
+            return new BusinessResponse<bool>(ok && !isLoginBlock, ok, message);
         }
 
         public BusinessResponse<List<EntityUser>> GetAll()
@@ -71,6 +73,8 @@ namespace Business
 
         public BusinessResponse<bool> Create(EntityUser user)
         {
+            user.Password = CryptoManager.EncryptString(user.Password);
+
             bool ok = dataAccess.Insert(user);
 
             // Si ok viene false es porque username ya existe => nombre + apellido
