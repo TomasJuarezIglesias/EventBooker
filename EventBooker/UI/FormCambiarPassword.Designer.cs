@@ -290,9 +290,9 @@
             this.bunifuLabel6.Location = new System.Drawing.Point(30, 277);
             this.bunifuLabel6.Name = "bunifuLabel6";
             this.bunifuLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel6.Size = new System.Drawing.Size(187, 21);
+            this.bunifuLabel6.Size = new System.Drawing.Size(176, 21);
             this.bunifuLabel6.TabIndex = 13;
-            this.bunifuLabel6.Text = "Repetir nueva contraseña *";
+            this.bunifuLabel6.Text = "Repetir nueva contraseña";
             this.bunifuLabel6.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel6.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 

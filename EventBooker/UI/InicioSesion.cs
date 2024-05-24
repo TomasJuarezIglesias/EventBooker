@@ -17,13 +17,13 @@ namespace UI
     public partial class InicioSesion : ServiceForm
     {
         private SessionManager _sessionManager;
-        private readonly BusinessUser _bussinesUser;
+        private readonly BusinessUser _businessUser;
         private List<EntityUser> _ListaErrorLogeo;
 
         public InicioSesion()
         {
             InitializeComponent();
-            _bussinesUser = new BusinessUser();
+            _businessUser = new BusinessUser();
             _ListaErrorLogeo = new List<EntityUser>();  
         }
 
@@ -54,7 +54,7 @@ namespace UI
 
             try
             {
-                BusinessResponse<EntityUser> response = _bussinesUser.VerifyCredentials(TxtUsername.Text, TxtPassword.Text);
+                BusinessResponse<EntityUser> response = _businessUser.VerifyCredentials(TxtUsername.Text, TxtPassword.Text);
 
                 RevisarRespuestaServicio(response);
 
@@ -68,7 +68,7 @@ namespace UI
                     if (_ListaErrorLogeo.Where(users => users.Id == response.Data.Id).Count() == 3)
                     {
 
-                        RevisarRespuestaServicio(_bussinesUser.BlockUser(response.Data, true));
+                        RevisarRespuestaServicio(_businessUser.BlockUser(response.Data, true));
                     }
                 }
 
