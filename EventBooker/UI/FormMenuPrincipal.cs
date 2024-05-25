@@ -114,7 +114,8 @@ namespace UI
 
         private void BtnRealizarReserva_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormRealizarReserva());
+            HideSubmenu();
+            OpenChildForm(new FormRegistrarCliente());
         }
 
         // Usuario
