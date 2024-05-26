@@ -12,9 +12,16 @@ namespace UI
 {
     public partial class FormRegistrarCliente : ServiceForm
     {
-        public FormRegistrarCliente()
+        private Action<ServiceForm> _openChildForm;
+        public FormRegistrarCliente(Action<ServiceForm> openChildForm)
         {
+            _openChildForm = openChildForm;
             InitializeComponent();
+        }
+
+        private void BtnRegistrarCliente_Click(object sender, EventArgs e)
+        {
+            _openChildForm(new FormRealizarReserva(_openChildForm));
         }
     }
 }

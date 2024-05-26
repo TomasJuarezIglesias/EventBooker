@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Business;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,27 @@ namespace UI
 {
     public partial class FormRealizarReserva : ServiceForm
     {
-        public FormRealizarReserva()
+        private Action<ServiceForm> openChildForm;
+
+        public FormRealizarReserva(Action<ServiceForm> openChildForm)
         {
+            this.openChildForm = openChildForm;
             InitializeComponent();
+        }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+            $"¿Está seguro de que desea cancelar el proceso de reserva?",
+            $"Cancelar Reserva",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question);
+
+            // Verifica el resultado de la selección del usuario
+            if (result == DialogResult.Yes)
+            {
+                openChildForm(new FormInicio());
+            }
         }
     }
 }
