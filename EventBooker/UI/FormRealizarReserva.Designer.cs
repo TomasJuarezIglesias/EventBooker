@@ -110,12 +110,11 @@
             this.bunifuPanel1.Controls.Add(this.BtnRegistrarReserva);
             this.bunifuPanel1.Controls.Add(this.bunifuLabel2);
             this.bunifuPanel1.Controls.Add(this.bunifuLabel1);
-            this.bunifuPanel1.Location = new System.Drawing.Point(90, 78);
-            this.bunifuPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuPanel1.Location = new System.Drawing.Point(68, 63);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = true;
-            this.bunifuPanel1.Size = new System.Drawing.Size(1020, 597);
-            this.bunifuPanel1.TabIndex = 3;
+            this.bunifuPanel1.Size = new System.Drawing.Size(765, 485);
+            this.bunifuPanel1.TabIndex = 4;
             // 
             // bunifuLabel21
             // 
@@ -124,11 +123,10 @@
             this.bunifuLabel21.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel21.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel21.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel21.Location = new System.Drawing.Point(40, 552);
-            this.bunifuLabel21.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel21.Location = new System.Drawing.Point(30, 448);
             this.bunifuLabel21.Name = "bunifuLabel21";
             this.bunifuLabel21.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel21.Size = new System.Drawing.Size(205, 28);
+            this.bunifuLabel21.Size = new System.Drawing.Size(163, 21);
             this.bunifuLabel21.TabIndex = 52;
             this.bunifuLabel21.Text = "Costo Total: $1.000.000";
             this.bunifuLabel21.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -141,11 +139,10 @@
             this.bunifuLabel20.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel20.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel20.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel20.Location = new System.Drawing.Point(40, 516);
-            this.bunifuLabel20.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel20.Location = new System.Drawing.Point(30, 419);
             this.bunifuLabel20.Name = "bunifuLabel20";
             this.bunifuLabel20.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel20.Size = new System.Drawing.Size(316, 28);
+            this.bunifuLabel20.Size = new System.Drawing.Size(251, 21);
             this.bunifuLabel20.TabIndex = 51;
             this.bunifuLabel20.Text = "Deposito de confirmación: $300.000";
             this.bunifuLabel20.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -158,11 +155,10 @@
             this.bunifuLabel19.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel19.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel19.Font = new System.Drawing.Font("Segoe UI", 18F);
-            this.bunifuLabel19.Location = new System.Drawing.Point(40, 467);
-            this.bunifuLabel19.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel19.Location = new System.Drawing.Point(30, 379);
             this.bunifuLabel19.Name = "bunifuLabel19";
             this.bunifuLabel19.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel19.Size = new System.Drawing.Size(246, 41);
+            this.bunifuLabel19.Size = new System.Drawing.Size(197, 32);
             this.bunifuLabel19.TabIndex = 50;
             this.bunifuLabel19.Text = "Costos del evento:";
             this.bunifuLabel19.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -175,11 +171,10 @@
             this.bunifuLabel18.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel18.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel18.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel18.Location = new System.Drawing.Point(40, 431);
-            this.bunifuLabel18.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel18.Location = new System.Drawing.Point(30, 350);
             this.bunifuLabel18.Name = "bunifuLabel18";
             this.bunifuLabel18.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel18.Size = new System.Drawing.Size(216, 28);
+            this.bunifuLabel18.Size = new System.Drawing.Size(173, 21);
             this.bunifuLabel18.TabIndex = 49;
             this.bunifuLabel18.Text = "Capacidad: 200 Personas";
             this.bunifuLabel18.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -192,11 +187,10 @@
             this.bunifuLabel17.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel17.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel17.Location = new System.Drawing.Point(40, 360);
-            this.bunifuLabel17.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel17.Location = new System.Drawing.Point(30, 292);
             this.bunifuLabel17.Name = "bunifuLabel17";
             this.bunifuLabel17.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel17.Size = new System.Drawing.Size(207, 28);
+            this.bunifuLabel17.Size = new System.Drawing.Size(164, 21);
             this.bunifuLabel17.TabIndex = 48;
             this.bunifuLabel17.Text = "Nombre: Azaila Eventos";
             this.bunifuLabel17.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -209,11 +203,10 @@
             this.bunifuLabel16.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel16.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel16.Location = new System.Drawing.Point(40, 395);
-            this.bunifuLabel16.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel16.Location = new System.Drawing.Point(30, 321);
             this.bunifuLabel16.Name = "bunifuLabel16";
             this.bunifuLabel16.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel16.Size = new System.Drawing.Size(372, 28);
+            this.bunifuLabel16.Size = new System.Drawing.Size(295, 21);
             this.bunifuLabel16.TabIndex = 47;
             this.bunifuLabel16.Text = "Ubicación: Acevedo 440, Lomas de zamora";
             this.bunifuLabel16.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -226,11 +219,10 @@
             this.bunifuLabel15.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel15.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel15.Font = new System.Drawing.Font("Segoe UI", 18F);
-            this.bunifuLabel15.Location = new System.Drawing.Point(40, 311);
-            this.bunifuLabel15.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel15.Location = new System.Drawing.Point(30, 253);
             this.bunifuLabel15.Name = "bunifuLabel15";
             this.bunifuLabel15.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel15.Size = new System.Drawing.Size(211, 41);
+            this.bunifuLabel15.Size = new System.Drawing.Size(169, 32);
             this.bunifuLabel15.TabIndex = 46;
             this.bunifuLabel15.Text = "Datos del salón:";
             this.bunifuLabel15.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -238,9 +230,10 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(704, 486);
+            this.numericUpDown1.Location = new System.Drawing.Point(528, 395);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDown1.Size = new System.Drawing.Size(90, 20);
             this.numericUpDown1.TabIndex = 45;
             // 
             // bunifuLabel14
@@ -250,11 +243,10 @@
             this.bunifuLabel14.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel14.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel14.Location = new System.Drawing.Point(508, 480);
-            this.bunifuLabel14.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel14.Location = new System.Drawing.Point(381, 390);
             this.bunifuLabel14.Name = "bunifuLabel14";
             this.bunifuLabel14.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel14.Size = new System.Drawing.Size(168, 28);
+            this.bunifuLabel14.Size = new System.Drawing.Size(132, 21);
             this.bunifuLabel14.TabIndex = 44;
             this.bunifuLabel14.Text = "Cantidad invitados:";
             this.bunifuLabel14.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -267,9 +259,10 @@
             this.comboBox3.Items.AddRange(new object[] {
             "Simple",
             "Completo"});
-            this.comboBox3.Location = new System.Drawing.Point(704, 435);
+            this.comboBox3.Location = new System.Drawing.Point(528, 353);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(237, 24);
+            this.comboBox3.Size = new System.Drawing.Size(179, 21);
             this.comboBox3.TabIndex = 43;
             // 
             // bunifuLabel13
@@ -279,11 +272,10 @@
             this.bunifuLabel13.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel13.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel13.Location = new System.Drawing.Point(508, 431);
-            this.bunifuLabel13.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel13.Location = new System.Drawing.Point(381, 350);
             this.bunifuLabel13.Name = "bunifuLabel13";
             this.bunifuLabel13.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel13.Size = new System.Drawing.Size(167, 28);
+            this.bunifuLabel13.Size = new System.Drawing.Size(133, 21);
             this.bunifuLabel13.TabIndex = 42;
             this.bunifuLabel13.Text = "Selecciona servicio:";
             this.bunifuLabel13.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -316,7 +308,8 @@
             this.bunifuTextBox1.IconRight = null;
             this.bunifuTextBox1.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.bunifuTextBox1.Lines = new string[0];
-            this.bunifuTextBox1.Location = new System.Drawing.Point(508, 371);
+            this.bunifuTextBox1.Location = new System.Drawing.Point(381, 301);
+            this.bunifuTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuTextBox1.MaxLength = 32767;
             this.bunifuTextBox1.MinimumSize = new System.Drawing.Size(1, 1);
             this.bunifuTextBox1.Modified = false;
@@ -342,7 +335,7 @@
             stateProperties4.ForeColor = System.Drawing.Color.Empty;
             stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.bunifuTextBox1.OnIdleState = stateProperties4;
-            this.bunifuTextBox1.Padding = new System.Windows.Forms.Padding(3);
+            this.bunifuTextBox1.Padding = new System.Windows.Forms.Padding(2);
             this.bunifuTextBox1.PasswordChar = '\0';
             this.bunifuTextBox1.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.bunifuTextBox1.PlaceholderText = "Enter text";
@@ -352,7 +345,7 @@
             this.bunifuTextBox1.SelectionLength = 0;
             this.bunifuTextBox1.SelectionStart = 0;
             this.bunifuTextBox1.ShortcutsEnabled = true;
-            this.bunifuTextBox1.Size = new System.Drawing.Size(433, 41);
+            this.bunifuTextBox1.Size = new System.Drawing.Size(325, 33);
             this.bunifuTextBox1.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.bunifuTextBox1.TabIndex = 41;
             this.bunifuTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -370,11 +363,10 @@
             this.bunifuLabel12.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel12.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel12.Location = new System.Drawing.Point(508, 336);
-            this.bunifuLabel12.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel12.Location = new System.Drawing.Point(381, 273);
             this.bunifuLabel12.Name = "bunifuLabel12";
             this.bunifuLabel12.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel12.Size = new System.Drawing.Size(203, 28);
+            this.bunifuLabel12.Size = new System.Drawing.Size(160, 21);
             this.bunifuLabel12.TabIndex = 40;
             this.bunifuLabel12.Text = "Descripcion del evento:";
             this.bunifuLabel12.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -427,8 +419,7 @@
             this.bunifuButton1.IdleIconLeftImage = null;
             this.bunifuButton1.IdleIconRightImage = null;
             this.bunifuButton1.IndicateFocus = false;
-            this.bunifuButton1.Location = new System.Drawing.Point(598, 275);
-            this.bunifuButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuButton1.Location = new System.Drawing.Point(448, 223);
             this.bunifuButton1.Name = "bunifuButton1";
             this.bunifuButton1.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton1.OnDisabledState.BorderRadius = 1;
@@ -462,7 +453,7 @@
             this.bunifuButton1.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.bunifuButton1.OnPressedState.IconLeftImage = null;
             this.bunifuButton1.OnPressedState.IconRightImage = null;
-            this.bunifuButton1.Size = new System.Drawing.Size(248, 31);
+            this.bunifuButton1.Size = new System.Drawing.Size(186, 25);
             this.bunifuButton1.TabIndex = 39;
             this.bunifuButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuButton1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -477,9 +468,10 @@
             this.comboBox2.Items.AddRange(new object[] {
             "Diurno",
             "Nocturno"});
-            this.comboBox2.Location = new System.Drawing.Point(704, 234);
+            this.comboBox2.Location = new System.Drawing.Point(528, 190);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(237, 24);
+            this.comboBox2.Size = new System.Drawing.Size(179, 21);
             this.comboBox2.TabIndex = 38;
             // 
             // bunifuLabel11
@@ -489,11 +481,10 @@
             this.bunifuLabel11.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel11.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel11.Location = new System.Drawing.Point(508, 230);
-            this.bunifuLabel11.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel11.Location = new System.Drawing.Point(381, 187);
             this.bunifuLabel11.Name = "bunifuLabel11";
             this.bunifuLabel11.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel11.Size = new System.Drawing.Size(149, 28);
+            this.bunifuLabel11.Size = new System.Drawing.Size(118, 21);
             this.bunifuLabel11.TabIndex = 37;
             this.bunifuLabel11.Text = "Selecciona turno:";
             this.bunifuLabel11.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -517,10 +508,11 @@
             this.bunifuDatePicker1.IconColor = System.Drawing.Color.Gray;
             this.bunifuDatePicker1.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.bunifuDatePicker1.LeftTextMargin = 5;
-            this.bunifuDatePicker1.Location = new System.Drawing.Point(704, 182);
+            this.bunifuDatePicker1.Location = new System.Drawing.Point(528, 148);
+            this.bunifuDatePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuDatePicker1.MinimumSize = new System.Drawing.Size(4, 32);
             this.bunifuDatePicker1.Name = "bunifuDatePicker1";
-            this.bunifuDatePicker1.Size = new System.Drawing.Size(237, 32);
+            this.bunifuDatePicker1.Size = new System.Drawing.Size(179, 32);
             this.bunifuDatePicker1.TabIndex = 36;
             this.bunifuDatePicker1.Value = new System.DateTime(2024, 5, 26, 16, 7, 46, 0);
             // 
@@ -531,11 +523,10 @@
             this.bunifuLabel10.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel10.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel10.Location = new System.Drawing.Point(508, 182);
-            this.bunifuLabel10.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel10.Location = new System.Drawing.Point(381, 148);
             this.bunifuLabel10.Name = "bunifuLabel10";
             this.bunifuLabel10.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel10.Size = new System.Drawing.Size(147, 28);
+            this.bunifuLabel10.Size = new System.Drawing.Size(117, 21);
             this.bunifuLabel10.TabIndex = 35;
             this.bunifuLabel10.Text = "Selecciona fecha:";
             this.bunifuLabel10.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -547,9 +538,10 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Azaila"});
-            this.comboBox1.Location = new System.Drawing.Point(704, 135);
+            this.comboBox1.Location = new System.Drawing.Point(528, 110);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(237, 24);
+            this.comboBox1.Size = new System.Drawing.Size(179, 21);
             this.comboBox1.TabIndex = 34;
             // 
             // bunifuLabel9
@@ -559,11 +551,10 @@
             this.bunifuLabel9.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel9.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel9.Location = new System.Drawing.Point(508, 131);
-            this.bunifuLabel9.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel9.Location = new System.Drawing.Point(381, 106);
             this.bunifuLabel9.Name = "bunifuLabel9";
             this.bunifuLabel9.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel9.Size = new System.Drawing.Size(147, 28);
+            this.bunifuLabel9.Size = new System.Drawing.Size(117, 21);
             this.bunifuLabel9.TabIndex = 33;
             this.bunifuLabel9.Text = "Selecciona salón:";
             this.bunifuLabel9.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -576,11 +567,10 @@
             this.bunifuLabel8.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel8.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel8.Font = new System.Drawing.Font("Segoe UI", 18F);
-            this.bunifuLabel8.Location = new System.Drawing.Point(508, 82);
-            this.bunifuLabel8.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel8.Location = new System.Drawing.Point(381, 67);
             this.bunifuLabel8.Name = "bunifuLabel8";
             this.bunifuLabel8.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel8.Size = new System.Drawing.Size(258, 41);
+            this.bunifuLabel8.Size = new System.Drawing.Size(208, 32);
             this.bunifuLabel8.TabIndex = 32;
             this.bunifuLabel8.Text = "Datos de la reserva:";
             this.bunifuLabel8.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -593,11 +583,10 @@
             this.bunifuLabel6.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel6.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel6.Location = new System.Drawing.Point(40, 275);
-            this.bunifuLabel6.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel6.Location = new System.Drawing.Point(30, 223);
             this.bunifuLabel6.Name = "bunifuLabel6";
             this.bunifuLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel6.Size = new System.Drawing.Size(199, 28);
+            this.bunifuLabel6.Size = new System.Drawing.Size(159, 21);
             this.bunifuLabel6.TabIndex = 31;
             this.bunifuLabel6.Text = "Contacto: 1154984213";
             this.bunifuLabel6.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -610,11 +599,10 @@
             this.bunifuLabel5.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel5.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel5.Location = new System.Drawing.Point(40, 239);
-            this.bunifuLabel5.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel5.Location = new System.Drawing.Point(30, 194);
             this.bunifuLabel5.Name = "bunifuLabel5";
             this.bunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel5.Size = new System.Drawing.Size(253, 28);
+            this.bunifuLabel5.Size = new System.Drawing.Size(201, 21);
             this.bunifuLabel5.TabIndex = 30;
             this.bunifuLabel5.Text = "Email: tjuarez.tm@gmail.com";
             this.bunifuLabel5.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -627,11 +615,10 @@
             this.bunifuLabel4.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel4.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel4.Location = new System.Drawing.Point(40, 203);
-            this.bunifuLabel4.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel4.Location = new System.Drawing.Point(30, 165);
             this.bunifuLabel4.Name = "bunifuLabel4";
             this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel4.Size = new System.Drawing.Size(264, 28);
+            this.bunifuLabel4.Size = new System.Drawing.Size(210, 21);
             this.bunifuLabel4.TabIndex = 29;
             this.bunifuLabel4.Text = "Dirección: Maipu 550, Banfield";
             this.bunifuLabel4.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -644,11 +631,10 @@
             this.bunifuLabel3.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel3.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel3.Location = new System.Drawing.Point(40, 167);
-            this.bunifuLabel3.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel3.Location = new System.Drawing.Point(30, 136);
             this.bunifuLabel3.Name = "bunifuLabel3";
             this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel3.Size = new System.Drawing.Size(127, 28);
+            this.bunifuLabel3.Size = new System.Drawing.Size(103, 21);
             this.bunifuLabel3.TabIndex = 28;
             this.bunifuLabel3.Text = "Dni: 44891735";
             this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -701,8 +687,7 @@
             this.BtnCancelar.IdleIconLeftImage = null;
             this.BtnCancelar.IdleIconRightImage = null;
             this.BtnCancelar.IndicateFocus = false;
-            this.BtnCancelar.Location = new System.Drawing.Point(508, 529);
-            this.BtnCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnCancelar.Location = new System.Drawing.Point(381, 430);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnCancelar.OnDisabledState.BorderRadius = 1;
@@ -736,7 +721,7 @@
             this.BtnCancelar.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.BtnCancelar.OnPressedState.IconLeftImage = null;
             this.BtnCancelar.OnPressedState.IconRightImage = null;
-            this.BtnCancelar.Size = new System.Drawing.Size(235, 48);
+            this.BtnCancelar.Size = new System.Drawing.Size(176, 39);
             this.BtnCancelar.TabIndex = 27;
             this.BtnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnCancelar.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -752,11 +737,10 @@
             this.bunifuLabel7.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel7.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel7.Location = new System.Drawing.Point(40, 131);
-            this.bunifuLabel7.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel7.Location = new System.Drawing.Point(30, 106);
             this.bunifuLabel7.Name = "bunifuLabel7";
             this.bunifuLabel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel7.Size = new System.Drawing.Size(292, 28);
+            this.bunifuLabel7.Size = new System.Drawing.Size(232, 21);
             this.bunifuLabel7.TabIndex = 23;
             this.bunifuLabel7.Text = "Nombre y Apellido: Tomas Juarez";
             this.bunifuLabel7.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -809,8 +793,7 @@
             this.BtnRegistrarReserva.IdleIconLeftImage = null;
             this.BtnRegistrarReserva.IdleIconRightImage = null;
             this.BtnRegistrarReserva.IndicateFocus = false;
-            this.BtnRegistrarReserva.Location = new System.Drawing.Point(766, 529);
-            this.BtnRegistrarReserva.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnRegistrarReserva.Location = new System.Drawing.Point(574, 430);
             this.BtnRegistrarReserva.Name = "BtnRegistrarReserva";
             this.BtnRegistrarReserva.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnRegistrarReserva.OnDisabledState.BorderRadius = 1;
@@ -844,7 +827,7 @@
             this.BtnRegistrarReserva.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.BtnRegistrarReserva.OnPressedState.IconLeftImage = null;
             this.BtnRegistrarReserva.OnPressedState.IconRightImage = null;
-            this.BtnRegistrarReserva.Size = new System.Drawing.Size(235, 48);
+            this.BtnRegistrarReserva.Size = new System.Drawing.Size(176, 39);
             this.BtnRegistrarReserva.TabIndex = 16;
             this.BtnRegistrarReserva.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnRegistrarReserva.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -859,11 +842,10 @@
             this.bunifuLabel2.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel2.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel2.Font = new System.Drawing.Font("Segoe UI", 18F);
-            this.bunifuLabel2.Location = new System.Drawing.Point(40, 82);
-            this.bunifuLabel2.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel2.Location = new System.Drawing.Point(30, 67);
             this.bunifuLabel2.Name = "bunifuLabel2";
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(228, 41);
+            this.bunifuLabel2.Size = new System.Drawing.Size(184, 32);
             this.bunifuLabel2.TabIndex = 1;
             this.bunifuLabel2.Text = "Datos del cliente:";
             this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -876,11 +858,10 @@
             this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 20.25F);
-            this.bunifuLabel1.Location = new System.Drawing.Point(40, 17);
-            this.bunifuLabel1.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel1.Location = new System.Drawing.Point(30, 16);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(320, 57);
+            this.bunifuLabel1.Size = new System.Drawing.Size(249, 45);
             this.bunifuLabel1.TabIndex = 0;
             this.bunifuLabel1.Text = "Registrar Reserva";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -888,13 +869,12 @@
             // 
             // FormRealizarReserva
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(1201, 752);
+            this.ClientSize = new System.Drawing.Size(901, 611);
             this.Controls.Add(this.bunifuPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormRealizarReserva";
             this.Text = "FormRealizarReserva";
             this.bunifuPanel1.ResumeLayout(false);
@@ -907,35 +887,35 @@
         #endregion
 
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel7;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton BtnRegistrarReserva;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton BtnCancelar;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel5;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel4;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel3;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel6;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel8;
-        private Bunifu.UI.WinForms.BunifuDatePicker bunifuDatePicker1;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel10;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel9;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel21;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel20;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel19;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel18;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel17;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel16;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel15;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel14;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel13;
         private Bunifu.UI.WinForms.BunifuTextBox bunifuTextBox1;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel12;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton1;
         private System.Windows.Forms.ComboBox comboBox2;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel11;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel14;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel13;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel15;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel17;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel16;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel21;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel20;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel19;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel18;
+        private Bunifu.UI.WinForms.BunifuDatePicker bunifuDatePicker1;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel10;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel9;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel8;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel6;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel5;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel4;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel3;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton BtnCancelar;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel7;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton BtnRegistrarReserva;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
     }
 }

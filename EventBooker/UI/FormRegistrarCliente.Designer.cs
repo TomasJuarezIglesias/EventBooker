@@ -95,12 +95,11 @@
             this.bunifuPanel1.Controls.Add(this.TxtDni);
             this.bunifuPanel1.Controls.Add(this.bunifuLabel2);
             this.bunifuPanel1.Controls.Add(this.bunifuLabel1);
-            this.bunifuPanel1.Location = new System.Drawing.Point(81, 54);
-            this.bunifuPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuPanel1.Location = new System.Drawing.Point(61, 44);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = true;
-            this.bunifuPanel1.Size = new System.Drawing.Size(1020, 597);
-            this.bunifuPanel1.TabIndex = 2;
+            this.bunifuPanel1.Size = new System.Drawing.Size(765, 485);
+            this.bunifuPanel1.TabIndex = 3;
             // 
             // TxtContacto
             // 
@@ -129,8 +128,7 @@
             this.TxtContacto.IconRight = null;
             this.TxtContacto.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtContacto.Lines = new string[0];
-            this.TxtContacto.Location = new System.Drawing.Point(584, 410);
-            this.TxtContacto.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtContacto.Location = new System.Drawing.Point(438, 333);
             this.TxtContacto.MaxLength = 32767;
             this.TxtContacto.MinimumSize = new System.Drawing.Size(1, 1);
             this.TxtContacto.Modified = false;
@@ -156,7 +154,7 @@
             stateProperties4.ForeColor = System.Drawing.Color.Empty;
             stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.TxtContacto.OnIdleState = stateProperties4;
-            this.TxtContacto.Padding = new System.Windows.Forms.Padding(4);
+            this.TxtContacto.Padding = new System.Windows.Forms.Padding(3);
             this.TxtContacto.PasswordChar = '\0';
             this.TxtContacto.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.TxtContacto.PlaceholderText = "Ingrese Contacto";
@@ -166,7 +164,7 @@
             this.TxtContacto.SelectionLength = 0;
             this.TxtContacto.SelectionStart = 0;
             this.TxtContacto.ShortcutsEnabled = true;
-            this.TxtContacto.Size = new System.Drawing.Size(347, 46);
+            this.TxtContacto.Size = new System.Drawing.Size(260, 37);
             this.TxtContacto.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.TxtContacto.TabIndex = 26;
             this.TxtContacto.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -184,11 +182,10 @@
             this.bunifuLabel6.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel6.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel6.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bunifuLabel6.Location = new System.Drawing.Point(584, 374);
-            this.bunifuLabel6.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel6.Location = new System.Drawing.Point(438, 304);
             this.bunifuLabel6.Name = "bunifuLabel6";
             this.bunifuLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel6.Size = new System.Drawing.Size(159, 28);
+            this.bunifuLabel6.Size = new System.Drawing.Size(126, 21);
             this.bunifuLabel6.TabIndex = 25;
             this.bunifuLabel6.Text = "Ingresar Contacto:";
             this.bunifuLabel6.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -221,8 +218,7 @@
             this.TxtApellido.IconRight = null;
             this.TxtApellido.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtApellido.Lines = new string[0];
-            this.TxtApellido.Location = new System.Drawing.Point(38, 410);
-            this.TxtApellido.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtApellido.Location = new System.Drawing.Point(28, 333);
             this.TxtApellido.MaxLength = 32767;
             this.TxtApellido.MinimumSize = new System.Drawing.Size(1, 1);
             this.TxtApellido.Modified = false;
@@ -248,7 +244,7 @@
             stateProperties8.ForeColor = System.Drawing.Color.Empty;
             stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.TxtApellido.OnIdleState = stateProperties8;
-            this.TxtApellido.Padding = new System.Windows.Forms.Padding(4);
+            this.TxtApellido.Padding = new System.Windows.Forms.Padding(3);
             this.TxtApellido.PasswordChar = '\0';
             this.TxtApellido.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.TxtApellido.PlaceholderText = "Ingrese Apellido";
@@ -258,7 +254,7 @@
             this.TxtApellido.SelectionLength = 0;
             this.TxtApellido.SelectionStart = 0;
             this.TxtApellido.ShortcutsEnabled = true;
-            this.TxtApellido.Size = new System.Drawing.Size(347, 46);
+            this.TxtApellido.Size = new System.Drawing.Size(260, 37);
             this.TxtApellido.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.TxtApellido.TabIndex = 24;
             this.TxtApellido.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -276,11 +272,10 @@
             this.bunifuLabel7.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel7.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel7.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bunifuLabel7.Location = new System.Drawing.Point(38, 374);
-            this.bunifuLabel7.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel7.Location = new System.Drawing.Point(28, 304);
             this.bunifuLabel7.Name = "bunifuLabel7";
             this.bunifuLabel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel7.Size = new System.Drawing.Size(153, 28);
+            this.bunifuLabel7.Size = new System.Drawing.Size(121, 21);
             this.bunifuLabel7.TabIndex = 23;
             this.bunifuLabel7.Text = "Ingresar Apellido:";
             this.bunifuLabel7.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -313,8 +308,7 @@
             this.txtEmail.IconRight = null;
             this.txtEmail.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtEmail.Lines = new string[0];
-            this.txtEmail.Location = new System.Drawing.Point(584, 289);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmail.Location = new System.Drawing.Point(438, 235);
             this.txtEmail.MaxLength = 32767;
             this.txtEmail.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtEmail.Modified = false;
@@ -340,7 +334,7 @@
             stateProperties12.ForeColor = System.Drawing.Color.Empty;
             stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtEmail.OnIdleState = stateProperties12;
-            this.txtEmail.Padding = new System.Windows.Forms.Padding(4);
+            this.txtEmail.Padding = new System.Windows.Forms.Padding(3);
             this.txtEmail.PasswordChar = '\0';
             this.txtEmail.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtEmail.PlaceholderText = "Ingrese Email";
@@ -350,7 +344,7 @@
             this.txtEmail.SelectionLength = 0;
             this.txtEmail.SelectionStart = 0;
             this.txtEmail.ShortcutsEnabled = true;
-            this.txtEmail.Size = new System.Drawing.Size(347, 46);
+            this.txtEmail.Size = new System.Drawing.Size(260, 37);
             this.txtEmail.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtEmail.TabIndex = 22;
             this.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -368,11 +362,10 @@
             this.bunifuLabel4.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel4.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bunifuLabel4.Location = new System.Drawing.Point(584, 253);
-            this.bunifuLabel4.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel4.Location = new System.Drawing.Point(438, 206);
             this.bunifuLabel4.Name = "bunifuLabel4";
             this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel4.Size = new System.Drawing.Size(126, 28);
+            this.bunifuLabel4.Size = new System.Drawing.Size(102, 21);
             this.bunifuLabel4.TabIndex = 21;
             this.bunifuLabel4.Text = "Ingresar Email:";
             this.bunifuLabel4.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -405,8 +398,7 @@
             this.TxtNombre.IconRight = null;
             this.TxtNombre.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtNombre.Lines = new string[0];
-            this.TxtNombre.Location = new System.Drawing.Point(38, 289);
-            this.TxtNombre.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtNombre.Location = new System.Drawing.Point(28, 235);
             this.TxtNombre.MaxLength = 32767;
             this.TxtNombre.MinimumSize = new System.Drawing.Size(1, 1);
             this.TxtNombre.Modified = false;
@@ -432,7 +424,7 @@
             stateProperties16.ForeColor = System.Drawing.Color.Empty;
             stateProperties16.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.TxtNombre.OnIdleState = stateProperties16;
-            this.TxtNombre.Padding = new System.Windows.Forms.Padding(4);
+            this.TxtNombre.Padding = new System.Windows.Forms.Padding(3);
             this.TxtNombre.PasswordChar = '\0';
             this.TxtNombre.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.TxtNombre.PlaceholderText = "Ingrese Nombre";
@@ -442,7 +434,7 @@
             this.TxtNombre.SelectionLength = 0;
             this.TxtNombre.SelectionStart = 0;
             this.TxtNombre.ShortcutsEnabled = true;
-            this.TxtNombre.Size = new System.Drawing.Size(347, 46);
+            this.TxtNombre.Size = new System.Drawing.Size(260, 37);
             this.TxtNombre.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.TxtNombre.TabIndex = 20;
             this.TxtNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -460,11 +452,10 @@
             this.bunifuLabel5.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel5.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel5.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bunifuLabel5.Location = new System.Drawing.Point(40, 253);
-            this.bunifuLabel5.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel5.Location = new System.Drawing.Point(30, 206);
             this.bunifuLabel5.Name = "bunifuLabel5";
             this.bunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel5.Size = new System.Drawing.Size(152, 28);
+            this.bunifuLabel5.Size = new System.Drawing.Size(122, 21);
             this.bunifuLabel5.TabIndex = 19;
             this.bunifuLabel5.Text = "Ingresar Nombre:";
             this.bunifuLabel5.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -497,8 +488,7 @@
             this.TxtDireccion.IconRight = null;
             this.TxtDireccion.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtDireccion.Lines = new string[0];
-            this.TxtDireccion.Location = new System.Drawing.Point(584, 172);
-            this.TxtDireccion.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtDireccion.Location = new System.Drawing.Point(438, 140);
             this.TxtDireccion.MaxLength = 32767;
             this.TxtDireccion.MinimumSize = new System.Drawing.Size(1, 1);
             this.TxtDireccion.Modified = false;
@@ -524,7 +514,7 @@
             stateProperties20.ForeColor = System.Drawing.Color.Empty;
             stateProperties20.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.TxtDireccion.OnIdleState = stateProperties20;
-            this.TxtDireccion.Padding = new System.Windows.Forms.Padding(4);
+            this.TxtDireccion.Padding = new System.Windows.Forms.Padding(3);
             this.TxtDireccion.PasswordChar = '\0';
             this.TxtDireccion.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.TxtDireccion.PlaceholderText = "Ingrese Dirección";
@@ -534,7 +524,7 @@
             this.TxtDireccion.SelectionLength = 0;
             this.TxtDireccion.SelectionStart = 0;
             this.TxtDireccion.ShortcutsEnabled = true;
-            this.TxtDireccion.Size = new System.Drawing.Size(347, 46);
+            this.TxtDireccion.Size = new System.Drawing.Size(260, 37);
             this.TxtDireccion.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.TxtDireccion.TabIndex = 18;
             this.TxtDireccion.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -552,11 +542,10 @@
             this.bunifuLabel3.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel3.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bunifuLabel3.Location = new System.Drawing.Point(584, 136);
-            this.bunifuLabel3.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel3.Location = new System.Drawing.Point(438, 110);
             this.bunifuLabel3.Name = "bunifuLabel3";
             this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel3.Size = new System.Drawing.Size(161, 28);
+            this.bunifuLabel3.Size = new System.Drawing.Size(129, 21);
             this.bunifuLabel3.TabIndex = 17;
             this.bunifuLabel3.Text = "Ingresar Dirección:";
             this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -609,8 +598,7 @@
             this.BtnRegistrarCliente.IdleIconLeftImage = null;
             this.BtnRegistrarCliente.IdleIconRightImage = null;
             this.BtnRegistrarCliente.IndicateFocus = false;
-            this.BtnRegistrarCliente.Location = new System.Drawing.Point(766, 529);
-            this.BtnRegistrarCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnRegistrarCliente.Location = new System.Drawing.Point(574, 430);
             this.BtnRegistrarCliente.Name = "BtnRegistrarCliente";
             this.BtnRegistrarCliente.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnRegistrarCliente.OnDisabledState.BorderRadius = 1;
@@ -644,7 +632,7 @@
             this.BtnRegistrarCliente.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.BtnRegistrarCliente.OnPressedState.IconLeftImage = null;
             this.BtnRegistrarCliente.OnPressedState.IconRightImage = null;
-            this.BtnRegistrarCliente.Size = new System.Drawing.Size(235, 48);
+            this.BtnRegistrarCliente.Size = new System.Drawing.Size(176, 39);
             this.BtnRegistrarCliente.TabIndex = 16;
             this.BtnRegistrarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnRegistrarCliente.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -680,8 +668,7 @@
             this.TxtDni.IconRight = null;
             this.TxtDni.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtDni.Lines = new string[0];
-            this.TxtDni.Location = new System.Drawing.Point(40, 172);
-            this.TxtDni.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtDni.Location = new System.Drawing.Point(30, 140);
             this.TxtDni.MaxLength = 32767;
             this.TxtDni.MinimumSize = new System.Drawing.Size(1, 1);
             this.TxtDni.Modified = false;
@@ -707,7 +694,7 @@
             stateProperties24.ForeColor = System.Drawing.Color.Empty;
             stateProperties24.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.TxtDni.OnIdleState = stateProperties24;
-            this.TxtDni.Padding = new System.Windows.Forms.Padding(4);
+            this.TxtDni.Padding = new System.Windows.Forms.Padding(3);
             this.TxtDni.PasswordChar = '\0';
             this.TxtDni.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.TxtDni.PlaceholderText = "Ingrese Dni";
@@ -717,7 +704,7 @@
             this.TxtDni.SelectionLength = 0;
             this.TxtDni.SelectionStart = 0;
             this.TxtDni.ShortcutsEnabled = true;
-            this.TxtDni.Size = new System.Drawing.Size(347, 46);
+            this.TxtDni.Size = new System.Drawing.Size(260, 37);
             this.TxtDni.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.TxtDni.TabIndex = 2;
             this.TxtDni.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -735,11 +722,10 @@
             this.bunifuLabel2.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel2.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bunifuLabel2.Location = new System.Drawing.Point(40, 136);
-            this.bunifuLabel2.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel2.Location = new System.Drawing.Point(30, 110);
             this.bunifuLabel2.Name = "bunifuLabel2";
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(109, 28);
+            this.bunifuLabel2.Size = new System.Drawing.Size(88, 21);
             this.bunifuLabel2.TabIndex = 1;
             this.bunifuLabel2.Text = "Ingresar Dni:";
             this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -752,11 +738,10 @@
             this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 20.25F);
-            this.bunifuLabel1.Location = new System.Drawing.Point(40, 36);
-            this.bunifuLabel1.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel1.Location = new System.Drawing.Point(30, 29);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(305, 57);
+            this.bunifuLabel1.Size = new System.Drawing.Size(237, 45);
             this.bunifuLabel1.TabIndex = 0;
             this.bunifuLabel1.Text = "Registrar Cliente";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -764,12 +749,13 @@
             // 
             // FormRegistrarCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(1183, 705);
+            this.ClientSize = new System.Drawing.Size(887, 573);
             this.Controls.Add(this.bunifuPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormRegistrarCliente";
             this.Text = "FormRegistrarCliente";
             this.bunifuPanel1.ResumeLayout(false);
@@ -781,12 +767,6 @@
         #endregion
 
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton BtnRegistrarCliente;
-        private Bunifu.UI.WinForms.BunifuTextBox TxtDni;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
-        private Bunifu.UI.WinForms.BunifuTextBox TxtDireccion;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel3;
         private Bunifu.UI.WinForms.BunifuTextBox TxtContacto;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel6;
         private Bunifu.UI.WinForms.BunifuTextBox TxtApellido;
@@ -795,5 +775,11 @@
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel4;
         private Bunifu.UI.WinForms.BunifuTextBox TxtNombre;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel5;
+        private Bunifu.UI.WinForms.BunifuTextBox TxtDireccion;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel3;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton BtnRegistrarCliente;
+        private Bunifu.UI.WinForms.BunifuTextBox TxtDni;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
     }
 }
