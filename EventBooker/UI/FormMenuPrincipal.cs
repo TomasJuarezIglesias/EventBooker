@@ -44,7 +44,6 @@ namespace UI
         {
             PanelAdministrador.Visible = false;
             PanelMaestros.Visible = false;
-            PanelReportes.Visible = false;
             PanelUsuario.Visible = false;
         }
 
@@ -69,9 +68,6 @@ namespace UI
             if(PanelMaestros.Visible == true)
                 PanelMaestros.Visible = false;
 
-            if(PanelReportes.Visible == true)
-                PanelReportes.Visible = false;
-
             if (PanelUsuario.Visible == true)
                 PanelUsuario.Visible = false;
         }
@@ -86,10 +82,6 @@ namespace UI
             ShowSubmenu(PanelMaestros);
         }
 
-        private void BtnReportes_Click(object sender, EventArgs e)
-        {
-            ShowSubmenu(PanelReportes);
-        }
 
         private void BtnUsuario_Click(object sender, EventArgs e)
         {

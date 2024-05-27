@@ -47,10 +47,10 @@ namespace UI
             HideButtons(BtnModificar);
             ShowPanelData();
 
-            TxtNombre.Text = user.Nombre;
-            TxtApellido.Text = user.Apellido;
-            TxtDni.Text = user.Dni.ToString();
-            TxtMail.Text = user.Mail;
+            TxtNombre.Text = user.Nombre.Trim();
+            TxtApellido.Text = user.Apellido.Trim();
+            TxtDni.Text = user.Dni.ToString().Trim();
+            TxtMail.Text = user.Mail.Trim();
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
@@ -61,12 +61,12 @@ namespace UI
             {
                 EntityUser user = new EntityUser
                 {
-                    Nombre = TxtNombre.Text,
-                    Apellido = TxtApellido.Text,
-                    Dni = Convert.ToInt32(TxtDni.Text),
-                    Mail = TxtMail.Text,
-                    Username = TxtNombre.Text + TxtApellido.Text,
-                    Password = TxtDni.Text + TxtApellido.Text
+                    Nombre = TxtNombre.Text.Trim(),
+                    Apellido = TxtApellido.Text.Trim(),
+                    Dni = Convert.ToInt32(TxtDni.Text.Trim()),
+                    Mail = TxtMail.Text.Trim(),
+                    Username = TxtNombre.Text.Trim() + TxtApellido.Text.Trim(),
+                    Password = TxtDni.Text.Trim() + TxtApellido.Text.Trim()
                 };
 
                 RevisarRespuestaServicio(_BusinessUser.Create(user));
@@ -76,10 +76,10 @@ namespace UI
             {
                 EntityUser user = DataGridViewUsuarios.SelectedRows[0].DataBoundItem as EntityUser;
 
-                user.Nombre = TxtNombre.Text;
-                user.Apellido = TxtApellido.Text;
-                user.Dni = Convert.ToInt32(TxtDni.Text);
-                user.Mail = TxtMail.Text;
+                user.Nombre = TxtNombre.Text.Trim();
+                user.Apellido = TxtApellido.Text.Trim();
+                user.Dni = Convert.ToInt32(TxtDni.Text.Trim());
+                user.Mail = TxtMail.Text.Trim();
                 user.Username = user.Nombre + user.Apellido;
 
                 RevisarRespuestaServicio(_BusinessUser.Update(user));
