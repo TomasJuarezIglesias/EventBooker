@@ -38,7 +38,7 @@ namespace Business
         {
             if (newPassword != newPasswordRep) return new BusinessResponse<bool>(false, false, "Las nuevas contraseñas no coinciden");
 
-            if (!RegexValidationService.IsValidPassword(newPassword)) return new BusinessResponse<bool>(false, false, "La contraseña debe contener minimo 8 caracteres, una mayuscula y al menos un numero");
+            if (!RegexValidationService.IsValidPassword(newPassword)) return new BusinessResponse<bool>(false, false, "La contraseña debe contener mínimo 8 caracteres, una mayúscula y al menos un numero");
 
             if (user.Password != CryptoManager.EncryptString(actualPassword)) return new BusinessResponse<bool>(false, false, "Contraseñas no coinciden");
 
@@ -78,7 +78,7 @@ namespace Business
             bool ok = dataAccess.Insert(user);
 
             // Si ok viene false es porque username ya existe => nombre + apellido
-            return new BusinessResponse<bool>(ok, ok, !ok ? "Error al guardar" : "Usuario creado correctamente");
+            return new BusinessResponse<bool>(ok, ok, !ok ? "Usuario existente, modifique nombre o apellido" : "Usuario creado correctamente");
         }
 
         public BusinessResponse<bool> Update(EntityUser user)
