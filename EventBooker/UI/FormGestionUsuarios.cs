@@ -36,21 +36,23 @@ namespace UI
 
         private void BtnModificar_Click(object sender, EventArgs e)
         {
-            EntityUser user = DataGridViewUsuarios.SelectedRows[0].DataBoundItem as EntityUser;
+            try
+            {
+                EntityUser user = DataGridViewUsuarios.SelectedRows[0].DataBoundItem as EntityUser;
 
-            if (user is null)
+                HideButtons(BtnModificar);
+                ShowPanelData();
+
+                TxtNombre.Text = user.Nombre.Trim();
+                TxtApellido.Text = user.Apellido.Trim();
+                TxtDni.Text = user.Dni.ToString().Trim();
+                TxtMail.Text = user.Mail.Trim();
+            }
+            catch (Exception)
             {
                 RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "Debe seleccionar un usuario"));
-                return;
             }
-
-            HideButtons(BtnModificar);
-            ShowPanelData();
-
-            TxtNombre.Text = user.Nombre.Trim();
-            TxtApellido.Text = user.Apellido.Trim();
-            TxtDni.Text = user.Dni.ToString().Trim();
-            TxtMail.Text = user.Mail.Trim();
+            
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
@@ -124,26 +126,26 @@ namespace UI
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
-            EntityUser user = DataGridViewUsuarios.SelectedRows[0].DataBoundItem as EntityUser;
+            try
+            {
+                EntityUser user = DataGridViewUsuarios.SelectedRows[0].DataBoundItem as EntityUser;
 
-            if (user is null)
+                DialogResult result = MessageBox.Show(
+                $"¿Está seguro de que desea eliminar el usuario {user.Username}?",
+                $"Confirmar eliminar",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+                // Verifica el resultado de la selección del usuario
+                if (result == DialogResult.Yes)
+                {
+                    RevisarRespuestaServicio(_BusinessUser.Delete(user));
+                    FillDataGridView();
+                }
+            }
+            catch (Exception)
             {
                 RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "Debe seleccionar un usuario"));
-                return;
-            }
-
-
-            DialogResult result = MessageBox.Show(
-            $"¿Está seguro de que desea eliminar el usuario {user.Username}?",
-            $"Confirmar eliminar",
-            MessageBoxButtons.YesNo,
-            MessageBoxIcon.Question);
-
-            // Verifica el resultado de la selección del usuario
-            if (result == DialogResult.Yes)
-            {
-                RevisarRespuestaServicio(_BusinessUser.Delete(user));
-                FillDataGridView();
             }
         }
 
@@ -159,6 +161,8 @@ namespace UI
                 LblErrorMail
             });
             HidePanelData();
+            DataGridViewUsuarios.CurrentCell = null;
+            BtnDesbloquear.Visible = false;
         }
 
         private void FillDataGridView()
