@@ -57,6 +57,8 @@ namespace UI
         {
             if (!ValidateTextBox()) return;
 
+            BusinessResponse<bool> response = new BusinessResponse<bool>(false, false, "");
+
             if (BtnCrear.Visible)
             {
                 EntityUser user = new EntityUser
@@ -65,11 +67,12 @@ namespace UI
                     Apellido = TxtApellido.Text.Trim(),
                     Dni = Convert.ToInt32(TxtDni.Text.Trim()),
                     Mail = TxtMail.Text.Trim(),
-                    Username = TxtNombre.Text.Trim() + TxtApellido.Text.Trim(),
+                    Username = TxtDni.Text.Trim() + TxtNombre.Text.Trim(),
                     Password = TxtDni.Text.Trim() + TxtApellido.Text.Trim()
                 };
 
-                RevisarRespuestaServicio(_BusinessUser.Create(user));
+                response = _BusinessUser.Create(user);
+                RevisarRespuestaServicio(response);
             }
 
             if (BtnModificar.Visible)
@@ -82,16 +85,20 @@ namespace UI
                 user.Mail = TxtMail.Text.Trim();
                 user.Username = user.Nombre + user.Apellido;
 
-                RevisarRespuestaServicio(_BusinessUser.Update(user));
+                response = _BusinessUser.Update(user);
+                RevisarRespuestaServicio(response);
             }
 
-            FillDataGridView();
-            ShowButtons();
-            HidePanelData();
+            if (response.Ok)
+            {
+                FillDataGridView();
+                ShowButtons();
+                HidePanelData();
+            }
+
         }
 
-
-        private void BtnBloquear_Click(object sender, EventArgs e)
+        private void BtnDesbloquear_Click(object sender, EventArgs e)
         {
             EntityUser user = DataGridViewUsuarios.SelectedRows[0].DataBoundItem as EntityUser;
 
@@ -101,18 +108,16 @@ namespace UI
                 return;
             }
 
-            string bloquearMessage = user.IsBlock ? "Desbloquear" : "Bloquear";
-
             DialogResult result = MessageBox.Show(
-            $"¿Está seguro de que desea {bloquearMessage} el usuario {user.Username}?",
-            $"Confirmar {bloquearMessage}",
+            $"¿Está seguro de que desea Desbloquear el usuario {user.Username}?",
+            $"Confirmar Desbloquear",
             MessageBoxButtons.YesNo,
             MessageBoxIcon.Question);
 
             // Verifica el resultado de la selección del usuario
             if (result == DialogResult.Yes)
             {
-                RevisarRespuestaServicio(_BusinessUser.BlockUser(user, false));
+                RevisarRespuestaServicio(_BusinessUser.UnblockUser(user));
                 FillDataGridView();
             }
         }
@@ -142,34 +147,6 @@ namespace UI
             }
         }
 
-
-        private void BtnResetPassword_Click(object sender, EventArgs e)
-        {
-            EntityUser user = DataGridViewUsuarios.SelectedRows[0].DataBoundItem as EntityUser;
-
-            if (user is null)
-            {
-                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "Debe seleccionar un usuario"));
-                return;
-            }
-
-
-            DialogResult result = MessageBox.Show(
-            $"¿Está seguro de que desea resetear la contraseña del usuario {user.Username}?",
-            $"Confirmar reset contraseña",
-            MessageBoxButtons.YesNo,
-            MessageBoxIcon.Question);
-
-            // Verifica el resultado de la selección del usuario
-            if (result == DialogResult.Yes)
-            {
-                // Encryptado realizado a nivel de capa usuario por utilizacion de metodo update compartido
-                user.Password = CryptoManager.EncryptString(user.Dni + user.Apellido);
-
-                RevisarRespuestaServicio(_BusinessUser.Update(user));
-                FillDataGridView();
-            }
-        }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
@@ -201,6 +178,7 @@ namespace UI
 
             LblCantidadUsuarios.Text = $"Cantidad de usuarios: {users.Count}";
             LblUsuariosBloqueados.Text = $"Usuarios Bloqueados: {users.Where(user => user.IsBlock).Count()}";
+
         }
 
         private void ShowPanelData()
@@ -295,5 +273,23 @@ namespace UI
             return ok;
         }
 
+        private void DataGridViewUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            EntityUser user = DataGridViewUsuarios.SelectedRows[0].DataBoundItem as EntityUser;
+
+            if (PanelData.Visible || user?.IsBlock == false)
+            {
+                BtnDesbloquear.Visible = false;
+                return;
+            }
+
+            BtnDesbloquear.Visible = true;
+        }
+
+        private void DataGridViewUsuarios_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            DataGridViewUsuarios.CurrentCell = null;
+            BtnDesbloquear.Visible = false;
+        }
     }
 }

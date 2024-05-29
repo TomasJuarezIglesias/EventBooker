@@ -139,7 +139,7 @@
         AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="BtnBloquear.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BtnDesbloquear.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAJYAAAAnCAYAAADtl7EyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACRSURBVHhe7dyhEYBAEARBwr2PmTAIAAqPAsa1aLV29G4z
@@ -203,15 +203,6 @@
         A7ADIGmt9Zlz/szMbm636GRpjH0A3LZbdLIkTECDMAE5wgTkCBOQI0xAjjABOcIE5AgTkCNMQI4wATnC
         BOQIE5AjTECOMAE5wgTkCBOQI0xAjjABOcIE5AgTkCNMQI4wATnCBOQIE5AjTECOMAE5wgTkCBOQI0xA
         jjABOcIE5AgTkPMXpud5vvswM7u53aKTJYCSMV4mwzlaRNE9zAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="BtnResetPassword.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAJYAAAAnCAYAAADtl7EyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACRSURBVHhe7dyhEYBAEARBwr2PmTAIAAqPAsa1aLV29G4z
-        s6+1TvjL3dT2NMBXwiIhLBLCIiEsEsIiISwSwiIhLBLCIiEsEsIiISwSwiIhLBLCIiEsEsIiISwSwiIh
-        LBLCIiEsEsIiISwSwiIhLBLCIiEsEsIiISwSwiIhLBLCIiEsEsIiISwS92vy8TTAWzNzXFL14+c5gnHj
-        AAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="LblErrorMail.BaseStylesheet" xml:space="preserve">

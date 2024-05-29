@@ -49,21 +49,22 @@ namespace Business
             return new BusinessResponse<bool>(ok, ok, !ok ? "Error al modificar contraseña" : "Contraseña modificada correctamente");
         }
 
-        public BusinessResponse<bool> BlockUser(EntityUser user, bool isLoginBlock)
+        public BusinessResponse<bool> BlockUser(EntityUser user)
         {
-            user.IsBlock = !user.IsBlock;
+            user.IsBlock = true;
             bool ok = dataAccess.Update(user);
 
-            string bloquearMessage = user.IsBlock ? "Bloqueado" : "Desbloqueado";
+            return new BusinessResponse<bool>(false, ok, ok ? "El usuario ha sido bloqueado por exceder número de intentos fallidos" : "Error al bloquear usuario");
+        }
 
-            string message = isLoginBlock ? "El usuario ha sido bloqueado por exceder numero de intentos fallidos" : $"{bloquearMessage} Correctamente";
+        public BusinessResponse<bool> UnblockUser(EntityUser user)
+        {
+            user.IsBlock = false;
+            user.Password = CryptoManager.EncryptString(user.Dni + user.Apellido);
 
-            if (!ok)
-            {
-                message = user.IsBlock ? $"No se pudo bloquear" : $"No se pudo desbloquear";
-            }
+            bool ok = dataAccess.Update(user);
 
-            return new BusinessResponse<bool>(ok && !isLoginBlock, ok, message);
+            return new BusinessResponse<bool>(ok, ok, ok ? "Desbloqueado correctamente" : "No se pudo desbloquear");
         }
 
         public BusinessResponse<List<EntityUser>> GetAll()
@@ -77,8 +78,7 @@ namespace Business
 
             bool ok = dataAccess.Insert(user);
 
-            // Si ok viene false es porque username ya existe => nombre + apellido
-            return new BusinessResponse<bool>(ok, ok, !ok ? "Usuario existente, modifique nombre o apellido" : "Usuario creado correctamente");
+            return new BusinessResponse<bool>(ok, ok, !ok ? "Usuario existente" : "Usuario creado correctamente");
         }
 
         public BusinessResponse<bool> Update(EntityUser user)
