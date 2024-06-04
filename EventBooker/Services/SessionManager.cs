@@ -12,6 +12,7 @@ namespace Services
         public Guid SessionId { get; private set; }
         public DateTime LoginTime { get; private set; }
         public EntityUser User { get; private set; }
+        public EntityIdioma Idioma { get; private set; }
 
         private static SessionManager _instance;
 
@@ -28,7 +29,7 @@ namespace Services
             return _instance;
         }
 
-        public static SessionManager Login(EntityUser user)
+        public static SessionManager Login(EntityUser user, EntityIdioma idioma)
         {
             if (_instance != null) throw new Exception("Hay una sesión en curso");
 
@@ -36,7 +37,8 @@ namespace Services
             {
                 _instance = new SessionManager
                 {
-                    User = user
+                    User = user,
+                    Idioma = idioma
                 }; 
             }
 

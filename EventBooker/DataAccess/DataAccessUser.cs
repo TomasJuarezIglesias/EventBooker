@@ -11,7 +11,7 @@ namespace DataAccess
 {
     public class DataAccessUser
     {
-        DBConnection conn;
+        private readonly DBConnection conn;
         public DataAccessUser()
         {
             conn = DBConnection.GetInstance();

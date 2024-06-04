@@ -21,5 +21,11 @@ namespace DataAccess
             Apellido = row["Apellido"].ToString(),
             Mail = row["Mail"].ToString()
         };
+
+        public static EntityIdioma MapIdioma(DataRow row) => new EntityIdioma()
+        {
+            Id = Convert.ToInt32(row["IdIdioma"]),
+            Idioma = row["Idioma"].ToString()
+        };
     }
 }

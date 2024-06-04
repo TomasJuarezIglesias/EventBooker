@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessIdioma.cs" />
     <Compile Include="BusinessResponse.cs" />
     <Compile Include="BusinessUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

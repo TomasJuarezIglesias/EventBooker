@@ -20,11 +20,14 @@ namespace UI
         private readonly BusinessUser _businessUser;
         private List<EntityUser> _ListaErrorLogeo;
 
+        private BusinessIdioma _businessIdioma;
         public InicioSesion()
         {
             InitializeComponent();
             _businessUser = new BusinessUser();
             _ListaErrorLogeo = new List<EntityUser>();  
+            _businessIdioma = new BusinessIdioma();
+            FillIdiomas();
         }
 
         private void BtnIngresar_Click(object sender, EventArgs e)
@@ -74,7 +77,9 @@ namespace UI
 
                 if (response.Ok)
                 {
-                    _sessionManager = SessionManager.Login(response.Data);
+                    EntityIdioma idioma = ComboBoxIdiomas.SelectedItem as EntityIdioma;
+
+                    _sessionManager = SessionManager.Login(response.Data, idioma);
 
                     FormMenuPrincipal menuPrincipal = new FormMenuPrincipal();
                     menuPrincipal.Show();
@@ -87,6 +92,21 @@ namespace UI
                 RevisarRespuestaServicio(new BusinessResponse<bool>(false,false,ex.Message));
             }
             
+        }
+
+        private void FillIdiomas()
+        {
+            ComboBoxIdiomas.Items.Clear();
+            BusinessResponse<List<EntityIdioma>> response = _businessIdioma.GetAll();
+            ComboBoxIdiomas.Items.AddRange(response.Data.ToArray());
+            ComboBoxIdiomas.DisplayMember = "Idioma";
+            ComboBoxIdiomas.SelectedIndex = 0;
+        }
+
+        private void ComboBoxIdiomas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            EntityIdioma idioma = ComboBoxIdiomas.SelectedItem as EntityIdioma;
+            _publisher.NotifyAll(idioma);
         }
     }
 }

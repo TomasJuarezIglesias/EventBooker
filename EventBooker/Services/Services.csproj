@@ -42,6 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CryptoManager.cs" />
+    <Compile Include="IObserver.cs" />
+    <Compile Include="IPublisher.cs" />
+    <Compile Include="LanguageManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegexValidationService.cs" />
     <Compile Include="SessionManager.cs" />

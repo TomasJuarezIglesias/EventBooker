@@ -1,5 +1,8 @@
 ﻿using Bunifu.UI.WinForms;
+using Bunifu.UI.WinForms.BunifuButton;
 using Business;
+using Entities;
+using Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,11 +15,18 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class ServiceForm : Form
+    public partial class ServiceForm : Form, IObserver
     {
+        protected readonly IPublisher _publisher;
+
         public ServiceForm()
         {
             StartPosition = FormStartPosition.CenterScreen;
+
+            _publisher = new LanguageManager();
+            _publisher.RemoveAllObservers();
+            _publisher.AddObserver(this);
+
             InitializeComponent();
         }
 
@@ -60,5 +70,28 @@ namespace UI
             
         }
 
+        public void Notify(object objeto)
+        {
+            EntityIdioma idioma = (EntityIdioma)objeto;
+            ChangeTranslation(idioma);
+        }
+
+        private void ChangeTranslation(EntityIdioma idioma, Control.ControlCollection collectionPanel = null)
+        {
+            Control.ControlCollection controlCollection = collectionPanel ?? Controls;
+
+            foreach (Control item in controlCollection)
+            {
+                if (item is Panel || item is BunifuPanel) ChangeTranslation(idioma, item.Controls);
+
+                if (item.Name.Contains("Form"))
+                {
+                    // Buscar por name en la tabla junto con el id y setear el text del idioma seleccionado
+
+                }
+            }
+        }
+
+        
     }
 }
