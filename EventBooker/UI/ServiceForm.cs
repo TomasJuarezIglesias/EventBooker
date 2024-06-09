@@ -70,9 +70,8 @@ namespace UI
             
         }
 
-        public void Notify(object objeto)
+        public void Notify(EntityIdioma idioma)
         {
-            EntityIdioma idioma = (EntityIdioma)objeto;
             ChangeTranslation(idioma);
         }
 

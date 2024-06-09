@@ -9,6 +9,6 @@ namespace Services
 {
     public interface IObserver
     {
-        void Notify(object objeto);
+        void Notify(EntityIdioma idioma);
     }
 }

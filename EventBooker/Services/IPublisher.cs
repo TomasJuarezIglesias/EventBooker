@@ -11,6 +11,6 @@ namespace Services
     {
         void AddObserver(IObserver observer);
         void RemoveAllObservers();
-        void NotifyAll(object obj);
+        void NotifyAll(EntityIdioma idioma);
     }
 }

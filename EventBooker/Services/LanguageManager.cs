@@ -16,11 +16,11 @@ namespace Services
             _observers = new List<IObserver>();
         }
 
-        public void NotifyAll(object obj)
+        public void NotifyAll(EntityIdioma idioma)
         {
             foreach (var observer in _observers) 
             {
-                observer.Notify(obj);
+                observer.Notify(idioma);
             }
         }
 
