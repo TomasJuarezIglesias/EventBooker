@@ -85,7 +85,7 @@ namespace UI
                 user.Apellido = TxtApellido.Text.Trim();
                 user.Dni = Convert.ToInt32(TxtDni.Text.Trim());
                 user.Mail = TxtMail.Text.Trim();
-                user.Username = user.Nombre + user.Apellido;
+                user.Username = user.Dni + user.Nombre;
 
                 response = _BusinessUser.Update(user);
                 RevisarRespuestaServicio(response);
@@ -96,6 +96,7 @@ namespace UI
                 FillDataGridView();
                 ShowButtons();
                 HidePanelData();
+                BtnDesbloquear.Visible = false;
             }
 
         }
@@ -281,13 +282,7 @@ namespace UI
         {
             EntityUser user = DataGridViewUsuarios.SelectedRows[0].DataBoundItem as EntityUser;
 
-            if (PanelData.Visible || user?.IsBlock == false)
-            {
-                BtnDesbloquear.Visible = false;
-                return;
-            }
-
-            BtnDesbloquear.Visible = true;
+            BtnDesbloquear.Visible = !(PanelData.Visible || user?.IsBlock == false);
         }
 
         private void DataGridViewUsuarios_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
