@@ -81,15 +81,23 @@ namespace UI
             {
                 EntityUser user = DataGridViewUsuarios.SelectedRows[0].DataBoundItem as EntityUser;
 
-                user.Nombre = TxtNombre.Text.Trim();
-                user.Apellido = TxtApellido.Text.Trim();
-                user.Dni = Convert.ToInt32(TxtDni.Text.Trim());
-                user.Mail = TxtMail.Text.Trim();
-                user.Username = user.Dni + user.Nombre;
+                // Nueva instancia para no afectar a la lista
+                EntityUser userUpdated = new EntityUser
+                {
+                    Id = user.Id,
+                    Nombre = TxtNombre.Text.Trim(),
+                    Apellido = TxtApellido.Text.Trim(),
+                    Dni = Convert.ToInt32(TxtDni.Text.Trim()),
+                    Mail = TxtMail.Text.Trim(),
+                    Username = TxtDni.Text.Trim() + TxtNombre.Text.Trim(),
+                    Password = user.Password
+                };
 
-                response = _BusinessUser.Update(user);
+                response = _BusinessUser.Update(userUpdated);
                 RevisarRespuestaServicio(response);
             }
+
+            
 
             if (response.Ok)
             {
@@ -98,7 +106,6 @@ namespace UI
                 HidePanelData();
                 BtnDesbloquear.Visible = false;
             }
-
         }
 
         private void BtnDesbloquear_Click(object sender, EventArgs e)
