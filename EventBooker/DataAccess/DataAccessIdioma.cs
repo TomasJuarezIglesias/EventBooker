@@ -21,7 +21,7 @@ namespace DataAccess
         {
             List<EntityIdioma> idiomas = new List<EntityIdioma>();
 
-            DataTable data = connection.Read("SP_GetIdiomas");
+            DataTable data = connection.Read("SP_SelectIdiomas");
 
             foreach (DataRow row in data.Rows) 
             {

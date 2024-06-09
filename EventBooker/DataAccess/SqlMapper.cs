@@ -27,5 +27,23 @@ namespace DataAccess
             Id = Convert.ToInt32(row["IdIdioma"]),
             Idioma = row["Idioma"].ToString()
         };
+
+        public static EntitySalon MapSalon(DataRow row) => new EntitySalon()
+        {
+            Id = Convert.ToInt32(row["IdSalon"]),
+            Nombre = row["Nombre"].ToString(),
+            Ubicacion = row["Ubicacion"].ToString(),
+            Precio = Convert.ToDouble(row["Precio"]),
+            PrecioCubierto = Convert.ToDouble(row["PrecioCubierto"]),
+            Capacidad = Convert.ToInt32(row["Capacidad"]),
+            CantidadMinimaInvitados = Convert.ToInt32(row["CantidadMinimaInvitados"])
+        };
+
+        public static EntityServicio MapServicio(DataRow row) => new EntityServicio()
+        {
+            Id = Convert.ToInt32(row["IdServicio"]),
+            Descripcion = row["Descripcion"].ToString(),
+            Valor = Convert.ToDouble(row["Valor"])
+        };
     }
 }

@@ -12,7 +12,7 @@ namespace Services
         public Guid SessionId { get; private set; }
         public DateTime LoginTime { get; private set; }
         public EntityUser User { get; private set; }
-        public EntityIdioma Idioma { get; private set; }
+        public EntityIdioma Idioma { get; set; }
 
         private static SessionManager _instance;
 

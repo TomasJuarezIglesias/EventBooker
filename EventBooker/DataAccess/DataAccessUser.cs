@@ -21,7 +21,7 @@ namespace DataAccess
         {
             List<EntityUser> users = new List<EntityUser>();
 
-            DataTable data = conn.Read("SP_GetUser");
+            DataTable data = conn.Read("SP_SelectUser");
 
             foreach (DataRow row in data.Rows)
             {
@@ -38,7 +38,7 @@ namespace DataAccess
                 new SqlParameter("@In_username", SqlDbType.NVarChar){ Value = username }
             };
 
-            DataTable data = conn.Read("SP_GetUser", parameters);
+            DataTable data = conn.Read("SP_SelectUser", parameters);
 
             return data.Rows.Count == 0 ? null : SqlMapper.MapUser(data.Rows[0]);
         }

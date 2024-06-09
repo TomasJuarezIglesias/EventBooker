@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccessIdioma.cs" />
+    <Compile Include="DataAccessSalon.cs" />
+    <Compile Include="DataAccessServicio.cs" />
     <Compile Include="DataAccessUser.cs" />
     <Compile Include="DbConnection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
