@@ -100,6 +100,7 @@ namespace UI
         private void BtnGestionUsuario_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormGestionUsuarios());
+            HideSubmenu();
         }
 
         // Realizar Reserva
@@ -120,7 +121,8 @@ namespace UI
 
         private void BtnCambiarPassword_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormCambiarPassword(this));        
+            OpenChildForm(new FormCambiarPassword(this));
+            HideSubmenu();
         }
 
         private void BtnCerrarSesion_Click(object sender, EventArgs e)
@@ -141,5 +143,12 @@ namespace UI
             }
         }
 
+        // Maestros
+
+        private void BtnGestionSalon_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormGestionSalon());
+            HideSubmenu();
+        }
     }
 }
