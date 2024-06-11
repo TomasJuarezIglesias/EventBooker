@@ -150,5 +150,11 @@ namespace UI
             OpenChildForm(new FormGestionSalon());
             HideSubmenu();
         }
+
+        private void BtnGestionServicios_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormGestionServicio());
+            HideSubmenu();  
+        }
     }
 }
