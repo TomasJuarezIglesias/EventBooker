@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -106,7 +107,10 @@ namespace UI
         private void ComboBoxIdiomas_SelectedIndexChanged(object sender, EventArgs e)
         {
             EntityIdioma idioma = ComboBoxIdiomas.SelectedItem as EntityIdioma;
-            _publisher.NotifyAll(idioma);
+
+            IPublisher publisher = new LanguageManager();
+            publisher.AddObserver(this);
+            publisher.NotifyAll(idioma);
         }
     }
 }
