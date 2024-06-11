@@ -24,8 +24,6 @@ namespace Services
 
         public static SessionManager GetInstance()
         {
-            if (_instance is null) throw new Exception("Sesion no iniciada");
-
             return _instance;
         }
 

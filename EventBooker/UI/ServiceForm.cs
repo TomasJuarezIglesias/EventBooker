@@ -17,15 +17,16 @@ namespace UI
 {
     public partial class ServiceForm : Form, IObserver
     {
-        protected readonly IPublisher _publisher;
-
         public ServiceForm()
         {
             StartPosition = FormStartPosition.CenterScreen;
 
-            _publisher = new LanguageManager();
-            _publisher.RemoveAllObservers();
-            _publisher.AddObserver(this);
+            SessionManager sessionManager = SessionManager.GetInstance();
+
+            if (sessionManager != null)
+            {
+                ChangeTranslation(sessionManager.Idioma);
+            }
 
             InitializeComponent();
         }
@@ -51,7 +52,7 @@ namespace UI
         {
             foreach (var label in labels)
             {
-                label.Visible = false;  
+                label.Visible = false;
             }
         }
 
@@ -62,12 +63,12 @@ namespace UI
                 MessageBox.Show(respuesta.Mensaje, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            
+
             if (respuesta.Ok && !string.IsNullOrEmpty(respuesta.Mensaje))
             {
                 MessageBox.Show(respuesta.Mensaje, "Great!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            
+
         }
 
         public void Notify(EntityIdioma idioma)
@@ -91,6 +92,6 @@ namespace UI
             }
         }
 
-        
+
     }
 }
