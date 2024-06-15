@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccessCliente.cs" />
     <Compile Include="DataAccessIdioma.cs" />
     <Compile Include="DataAccessSalon.cs" />
     <Compile Include="DataAccessServicio.cs" />

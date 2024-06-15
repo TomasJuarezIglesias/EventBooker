@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class FormRealizarReserva : ServiceForm
+    public partial class FormRegistrarReserva : ServiceForm
     {
         private Action<ServiceForm> openChildForm;
 
-        public FormRealizarReserva(Action<ServiceForm> openChildForm)
+        public FormRegistrarReserva(Action<ServiceForm> openChildForm)
         {
             this.openChildForm = openChildForm;
             InitializeComponent();

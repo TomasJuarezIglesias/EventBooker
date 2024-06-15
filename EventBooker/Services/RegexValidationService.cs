@@ -28,5 +28,11 @@ namespace Services
             string emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
             return Regex.IsMatch(email, emailPattern);
         }
+
+        public static bool IsValidContact(string contacto) 
+        {
+            string contactPattern = @"^\d{10}$";
+            return Regex.IsMatch(contacto, contactPattern);
+        }
     }
 }

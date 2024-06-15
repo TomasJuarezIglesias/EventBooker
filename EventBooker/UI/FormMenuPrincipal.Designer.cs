@@ -51,7 +51,7 @@
             this.BtnUsuario = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.BtnReportes = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.BtnCobranza = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.BtnRealizarReserva = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.BtnRegistrarReserva = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.PanelMaestros = new System.Windows.Forms.Panel();
             this.BtnGestionServicios = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.BtnGestionSalon = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -76,7 +76,7 @@
             this.PanelSideMenu.Controls.Add(this.BtnUsuario);
             this.PanelSideMenu.Controls.Add(this.BtnReportes);
             this.PanelSideMenu.Controls.Add(this.BtnCobranza);
-            this.PanelSideMenu.Controls.Add(this.BtnRealizarReserva);
+            this.PanelSideMenu.Controls.Add(this.BtnRegistrarReserva);
             this.PanelSideMenu.Controls.Add(this.PanelMaestros);
             this.PanelSideMenu.Controls.Add(this.BtnMaestros);
             this.PanelSideMenu.Controls.Add(this.PanelAdministrador);
@@ -85,8 +85,9 @@
             this.PanelSideMenu.Controls.Add(this.BtnAyuda);
             this.PanelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelSideMenu.Location = new System.Drawing.Point(0, 0);
+            this.PanelSideMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PanelSideMenu.Name = "PanelSideMenu";
-            this.PanelSideMenu.Size = new System.Drawing.Size(233, 611);
+            this.PanelSideMenu.Size = new System.Drawing.Size(311, 752);
             this.PanelSideMenu.TabIndex = 0;
             // 
             // PanelUsuario
@@ -96,9 +97,10 @@
             this.PanelUsuario.Controls.Add(this.BtnCambiarPassword);
             this.PanelUsuario.Controls.Add(this.BtnLogin);
             this.PanelUsuario.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelUsuario.Location = new System.Drawing.Point(0, 388);
+            this.PanelUsuario.Location = new System.Drawing.Point(0, 478);
+            this.PanelUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PanelUsuario.Name = "PanelUsuario";
-            this.PanelUsuario.Size = new System.Drawing.Size(233, 124);
+            this.PanelUsuario.Size = new System.Drawing.Size(311, 153);
             this.PanelUsuario.TabIndex = 44;
             // 
             // BtnCerrarSesion
@@ -149,7 +151,8 @@
             this.BtnCerrarSesion.IdleIconLeftImage = null;
             this.BtnCerrarSesion.IdleIconRightImage = null;
             this.BtnCerrarSesion.IndicateFocus = false;
-            this.BtnCerrarSesion.Location = new System.Drawing.Point(0, 78);
+            this.BtnCerrarSesion.Location = new System.Drawing.Point(0, 96);
+            this.BtnCerrarSesion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnCerrarSesion.Name = "BtnCerrarSesion";
             this.BtnCerrarSesion.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnCerrarSesion.OnDisabledState.BorderRadius = 1;
@@ -183,7 +186,7 @@
             this.BtnCerrarSesion.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.BtnCerrarSesion.OnPressedState.IconLeftImage = null;
             this.BtnCerrarSesion.OnPressedState.IconRightImage = null;
-            this.BtnCerrarSesion.Size = new System.Drawing.Size(233, 39);
+            this.BtnCerrarSesion.Size = new System.Drawing.Size(311, 48);
             this.BtnCerrarSesion.TabIndex = 17;
             this.BtnCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnCerrarSesion.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -240,7 +243,8 @@
             this.BtnCambiarPassword.IdleIconLeftImage = null;
             this.BtnCambiarPassword.IdleIconRightImage = null;
             this.BtnCambiarPassword.IndicateFocus = false;
-            this.BtnCambiarPassword.Location = new System.Drawing.Point(0, 39);
+            this.BtnCambiarPassword.Location = new System.Drawing.Point(0, 48);
+            this.BtnCambiarPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnCambiarPassword.Name = "BtnCambiarPassword";
             this.BtnCambiarPassword.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnCambiarPassword.OnDisabledState.BorderRadius = 1;
@@ -274,7 +278,7 @@
             this.BtnCambiarPassword.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.BtnCambiarPassword.OnPressedState.IconLeftImage = null;
             this.BtnCambiarPassword.OnPressedState.IconRightImage = null;
-            this.BtnCambiarPassword.Size = new System.Drawing.Size(233, 39);
+            this.BtnCambiarPassword.Size = new System.Drawing.Size(311, 48);
             this.BtnCambiarPassword.TabIndex = 16;
             this.BtnCambiarPassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnCambiarPassword.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -332,6 +336,7 @@
             this.BtnLogin.IdleIconRightImage = null;
             this.BtnLogin.IndicateFocus = false;
             this.BtnLogin.Location = new System.Drawing.Point(0, 0);
+            this.BtnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnLogin.Name = "BtnLogin";
             this.BtnLogin.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnLogin.OnDisabledState.BorderRadius = 1;
@@ -365,7 +370,7 @@
             this.BtnLogin.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.BtnLogin.OnPressedState.IconLeftImage = null;
             this.BtnLogin.OnPressedState.IconRightImage = null;
-            this.BtnLogin.Size = new System.Drawing.Size(233, 39);
+            this.BtnLogin.Size = new System.Drawing.Size(311, 48);
             this.BtnLogin.TabIndex = 15;
             this.BtnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnLogin.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -422,7 +427,8 @@
             this.BtnUsuario.IdleIconLeftImage = null;
             this.BtnUsuario.IdleIconRightImage = null;
             this.BtnUsuario.IndicateFocus = false;
-            this.BtnUsuario.Location = new System.Drawing.Point(0, 349);
+            this.BtnUsuario.Location = new System.Drawing.Point(0, 430);
+            this.BtnUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnUsuario.Name = "BtnUsuario";
             this.BtnUsuario.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnUsuario.OnDisabledState.BorderRadius = 1;
@@ -456,7 +462,7 @@
             this.BtnUsuario.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.BtnUsuario.OnPressedState.IconLeftImage = null;
             this.BtnUsuario.OnPressedState.IconRightImage = null;
-            this.BtnUsuario.Size = new System.Drawing.Size(233, 39);
+            this.BtnUsuario.Size = new System.Drawing.Size(311, 48);
             this.BtnUsuario.TabIndex = 43;
             this.BtnUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnUsuario.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -513,7 +519,8 @@
             this.BtnReportes.IdleIconLeftImage = null;
             this.BtnReportes.IdleIconRightImage = null;
             this.BtnReportes.IndicateFocus = false;
-            this.BtnReportes.Location = new System.Drawing.Point(0, 310);
+            this.BtnReportes.Location = new System.Drawing.Point(0, 382);
+            this.BtnReportes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnReportes.Name = "BtnReportes";
             this.BtnReportes.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnReportes.OnDisabledState.BorderRadius = 1;
@@ -547,7 +554,7 @@
             this.BtnReportes.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.BtnReportes.OnPressedState.IconLeftImage = null;
             this.BtnReportes.OnPressedState.IconRightImage = null;
-            this.BtnReportes.Size = new System.Drawing.Size(233, 39);
+            this.BtnReportes.Size = new System.Drawing.Size(311, 48);
             this.BtnReportes.TabIndex = 41;
             this.BtnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnReportes.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -603,7 +610,8 @@
             this.BtnCobranza.IdleIconLeftImage = null;
             this.BtnCobranza.IdleIconRightImage = null;
             this.BtnCobranza.IndicateFocus = false;
-            this.BtnCobranza.Location = new System.Drawing.Point(0, 271);
+            this.BtnCobranza.Location = new System.Drawing.Point(0, 334);
+            this.BtnCobranza.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnCobranza.Name = "BtnCobranza";
             this.BtnCobranza.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnCobranza.OnDisabledState.BorderRadius = 1;
@@ -637,7 +645,7 @@
             this.BtnCobranza.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.BtnCobranza.OnPressedState.IconLeftImage = null;
             this.BtnCobranza.OnPressedState.IconRightImage = null;
-            this.BtnCobranza.Size = new System.Drawing.Size(233, 39);
+            this.BtnCobranza.Size = new System.Drawing.Size(311, 48);
             this.BtnCobranza.TabIndex = 40;
             this.BtnCobranza.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnCobranza.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -645,96 +653,97 @@
             this.BtnCobranza.TextPadding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.BtnCobranza.UseDefaultRadiusAndThickness = true;
             // 
-            // BtnRealizarReserva
+            // BtnRegistrarReserva
             // 
-            this.BtnRealizarReserva.AllowAnimations = true;
-            this.BtnRealizarReserva.AllowMouseEffects = true;
-            this.BtnRealizarReserva.AllowToggling = false;
-            this.BtnRealizarReserva.AnimationSpeed = 200;
-            this.BtnRealizarReserva.AutoGenerateColors = false;
-            this.BtnRealizarReserva.AutoRoundBorders = false;
-            this.BtnRealizarReserva.AutoSizeLeftIcon = true;
-            this.BtnRealizarReserva.AutoSizeRightIcon = true;
-            this.BtnRealizarReserva.BackColor = System.Drawing.Color.Transparent;
-            this.BtnRealizarReserva.BackColor1 = System.Drawing.Color.DimGray;
-            this.BtnRealizarReserva.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnRealizarReserva.BackgroundImage")));
-            this.BtnRealizarReserva.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.BtnRealizarReserva.ButtonText = "Realizar Reserva";
-            this.BtnRealizarReserva.ButtonTextMarginLeft = 0;
-            this.BtnRealizarReserva.ColorContrastOnClick = 45;
-            this.BtnRealizarReserva.ColorContrastOnHover = 45;
-            this.BtnRealizarReserva.Cursor = System.Windows.Forms.Cursors.Default;
+            this.BtnRegistrarReserva.AllowAnimations = true;
+            this.BtnRegistrarReserva.AllowMouseEffects = true;
+            this.BtnRegistrarReserva.AllowToggling = false;
+            this.BtnRegistrarReserva.AnimationSpeed = 200;
+            this.BtnRegistrarReserva.AutoGenerateColors = false;
+            this.BtnRegistrarReserva.AutoRoundBorders = false;
+            this.BtnRegistrarReserva.AutoSizeLeftIcon = true;
+            this.BtnRegistrarReserva.AutoSizeRightIcon = true;
+            this.BtnRegistrarReserva.BackColor = System.Drawing.Color.Transparent;
+            this.BtnRegistrarReserva.BackColor1 = System.Drawing.Color.DimGray;
+            this.BtnRegistrarReserva.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnRegistrarReserva.BackgroundImage")));
+            this.BtnRegistrarReserva.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnRegistrarReserva.ButtonText = "Registrar Reserva";
+            this.BtnRegistrarReserva.ButtonTextMarginLeft = 0;
+            this.BtnRegistrarReserva.ColorContrastOnClick = 45;
+            this.BtnRegistrarReserva.ColorContrastOnHover = 45;
+            this.BtnRegistrarReserva.Cursor = System.Windows.Forms.Cursors.Default;
             borderEdges7.BottomLeft = true;
             borderEdges7.BottomRight = true;
             borderEdges7.TopLeft = true;
             borderEdges7.TopRight = true;
-            this.BtnRealizarReserva.CustomizableEdges = borderEdges7;
-            this.BtnRealizarReserva.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.BtnRealizarReserva.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.BtnRealizarReserva.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.BtnRealizarReserva.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.BtnRealizarReserva.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnRealizarReserva.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.BtnRealizarReserva.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.BtnRealizarReserva.ForeColor = System.Drawing.Color.White;
-            this.BtnRealizarReserva.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnRealizarReserva.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.BtnRealizarReserva.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.BtnRealizarReserva.IconMarginLeft = 11;
-            this.BtnRealizarReserva.IconPadding = 10;
-            this.BtnRealizarReserva.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnRealizarReserva.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.BtnRealizarReserva.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.BtnRealizarReserva.IconSize = 25;
-            this.BtnRealizarReserva.IdleBorderColor = System.Drawing.Color.DimGray;
-            this.BtnRealizarReserva.IdleBorderRadius = 1;
-            this.BtnRealizarReserva.IdleBorderThickness = 1;
-            this.BtnRealizarReserva.IdleFillColor = System.Drawing.Color.DimGray;
-            this.BtnRealizarReserva.IdleIconLeftImage = null;
-            this.BtnRealizarReserva.IdleIconRightImage = null;
-            this.BtnRealizarReserva.IndicateFocus = false;
-            this.BtnRealizarReserva.Location = new System.Drawing.Point(0, 232);
-            this.BtnRealizarReserva.Name = "BtnRealizarReserva";
-            this.BtnRealizarReserva.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.BtnRealizarReserva.OnDisabledState.BorderRadius = 1;
-            this.BtnRealizarReserva.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.BtnRealizarReserva.OnDisabledState.BorderThickness = 1;
-            this.BtnRealizarReserva.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.BtnRealizarReserva.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.BtnRealizarReserva.OnDisabledState.IconLeftImage = null;
-            this.BtnRealizarReserva.OnDisabledState.IconRightImage = null;
-            this.BtnRealizarReserva.onHoverState.BorderColor = System.Drawing.Color.DarkGray;
-            this.BtnRealizarReserva.onHoverState.BorderRadius = 1;
-            this.BtnRealizarReserva.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.BtnRealizarReserva.onHoverState.BorderThickness = 1;
-            this.BtnRealizarReserva.onHoverState.FillColor = System.Drawing.Color.DarkGray;
-            this.BtnRealizarReserva.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.BtnRealizarReserva.onHoverState.IconLeftImage = null;
-            this.BtnRealizarReserva.onHoverState.IconRightImage = null;
-            this.BtnRealizarReserva.OnIdleState.BorderColor = System.Drawing.Color.DimGray;
-            this.BtnRealizarReserva.OnIdleState.BorderRadius = 1;
-            this.BtnRealizarReserva.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.BtnRealizarReserva.OnIdleState.BorderThickness = 1;
-            this.BtnRealizarReserva.OnIdleState.FillColor = System.Drawing.Color.DimGray;
-            this.BtnRealizarReserva.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.BtnRealizarReserva.OnIdleState.IconLeftImage = null;
-            this.BtnRealizarReserva.OnIdleState.IconRightImage = null;
-            this.BtnRealizarReserva.OnPressedState.BorderColor = System.Drawing.Color.DimGray;
-            this.BtnRealizarReserva.OnPressedState.BorderRadius = 1;
-            this.BtnRealizarReserva.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.BtnRealizarReserva.OnPressedState.BorderThickness = 1;
-            this.BtnRealizarReserva.OnPressedState.FillColor = System.Drawing.Color.DimGray;
-            this.BtnRealizarReserva.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.BtnRealizarReserva.OnPressedState.IconLeftImage = null;
-            this.BtnRealizarReserva.OnPressedState.IconRightImage = null;
-            this.BtnRealizarReserva.Size = new System.Drawing.Size(233, 39);
-            this.BtnRealizarReserva.TabIndex = 39;
-            this.BtnRealizarReserva.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnRealizarReserva.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.BtnRealizarReserva.TextMarginLeft = 0;
-            this.BtnRealizarReserva.TextPadding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BtnRealizarReserva.UseDefaultRadiusAndThickness = true;
-            this.BtnRealizarReserva.Click += new System.EventHandler(this.BtnRealizarReserva_Click);
+            this.BtnRegistrarReserva.CustomizableEdges = borderEdges7;
+            this.BtnRegistrarReserva.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.BtnRegistrarReserva.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.BtnRegistrarReserva.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.BtnRegistrarReserva.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.BtnRegistrarReserva.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnRegistrarReserva.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.BtnRegistrarReserva.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.BtnRegistrarReserva.ForeColor = System.Drawing.Color.White;
+            this.BtnRegistrarReserva.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnRegistrarReserva.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.BtnRegistrarReserva.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.BtnRegistrarReserva.IconMarginLeft = 11;
+            this.BtnRegistrarReserva.IconPadding = 10;
+            this.BtnRegistrarReserva.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnRegistrarReserva.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.BtnRegistrarReserva.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.BtnRegistrarReserva.IconSize = 25;
+            this.BtnRegistrarReserva.IdleBorderColor = System.Drawing.Color.DimGray;
+            this.BtnRegistrarReserva.IdleBorderRadius = 1;
+            this.BtnRegistrarReserva.IdleBorderThickness = 1;
+            this.BtnRegistrarReserva.IdleFillColor = System.Drawing.Color.DimGray;
+            this.BtnRegistrarReserva.IdleIconLeftImage = null;
+            this.BtnRegistrarReserva.IdleIconRightImage = null;
+            this.BtnRegistrarReserva.IndicateFocus = false;
+            this.BtnRegistrarReserva.Location = new System.Drawing.Point(0, 286);
+            this.BtnRegistrarReserva.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnRegistrarReserva.Name = "BtnRegistrarReserva";
+            this.BtnRegistrarReserva.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.BtnRegistrarReserva.OnDisabledState.BorderRadius = 1;
+            this.BtnRegistrarReserva.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnRegistrarReserva.OnDisabledState.BorderThickness = 1;
+            this.BtnRegistrarReserva.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.BtnRegistrarReserva.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.BtnRegistrarReserva.OnDisabledState.IconLeftImage = null;
+            this.BtnRegistrarReserva.OnDisabledState.IconRightImage = null;
+            this.BtnRegistrarReserva.onHoverState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BtnRegistrarReserva.onHoverState.BorderRadius = 1;
+            this.BtnRegistrarReserva.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnRegistrarReserva.onHoverState.BorderThickness = 1;
+            this.BtnRegistrarReserva.onHoverState.FillColor = System.Drawing.Color.DarkGray;
+            this.BtnRegistrarReserva.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.BtnRegistrarReserva.onHoverState.IconLeftImage = null;
+            this.BtnRegistrarReserva.onHoverState.IconRightImage = null;
+            this.BtnRegistrarReserva.OnIdleState.BorderColor = System.Drawing.Color.DimGray;
+            this.BtnRegistrarReserva.OnIdleState.BorderRadius = 1;
+            this.BtnRegistrarReserva.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnRegistrarReserva.OnIdleState.BorderThickness = 1;
+            this.BtnRegistrarReserva.OnIdleState.FillColor = System.Drawing.Color.DimGray;
+            this.BtnRegistrarReserva.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.BtnRegistrarReserva.OnIdleState.IconLeftImage = null;
+            this.BtnRegistrarReserva.OnIdleState.IconRightImage = null;
+            this.BtnRegistrarReserva.OnPressedState.BorderColor = System.Drawing.Color.DimGray;
+            this.BtnRegistrarReserva.OnPressedState.BorderRadius = 1;
+            this.BtnRegistrarReserva.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnRegistrarReserva.OnPressedState.BorderThickness = 1;
+            this.BtnRegistrarReserva.OnPressedState.FillColor = System.Drawing.Color.DimGray;
+            this.BtnRegistrarReserva.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.BtnRegistrarReserva.OnPressedState.IconLeftImage = null;
+            this.BtnRegistrarReserva.OnPressedState.IconRightImage = null;
+            this.BtnRegistrarReserva.Size = new System.Drawing.Size(311, 48);
+            this.BtnRegistrarReserva.TabIndex = 39;
+            this.BtnRegistrarReserva.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnRegistrarReserva.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BtnRegistrarReserva.TextMarginLeft = 0;
+            this.BtnRegistrarReserva.TextPadding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.BtnRegistrarReserva.UseDefaultRadiusAndThickness = true;
+            this.BtnRegistrarReserva.Click += new System.EventHandler(this.BtnRegistrarReserva_Click);
             // 
             // PanelMaestros
             // 
@@ -742,9 +751,10 @@
             this.PanelMaestros.Controls.Add(this.BtnGestionServicios);
             this.PanelMaestros.Controls.Add(this.BtnGestionSalon);
             this.PanelMaestros.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelMaestros.Location = new System.Drawing.Point(0, 155);
+            this.PanelMaestros.Location = new System.Drawing.Point(0, 191);
+            this.PanelMaestros.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PanelMaestros.Name = "PanelMaestros";
-            this.PanelMaestros.Size = new System.Drawing.Size(233, 77);
+            this.PanelMaestros.Size = new System.Drawing.Size(311, 95);
             this.PanelMaestros.TabIndex = 38;
             // 
             // BtnGestionServicios
@@ -795,7 +805,8 @@
             this.BtnGestionServicios.IdleIconLeftImage = null;
             this.BtnGestionServicios.IdleIconRightImage = null;
             this.BtnGestionServicios.IndicateFocus = false;
-            this.BtnGestionServicios.Location = new System.Drawing.Point(0, 39);
+            this.BtnGestionServicios.Location = new System.Drawing.Point(0, 48);
+            this.BtnGestionServicios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnGestionServicios.Name = "BtnGestionServicios";
             this.BtnGestionServicios.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnGestionServicios.OnDisabledState.BorderRadius = 1;
@@ -829,7 +840,7 @@
             this.BtnGestionServicios.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.BtnGestionServicios.OnPressedState.IconLeftImage = null;
             this.BtnGestionServicios.OnPressedState.IconRightImage = null;
-            this.BtnGestionServicios.Size = new System.Drawing.Size(233, 39);
+            this.BtnGestionServicios.Size = new System.Drawing.Size(311, 48);
             this.BtnGestionServicios.TabIndex = 16;
             this.BtnGestionServicios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnGestionServicios.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -887,6 +898,7 @@
             this.BtnGestionSalon.IdleIconRightImage = null;
             this.BtnGestionSalon.IndicateFocus = false;
             this.BtnGestionSalon.Location = new System.Drawing.Point(0, 0);
+            this.BtnGestionSalon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnGestionSalon.Name = "BtnGestionSalon";
             this.BtnGestionSalon.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnGestionSalon.OnDisabledState.BorderRadius = 1;
@@ -920,7 +932,7 @@
             this.BtnGestionSalon.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.BtnGestionSalon.OnPressedState.IconLeftImage = null;
             this.BtnGestionSalon.OnPressedState.IconRightImage = null;
-            this.BtnGestionSalon.Size = new System.Drawing.Size(233, 39);
+            this.BtnGestionSalon.Size = new System.Drawing.Size(311, 48);
             this.BtnGestionSalon.TabIndex = 15;
             this.BtnGestionSalon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnGestionSalon.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -977,7 +989,8 @@
             this.BtnMaestros.IdleIconLeftImage = null;
             this.BtnMaestros.IdleIconRightImage = null;
             this.BtnMaestros.IndicateFocus = false;
-            this.BtnMaestros.Location = new System.Drawing.Point(0, 116);
+            this.BtnMaestros.Location = new System.Drawing.Point(0, 143);
+            this.BtnMaestros.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnMaestros.Name = "BtnMaestros";
             this.BtnMaestros.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnMaestros.OnDisabledState.BorderRadius = 1;
@@ -1011,7 +1024,7 @@
             this.BtnMaestros.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.BtnMaestros.OnPressedState.IconLeftImage = null;
             this.BtnMaestros.OnPressedState.IconRightImage = null;
-            this.BtnMaestros.Size = new System.Drawing.Size(233, 39);
+            this.BtnMaestros.Size = new System.Drawing.Size(311, 48);
             this.BtnMaestros.TabIndex = 37;
             this.BtnMaestros.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnMaestros.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1025,9 +1038,10 @@
             this.PanelAdministrador.BackColor = System.Drawing.Color.SlateGray;
             this.PanelAdministrador.Controls.Add(this.BtnGestionUsuario);
             this.PanelAdministrador.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelAdministrador.Location = new System.Drawing.Point(0, 78);
+            this.PanelAdministrador.Location = new System.Drawing.Point(0, 96);
+            this.PanelAdministrador.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PanelAdministrador.Name = "PanelAdministrador";
-            this.PanelAdministrador.Size = new System.Drawing.Size(233, 38);
+            this.PanelAdministrador.Size = new System.Drawing.Size(311, 47);
             this.PanelAdministrador.TabIndex = 36;
             // 
             // BtnGestionUsuario
@@ -1079,6 +1093,7 @@
             this.BtnGestionUsuario.IdleIconRightImage = null;
             this.BtnGestionUsuario.IndicateFocus = false;
             this.BtnGestionUsuario.Location = new System.Drawing.Point(0, 0);
+            this.BtnGestionUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnGestionUsuario.Name = "BtnGestionUsuario";
             this.BtnGestionUsuario.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnGestionUsuario.OnDisabledState.BorderRadius = 1;
@@ -1112,7 +1127,7 @@
             this.BtnGestionUsuario.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.BtnGestionUsuario.OnPressedState.IconLeftImage = null;
             this.BtnGestionUsuario.OnPressedState.IconRightImage = null;
-            this.BtnGestionUsuario.Size = new System.Drawing.Size(233, 39);
+            this.BtnGestionUsuario.Size = new System.Drawing.Size(311, 48);
             this.BtnGestionUsuario.TabIndex = 15;
             this.BtnGestionUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnGestionUsuario.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1169,7 +1184,8 @@
             this.BtnAdministrador.IdleIconLeftImage = null;
             this.BtnAdministrador.IdleIconRightImage = null;
             this.BtnAdministrador.IndicateFocus = false;
-            this.BtnAdministrador.Location = new System.Drawing.Point(0, 39);
+            this.BtnAdministrador.Location = new System.Drawing.Point(0, 48);
+            this.BtnAdministrador.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnAdministrador.Name = "BtnAdministrador";
             this.BtnAdministrador.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnAdministrador.OnDisabledState.BorderRadius = 1;
@@ -1203,7 +1219,7 @@
             this.BtnAdministrador.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.BtnAdministrador.OnPressedState.IconLeftImage = null;
             this.BtnAdministrador.OnPressedState.IconRightImage = null;
-            this.BtnAdministrador.Size = new System.Drawing.Size(233, 39);
+            this.BtnAdministrador.Size = new System.Drawing.Size(311, 48);
             this.BtnAdministrador.TabIndex = 35;
             this.BtnAdministrador.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnAdministrador.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1261,6 +1277,7 @@
             this.BtnInicio.IdleIconRightImage = null;
             this.BtnInicio.IndicateFocus = false;
             this.BtnInicio.Location = new System.Drawing.Point(0, 0);
+            this.BtnInicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnInicio.Name = "BtnInicio";
             this.BtnInicio.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnInicio.OnDisabledState.BorderRadius = 1;
@@ -1294,7 +1311,7 @@
             this.BtnInicio.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.BtnInicio.OnPressedState.IconLeftImage = null;
             this.BtnInicio.OnPressedState.IconRightImage = null;
-            this.BtnInicio.Size = new System.Drawing.Size(233, 39);
+            this.BtnInicio.Size = new System.Drawing.Size(311, 48);
             this.BtnInicio.TabIndex = 34;
             this.BtnInicio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnInicio.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1351,7 +1368,8 @@
             this.BtnAyuda.IdleIconLeftImage = null;
             this.BtnAyuda.IdleIconRightImage = null;
             this.BtnAyuda.IndicateFocus = false;
-            this.BtnAyuda.Location = new System.Drawing.Point(0, 572);
+            this.BtnAyuda.Location = new System.Drawing.Point(0, 704);
+            this.BtnAyuda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnAyuda.Name = "BtnAyuda";
             this.BtnAyuda.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnAyuda.OnDisabledState.BorderRadius = 1;
@@ -1385,7 +1403,7 @@
             this.BtnAyuda.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.BtnAyuda.OnPressedState.IconLeftImage = null;
             this.BtnAyuda.OnPressedState.IconRightImage = null;
-            this.BtnAyuda.Size = new System.Drawing.Size(233, 39);
+            this.BtnAyuda.Size = new System.Drawing.Size(311, 48);
             this.BtnAyuda.TabIndex = 31;
             this.BtnAyuda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnAyuda.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1396,21 +1414,23 @@
             // PanelContenedor
             // 
             this.PanelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelContenedor.Location = new System.Drawing.Point(233, 0);
-            this.PanelContenedor.MinimumSize = new System.Drawing.Size(901, 611);
+            this.PanelContenedor.Location = new System.Drawing.Point(311, 0);
+            this.PanelContenedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PanelContenedor.MinimumSize = new System.Drawing.Size(1201, 752);
             this.PanelContenedor.Name = "PanelContenedor";
-            this.PanelContenedor.Size = new System.Drawing.Size(901, 611);
+            this.PanelContenedor.Size = new System.Drawing.Size(1201, 752);
             this.PanelContenedor.TabIndex = 1;
             // 
             // FormMenuPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(1134, 611);
+            this.ClientSize = new System.Drawing.Size(1512, 752);
             this.Controls.Add(this.PanelContenedor);
             this.Controls.Add(this.PanelSideMenu);
-            this.MinimumSize = new System.Drawing.Size(1150, 650);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(1527, 789);
             this.Name = "FormMenuPrincipal";
             this.Text = "Menú Principal";
             this.PanelSideMenu.ResumeLayout(false);
@@ -1433,7 +1453,7 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton BtnUsuario;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton BtnReportes;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton BtnCobranza;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton BtnRealizarReserva;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton BtnRegistrarReserva;
         private System.Windows.Forms.Panel PanelMaestros;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton BtnGestionSalon;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton BtnMaestros;

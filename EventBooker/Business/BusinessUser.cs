@@ -85,7 +85,7 @@ namespace Business
         {
             bool ok = dataAccess.Update(user);
 
-            return new BusinessResponse<bool>(ok, ok, !ok ? "Error al modificar, verifique los datos" : "Usuario modificado correctamente");
+            return new BusinessResponse<bool>(ok, ok, !ok ? $"Ya existe usuario con dni: {user.Dni}" : "Usuario modificado correctamente");
         }
 
         public BusinessResponse<bool> Delete(Entity entity)

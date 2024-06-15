@@ -187,11 +187,11 @@
     <Compile Include="FormMenuPrincipal.Designer.cs">
       <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormRealizarReserva.cs">
+    <Compile Include="FormRegistrarReserva.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRealizarReserva.Designer.cs">
-      <DependentUpon>FormRealizarReserva.cs</DependentUpon>
+    <Compile Include="FormRegistrarReserva.Designer.cs">
+      <DependentUpon>FormRegistrarReserva.cs</DependentUpon>
     </Compile>
     <Compile Include="FormRegistrarCliente.cs">
       <SubType>Form</SubType>
@@ -231,8 +231,8 @@
     <EmbeddedResource Include="FormMenuPrincipal.resx">
       <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRealizarReserva.resx">
-      <DependentUpon>FormRealizarReserva.cs</DependentUpon>
+    <EmbeddedResource Include="FormRegistrarReserva.resx">
+      <DependentUpon>FormRegistrarReserva.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRegistrarCliente.resx">
       <DependentUpon>FormRegistrarCliente.cs</DependentUpon>

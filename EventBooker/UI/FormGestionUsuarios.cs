@@ -90,7 +90,8 @@ namespace UI
                     Dni = Convert.ToInt32(TxtDni.Text.Trim()),
                     Mail = TxtMail.Text.Trim(),
                     Username = TxtDni.Text.Trim() + TxtNombre.Text.Trim(),
-                    Password = user.Password
+                    Password = user.Password,
+                    IsBlock = user.IsBlock
                 };
 
                 response = _BusinessUser.Update(userUpdated);
