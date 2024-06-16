@@ -32,6 +32,20 @@ namespace DataAccess
             return salones;
         } 
 
+        public bool Disponibilidad(EntitySalon salon, DateTime fecha, string turno)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@In_IdSalon", SqlDbType.Int){ Value = salon.Id },
+                new SqlParameter("@In_Fecha", SqlDbType.Date){ Value = fecha },
+                new SqlParameter("@In_Turno", SqlDbType.NVarChar){ Value = turno }
+            };
+
+            DataTable data = _connection.Read("SP_SelectDisponibilidadSalon", parameters);
+
+            return data.Rows.Count == 0;
+        }
+
         public bool Insert(EntitySalon salon)
         {
             SqlParameter[] parameters = new SqlParameter[] 

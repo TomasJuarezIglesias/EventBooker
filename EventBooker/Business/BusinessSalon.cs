@@ -22,6 +22,13 @@ namespace Business
             return new BusinessResponse<List<EntitySalon>>(true, _dataAccess.SelectAll());
         }
 
+        public BusinessResponse<bool> VerificarDisponibilidad(EntitySalon salon, DateTime fecha, string turno)
+        {
+            bool ok = _dataAccess.Disponibilidad(salon, fecha, turno);
+
+            return new BusinessResponse<bool>(ok, ok, !ok ? "Salon no disponible para fecha y turno seleccionado" : "Salon seleccionado correctamente");
+        }
+
         public BusinessResponse<bool> Create(EntitySalon salon)
         {
             bool ok = _dataAccess.Insert(salon);

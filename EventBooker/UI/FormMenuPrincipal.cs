@@ -108,7 +108,7 @@ namespace UI
         private void BtnRegistrarReserva_Click(object sender, EventArgs e)
         {
             HideSubmenu();
-            OpenChildForm(new FormRegistrarCliente(OpenChildForm));
+            OpenChildForm(new FormSeleccionarSalon(OpenChildForm));
         }
 
         // Usuario
