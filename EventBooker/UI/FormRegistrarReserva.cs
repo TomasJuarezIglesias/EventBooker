@@ -24,10 +24,14 @@ namespace UI
         public FormRegistrarReserva(Action<ServiceForm> openChildForm, EntityReserva reserva = null)
         {
             InitializeComponent();
-            this.openChildForm = openChildForm;
-            _reserva = reserva;
+
+            // Intancio Business
             _businessCliente = new BusinessCliente();
             _businessReserva = new BusinessReserva();
+
+            this.openChildForm = openChildForm;
+            _reserva = reserva;
+
             MostrarDatos();
         }
         private void BtnSeleccionarSalon_Click(object sender, EventArgs e)
@@ -40,6 +44,28 @@ namespace UI
         {
             this.Close();
             openChildForm(new FormRegistrarCliente(openChildForm, _reserva));
+        }
+        private void BtnSeleccionarServicios_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FormSeleccionarServicios(openChildForm, _reserva));
+        }
+
+        private void BtnRegistrarReserva_Click(object sender, EventArgs e)
+        {
+            if (!ValidateInputs()) return;
+
+            _reserva.Estado = "Pendiente";
+            _reserva.Descripcion = TxtDescripcion.Text;
+            _reserva.Invitados = Convert.ToInt32(NumInvitados.Value);
+
+            BusinessResponse<bool> response = _businessReserva.Create(_reserva);
+            RevisarRespuestaServicio(response);
+
+            if (response.Ok)
+            {
+                this.Close();
+                openChildForm(new FormInicio());
+            }
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
@@ -58,6 +84,13 @@ namespace UI
             }
         }
 
+        // Evento que desencadena metodo para calcular costos
+        private void NumInvitados_ValueChanged(object sender, EventArgs e)
+        {
+            CalcularCostos();
+        }
+
+        // Manejo del combo box de clientes
         private void CmbClientes_SelectionChangeCommitted(object sender, EventArgs e)
         {
             CmbClientes.TextChanged -= CmbClientes_TextChanged;
@@ -73,14 +106,14 @@ namespace UI
             CmbClientes.Text = string.Empty;
             MostrarDatos();
         }
-
+        
         private void CmbClientes_TextChanged(object sender, EventArgs e)
         {
             CmbClientes.TextChanged -= CmbClientes_TextChanged;
 
             string searchText = CmbClientes.Text;
 
-            List<EntityCliente> clientes = _businessCliente.GetAll().Data;   
+            List<EntityCliente> clientes = _businessCliente.GetAll().Data;
 
             // Filtrar la lista de clientes según el texto ingresado
             var clientesFiltrados = clientes
@@ -99,10 +132,13 @@ namespace UI
             CmbClientes.TextChanged += CmbClientes_TextChanged;
         }
 
+
+
         private void MostrarDatos()
         {
+            BtnRegistrarReserva.Enabled = false;
             PanelCliente.Visible = false;
-            PanelDatosReserva.Visible = false;
+            PanelDatosEvento.Visible = false;
             PanelServicios.Visible = false;
             PanelListaServicios.Visible = false;
 
@@ -110,14 +146,14 @@ namespace UI
             {
                 LblUbicacion.Text = $"Ubicación: {_reserva.Salon.Ubicacion}";
                 LblFecha.Text = $"Fecha: {_reserva.Fecha.ToString("dd/MM/yyyy")} Turno: {_reserva.Turno}";
-                LblCapacidad.Text = $"Capacidad: {_reserva.Salon.Capacidad}";
+                LblCapacidad.Text = $"Cantidad Mínima Invitados: {_reserva.Salon.CantidadMinimaInvitados} Capacidad máxima: {_reserva.Salon.Capacidad}";
 
                 PanelCliente.Visible = true;
 
                 List<EntityCliente> clientes = _businessCliente.GetAll().Data;
                 EntityCliente clienteSelected = _reserva.Cliente != null ? clientes.FirstOrDefault(c => c.Dni == _reserva.Cliente.Dni) : null;
                 _reserva.Cliente = clienteSelected;
-                
+
                 // Setting Combo Box Clientes
                 CmbClientes.DataSource = null;
                 CmbClientes.DataSource = clientes;
@@ -125,16 +161,20 @@ namespace UI
                 CmbClientes.TextChanged += CmbClientes_TextChanged;
             }
 
+            // Muestra datos del cliente seleccionado
+            // Habilita seleccion de servicios y datos del evento
             if (_reserva?.Cliente != null)
             {
-                PanelDatosReserva.Visible = true;
+                PanelDatosEvento.Visible = true;
                 PanelServicios.Visible = true;
+                BtnRegistrarReserva.Enabled = true;
 
                 LblNombre.Text = $"Nombre: {_reserva.Cliente.Nombre} {_reserva.Cliente.Apellido}";
                 LblDni.Text = $"Dni: {_reserva.Cliente.Dni}";
                 LblContacto.Text = $"Contacto: {_reserva.Cliente.Contacto}";
             }
 
+            // Muestra los servicios seleccionados con el valor
             if (_reserva?.Servicios?.Count > 0)
             {
                 LblServicios.Text = $"Lista servicios: \r\n";
@@ -173,34 +213,6 @@ namespace UI
             LblCostoSenia.Text = $"Costo Seña: ${costoSenia}";
         }
 
-        private void BtnSeleccionarServicios_Click(object sender, EventArgs e)
-        {
-            openChildForm(new FormSeleccionarServicios(openChildForm, _reserva));
-        }
-
-        private void NumInvitados_ValueChanged(object sender, EventArgs e)
-        {
-            CalcularCostos();
-        }
-
-        private void BtnRegistrarReserva_Click(object sender, EventArgs e)
-        {
-            if (!ValidateInputs()) return;
-
-            _reserva.Estado = "Pendiente";
-            _reserva.Descripcion = TxtDescripcion.Text;
-            _reserva.Invitados = Convert.ToInt32(NumInvitados.Value);
-
-            BusinessResponse<bool> response = _businessReserva.Create(_reserva);
-            RevisarRespuestaServicio(response);
-
-            if (response.Ok)
-            {
-                this.Close();
-                openChildForm(new FormInicio());
-            }
-        }
-
         private bool ValidateInputs()
         {
             HideLabelError(new List<BunifuLabel>
@@ -217,15 +229,9 @@ namespace UI
                 ok = false;
             }
 
-            if (NumInvitados.Value > _reserva.Salon.Capacidad)
+            if (NumInvitados.Value > _reserva.Salon.Capacidad || NumInvitados.Value < _reserva.Salon.CantidadMinimaInvitados)
             {
-                ShowLabelError($"Capacidad máxima invitados: {_reserva.Salon.Capacidad}", LblErrorCantidadInvitados);
-                ok = false;
-            }
-
-            if (NumInvitados.Value < _reserva.Salon.CantidadMinimaInvitados)
-            {
-                ShowLabelError($"Cantidad minima invitados: {_reserva.Salon.CantidadMinimaInvitados}", LblErrorCantidadInvitados);
+                ShowLabelError($"Fuera de rango de la capacidad", LblErrorCantidadInvitados);
                 ok = false;
             }
 

@@ -124,6 +124,21 @@ namespace UI
 
             return ok;
         }
-        
+
+        private void BtnVolver_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+            $"¿Está seguro que desea volver?",
+            $"Volver",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question);
+
+            // Verifica el resultado de la selección del usuario
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+                _openChildForm(new FormRegistrarReserva(_openChildForm, _reserva));
+            }
+        }
     }
 }

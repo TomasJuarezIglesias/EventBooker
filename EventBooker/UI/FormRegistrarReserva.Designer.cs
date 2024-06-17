@@ -45,7 +45,7 @@
             this.LblCapacidad = new Bunifu.UI.WinForms.BunifuLabel();
             this.LblUbicacion = new Bunifu.UI.WinForms.BunifuLabel();
             this.LblFecha = new Bunifu.UI.WinForms.BunifuLabel();
-            this.PanelDatosReserva = new System.Windows.Forms.Panel();
+            this.PanelDatosEvento = new System.Windows.Forms.Panel();
             this.LblErrorCantidadInvitados = new Bunifu.UI.WinForms.BunifuLabel();
             this.LblErrorDescripcion = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel10 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -74,7 +74,7 @@
             this.LblListaServicios = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuPanel1.SuspendLayout();
             this.PanelSalon.SuspendLayout();
-            this.PanelDatosReserva.SuspendLayout();
+            this.PanelDatosEvento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NumInvitados)).BeginInit();
             this.PanelCostos.SuspendLayout();
             this.PanelServicios.SuspendLayout();
@@ -92,7 +92,7 @@
             this.bunifuPanel1.BorderRadius = 3;
             this.bunifuPanel1.BorderThickness = 1;
             this.bunifuPanel1.Controls.Add(this.PanelSalon);
-            this.bunifuPanel1.Controls.Add(this.PanelDatosReserva);
+            this.bunifuPanel1.Controls.Add(this.PanelDatosEvento);
             this.bunifuPanel1.Controls.Add(this.PanelCostos);
             this.bunifuPanel1.Controls.Add(this.PanelServicios);
             this.bunifuPanel1.Controls.Add(this.PanelCliente);
@@ -274,21 +274,21 @@
             this.LblFecha.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.LblFecha.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // PanelDatosReserva
+            // PanelDatosEvento
             // 
-            this.PanelDatosReserva.BackColor = System.Drawing.Color.Transparent;
-            this.PanelDatosReserva.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PanelDatosReserva.Controls.Add(this.LblErrorCantidadInvitados);
-            this.PanelDatosReserva.Controls.Add(this.LblErrorDescripcion);
-            this.PanelDatosReserva.Controls.Add(this.bunifuLabel10);
-            this.PanelDatosReserva.Controls.Add(this.NumInvitados);
-            this.PanelDatosReserva.Controls.Add(this.TxtDescripcion);
-            this.PanelDatosReserva.Controls.Add(this.bunifuLabel14);
-            this.PanelDatosReserva.Location = new System.Drawing.Point(13, 314);
-            this.PanelDatosReserva.Margin = new System.Windows.Forms.Padding(2);
-            this.PanelDatosReserva.Name = "PanelDatosReserva";
-            this.PanelDatosReserva.Size = new System.Drawing.Size(458, 111);
-            this.PanelDatosReserva.TabIndex = 59;
+            this.PanelDatosEvento.BackColor = System.Drawing.Color.Transparent;
+            this.PanelDatosEvento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PanelDatosEvento.Controls.Add(this.LblErrorCantidadInvitados);
+            this.PanelDatosEvento.Controls.Add(this.LblErrorDescripcion);
+            this.PanelDatosEvento.Controls.Add(this.bunifuLabel10);
+            this.PanelDatosEvento.Controls.Add(this.NumInvitados);
+            this.PanelDatosEvento.Controls.Add(this.TxtDescripcion);
+            this.PanelDatosEvento.Controls.Add(this.bunifuLabel14);
+            this.PanelDatosEvento.Location = new System.Drawing.Point(13, 314);
+            this.PanelDatosEvento.Margin = new System.Windows.Forms.Padding(2);
+            this.PanelDatosEvento.Name = "PanelDatosEvento";
+            this.PanelDatosEvento.Size = new System.Drawing.Size(458, 111);
+            this.PanelDatosEvento.TabIndex = 59;
             // 
             // LblErrorCantidadInvitados
             // 
@@ -1056,8 +1056,8 @@
             this.bunifuPanel1.PerformLayout();
             this.PanelSalon.ResumeLayout(false);
             this.PanelSalon.PerformLayout();
-            this.PanelDatosReserva.ResumeLayout(false);
-            this.PanelDatosReserva.PerformLayout();
+            this.PanelDatosEvento.ResumeLayout(false);
+            this.PanelDatosEvento.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NumInvitados)).EndInit();
             this.PanelCostos.ResumeLayout(false);
             this.PanelCostos.PerformLayout();
@@ -1080,7 +1080,7 @@
         private Bunifu.UI.WinForms.BunifuLabel LblCapacidad;
         private Bunifu.UI.WinForms.BunifuLabel LblUbicacion;
         private Bunifu.UI.WinForms.BunifuLabel LblFecha;
-        private System.Windows.Forms.Panel PanelDatosReserva;
+        private System.Windows.Forms.Panel PanelDatosEvento;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel10;
         private System.Windows.Forms.NumericUpDown NumInvitados;
         private Bunifu.UI.WinForms.BunifuTextBox TxtDescripcion;

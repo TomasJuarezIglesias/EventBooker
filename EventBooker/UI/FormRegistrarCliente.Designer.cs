@@ -49,11 +49,12 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties18 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties19 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties20 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties21 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties22 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties23 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties24 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.LblErrorContacto = new Bunifu.UI.WinForms.BunifuLabel();
             this.LblErrorApellido = new Bunifu.UI.WinForms.BunifuLabel();
@@ -75,6 +76,7 @@
             this.TxtDni = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.BtnVolver = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,6 +89,7 @@
             this.bunifuPanel1.BorderColor = System.Drawing.Color.Transparent;
             this.bunifuPanel1.BorderRadius = 3;
             this.bunifuPanel1.BorderThickness = 1;
+            this.bunifuPanel1.Controls.Add(this.BtnVolver);
             this.bunifuPanel1.Controls.Add(this.LblErrorContacto);
             this.bunifuPanel1.Controls.Add(this.LblErrorApellido);
             this.bunifuPanel1.Controls.Add(this.LblErrorEmail);
@@ -684,11 +687,11 @@
             this.BtnRegistrarCliente.ColorContrastOnClick = 45;
             this.BtnRegistrarCliente.ColorContrastOnHover = 45;
             this.BtnRegistrarCliente.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.BtnRegistrarCliente.CustomizableEdges = borderEdges1;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.BtnRegistrarCliente.CustomizableEdges = borderEdges2;
             this.BtnRegistrarCliente.DialogResult = System.Windows.Forms.DialogResult.None;
             this.BtnRegistrarCliente.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnRegistrarCliente.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -861,6 +864,96 @@
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
+            // BtnVolver
+            // 
+            this.BtnVolver.AllowAnimations = true;
+            this.BtnVolver.AllowMouseEffects = true;
+            this.BtnVolver.AllowToggling = false;
+            this.BtnVolver.AnimationSpeed = 200;
+            this.BtnVolver.AutoGenerateColors = false;
+            this.BtnVolver.AutoRoundBorders = false;
+            this.BtnVolver.AutoSizeLeftIcon = true;
+            this.BtnVolver.AutoSizeRightIcon = true;
+            this.BtnVolver.BackColor = System.Drawing.Color.Transparent;
+            this.BtnVolver.BackColor1 = System.Drawing.Color.DimGray;
+            this.BtnVolver.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnVolver.BackgroundImage")));
+            this.BtnVolver.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnVolver.ButtonText = "Volver";
+            this.BtnVolver.ButtonTextMarginLeft = 0;
+            this.BtnVolver.ColorContrastOnClick = 45;
+            this.BtnVolver.ColorContrastOnHover = 45;
+            this.BtnVolver.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.BtnVolver.CustomizableEdges = borderEdges1;
+            this.BtnVolver.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.BtnVolver.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.BtnVolver.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.BtnVolver.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.BtnVolver.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.BtnVolver.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.BtnVolver.ForeColor = System.Drawing.Color.White;
+            this.BtnVolver.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnVolver.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.BtnVolver.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.BtnVolver.IconMarginLeft = 11;
+            this.BtnVolver.IconPadding = 10;
+            this.BtnVolver.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnVolver.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.BtnVolver.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.BtnVolver.IconSize = 25;
+            this.BtnVolver.IdleBorderColor = System.Drawing.Color.Gray;
+            this.BtnVolver.IdleBorderRadius = 1;
+            this.BtnVolver.IdleBorderThickness = 1;
+            this.BtnVolver.IdleFillColor = System.Drawing.Color.DimGray;
+            this.BtnVolver.IdleIconLeftImage = null;
+            this.BtnVolver.IdleIconRightImage = null;
+            this.BtnVolver.IndicateFocus = false;
+            this.BtnVolver.Location = new System.Drawing.Point(384, 430);
+            this.BtnVolver.Name = "BtnVolver";
+            this.BtnVolver.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.BtnVolver.OnDisabledState.BorderRadius = 1;
+            this.BtnVolver.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnVolver.OnDisabledState.BorderThickness = 1;
+            this.BtnVolver.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.BtnVolver.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.BtnVolver.OnDisabledState.IconLeftImage = null;
+            this.BtnVolver.OnDisabledState.IconRightImage = null;
+            this.BtnVolver.onHoverState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BtnVolver.onHoverState.BorderRadius = 1;
+            this.BtnVolver.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnVolver.onHoverState.BorderThickness = 1;
+            this.BtnVolver.onHoverState.FillColor = System.Drawing.Color.DarkGray;
+            this.BtnVolver.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.BtnVolver.onHoverState.IconLeftImage = null;
+            this.BtnVolver.onHoverState.IconRightImage = null;
+            this.BtnVolver.OnIdleState.BorderColor = System.Drawing.Color.Gray;
+            this.BtnVolver.OnIdleState.BorderRadius = 1;
+            this.BtnVolver.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnVolver.OnIdleState.BorderThickness = 1;
+            this.BtnVolver.OnIdleState.FillColor = System.Drawing.Color.DimGray;
+            this.BtnVolver.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.BtnVolver.OnIdleState.IconLeftImage = null;
+            this.BtnVolver.OnIdleState.IconRightImage = null;
+            this.BtnVolver.OnPressedState.BorderColor = System.Drawing.Color.Gray;
+            this.BtnVolver.OnPressedState.BorderRadius = 1;
+            this.BtnVolver.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BtnVolver.OnPressedState.BorderThickness = 1;
+            this.BtnVolver.OnPressedState.FillColor = System.Drawing.Color.DimGray;
+            this.BtnVolver.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.BtnVolver.OnPressedState.IconLeftImage = null;
+            this.BtnVolver.OnPressedState.IconRightImage = null;
+            this.BtnVolver.Size = new System.Drawing.Size(176, 39);
+            this.BtnVolver.TabIndex = 33;
+            this.BtnVolver.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BtnVolver.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BtnVolver.TextMarginLeft = 0;
+            this.BtnVolver.TextPadding = new System.Windows.Forms.Padding(0);
+            this.BtnVolver.UseDefaultRadiusAndThickness = true;
+            this.BtnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
+            // 
             // FormRegistrarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -869,7 +962,7 @@
             this.ClientSize = new System.Drawing.Size(901, 611);
             this.Controls.Add(this.bunifuPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormRegistrarCliente";
             this.Text = "FormRegistrarCliente";
             this.bunifuPanel1.ResumeLayout(false);
@@ -901,5 +994,6 @@
         private Bunifu.UI.WinForms.BunifuTextBox TxtDni;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton BtnVolver;
     }
 }
