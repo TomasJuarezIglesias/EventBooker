@@ -16,17 +16,18 @@ namespace UI
     {
         private Action<ServiceForm> openChildForm;
         private readonly BusinessSalon _businessSalon;
+        private EntityReserva _reserva;
 
-        public FormSeleccionarSalon(Action<ServiceForm> openChildForm)
+        public FormSeleccionarSalon(Action<ServiceForm> openChildForm, EntityReserva reserva)
         {
             InitializeComponent();
             this.openChildForm = openChildForm;
             _businessSalon = new BusinessSalon();
-            FillComboBox();
-            DateTimePickerFecha.Value = DateTime.Now;
+            _reserva = reserva is null ? new EntityReserva() : reserva;
+            FillData();
         }
 
-        private void FillComboBox()
+        private void FillData()
         {
             List<EntitySalon> salones = _businessSalon.GetAll().Data;
 
@@ -34,6 +35,14 @@ namespace UI
             CmbSalon.DataSource = salones;
             CmbSalon.DisplayMember = "Ubicacion";
             CmbSalon.SelectedIndex = -1;
+
+            if (_reserva?.Salon != null)
+            {
+                CmbSalon.SelectedItem = salones.FirstOrDefault(s => s.Id == _reserva.Salon.Id);
+            }
+
+            DateTimePickerFecha.Value = _reserva?.Fecha != DateTime.MinValue ? _reserva.Fecha : DateTime.Now;
+            CmbTurnos.SelectedItem = _reserva?.Turno != null ? _reserva.Turno : null; 
         }
 
         private void CmbSalon_SelectionChangeCommitted(object sender, EventArgs e)
@@ -76,7 +85,12 @@ namespace UI
 
             if (response.Ok)
             {
-                // Redirigir a registrar reserva junto con la data seleccionada
+                _reserva.Salon = salon;
+                _reserva.Fecha = DateTimePickerFecha.Value;
+                _reserva.Turno = CmbTurnos.Text;
+
+                this.Close();
+                openChildForm(new FormRegistrarReserva(openChildForm, _reserva));
             }
         }
     }

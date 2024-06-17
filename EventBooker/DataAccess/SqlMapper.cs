@@ -45,5 +45,16 @@ namespace DataAccess
             Descripcion = row["Descripcion"].ToString(),
             Valor = Convert.ToDouble(row["Valor"])
         };
+
+        public static EntityCliente MapCliente(DataRow row) => new EntityCliente()
+        {
+            Id = Convert.ToInt32(row["IdCliente"]),
+            Dni = Convert.ToInt32(row["Dni"]),
+            Nombre = row["Nombre"].ToString(),
+            Apellido = row["Apellido"].ToString(),
+            Direccion = row["Direccion"].ToString(),
+            Email = row["Email"].ToString(),
+            Contacto = row["Contacto"].ToString()
+        };
     }
 }

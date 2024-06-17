@@ -16,6 +16,11 @@ namespace Business
             _dataAccessCliente = new DataAccessCliente();
         }
 
+        public BusinessResponse<List<EntityCliente>> GetAll()
+        {
+            return new BusinessResponse<List<EntityCliente>>(true, _dataAccessCliente.SelectAll());
+        }
+
         public BusinessResponse<bool> Create(EntityCliente cliente)
         {
             bool ok = _dataAccessCliente.Insert(cliente);

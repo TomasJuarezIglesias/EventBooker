@@ -18,10 +18,12 @@ namespace UI
     {
         private readonly BusinessCliente _businessCliente;
         private Action<ServiceForm> _openChildForm;
-        public FormRegistrarCliente(Action<ServiceForm> openChildForm)
+        private EntityReserva _reserva;
+        public FormRegistrarCliente(Action<ServiceForm> openChildForm, EntityReserva reserva = null)
         {
             _openChildForm = openChildForm;
             _businessCliente = new BusinessCliente();
+            _reserva = reserva;
             InitializeComponent();
         }
 
@@ -45,9 +47,9 @@ namespace UI
 
             if (response.Ok)
             {
-                // Volver al form de registrar reserva con datos del cliente creado
+                this.Close();
+                _openChildForm(new FormRegistrarReserva(_openChildForm, _reserva));
             }
-            //_openChildForm(new FormRegistrarReserva(_openChildForm));
         }
 
         private bool ValidateTextBox()

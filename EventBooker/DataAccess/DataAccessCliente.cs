@@ -18,6 +18,19 @@ namespace DataAccess
             _connection = DBConnection.GetInstance();
         }
 
+        public List<EntityCliente> SelectAll()
+        {
+            List<EntityCliente> clientes = new List<EntityCliente>();
+            DataTable data = _connection.Read("SP_SelectCliente");
+
+            foreach (DataRow row in data.Rows)
+            {
+                clientes.Add(SqlMapper.MapCliente(row));
+            }
+
+            return clientes;
+        }
+
         public bool Insert(EntityCliente cliente)
         {
             SqlParameter[] parameters = new SqlParameter[]
