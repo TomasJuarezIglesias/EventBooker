@@ -15,22 +15,28 @@ namespace UI
     public partial class FormSeleccionarServicios : ServiceForm
     {
         private Action<ServiceForm> openChildForm;
-        private readonly BusinessServicio _businessServicio;
         private List<EntityServicio> _serviciosSeleccionados;
+        private EntityReserva _reserva;
+        
+        private readonly BusinessServicio _businessServicio;
 
-        public FormSeleccionarServicios(Action<ServiceForm> openChildForm)
+        public FormSeleccionarServicios(Action<ServiceForm> openChildForm, EntityReserva reserva)
         {
             InitializeComponent();
             this.openChildForm = openChildForm;
             _businessServicio = new BusinessServicio();
             _serviciosSeleccionados = new List<EntityServicio>();
+            _reserva = reserva;
             FillListCheckBox();
             MostrarValores();
         }
 
         private void BtnSeleccionar_Click(object sender, EventArgs e)
         {
-
+            RevisarRespuestaServicio(new BusinessResponse<bool>(true, true, "Servicios Seleccionados correctamente"));
+            _reserva.Servicios = _serviciosSeleccionados;
+            this.Close();
+            openChildForm(new FormRegistrarReserva(openChildForm, _reserva));
         }
 
         private void FillListCheckBox()
@@ -51,6 +57,11 @@ namespace UI
                     Location = new Point(10, positionY)
                 };
 
+                if (_reserva.Servicios != null)
+                {
+                    checkBox.Checked = _reserva.Servicios.Exists(s => s.Id == servicio.Id);
+                }
+
                 // Asignar el manejador del evento OnCheckedChanged
                 checkBox.CheckedChanged += new EventHandler(CheckBox_CheckedChanged);
 
@@ -60,6 +71,10 @@ namespace UI
                 // Incrementa la posición Y para el próximo CheckBox
                 positionY += 30;
             }
+
+            if(_reserva.Servicios != null) _serviciosSeleccionados = _reserva.Servicios;
+
+            MostrarValores();
         }
 
         private void CheckBox_CheckedChanged(object sender, EventArgs e)
@@ -76,7 +91,7 @@ namespace UI
                 }
                 else
                 {
-                    _serviciosSeleccionados.Remove(servicio);
+                    _serviciosSeleccionados.Remove( _serviciosSeleccionados.FirstOrDefault(s => s.Id == servicio.Id) );
                 }
 
                 MostrarValores();

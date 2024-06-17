@@ -102,5 +102,52 @@ namespace DataAccess
 
             return canInsert != -1;
         }
+
+
+        public int WriteWithReturn(string sp, SqlParameter[] parameters)
+        {
+            int id = -1;
+
+            if (parameters.Length == 0) return id;
+
+            OpenConnection();
+            SqlTransaction transaction = _connection.BeginTransaction();
+
+            try
+            {
+                SqlCommand sqlCommand = new SqlCommand
+                {
+                    CommandType = CommandType.StoredProcedure,
+                    CommandText = sp,
+                    Connection = _connection,
+                    Transaction = transaction
+                };
+
+                sqlCommand.Parameters.Clear();
+                sqlCommand.Parameters.AddRange(parameters);
+
+                SqlParameter outputParam = new SqlParameter
+                {
+                    ParameterName = "@Out_Id",
+                    SqlDbType = SqlDbType.Int,
+                    Direction = ParameterDirection.Output
+                };
+                sqlCommand.Parameters.Add(outputParam);
+
+                sqlCommand.ExecuteNonQuery();
+
+                id = Convert.ToInt32(sqlCommand.Parameters["@Out_Id"].Value);
+
+                transaction.Commit();
+            }
+            catch (Exception)
+            {
+                transaction.Rollback();
+            }
+
+            CloseConnection();
+
+            return id;
+        }
     }
 }

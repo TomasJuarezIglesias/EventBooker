@@ -55,12 +55,11 @@
             this.bunifuPanel1.Controls.Add(this.bunifuLabel4);
             this.bunifuPanel1.Controls.Add(this.BtnSeleccionar);
             this.bunifuPanel1.Controls.Add(this.bunifuLabel1);
-            this.bunifuPanel1.Location = new System.Drawing.Point(90, 78);
-            this.bunifuPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuPanel1.Location = new System.Drawing.Point(68, 63);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = true;
-            this.bunifuPanel1.Size = new System.Drawing.Size(1020, 597);
-            this.bunifuPanel1.TabIndex = 5;
+            this.bunifuPanel1.Size = new System.Drawing.Size(765, 485);
+            this.bunifuPanel1.TabIndex = 6;
             // 
             // bunifuLabel2
             // 
@@ -69,11 +68,10 @@
             this.bunifuLabel2.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel2.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel2.Font = new System.Drawing.Font("Segoe UI", 18F);
-            this.bunifuLabel2.Location = new System.Drawing.Point(548, 114);
-            this.bunifuLabel2.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel2.Location = new System.Drawing.Point(411, 93);
             this.bunifuLabel2.Name = "bunifuLabel2";
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(105, 41);
+            this.bunifuLabel2.Size = new System.Drawing.Size(83, 32);
             this.bunifuLabel2.TabIndex = 30;
             this.bunifuLabel2.Text = "Valores:";
             this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -86,11 +84,10 @@
             this.LblValores.Cursor = System.Windows.Forms.Cursors.Default;
             this.LblValores.CursorType = System.Windows.Forms.Cursors.Default;
             this.LblValores.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.LblValores.Location = new System.Drawing.Point(548, 173);
-            this.LblValores.Margin = new System.Windows.Forms.Padding(4);
+            this.LblValores.Location = new System.Drawing.Point(411, 141);
             this.LblValores.Name = "LblValores";
             this.LblValores.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.LblValores.Size = new System.Drawing.Size(68, 28);
+            this.LblValores.Size = new System.Drawing.Size(55, 21);
             this.LblValores.TabIndex = 29;
             this.LblValores.Text = "Valores:";
             this.LblValores.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -99,9 +96,10 @@
             // PanelServicios
             // 
             this.PanelServicios.BackColor = System.Drawing.Color.Transparent;
-            this.PanelServicios.Location = new System.Drawing.Point(40, 173);
+            this.PanelServicios.Location = new System.Drawing.Point(30, 141);
+            this.PanelServicios.Margin = new System.Windows.Forms.Padding(2);
             this.PanelServicios.Name = "PanelServicios";
-            this.PanelServicios.Size = new System.Drawing.Size(432, 334);
+            this.PanelServicios.Size = new System.Drawing.Size(324, 271);
             this.PanelServicios.TabIndex = 27;
             // 
             // bunifuLabel4
@@ -111,11 +109,10 @@
             this.bunifuLabel4.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel4.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel4.Font = new System.Drawing.Font("Segoe UI", 18F);
-            this.bunifuLabel4.Location = new System.Drawing.Point(40, 114);
-            this.bunifuLabel4.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel4.Location = new System.Drawing.Point(30, 93);
             this.bunifuLabel4.Name = "bunifuLabel4";
             this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel4.Size = new System.Drawing.Size(66, 41);
+            this.bunifuLabel4.Size = new System.Drawing.Size(52, 32);
             this.bunifuLabel4.TabIndex = 26;
             this.bunifuLabel4.Text = "Lista:";
             this.bunifuLabel4.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -168,8 +165,7 @@
             this.BtnSeleccionar.IdleIconLeftImage = null;
             this.BtnSeleccionar.IdleIconRightImage = null;
             this.BtnSeleccionar.IndicateFocus = false;
-            this.BtnSeleccionar.Location = new System.Drawing.Point(390, 525);
-            this.BtnSeleccionar.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnSeleccionar.Location = new System.Drawing.Point(292, 427);
             this.BtnSeleccionar.Name = "BtnSeleccionar";
             this.BtnSeleccionar.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnSeleccionar.OnDisabledState.BorderRadius = 1;
@@ -203,7 +199,7 @@
             this.BtnSeleccionar.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.BtnSeleccionar.OnPressedState.IconLeftImage = null;
             this.BtnSeleccionar.OnPressedState.IconRightImage = null;
-            this.BtnSeleccionar.Size = new System.Drawing.Size(235, 48);
+            this.BtnSeleccionar.Size = new System.Drawing.Size(176, 39);
             this.BtnSeleccionar.TabIndex = 16;
             this.BtnSeleccionar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnSeleccionar.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -219,11 +215,10 @@
             this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 20.25F);
-            this.bunifuLabel1.Location = new System.Drawing.Point(40, 36);
-            this.bunifuLabel1.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel1.Location = new System.Drawing.Point(30, 29);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(382, 57);
+            this.bunifuLabel1.Size = new System.Drawing.Size(299, 45);
             this.bunifuLabel1.TabIndex = 0;
             this.bunifuLabel1.Text = "Seleccionar Servicios";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -231,12 +226,13 @@
             // 
             // FormSeleccionarServicios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(1201, 752);
+            this.ClientSize = new System.Drawing.Size(901, 611);
             this.Controls.Add(this.bunifuPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormSeleccionarServicios";
             this.Text = "FormSeleccionarServicios";
             this.bunifuPanel1.ResumeLayout(false);
@@ -248,11 +244,11 @@
         #endregion
 
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
+        private Bunifu.UI.WinForms.BunifuLabel LblValores;
+        private System.Windows.Forms.Panel PanelServicios;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel4;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton BtnSeleccionar;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
-        private Bunifu.UI.WinForms.BunifuLabel LblValores;
-        private System.Windows.Forms.Panel PanelServicios;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
     }
 }

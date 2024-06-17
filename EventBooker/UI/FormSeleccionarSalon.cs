@@ -39,6 +39,7 @@ namespace UI
             if (_reserva?.Salon != null)
             {
                 CmbSalon.SelectedItem = salones.FirstOrDefault(s => s.Id == _reserva.Salon.Id);
+                FillLabelsSalon();
             }
 
             DateTimePickerFecha.Value = _reserva?.Fecha != DateTime.MinValue ? _reserva.Fecha : DateTime.Now;
@@ -47,33 +48,26 @@ namespace UI
 
         private void CmbSalon_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            EntitySalon salon = CmbSalon.SelectedItem as EntitySalon;
-
-            LblNombre.Text = $"Nombre: {salon.Nombre}";
-            LblUbicacion.Text = $"Ubicación: {salon.Ubicacion}";
-            LblPrecio.Text = $"Precio: ${salon.Precio}";
-            LblPrecioCubierto.Text = $"Precio Cubierto: ${salon.PrecioCubierto}";
-            LblCapacidad.Text = $"Capacidad: {salon.Capacidad}";
-            LblCantidadMinimaInvitados.Text = $"Cantidad Minima Invitados: {salon.CantidadMinimaInvitados}";
+            FillLabelsSalon();
         }
 
         private void BtnSeleccionar_Click(object sender, EventArgs e)
         {
-            if(CmbSalon.SelectedIndex == -1)
+            if (CmbSalon.SelectedIndex == -1)
             {
-                RevisarRespuestaServicio(new BusinessResponse<bool>(false,false, "Debe seleccionar salón"));
-                return;
-            }
-            
-            if(DateTimePickerFecha.Value.Date < DateTime.Now.Date)
-            {
-                RevisarRespuestaServicio(new BusinessResponse<bool>(false,false, "Debe seleccionar una fecha mayor a la actual"));
+                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "Debe seleccionar salón"));
                 return;
             }
 
-            if(CmbTurnos.SelectedIndex == -1)
+            if (DateTimePickerFecha.Value.Date < DateTime.Now.Date)
             {
-                RevisarRespuestaServicio(new BusinessResponse<bool>(false,false, "Debe seleccionar turno"));
+                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "Debe seleccionar una fecha mayor a la actual"));
+                return;
+            }
+
+            if (CmbTurnos.SelectedIndex == -1)
+            {
+                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "Debe seleccionar turno"));
                 return;
             }
 
@@ -92,6 +86,18 @@ namespace UI
                 this.Close();
                 openChildForm(new FormRegistrarReserva(openChildForm, _reserva));
             }
+        }
+
+        private void FillLabelsSalon()
+        {
+            EntitySalon salon = CmbSalon.SelectedItem as EntitySalon;
+
+            LblNombre.Text = $"Nombre: {salon.Nombre}";
+            LblUbicacion.Text = $"Ubicación: {salon.Ubicacion}";
+            LblPrecio.Text = $"Precio: ${salon.Precio}";
+            LblPrecioCubierto.Text = $"Precio Cubierto: ${salon.PrecioCubierto}";
+            LblCapacidad.Text = $"Capacidad: {salon.Capacidad}";
+            LblCantidadMinimaInvitados.Text = $"Cantidad Minima Invitados: {salon.CantidadMinimaInvitados}";
         }
     }
 }

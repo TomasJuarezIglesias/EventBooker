@@ -70,12 +70,11 @@
             this.bunifuPanel1.Controls.Add(this.bunifuLabel5);
             this.bunifuPanel1.Controls.Add(this.BtnSeleccionar);
             this.bunifuPanel1.Controls.Add(this.bunifuLabel1);
-            this.bunifuPanel1.Location = new System.Drawing.Point(90, 78);
-            this.bunifuPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuPanel1.Location = new System.Drawing.Point(68, 63);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = true;
-            this.bunifuPanel1.Size = new System.Drawing.Size(1020, 597);
-            this.bunifuPanel1.TabIndex = 4;
+            this.bunifuPanel1.Size = new System.Drawing.Size(765, 485);
+            this.bunifuPanel1.TabIndex = 5;
             // 
             // bunifuLabel4
             // 
@@ -84,11 +83,10 @@
             this.bunifuLabel4.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel4.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel4.Font = new System.Drawing.Font("Segoe UI", 18F);
-            this.bunifuLabel4.Location = new System.Drawing.Point(40, 184);
-            this.bunifuLabel4.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel4.Location = new System.Drawing.Point(30, 150);
             this.bunifuLabel4.Name = "bunifuLabel4";
             this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel4.Size = new System.Drawing.Size(293, 41);
+            this.bunifuLabel4.Size = new System.Drawing.Size(236, 32);
             this.bunifuLabel4.TabIndex = 26;
             this.bunifuLabel4.Text = "Información del salón:";
             this.bunifuLabel4.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -103,9 +101,10 @@
             this.panel1.Controls.Add(this.LblPrecio);
             this.panel1.Controls.Add(this.LblUbicacion);
             this.panel1.Controls.Add(this.LblNombre);
-            this.panel1.Location = new System.Drawing.Point(40, 232);
+            this.panel1.Location = new System.Drawing.Point(30, 188);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(944, 250);
+            this.panel1.Size = new System.Drawing.Size(708, 203);
             this.panel1.TabIndex = 25;
             // 
             // LblCantidadMinimaInvitados
@@ -115,11 +114,10 @@
             this.LblCantidadMinimaInvitados.Cursor = System.Windows.Forms.Cursors.Default;
             this.LblCantidadMinimaInvitados.CursorType = System.Windows.Forms.Cursors.Default;
             this.LblCantidadMinimaInvitados.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.LblCantidadMinimaInvitados.Location = new System.Drawing.Point(395, 156);
-            this.LblCantidadMinimaInvitados.Margin = new System.Windows.Forms.Padding(4);
+            this.LblCantidadMinimaInvitados.Location = new System.Drawing.Point(296, 127);
             this.LblCantidadMinimaInvitados.Name = "LblCantidadMinimaInvitados";
             this.LblCantidadMinimaInvitados.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.LblCantidadMinimaInvitados.Size = new System.Drawing.Size(239, 28);
+            this.LblCantidadMinimaInvitados.Size = new System.Drawing.Size(189, 21);
             this.LblCantidadMinimaInvitados.TabIndex = 25;
             this.LblCantidadMinimaInvitados.Text = "Cantidad Minima Invitados:";
             this.LblCantidadMinimaInvitados.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -132,11 +130,10 @@
             this.LblCapacidad.Cursor = System.Windows.Forms.Cursors.Default;
             this.LblCapacidad.CursorType = System.Windows.Forms.Cursors.Default;
             this.LblCapacidad.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.LblCapacidad.Location = new System.Drawing.Point(47, 156);
-            this.LblCapacidad.Margin = new System.Windows.Forms.Padding(4);
+            this.LblCapacidad.Location = new System.Drawing.Point(35, 127);
             this.LblCapacidad.Name = "LblCapacidad";
             this.LblCapacidad.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.LblCapacidad.Size = new System.Drawing.Size(96, 28);
+            this.LblCapacidad.Size = new System.Drawing.Size(75, 21);
             this.LblCapacidad.TabIndex = 24;
             this.LblCapacidad.Text = "Capacidad:";
             this.LblCapacidad.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -149,11 +146,10 @@
             this.LblPrecioCubierto.Cursor = System.Windows.Forms.Cursors.Default;
             this.LblPrecioCubierto.CursorType = System.Windows.Forms.Cursors.Default;
             this.LblPrecioCubierto.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.LblPrecioCubierto.Location = new System.Drawing.Point(395, 89);
-            this.LblPrecioCubierto.Margin = new System.Windows.Forms.Padding(4);
+            this.LblPrecioCubierto.Location = new System.Drawing.Point(296, 72);
             this.LblPrecioCubierto.Name = "LblPrecioCubierto";
             this.LblPrecioCubierto.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.LblPrecioCubierto.Size = new System.Drawing.Size(136, 28);
+            this.LblPrecioCubierto.Size = new System.Drawing.Size(107, 21);
             this.LblPrecioCubierto.TabIndex = 23;
             this.LblPrecioCubierto.Text = "Precio cubierto:";
             this.LblPrecioCubierto.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -166,11 +162,10 @@
             this.LblPrecio.Cursor = System.Windows.Forms.Cursors.Default;
             this.LblPrecio.CursorType = System.Windows.Forms.Cursors.Default;
             this.LblPrecio.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.LblPrecio.Location = new System.Drawing.Point(47, 89);
-            this.LblPrecio.Margin = new System.Windows.Forms.Padding(4);
+            this.LblPrecio.Location = new System.Drawing.Point(35, 72);
             this.LblPrecio.Name = "LblPrecio";
             this.LblPrecio.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.LblPrecio.Size = new System.Drawing.Size(58, 28);
+            this.LblPrecio.Size = new System.Drawing.Size(46, 21);
             this.LblPrecio.TabIndex = 22;
             this.LblPrecio.Text = "Precio:";
             this.LblPrecio.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -183,11 +178,10 @@
             this.LblUbicacion.Cursor = System.Windows.Forms.Cursors.Default;
             this.LblUbicacion.CursorType = System.Windows.Forms.Cursors.Default;
             this.LblUbicacion.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.LblUbicacion.Location = new System.Drawing.Point(395, 29);
-            this.LblUbicacion.Margin = new System.Windows.Forms.Padding(4);
+            this.LblUbicacion.Location = new System.Drawing.Point(296, 24);
             this.LblUbicacion.Name = "LblUbicacion";
             this.LblUbicacion.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.LblUbicacion.Size = new System.Drawing.Size(91, 28);
+            this.LblUbicacion.Size = new System.Drawing.Size(71, 21);
             this.LblUbicacion.TabIndex = 21;
             this.LblUbicacion.Text = "Ubicación:";
             this.LblUbicacion.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -200,11 +194,10 @@
             this.LblNombre.Cursor = System.Windows.Forms.Cursors.Default;
             this.LblNombre.CursorType = System.Windows.Forms.Cursors.Default;
             this.LblNombre.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.LblNombre.Location = new System.Drawing.Point(47, 29);
-            this.LblNombre.Margin = new System.Windows.Forms.Padding(4);
+            this.LblNombre.Location = new System.Drawing.Point(35, 24);
             this.LblNombre.Name = "LblNombre";
             this.LblNombre.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.LblNombre.Size = new System.Drawing.Size(77, 28);
+            this.LblNombre.Size = new System.Drawing.Size(61, 21);
             this.LblNombre.TabIndex = 20;
             this.LblNombre.Text = "Nombre:";
             this.LblNombre.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -217,9 +210,10 @@
             this.CmbTurnos.Items.AddRange(new object[] {
             "Diurno",
             "Nocturno"});
-            this.CmbTurnos.Location = new System.Drawing.Point(777, 128);
+            this.CmbTurnos.Location = new System.Drawing.Point(583, 104);
+            this.CmbTurnos.Margin = new System.Windows.Forms.Padding(2);
             this.CmbTurnos.Name = "CmbTurnos";
-            this.CmbTurnos.Size = new System.Drawing.Size(207, 24);
+            this.CmbTurnos.Size = new System.Drawing.Size(156, 21);
             this.CmbTurnos.TabIndex = 24;
             // 
             // bunifuLabel3
@@ -229,11 +223,10 @@
             this.bunifuLabel3.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel3.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bunifuLabel3.Location = new System.Drawing.Point(715, 124);
-            this.bunifuLabel3.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel3.Location = new System.Drawing.Point(536, 101);
             this.bunifuLabel3.Name = "bunifuLabel3";
             this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel3.Size = new System.Drawing.Size(55, 28);
+            this.bunifuLabel3.Size = new System.Drawing.Size(44, 21);
             this.bunifuLabel3.TabIndex = 23;
             this.bunifuLabel3.Text = "Turno:";
             this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -241,9 +234,10 @@
             // 
             // DateTimePickerFecha
             // 
-            this.DateTimePickerFecha.Location = new System.Drawing.Point(435, 130);
+            this.DateTimePickerFecha.Location = new System.Drawing.Point(314, 104);
+            this.DateTimePickerFecha.Margin = new System.Windows.Forms.Padding(2);
             this.DateTimePickerFecha.Name = "DateTimePickerFecha";
-            this.DateTimePickerFecha.Size = new System.Drawing.Size(207, 22);
+            this.DateTimePickerFecha.Size = new System.Drawing.Size(205, 20);
             this.DateTimePickerFecha.TabIndex = 22;
             this.DateTimePickerFecha.Value = new System.DateTime(2024, 6, 15, 17, 55, 6, 0);
             // 
@@ -254,11 +248,10 @@
             this.bunifuLabel2.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel2.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bunifuLabel2.Location = new System.Drawing.Point(375, 124);
-            this.bunifuLabel2.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel2.Location = new System.Drawing.Point(266, 101);
             this.bunifuLabel2.Name = "bunifuLabel2";
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(54, 28);
+            this.bunifuLabel2.Size = new System.Drawing.Size(43, 21);
             this.bunifuLabel2.TabIndex = 21;
             this.bunifuLabel2.Text = "Fecha:";
             this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -268,9 +261,10 @@
             // 
             this.CmbSalon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbSalon.FormattingEnabled = true;
-            this.CmbSalon.Location = new System.Drawing.Point(100, 128);
+            this.CmbSalon.Location = new System.Drawing.Point(75, 104);
+            this.CmbSalon.Margin = new System.Windows.Forms.Padding(2);
             this.CmbSalon.Name = "CmbSalon";
-            this.CmbSalon.Size = new System.Drawing.Size(207, 24);
+            this.CmbSalon.Size = new System.Drawing.Size(156, 21);
             this.CmbSalon.TabIndex = 20;
             this.CmbSalon.SelectionChangeCommitted += new System.EventHandler(this.CmbSalon_SelectionChangeCommitted);
             // 
@@ -281,11 +275,10 @@
             this.bunifuLabel5.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel5.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel5.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bunifuLabel5.Location = new System.Drawing.Point(40, 124);
-            this.bunifuLabel5.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel5.Location = new System.Drawing.Point(30, 101);
             this.bunifuLabel5.Name = "bunifuLabel5";
             this.bunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel5.Size = new System.Drawing.Size(53, 28);
+            this.bunifuLabel5.Size = new System.Drawing.Size(42, 21);
             this.bunifuLabel5.TabIndex = 19;
             this.bunifuLabel5.Text = "Salon:";
             this.bunifuLabel5.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -338,8 +331,7 @@
             this.BtnSeleccionar.IdleIconLeftImage = null;
             this.BtnSeleccionar.IdleIconRightImage = null;
             this.BtnSeleccionar.IndicateFocus = false;
-            this.BtnSeleccionar.Location = new System.Drawing.Point(386, 514);
-            this.BtnSeleccionar.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnSeleccionar.Location = new System.Drawing.Point(290, 418);
             this.BtnSeleccionar.Name = "BtnSeleccionar";
             this.BtnSeleccionar.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnSeleccionar.OnDisabledState.BorderRadius = 1;
@@ -373,7 +365,7 @@
             this.BtnSeleccionar.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.BtnSeleccionar.OnPressedState.IconLeftImage = null;
             this.BtnSeleccionar.OnPressedState.IconRightImage = null;
-            this.BtnSeleccionar.Size = new System.Drawing.Size(235, 48);
+            this.BtnSeleccionar.Size = new System.Drawing.Size(176, 39);
             this.BtnSeleccionar.TabIndex = 16;
             this.BtnSeleccionar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnSeleccionar.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -389,11 +381,10 @@
             this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 20.25F);
-            this.bunifuLabel1.Location = new System.Drawing.Point(40, 36);
-            this.bunifuLabel1.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel1.Location = new System.Drawing.Point(30, 29);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(323, 57);
+            this.bunifuLabel1.Size = new System.Drawing.Size(254, 45);
             this.bunifuLabel1.TabIndex = 0;
             this.bunifuLabel1.Text = "Seleccionar Salón";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -401,12 +392,13 @@
             // 
             // FormSeleccionarSalon
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(1201, 752);
+            this.ClientSize = new System.Drawing.Size(901, 611);
             this.Controls.Add(this.bunifuPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormSeleccionarSalon";
             this.Text = "FormSeleccionarSalon";
             this.bunifuPanel1.ResumeLayout(false);
@@ -420,21 +412,21 @@
         #endregion
 
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel5;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton BtnSeleccionar;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
-        private System.Windows.Forms.ComboBox CmbSalon;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel4;
+        private System.Windows.Forms.Panel panel1;
+        private Bunifu.UI.WinForms.BunifuLabel LblCantidadMinimaInvitados;
+        private Bunifu.UI.WinForms.BunifuLabel LblCapacidad;
+        private Bunifu.UI.WinForms.BunifuLabel LblPrecioCubierto;
+        private Bunifu.UI.WinForms.BunifuLabel LblPrecio;
+        private Bunifu.UI.WinForms.BunifuLabel LblUbicacion;
+        private Bunifu.UI.WinForms.BunifuLabel LblNombre;
         private System.Windows.Forms.ComboBox CmbTurnos;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel3;
         private System.Windows.Forms.DateTimePicker DateTimePickerFecha;
-        private System.Windows.Forms.Panel panel1;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel4;
-        private Bunifu.UI.WinForms.BunifuLabel LblNombre;
-        private Bunifu.UI.WinForms.BunifuLabel LblUbicacion;
-        private Bunifu.UI.WinForms.BunifuLabel LblPrecio;
-        private Bunifu.UI.WinForms.BunifuLabel LblCapacidad;
-        private Bunifu.UI.WinForms.BunifuLabel LblPrecioCubierto;
-        private Bunifu.UI.WinForms.BunifuLabel LblCantidadMinimaInvitados;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
+        private System.Windows.Forms.ComboBox CmbSalon;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel5;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton BtnSeleccionar;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
     }
 }

@@ -62,10 +62,10 @@ namespace UI
 
         private void HideSubmenu()
         {
-            if(PanelAdministrador.Visible == true)
+            if (PanelAdministrador.Visible == true)
                 PanelAdministrador.Visible = false;
 
-            if(PanelMaestros.Visible == true)
+            if (PanelMaestros.Visible == true)
                 PanelMaestros.Visible = false;
 
             if (PanelUsuario.Visible == true)
@@ -154,7 +154,7 @@ namespace UI
         private void BtnGestionServicios_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormGestionServicio());
-            HideSubmenu();  
+            HideSubmenu();
         }
     }
 }

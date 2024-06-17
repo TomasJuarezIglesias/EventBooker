@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BusinessCliente.cs" />
     <Compile Include="BusinessIdioma.cs" />
+    <Compile Include="BusinessReserva.cs" />
     <Compile Include="BusinessResponse.cs" />
     <Compile Include="BusinessSalon.cs" />
     <Compile Include="BusinessServicio.cs" />

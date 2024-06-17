@@ -19,7 +19,8 @@ namespace UI
         private readonly BusinessCliente _businessCliente;
         private Action<ServiceForm> _openChildForm;
         private EntityReserva _reserva;
-        public FormRegistrarCliente(Action<ServiceForm> openChildForm, EntityReserva reserva = null)
+
+        public FormRegistrarCliente(Action<ServiceForm> openChildForm, EntityReserva reserva)
         {
             _openChildForm = openChildForm;
             _businessCliente = new BusinessCliente();
@@ -29,9 +30,9 @@ namespace UI
 
         private void BtnRegistrarCliente_Click(object sender, EventArgs e)
         {
-            if(!ValidateTextBox()) return;
-            
-            EntityCliente cliente = new EntityCliente 
+            if (!ValidateTextBox()) return;
+
+            EntityCliente cliente = new EntityCliente
             {
                 Dni = Convert.ToInt32(TxtDni.Text.Trim()),
                 Nombre = TxtNombre.Text.Trim(),
@@ -48,6 +49,7 @@ namespace UI
             if (response.Ok)
             {
                 this.Close();
+                _reserva.Cliente = cliente;
                 _openChildForm(new FormRegistrarReserva(_openChildForm, _reserva));
             }
         }
@@ -122,5 +124,6 @@ namespace UI
 
             return ok;
         }
+        
     }
 }
