@@ -118,15 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="BtnAyuda.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAOkAAAAnCAYAAADq1W8nAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACcSURBVHhe7dOhFYAwFMDAjvs7M2MwADx8PREnTkVnzcy1
-        936Anu/PdQpAh0khzqQQZ1KIMynEmRTiTApxJoU4k0KcSSHOpBBnUogzKcSZFOJMCnEmhTiTQpxJIc6k
-        EGdSiDMpxJkU4kwKcSaFOJNCnEkhzqQQZ1KIMynEmRTiTApxJoU4k0KcSSHOpBBnUogzKcStmblPAfjf
-        zNwvk+AM/NKEWQAAAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="BtnInicio.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAOkAAAAnCAYAAADq1W8nAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -208,7 +199,7 @@
         zNwvk+AM/NKEWQAAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="BtnUsuario.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BtnCambiarPassword.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAOkAAAAnCAYAAADq1W8nAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACcSURBVHhe7dOhFYAwFMDAjvs7M2MwADx8PREnTkVnzcy1
@@ -220,22 +211,22 @@
   <data name="BtnCerrarSesion.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAOkAAAAnCAYAAADq1W8nAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACbSURBVHhe7dOhFYAwFARBSv99powUAMTyKGDFiDF3eq+Z
-        Wa8bSFon0r8DiBApxIkU4kQKcSKFOJFCnEghTqQQJ1KIEynEiRTiRApxIoU4kUKcSCFOpBAnUogTKcSJ
-        FOJECnEihTiRQpxIIU6kECdSiBMpxIkU4kQKcSKFOJFCnEghTqQQJ1KIEynEiRTiRApxIoW4E+n+jkDF
-        7AdVr57KgtFTJQAAAABJRU5ErkJggg==
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACcSURBVHhe7dOhFYAwFMDAjvs7M2MwADx8PREnTkVnzcy1
+        936Anu/PdQpAh0khzqQQZ1KIMynEmRTiTApxJoU4k0KcSSHOpBBnUogzKcSZFOJMCnEmhTiTQpxJIc6k
+        EGdSiDMpxJkU4kwKcSaFOJNCnEkhzqQQZ1KIMynEmRTiTApxJoU4k0KcSSHOpBBnUogzKcStmblPAfjf
+        zNwvk+AM/NKEWQAAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="BtnCambiarPassword.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BtnAyuda.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAOkAAAAnCAYAAADq1W8nAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACbSURBVHhe7dOhFYAwFARBSv99powUAMTyKGDFiDF3eq+Z
-        Wa8bSFon0r8DiBApxIkU4kQKcSKFOJFCnEghTqQQJ1KIEynEiRTiRApxIoU4kUKcSCFOpBAnUogTKcSJ
-        FOJECnEihTiRQpxIIU6kECdSiBMpxIkU4kQKcSKFOJFCnEghTqQQJ1KIEynEiRTiRApxIoW4E+n+jkDF
-        7AdVr57KgtFTJQAAAABJRU5ErkJggg==
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACcSURBVHhe7dOhFYAwFMDAjvs7M2MwADx8PREnTkVnzcy1
+        936Anu/PdQpAh0khzqQQZ1KIMynEmRTiTApxJoU4k0KcSSHOpBBnUogzKcSZFOJMCnEmhTiTQpxJIc6k
+        EGdSiDMpxJkU4kwKcSaFOJNCnEkhzqQQZ1KIMynEmRTiTApxJoU4k0KcSSHOpBBnUogzKcStmblPAfjf
+        zNwvk+AM/NKEWQAAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="BtnLogin.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BtnCollectDeposit.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAOkAAAAnCAYAAADq1W8nAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACbSURBVHhe7dOhFYAwFARBSv99powUAMTyKGDFiDF3eq+Z

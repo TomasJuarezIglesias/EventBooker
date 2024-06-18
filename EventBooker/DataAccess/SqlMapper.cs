@@ -56,5 +56,15 @@ namespace DataAccess
             Email = row["Email"].ToString(),
             Contacto = row["Contacto"].ToString()
         };
+
+        public static EntityReserva MapReserva(DataRow row) => new EntityReserva()
+        {
+            Id = Convert.ToInt32(row["IdReserva"]),
+            Descripcion = row["Descripcion"].ToString(),
+            Fecha = Convert.ToDateTime(row["Fecha"]),
+            Turno = row["Turno"].ToString(),
+            Invitados = Convert.ToInt32(row["Invitados"]),
+            Estado = row["Estado"].ToString()
+        };
     }
 }

@@ -34,5 +34,12 @@ namespace Services
             string contactPattern = @"^\d{10}$";
             return Regex.IsMatch(contacto, contactPattern);
         }
+
+        // Valida si es visa, master o amex
+        public static bool IsValidCard(string card)
+        {
+            string cardPattern = @"^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|3[47][0-9]{13})$";
+            return Regex.IsMatch(card, cardPattern);
+        }
     }
 }

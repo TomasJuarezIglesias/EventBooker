@@ -157,6 +157,12 @@
     <Compile Include="FormCambiarPassword.Designer.cs">
       <DependentUpon>FormCambiarPassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCollectDeposit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCollectDeposit.Designer.cs">
+      <DependentUpon>FormCollectDeposit.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormGestionSalon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,6 +233,9 @@
     </Compile>
     <EmbeddedResource Include="FormCambiarPassword.resx">
       <DependentUpon>FormCambiarPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCollectDeposit.resx">
+      <DependentUpon>FormCollectDeposit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormGestionSalon.resx">
       <DependentUpon>FormGestionSalon.cs</DependentUpon>

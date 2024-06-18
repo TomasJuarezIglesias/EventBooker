@@ -1017,7 +1017,7 @@
             this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 20.25F);
-            this.bunifuLabel1.Location = new System.Drawing.Point(19, 3);
+            this.bunifuLabel1.Location = new System.Drawing.Point(13, 3);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel1.Size = new System.Drawing.Size(249, 45);

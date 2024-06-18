@@ -87,6 +87,7 @@ namespace UI
         // Evento que desencadena metodo para calcular costos
         private void NumInvitados_ValueChanged(object sender, EventArgs e)
         {
+            _reserva.Invitados = Convert.ToInt32(NumInvitados.Value);
             CalcularCostos();
         }
 

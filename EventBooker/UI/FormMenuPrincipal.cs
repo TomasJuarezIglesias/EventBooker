@@ -44,7 +44,7 @@ namespace UI
         {
             PanelAdministrador.Visible = false;
             PanelMaestros.Visible = false;
-            PanelUsuario.Visible = false;
+            PanelCobranza.Visible = false;
         }
 
         private void ShowSubmenu(Panel subMenu)
@@ -62,14 +62,14 @@ namespace UI
 
         private void HideSubmenu()
         {
-            if (PanelAdministrador.Visible == true)
+            if (PanelAdministrador.Visible)
                 PanelAdministrador.Visible = false;
 
-            if (PanelMaestros.Visible == true)
+            if (PanelMaestros.Visible)
                 PanelMaestros.Visible = false;
 
-            if (PanelUsuario.Visible == true)
-                PanelUsuario.Visible = false;
+            if (PanelCobranza.Visible)
+                PanelCobranza.Visible = false;
         }
 
         private void BtnAdministrador_Click(object sender, EventArgs e)
@@ -82,10 +82,9 @@ namespace UI
             ShowSubmenu(PanelMaestros);
         }
 
-
-        private void BtnUsuario_Click(object sender, EventArgs e)
+        private void BtnCobranza_Click(object sender, EventArgs e)
         {
-            ShowSubmenu(PanelUsuario);
+            ShowSubmenu(PanelCobranza);
         }
 
         // Inicio
@@ -103,7 +102,7 @@ namespace UI
             HideSubmenu();
         }
 
-        // Realizar Reserva
+        // Registrar Reserva
 
         private void BtnRegistrarReserva_Click(object sender, EventArgs e)
         {
@@ -112,12 +111,6 @@ namespace UI
         }
 
         // Usuario
-        private void BtnLogin_Click(object sender, EventArgs e)
-        {
-            InicioSesion inicioSesion = new InicioSesion();
-            inicioSesion.Show();
-            this.Close();
-        }
 
         private void BtnCambiarPassword_Click(object sender, EventArgs e)
         {
@@ -154,6 +147,12 @@ namespace UI
         private void BtnGestionServicios_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormGestionServicio());
+            HideSubmenu();
+        }
+
+        private void BtnCollectDeposit_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormCollectDeposit());
             HideSubmenu();
         }
     }
