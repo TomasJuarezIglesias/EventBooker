@@ -1,4 +1,5 @@
 ﻿using Entities;
+using Services;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -52,7 +53,7 @@ namespace DataAccess
             Dni = Convert.ToInt32(row["Dni"]),
             Nombre = row["Nombre"].ToString(),
             Apellido = row["Apellido"].ToString(),
-            Direccion = row["Direccion"].ToString(),
+            Direccion = CryptoManager.ReversibleDecrypt(row["Direccion"].ToString()),
             Email = row["Email"].ToString(),
             Contacto = row["Contacto"].ToString()
         };

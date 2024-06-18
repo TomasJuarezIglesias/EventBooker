@@ -1,4 +1,5 @@
 ﻿using Entities;
+using Services;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -38,7 +39,7 @@ namespace DataAccess
                 new SqlParameter("@In_Dni", SqlDbType.Int){ Value = cliente.Dni },
                 new SqlParameter("@In_Nombre", SqlDbType.NVarChar){ Value = cliente.Nombre },
                 new SqlParameter("@In_Apellido", SqlDbType.NVarChar){ Value = cliente.Apellido },
-                new SqlParameter("@In_Direccion", SqlDbType.NVarChar){ Value = cliente.Direccion },
+                new SqlParameter("@In_Direccion", SqlDbType.NVarChar){ Value = CryptoManager.ReversibleEncrypt(cliente.Direccion) },
                 new SqlParameter("@In_Email", SqlDbType.NVarChar){ Value = cliente.Email },
                 new SqlParameter("@In_Contacto", SqlDbType.Int){ Value = cliente.Contacto },
             };
