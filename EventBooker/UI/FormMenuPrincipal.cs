@@ -102,12 +102,40 @@ namespace UI
             HideSubmenu();
         }
 
+        // Maestros
+
+        private void BtnGestionSalon_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormGestionSalon());
+            HideSubmenu();
+        }
+
+        private void BtnGestionServicios_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormGestionServicio());
+            HideSubmenu();
+        }
+
+        private void BtnGestionClientes_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormGestionClientes());
+            HideSubmenu();
+        }
+
         // Registrar Reserva
 
         private void BtnRegistrarReserva_Click(object sender, EventArgs e)
         {
             HideSubmenu();
             OpenChildForm(new FormRegistrarReserva(OpenChildForm));
+        }
+
+        // Cobranza
+
+        private void BtnCollectDeposit_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormCollectDeposit());
+            HideSubmenu();
         }
 
         // Usuario
@@ -134,26 +162,6 @@ namespace UI
                 inicioSesion.Show();
                 this.Close();
             }
-        }
-
-        // Maestros
-
-        private void BtnGestionSalon_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new FormGestionSalon());
-            HideSubmenu();
-        }
-
-        private void BtnGestionServicios_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new FormGestionServicio());
-            HideSubmenu();
-        }
-
-        private void BtnCollectDeposit_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new FormCollectDeposit());
-            HideSubmenu();
         }
     }
 }

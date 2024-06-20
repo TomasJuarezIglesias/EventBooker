@@ -32,7 +32,7 @@ namespace DataAccess
         public static EntitySalon MapSalon(DataRow row) => new EntitySalon()
         {
             Id = Convert.ToInt32(row["IdSalon"]),
-            Nombre = row["Nombre"].ToString(),
+            Nombre = row.Table.Columns.Contains("Nombre") ? row["Nombre"].ToString() : row["NombreSalon"].ToString(),
             Ubicacion = row["Ubicacion"].ToString(),
             Precio = Convert.ToDouble(row["Precio"]),
             PrecioCubierto = Convert.ToDouble(row["PrecioCubierto"]),
@@ -51,11 +51,11 @@ namespace DataAccess
         {
             Id = Convert.ToInt32(row["IdCliente"]),
             Dni = Convert.ToInt32(row["Dni"]),
-            Nombre = row["Nombre"].ToString(),
+            Nombre = row.Table.Columns.Contains("Nombre") ? row["Nombre"].ToString() : row["NombreCliente"].ToString(),
             Apellido = row["Apellido"].ToString(),
             Direccion = CryptoManager.ReversibleDecrypt(row["Direccion"].ToString()),
             Email = row["Email"].ToString(),
-            Contacto = row["Contacto"].ToString()
+            Contacto = Convert.ToInt32(row["Contacto"])
         };
 
         public static EntityReserva MapReserva(DataRow row) => new EntityReserva()

@@ -70,7 +70,7 @@ namespace DataAccess
                 new SqlParameter("@In_Estado", SqlDbType.NVarChar){ Value = reserva.Estado },
             };
 
-            int idReserva = _connection.WriteWithReturn("SP_InsertReserva", parameters);
+            int idReserva = _connection.WriteWithReturn("SP_CreateReserva", parameters);
 
             if (idReserva == -1) return false;
 
@@ -84,7 +84,7 @@ namespace DataAccess
                         new SqlParameter("@In_IdServicio", SqlDbType.Int){ Value =  servicio.Id}
                     };
 
-                    _connection.Write("SP_InsertReservaServicio", parametersServicio);
+                    _connection.Write("SP_CreateReservaServicio", parametersServicio);
                 }
             }
 
@@ -118,7 +118,7 @@ namespace DataAccess
             {
                 foreach (var servicio in reserva.Servicios)
                 {
-                    _connection.Write("SP_InsertReservaServicio", new SqlParameter[]
+                    _connection.Write("SP_CreateReservaServicio", new SqlParameter[]
                     {
                         new SqlParameter("@In_IdReserva", SqlDbType.Int){ Value = reserva.Id },
                         new SqlParameter("@In_IdServicio", SqlDbType.Int){ Value =  servicio.Id}

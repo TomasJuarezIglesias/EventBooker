@@ -1,12 +1,16 @@
 ﻿using Bunifu.UI.WinForms;
 using Business;
 using Entities;
+using PdfSharp.Drawing;
+using PdfSharp.Pdf;
 using Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -86,9 +90,15 @@ namespace UI
                 FillDataGridView();
                 PanelCobro.Visible = false;
 
-                // Generar comprobante de reserva
-            }
+                // Obtener el path del escritorio
+                string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
+                // Path completo para guardar el PDF
+                string filePath = Path.Combine(desktopPath, $"comprobante_reserva_{reserva.Fecha.ToString("dd_MM_yyyyy")}_{reserva.Turno}.pdf");
+
+                // Generar comprobante de reserva
+                GenerarComprobanteDeReserva(reserva, filePath);
+            }
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
@@ -202,5 +212,86 @@ namespace UI
 
             return ok;
         }
+
+        public void GenerarComprobanteDeReserva(EntityReserva reserva, string filePath)
+        {
+            // Crear un nuevo documento PDF
+            PdfDocument document = new PdfDocument();
+            document.Info.Title = "Comprobante de Reserva";
+
+            // Crear una nueva página
+            PdfPage page = document.AddPage();
+            XGraphics gfx = XGraphics.FromPdfPage(page);
+
+            // Configurar fuentes
+            XFont fontTitle = new XFont("Verdana", 20, XFontStyleEx.Bold);
+            XFont fontSubtitle = new XFont("Verdana", 16, XFontStyleEx.Bold);
+            XFont fontRegular = new XFont("Verdana", 12, XFontStyleEx.Regular);
+
+            // Escribir el título
+            gfx.DrawString("Comprobante de Reserva", fontTitle, XBrushes.Black, new XRect(0, 40, page.Width, 40), XStringFormats.TopCenter);
+
+            int yPosition = 100;
+            // Escribir la información de la reserva
+            gfx.DrawString($"Información de la reserva:", fontSubtitle, XBrushes.Black, 40, yPosition);
+            yPosition += 20;
+            gfx.DrawString($"Fecha: {reserva.Fecha.ToString("dd/MM/yyyy")}", fontRegular, XBrushes.Black, 40, yPosition);
+            yPosition += 20;
+            gfx.DrawString($"Turno: {reserva.Turno}", fontRegular, XBrushes.Black, 40, yPosition);
+            yPosition += 20;
+            gfx.DrawString($"Salón: {reserva.Salon.Nombre} - {reserva.Salon.Ubicacion}", fontRegular, XBrushes.Black, 40, yPosition);
+            yPosition += 20;
+            gfx.DrawString($"Costo del Salón: ${reserva.Salon.Precio}", fontRegular, XBrushes.Black, 40, yPosition);
+
+            // Escribir la descripción del evento
+            yPosition += 40;
+            gfx.DrawString($"Descripción del evento:", fontSubtitle, XBrushes.Black, 40, yPosition);
+            yPosition += 20;
+            gfx.DrawString($"Descripción del Evento: {reserva.Descripcion}", fontRegular, XBrushes.Black, 40, yPosition);
+            yPosition += 20;
+            gfx.DrawString($"Cantidad de Invitados: {reserva.Invitados}", fontRegular, XBrushes.Black, 40, yPosition);
+            yPosition += 20;
+            gfx.DrawString($"Costo por Cubierto: ${reserva.Salon.PrecioCubierto}", fontRegular, XBrushes.Black, 40, yPosition);
+
+
+            // Escribir los servicios solicitados
+            yPosition += 40;
+            gfx.DrawString("Servicios Solicitados:", fontSubtitle, XBrushes.Black, 40, yPosition);
+            yPosition += 20;
+
+            //Realizo calculos de costos
+            double costoTotal = 0;
+
+            costoTotal += reserva.Salon.Precio;
+            costoTotal += reserva.Salon.PrecioCubierto * reserva.Invitados;
+
+            foreach (var servicio in reserva.Servicios)
+            {
+                // Escribo servicios
+                gfx.DrawString($"{servicio.Descripcion}: ${servicio.Valor}", fontRegular, XBrushes.Black, 50, yPosition);
+                yPosition += 20;
+
+                costoTotal += servicio.Valor;
+            }
+
+            double costoSenia = costoTotal == 0 ? 0 : ((30 * costoTotal) / 100);
+
+            // Escribir el monto abonado y el saldo pendiente
+            yPosition += 20;
+            gfx.DrawString("Estado de cuenta:", fontSubtitle, XBrushes.Black, 40, yPosition);
+            yPosition += 20;
+            gfx.DrawString($"Monto Total: ${costoTotal}", fontRegular, XBrushes.Black, 40, yPosition);
+            yPosition += 20;
+            gfx.DrawString($"Monto Abonado: ${costoSenia}", fontRegular, XBrushes.Black, 40, yPosition);
+            yPosition += 20;
+            gfx.DrawString($"Saldo Pendiente: ${costoTotal - costoSenia}", fontRegular, XBrushes.Black, 40, yPosition);
+
+            // Guardar el documento PDF
+            document.Save(filePath);
+
+            // Abrir el PDF con el lector predeterminado
+            Process.Start(filePath);
+        }
+
     }
 }

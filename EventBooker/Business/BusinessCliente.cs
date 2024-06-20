@@ -27,5 +27,19 @@ namespace Business
 
             return new BusinessResponse<bool>(ok, ok, ok ? "Creado Correctamente" : $"Ya existe cliente con dni: {cliente.Dni}");
         }
+
+        public BusinessResponse<bool> Update(EntityCliente cliente)
+        {
+            bool ok = _dataAccessCliente.Update(cliente);
+
+            return new BusinessResponse<bool>(ok, ok, ok ? "Modificado Correctamente" : $"Ya existe cliente con dni: {cliente.Dni}");
+        }
+
+        public BusinessResponse<bool> Delete(Entity cliente)
+        {
+            bool ok = _dataAccessCliente.Delete(cliente);
+
+            return new BusinessResponse<bool>(ok, ok, ok ? "Eliminado Correctamente" : $"Error al eliminar");
+        }
     }
 }

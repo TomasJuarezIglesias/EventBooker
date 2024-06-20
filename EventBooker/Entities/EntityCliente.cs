@@ -13,7 +13,7 @@ namespace Entities
         public string Apellido { get; set; }
         public string Direccion { get; set; }
         public string Email { get; set; }
-        public string Contacto { get; set; }
+        public int Contacto { get; set; }
 
         public override string ToString()
         {

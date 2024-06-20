@@ -39,12 +39,38 @@ namespace DataAccess
                 new SqlParameter("@In_Dni", SqlDbType.Int){ Value = cliente.Dni },
                 new SqlParameter("@In_Nombre", SqlDbType.NVarChar){ Value = cliente.Nombre },
                 new SqlParameter("@In_Apellido", SqlDbType.NVarChar){ Value = cliente.Apellido },
-                new SqlParameter("@In_Direccion", SqlDbType.NVarChar){ Value = CryptoManager.ReversibleEncrypt(cliente.Direccion) },
+                new SqlParameter("@In_Direccion", SqlDbType.NVarChar){ Value = cliente.Direccion },
                 new SqlParameter("@In_Email", SqlDbType.NVarChar){ Value = cliente.Email },
                 new SqlParameter("@In_Contacto", SqlDbType.Int){ Value = cliente.Contacto },
             };
 
             return _connection.Write("SP_CreateCliente", parameters);
+        }
+
+        public bool Update(EntityCliente cliente)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@In_IdCliente", SqlDbType.Int){ Value = cliente.Id },
+                new SqlParameter("@In_Dni", SqlDbType.Int){ Value = cliente.Dni },
+                new SqlParameter("@In_Nombre", SqlDbType.NVarChar){ Value = cliente.Nombre },
+                new SqlParameter("@In_Apellido", SqlDbType.NVarChar){ Value = cliente.Apellido },
+                new SqlParameter("@In_Direccion", SqlDbType.NVarChar){ Value = cliente.Direccion },
+                new SqlParameter("@In_Email", SqlDbType.NVarChar){ Value = cliente.Email },
+                new SqlParameter("@In_Contacto", SqlDbType.Int){ Value = cliente.Contacto },
+            };
+
+            return _connection.Write("SP_UpdateCliente", parameters);
+        }
+
+        public bool Delete(Entity cliente)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@In_IdCliente", SqlDbType.Int){ Value = cliente.Id }
+            };
+
+            return _connection.Write("SP_DeleteCliente", parameters);
         }
     }
 }

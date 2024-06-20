@@ -37,9 +37,9 @@ namespace UI
                 Dni = Convert.ToInt32(TxtDni.Text.Trim()),
                 Nombre = TxtNombre.Text.Trim(),
                 Apellido = TxtApellido.Text.Trim(),
-                Direccion = TxtDireccion.Text.Trim(),
+                Direccion = CryptoManager.ReversibleEncrypt(TxtDireccion.Text.Trim()),
                 Email = TxtEmail.Text.Trim(),
-                Contacto = TxtContacto.Text.Trim(),
+                Contacto = Convert.ToInt32(TxtContacto.Text.Trim()),
             };
 
             BusinessResponse<bool> response = _businessCliente.Create(cliente);
