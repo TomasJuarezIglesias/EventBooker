@@ -187,6 +187,9 @@ namespace UI
                 PanelListaServicios.Visible = true;
             }
 
+            TxtDescripcion.Text = !string.IsNullOrEmpty(_reserva?.Descripcion) ? _reserva?.Descripcion : string.Empty;
+            NumInvitados.Value = _reserva?.Invitados != null && _reserva?.Invitados != 0 ? _reserva.Invitados : 0;
+
             CalcularCostos();
         }
 
@@ -239,5 +242,21 @@ namespace UI
             return ok;
         }
 
+        private void TxtDescripcion_Leave(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(TxtDescripcion.Text))
+            {
+                _reserva.Descripcion = TxtDescripcion.Text;
+            }
+        }
+
+        private void NumInvitados_Leave(object sender, EventArgs e)
+        {
+            if (NumInvitados.Value >= 0)
+            {
+                _reserva.Invitados = Convert.ToInt32(NumInvitados.Value);
+                CalcularCostos();
+            }
+        }
     }
 }

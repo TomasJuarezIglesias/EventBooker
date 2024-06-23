@@ -353,6 +353,7 @@
             this.NumInvitados.Size = new System.Drawing.Size(90, 20);
             this.NumInvitados.TabIndex = 45;
             this.NumInvitados.ValueChanged += new System.EventHandler(this.NumInvitados_ValueChanged);
+            this.NumInvitados.Leave += new System.EventHandler(this.NumInvitados_Leave);
             // 
             // TxtDescripcion
             // 
@@ -428,6 +429,7 @@
             this.TxtDescripcion.TextPlaceholder = "Enter text";
             this.TxtDescripcion.UseSystemPasswordChar = false;
             this.TxtDescripcion.WordWrap = true;
+            this.TxtDescripcion.Leave += new System.EventHandler(this.TxtDescripcion_Leave);
             // 
             // bunifuLabel14
             // 
