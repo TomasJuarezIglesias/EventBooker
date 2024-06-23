@@ -102,6 +102,12 @@ namespace UI
             HideSubmenu();
         }
 
+        private void BtnPerfiles_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormGestionPerfiles(OpenChildForm));
+            HideSubmenu();
+        }
+
         // Maestros
 
         private void BtnGestionSalon_Click(object sender, EventArgs e)
@@ -163,5 +169,6 @@ namespace UI
                 this.Close();
             }
         }
+
     }
 }
