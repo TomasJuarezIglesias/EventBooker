@@ -170,5 +170,10 @@ namespace UI
             }
         }
 
+        private void BtnCambiarIdioma_Click(object sender, EventArgs e)
+        {
+            FormIdioma formIdioma = new FormIdioma();
+            formIdioma.Show();
+        }
     }
 }
