@@ -21,6 +21,7 @@ namespace UI
             CustomView();
             OpenChildForm(new FormInicio());
             _sessionManager = SessionManager.GetInstance();
+            CheckPermissions();
         }
 
         private ServiceForm _activeForm = null;
@@ -174,6 +175,15 @@ namespace UI
         {
             FormIdioma formIdioma = new FormIdioma();
             formIdioma.Show();
+        }
+
+        private void CheckPermissions()
+        {
+            BtnAdministrador.Visible = _sessionManager.HasPermission(1);
+            BtnMaestros.Visible = _sessionManager.HasPermission(2);
+            BtnRegistrarReserva.Visible = _sessionManager.HasPermission(3);
+            BtnCobranza.Visible = _sessionManager.HasPermission(4);
+            BtnReportes.Visible = _sessionManager.HasPermission(5);
         }
     }
 }

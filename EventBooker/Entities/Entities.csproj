@@ -44,10 +44,14 @@
     <Compile Include="Entity.cs" />
     <Compile Include="EntityCliente.cs" />
     <Compile Include="EntityIdioma.cs" />
+    <Compile Include="EntityPerfil.cs" />
     <Compile Include="EntityReserva.cs" />
     <Compile Include="EntitySalon.cs" />
     <Compile Include="EntityServicio.cs" />
     <Compile Include="EntityUser.cs" />
+    <Compile Include="Familia.cs" />
+    <Compile Include="IPermiso.cs" />
+    <Compile Include="Patente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

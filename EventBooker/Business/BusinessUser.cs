@@ -12,10 +12,12 @@ namespace Business
     public class BusinessUser
     {
         private readonly DataAccessUser dataAccess;
+        private readonly BusinessPerfil _businessPerfil;
 
         public BusinessUser()
         {
             dataAccess = new DataAccessUser();
+            _businessPerfil = new BusinessPerfil();
         }
 
         public BusinessResponse<EntityUser> VerifyCredentials(string username, string password)
@@ -30,6 +32,11 @@ namespace Business
                 string.Empty;
 
             ok = user?.IsBlock == true ? false : ok;
+
+            if (ok)
+            {
+                user.Perfil = _businessPerfil.GetByUser(user).Data;
+            }
 
             return new BusinessResponse<EntityUser>(ok, user, mensaje);
         }
