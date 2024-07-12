@@ -67,5 +67,23 @@ namespace DataAccess
             Invitados = Convert.ToInt32(row["Invitados"]),
             Estado = row["Estado"].ToString()
         };
+
+        public static EntityPerfil MapPerfil(DataRow row) => new EntityPerfil()
+        {
+            Id = Convert.ToInt32(row["IdPerfil"]),
+            Descripcion = row["Descripcion"].ToString()
+        };
+
+        public static Patente MapPatente(DataRow row) => new Patente()
+        {
+            Id = Convert.ToInt32(row["IdPermiso"]),
+            Nombre = row["Nombre"].ToString()
+        };
+
+        public static Familia MapFamilia(DataRow row) => new Familia()
+        {
+            Id = Convert.ToInt32(row["IdPermiso"]),
+            Nombre = row["Nombre"].ToString()
+        };
     }
 }

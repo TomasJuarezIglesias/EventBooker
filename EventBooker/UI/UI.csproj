@@ -236,6 +236,18 @@
     <Compile Include="FormGestionClientes.Designer.cs">
       <DependentUpon>FormGestionClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormGestionFamiliaPermisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGestionFamiliaPermisos.Designer.cs">
+      <DependentUpon>FormGestionFamiliaPermisos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGestionPerfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGestionPerfiles.Designer.cs">
+      <DependentUpon>FormGestionPerfiles.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormGestionSalon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -253,6 +265,12 @@
     </Compile>
     <Compile Include="FormGestionUsuarios.Designer.cs">
       <DependentUpon>FormGestionUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormIdioma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormIdioma.Designer.cs">
+      <DependentUpon>FormIdioma.cs</DependentUpon>
     </Compile>
     <Compile Include="FormInicio.cs">
       <SubType>Form</SubType>
@@ -313,6 +331,12 @@
     <EmbeddedResource Include="FormGestionClientes.resx">
       <DependentUpon>FormGestionClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormGestionFamiliaPermisos.resx">
+      <DependentUpon>FormGestionFamiliaPermisos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGestionPerfiles.resx">
+      <DependentUpon>FormGestionPerfiles.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormGestionSalon.resx">
       <DependentUpon>FormGestionSalon.cs</DependentUpon>
     </EmbeddedResource>
@@ -321,6 +345,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormGestionUsuarios.resx">
       <DependentUpon>FormGestionUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormIdioma.resx">
+      <DependentUpon>FormIdioma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormInicio.resx">
       <DependentUpon>FormInicio.cs</DependentUpon>

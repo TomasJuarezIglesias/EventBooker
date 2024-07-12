@@ -21,6 +21,7 @@ namespace UI
             CustomView();
             OpenChildForm(new FormInicio());
             _sessionManager = SessionManager.GetInstance();
+            CheckPermissions();
         }
 
         private ServiceForm _activeForm = null;
@@ -102,6 +103,12 @@ namespace UI
             HideSubmenu();
         }
 
+        private void BtnPerfiles_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormGestionPerfiles(OpenChildForm));
+            HideSubmenu();
+        }
+
         // Maestros
 
         private void BtnGestionSalon_Click(object sender, EventArgs e)
@@ -162,6 +169,21 @@ namespace UI
                 inicioSesion.Show();
                 this.Close();
             }
+        }
+
+        private void BtnCambiarIdioma_Click(object sender, EventArgs e)
+        {
+            FormIdioma formIdioma = new FormIdioma();
+            formIdioma.Show();
+        }
+
+        private void CheckPermissions()
+        {
+            BtnAdministrador.Visible = _sessionManager.HasPermission(1);
+            BtnMaestros.Visible = _sessionManager.HasPermission(2);
+            BtnRegistrarReserva.Visible = _sessionManager.HasPermission(3);
+            BtnCobranza.Visible = _sessionManager.HasPermission(4);
+            BtnReportes.Visible = _sessionManager.HasPermission(5);
         }
     }
 }

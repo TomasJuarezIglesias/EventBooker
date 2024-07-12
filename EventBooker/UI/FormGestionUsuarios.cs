@@ -18,20 +18,26 @@ namespace UI
     public partial class FormGestionUsuarios : ServiceForm
     {
         private BusinessUser _BusinessUser;
+        private BusinessPerfil _BusinessPerfil;
 
         public FormGestionUsuarios()
         {
             InitializeComponent();
             _BusinessUser = new BusinessUser();
+            _BusinessPerfil = new BusinessPerfil();
             FillDataGridView();
             HidePanelData();
         }
-
 
         private void BtnCrear_Click(object sender, EventArgs e)
         {
             HideButtons(BtnCrear);
             ShowPanelData();
+
+            CmbPerfiles.DataSource = null;
+            CmbPerfiles.DataSource = _BusinessPerfil.GetAll().Data;
+            CmbPerfiles.DisplayMember = "Descripcion";
+            CmbPerfiles.SelectedIndex = -1;
         }
 
         private void BtnModificar_Click(object sender, EventArgs e)
@@ -47,6 +53,13 @@ namespace UI
                 TxtApellido.Text = user.Apellido.Trim();
                 TxtDni.Text = user.Dni.ToString().Trim();
                 TxtMail.Text = user.Mail.Trim();
+
+                List<EntityPerfil> perfil = _BusinessPerfil.GetAll().Data;
+
+                CmbPerfiles.DataSource = null;
+                CmbPerfiles.DataSource = perfil;
+                CmbPerfiles.DisplayMember = "Descripcion";
+                CmbPerfiles.SelectedItem = perfil.First( p => p.Id == user.Perfil.Id);
             }
             catch (Exception)
             {
@@ -59,6 +72,12 @@ namespace UI
         {
             if (!ValidateTextBox()) return;
 
+            if (CmbPerfiles.SelectedIndex == -1)
+            {
+                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "Debe seleccionar Perfil"));
+                return;
+            }
+
             BusinessResponse<bool> response = new BusinessResponse<bool>(false, false, "");
 
             if (BtnCrear.Visible)
@@ -70,7 +89,8 @@ namespace UI
                     Dni = Convert.ToInt32(TxtDni.Text.Trim()),
                     Mail = TxtMail.Text.Trim(),
                     Username = TxtDni.Text.Trim() + TxtNombre.Text.Trim(),
-                    Password = TxtDni.Text.Trim() + TxtApellido.Text.Trim()
+                    Password = TxtDni.Text.Trim() + TxtApellido.Text.Trim(),
+                    Perfil = CmbPerfiles.SelectedItem as EntityPerfil
                 };
 
                 response = _BusinessUser.Create(user);
@@ -91,7 +111,8 @@ namespace UI
                     Mail = TxtMail.Text.Trim(),
                     Username = TxtDni.Text.Trim() + TxtNombre.Text.Trim(),
                     Password = user.Password,
-                    IsBlock = user.IsBlock
+                    IsBlock = user.IsBlock,
+                    Perfil = CmbPerfiles.SelectedItem as EntityPerfil
                 };
 
                 response = _BusinessUser.Update(userUpdated);

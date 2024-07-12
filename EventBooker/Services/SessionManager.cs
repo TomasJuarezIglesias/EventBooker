@@ -50,5 +50,22 @@ namespace Services
                 _instance = null;
             }
         }
+
+
+        public bool HasPermission(int idPermiso, List<IPermiso> permisos = null)
+        {
+            if (permisos == null) permisos = User.Perfil.Permisos;
+
+            foreach (var permiso in permisos)
+            {
+                if (permiso is Familia permisoFamilia)
+                {
+                    return HasPermission(idPermiso, permisoFamilia.Permisos);
+                }
+                if (permiso.Id == idPermiso) return true;
+            }
+
+            return false;
+        }
     }
 }

@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="DataAccessCliente.cs" />
     <Compile Include="DataAccessIdioma.cs" />
+    <Compile Include="DataAccessPerfil.cs" />
+    <Compile Include="DataAccessPermiso.cs" />
     <Compile Include="DataAccessReserva.cs" />
     <Compile Include="DataAccessSalon.cs" />
     <Compile Include="DataAccessServicio.cs" />

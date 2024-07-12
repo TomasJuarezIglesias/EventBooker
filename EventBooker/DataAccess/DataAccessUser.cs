@@ -25,7 +25,9 @@ namespace DataAccess
 
             foreach (DataRow row in data.Rows)
             {
-                users.Add(SqlMapper.MapUser(row));   
+                EntityUser user = SqlMapper.MapUser(row);
+                user.Perfil = SqlMapper.MapPerfil(row);
+                users.Add(user);
             }
 
             return users;
@@ -52,7 +54,8 @@ namespace DataAccess
                 new SqlParameter("@In_Dni", SqlDbType.Int){ Value = user.Dni },
                 new SqlParameter("@In_Nombre", SqlDbType.NVarChar){ Value = user.Nombre },
                 new SqlParameter("@In_Apellido", SqlDbType.NVarChar){ Value = user.Apellido },
-                new SqlParameter("@In_Mail", SqlDbType.NVarChar){ Value = user.Mail }
+                new SqlParameter("@In_Mail", SqlDbType.NVarChar){ Value = user.Mail },
+                new SqlParameter("@In_IdPerfil", SqlDbType.Int){ Value = user.Perfil.Id }
             };
 
             return conn.Write("SP_CreateUser", parameters);
@@ -69,7 +72,8 @@ namespace DataAccess
                 new SqlParameter("@In_Dni", SqlDbType.Int){ Value = user.Dni },
                 new SqlParameter("@In_Nombre", SqlDbType.NVarChar){ Value = user.Nombre },
                 new SqlParameter("@In_Apellido", SqlDbType.NVarChar){ Value = user.Apellido },
-                new SqlParameter("@In_Mail", SqlDbType.NVarChar){ Value = user.Mail }
+                new SqlParameter("@In_Mail", SqlDbType.NVarChar){ Value = user.Mail },
+                new SqlParameter("@In_IdPerfil", SqlDbType.Int){ Value = user.Perfil.Id }
             };
 
             return conn.Write("SP_UpdateUser", parameters);
