@@ -130,7 +130,7 @@ namespace UI
                 {
                     CmbFamilias.SelectedIndex = -1;
                     HidePanelData();
-                    ConfigListBox();
+                    FillData();
                 }
             }
         }
@@ -153,7 +153,7 @@ namespace UI
 
             if (EditedFamily.Permisos.Count == 0)
             {
-                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "Debe seleccionar permisos o familias de permisos para crear una familia"));
+                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "Debe seleccionar permisos o familias de permisos"));
                 return;
             }
 
@@ -183,6 +183,7 @@ namespace UI
             if (result == DialogResult.Yes)
             {
                 CmbFamilias.SelectedIndex = -1;
+                BtnEliminar.Visible = false;
                 HidePanelData();
             }
         }
