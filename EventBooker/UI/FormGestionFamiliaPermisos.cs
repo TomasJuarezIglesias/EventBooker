@@ -53,7 +53,7 @@ namespace UI
             ListBoxFamilias.DataSource = null;
             ListBoxFamilias.DataSource =
                 _businessPermiso.GetFamiliaPermisos().Data
-                .Where(p => !EditedFamily.Permisos.Any(ef => ef.Id == p.Id))
+                .Where(p => !EditedFamily.Permisos.Any(ef => ef.Id == p.Id) && p.Id != EditedFamily?.Id)
                 .ToList();
             ListBoxFamilias.DisplayMember = "Nombre";
             ListBoxFamilias.SelectedIndex = -1;

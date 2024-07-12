@@ -77,6 +77,8 @@
             this.BtnGuardar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.LblCantidadUsuarios = new Bunifu.UI.WinForms.BunifuLabel();
             this.LblUsuariosBloqueados = new Bunifu.UI.WinForms.BunifuLabel();
+            this.bunifuLabel6 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.CmbPerfiles = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewUsuarios)).BeginInit();
             this.PanelData.SuspendLayout();
             this.SuspendLayout();
@@ -165,7 +167,7 @@
             this.DataGridViewUsuarios.ShowCellToolTips = false;
             this.DataGridViewUsuarios.ShowEditingIcon = false;
             this.DataGridViewUsuarios.ShowRowErrors = false;
-            this.DataGridViewUsuarios.Size = new System.Drawing.Size(708, 299);
+            this.DataGridViewUsuarios.Size = new System.Drawing.Size(708, 280);
             this.DataGridViewUsuarios.TabIndex = 1;
             this.DataGridViewUsuarios.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             this.DataGridViewUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewUsuarios_CellClick);
@@ -564,7 +566,7 @@
             this.TxtNombre.IconRight = null;
             this.TxtNombre.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtNombre.Lines = new string[0];
-            this.TxtNombre.Location = new System.Drawing.Point(9, 24);
+            this.TxtNombre.Location = new System.Drawing.Point(10, 30);
             this.TxtNombre.MaxLength = 32767;
             this.TxtNombre.MinimumSize = new System.Drawing.Size(1, 1);
             this.TxtNombre.Modified = false;
@@ -640,7 +642,7 @@
             this.TxtApellido.IconRight = null;
             this.TxtApellido.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtApellido.Lines = new string[0];
-            this.TxtApellido.Location = new System.Drawing.Point(10, 118);
+            this.TxtApellido.Location = new System.Drawing.Point(10, 121);
             this.TxtApellido.MaxLength = 32767;
             this.TxtApellido.MinimumSize = new System.Drawing.Size(1, 1);
             this.TxtApellido.Modified = false;
@@ -716,7 +718,7 @@
             this.TxtMail.IconRight = null;
             this.TxtMail.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtMail.Lines = new string[0];
-            this.TxtMail.Location = new System.Drawing.Point(424, 118);
+            this.TxtMail.Location = new System.Drawing.Point(392, 121);
             this.TxtMail.MaxLength = 32767;
             this.TxtMail.MinimumSize = new System.Drawing.Size(1, 1);
             this.TxtMail.Modified = false;
@@ -787,7 +789,7 @@
             this.bunifuLabel3.AutoEllipsis = false;
             this.bunifuLabel3.CursorType = null;
             this.bunifuLabel3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bunifuLabel3.Location = new System.Drawing.Point(10, 91);
+            this.bunifuLabel3.Location = new System.Drawing.Point(9, 94);
             this.bunifuLabel3.Name = "bunifuLabel3";
             this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel3.Size = new System.Drawing.Size(60, 21);
@@ -803,7 +805,7 @@
             this.bunifuLabel4.AutoEllipsis = false;
             this.bunifuLabel4.CursorType = null;
             this.bunifuLabel4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bunifuLabel4.Location = new System.Drawing.Point(424, 3);
+            this.bunifuLabel4.Location = new System.Drawing.Point(392, 3);
             this.bunifuLabel4.Name = "bunifuLabel4";
             this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel4.Size = new System.Drawing.Size(27, 21);
@@ -819,7 +821,7 @@
             this.bunifuLabel5.AutoEllipsis = false;
             this.bunifuLabel5.CursorType = null;
             this.bunifuLabel5.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bunifuLabel5.Location = new System.Drawing.Point(424, 91);
+            this.bunifuLabel5.Location = new System.Drawing.Point(392, 94);
             this.bunifuLabel5.Name = "bunifuLabel5";
             this.bunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel5.Size = new System.Drawing.Size(33, 21);
@@ -857,7 +859,7 @@
             this.TxtDni.IconRight = null;
             this.TxtDni.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtDni.Lines = new string[0];
-            this.TxtDni.Location = new System.Drawing.Point(424, 24);
+            this.TxtDni.Location = new System.Drawing.Point(392, 30);
             this.TxtDni.MaxLength = 32767;
             this.TxtDni.MinimumSize = new System.Drawing.Size(1, 1);
             this.TxtDni.Modified = false;
@@ -906,6 +908,8 @@
             // 
             // PanelData
             // 
+            this.PanelData.Controls.Add(this.CmbPerfiles);
+            this.PanelData.Controls.Add(this.bunifuLabel6);
             this.PanelData.Controls.Add(this.LblErrorMail);
             this.PanelData.Controls.Add(this.LblErrorApellido);
             this.PanelData.Controls.Add(this.LblErrorDni);
@@ -920,9 +924,9 @@
             this.PanelData.Controls.Add(this.TxtMail);
             this.PanelData.Controls.Add(this.bunifuLabel4);
             this.PanelData.Controls.Add(this.bunifuLabel3);
-            this.PanelData.Location = new System.Drawing.Point(2, 406);
+            this.PanelData.Location = new System.Drawing.Point(2, 364);
             this.PanelData.Name = "PanelData";
-            this.PanelData.Size = new System.Drawing.Size(897, 174);
+            this.PanelData.Size = new System.Drawing.Size(897, 242);
             this.PanelData.TabIndex = 21;
             // 
             // LblErrorMail
@@ -932,7 +936,7 @@
             this.LblErrorMail.CursorType = null;
             this.LblErrorMail.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LblErrorMail.ForeColor = System.Drawing.Color.Brown;
-            this.LblErrorMail.Location = new System.Drawing.Point(424, 156);
+            this.LblErrorMail.Location = new System.Drawing.Point(392, 164);
             this.LblErrorMail.Name = "LblErrorMail";
             this.LblErrorMail.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.LblErrorMail.Size = new System.Drawing.Size(98, 15);
@@ -949,7 +953,7 @@
             this.LblErrorApellido.CursorType = null;
             this.LblErrorApellido.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LblErrorApellido.ForeColor = System.Drawing.Color.Brown;
-            this.LblErrorApellido.Location = new System.Drawing.Point(10, 156);
+            this.LblErrorApellido.Location = new System.Drawing.Point(10, 164);
             this.LblErrorApellido.Name = "LblErrorApellido";
             this.LblErrorApellido.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.LblErrorApellido.Size = new System.Drawing.Size(117, 15);
@@ -966,7 +970,7 @@
             this.LblErrorDni.CursorType = null;
             this.LblErrorDni.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LblErrorDni.ForeColor = System.Drawing.Color.Brown;
-            this.LblErrorDni.Location = new System.Drawing.Point(424, 64);
+            this.LblErrorDni.Location = new System.Drawing.Point(392, 73);
             this.LblErrorDni.Name = "LblErrorDni";
             this.LblErrorDni.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.LblErrorDni.Size = new System.Drawing.Size(92, 15);
@@ -983,7 +987,7 @@
             this.LblErrorNombre.CursorType = null;
             this.LblErrorNombre.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LblErrorNombre.ForeColor = System.Drawing.Color.Brown;
-            this.LblErrorNombre.Location = new System.Drawing.Point(10, 64);
+            this.LblErrorNombre.Location = new System.Drawing.Point(10, 73);
             this.LblErrorNombre.Name = "LblErrorNombre";
             this.LblErrorNombre.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.LblErrorNombre.Size = new System.Drawing.Size(129, 15);
@@ -1041,7 +1045,7 @@
             this.BtnCancelar.IdleIconLeftImage = null;
             this.BtnCancelar.IdleIconRightImage = null;
             this.BtnCancelar.IndicateFocus = false;
-            this.BtnCancelar.Location = new System.Drawing.Point(737, 116);
+            this.BtnCancelar.Location = new System.Drawing.Point(208, 194);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnCancelar.OnDisabledState.BorderRadius = 1;
@@ -1132,7 +1136,7 @@
             this.BtnGuardar.IdleIconLeftImage = null;
             this.BtnGuardar.IdleIconRightImage = null;
             this.BtnGuardar.IndicateFocus = false;
-            this.BtnGuardar.Location = new System.Drawing.Point(737, 36);
+            this.BtnGuardar.Location = new System.Drawing.Point(491, 194);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnGuardar.OnDisabledState.BorderRadius = 1;
@@ -1207,6 +1211,31 @@
             this.LblUsuariosBloqueados.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.LblUsuariosBloqueados.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
+            // bunifuLabel6
+            // 
+            this.bunifuLabel6.AllowParentOverrides = false;
+            this.bunifuLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuLabel6.AutoEllipsis = false;
+            this.bunifuLabel6.CursorType = null;
+            this.bunifuLabel6.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.bunifuLabel6.Location = new System.Drawing.Point(737, 67);
+            this.bunifuLabel6.Name = "bunifuLabel6";
+            this.bunifuLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel6.Size = new System.Drawing.Size(39, 21);
+            this.bunifuLabel6.TabIndex = 27;
+            this.bunifuLabel6.Text = "Perfil:";
+            this.bunifuLabel6.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel6.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // CmbPerfiles
+            // 
+            this.CmbPerfiles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbPerfiles.FormattingEnabled = true;
+            this.CmbPerfiles.Location = new System.Drawing.Point(737, 94);
+            this.CmbPerfiles.Name = "CmbPerfiles";
+            this.CmbPerfiles.Size = new System.Drawing.Size(144, 21);
+            this.CmbPerfiles.TabIndex = 28;
+            // 
             // FormGestionUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1258,5 +1287,7 @@
         private Bunifu.UI.WinForms.BunifuLabel LblErrorNombre;
         private Bunifu.UI.WinForms.BunifuLabel LblCantidadUsuarios;
         private Bunifu.UI.WinForms.BunifuLabel LblUsuariosBloqueados;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel6;
+        private System.Windows.Forms.ComboBox CmbPerfiles;
     }
 }
