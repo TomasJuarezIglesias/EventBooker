@@ -21,5 +21,33 @@ namespace Business
         {
             return new BusinessResponse<List<IPermiso>>(true, _dataAccessPermiso.SelectPermisosPerfil(perfil));
         }
+
+        public BusinessResponse<List<IPermiso>> GetFamiliaPermisos()
+        {
+            return new BusinessResponse<List<IPermiso>>(true, _dataAccessPermiso.SelectAllFamilias());
+        }
+
+        public BusinessResponse<List<IPermiso>> GetPermisos()
+        {
+            return new BusinessResponse<List<IPermiso>>(true, _dataAccessPermiso.SelectAllPermisos());
+        }
+
+        public BusinessResponse<bool> CreateFamilia(IPermiso familia)
+        {
+            bool ok = _dataAccessPermiso.InsertFamilia(familia);
+            return new BusinessResponse<bool>(ok, ok, ok ? "Creado correctamente" : "Error al crear");
+        }
+
+        public BusinessResponse<bool> UpdateFamilia(IPermiso familia)
+        {
+            bool ok = _dataAccessPermiso.UpdateFamilia(familia);
+            return new BusinessResponse<bool>(ok, ok, ok ? "Modificado correctamente" : "Error al modificar");
+        }
+
+        public BusinessResponse<bool> DeleteFamilia(IPermiso familia)
+        {
+            bool ok = _dataAccessPermiso.DeleteFamilia(familia);
+            return new BusinessResponse<bool>(ok, ok, ok ? "Eliminado correctamente" : "Familia asignada a un perfil");
+        }
     }
 }

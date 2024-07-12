@@ -23,7 +23,7 @@ namespace UI
         private void BtnCrearFamilia_Click(object sender, EventArgs e)
         {
             this.Close();
-            openChildForm(new FormGestionFamiliaPermisos());
+            openChildForm(new FormGestionFamiliaPermisos(openChildForm));
         }
     }
 }
