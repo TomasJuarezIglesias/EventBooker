@@ -1,4 +1,5 @@
-﻿using Services;
+﻿using Business;
+using Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,14 +14,12 @@ namespace UI
 {
     public partial class FormMenuPrincipal : ServiceForm
     {
-        private SessionManager _sessionManager;
-
         public FormMenuPrincipal()
         {
             InitializeComponent();
             CustomView();
             OpenChildForm(new FormInicio());
-            _sessionManager = SessionManager.GetInstance();
+            ChangeTranslation(_sessionManager.Idioma);
             CheckPermissions();
         }
 
@@ -156,8 +155,8 @@ namespace UI
         private void BtnCerrarSesion_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
-            "¿Está seguro de que desea cerrar sesión?",
-            "Confirmar Cierre de Sesión",
+            $"{SearchTraduccion("MessageCerrarSesion")}",
+            $"{SearchTraduccion("CaptionCerrarSesion")}",
             MessageBoxButtons.YesNo,
             MessageBoxIcon.Question);
 

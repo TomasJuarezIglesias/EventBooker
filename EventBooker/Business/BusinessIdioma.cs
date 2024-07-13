@@ -21,5 +21,10 @@ namespace Business
         {
             return new BusinessResponse<List<EntityIdioma>>(true, _dataAccessIdioma.SelectAll());
         }
+
+        public BusinessResponse<string> GetTraduccion(EntityIdioma idioma, string NombreControl)
+        {
+            return new BusinessResponse<string>(true, _dataAccessIdioma.SelectTraduccion(idioma, NombreControl));
+        } 
     }
 }

@@ -17,17 +17,15 @@ namespace UI
 {
     public partial class ServiceForm : Form, IObserver
     {
+        protected readonly BusinessIdioma _businessIdioma;
+        protected readonly SessionManager _sessionManager;
         public ServiceForm()
         {
             StartPosition = FormStartPosition.CenterScreen;
 
-            SessionManager sessionManager = SessionManager.GetInstance();
+            _sessionManager = SessionManager.GetInstance();
 
-            if (sessionManager != null)
-            {
-                ChangeTranslation(sessionManager.Idioma);
-            }
-
+            _businessIdioma = new BusinessIdioma();
             InitializeComponent();
         }
 
@@ -42,8 +40,14 @@ namespace UI
             ResumeLayout(false);
         }
 
-        protected void ShowLabelError(string mensaje, BunifuLabel label)
+        protected void ShowLabelError(string mensaje, BunifuLabel label, string NombreControl = null, EntityIdioma idioma = null)
         {
+            if (NombreControl != null)
+            {
+                label.Text = SearchTraduccion(NombreControl, idioma);
+                label.Visible = true;
+                return;
+            }
             label.Text = mensaje;
             label.Visible = true;
         }
@@ -76,7 +80,7 @@ namespace UI
             ChangeTranslation(idioma);
         }
 
-        private void ChangeTranslation(EntityIdioma idioma, Control.ControlCollection collectionPanel = null)
+        protected void ChangeTranslation(EntityIdioma idioma, Control.ControlCollection collectionPanel = null)
         {
             Control.ControlCollection controlCollection = collectionPanel ?? Controls;
 
@@ -84,14 +88,18 @@ namespace UI
             {
                 if (item is Panel || item is BunifuPanel) ChangeTranslation(idioma, item.Controls);
 
-                if (item.Name.Contains("Form"))
+                if (item is Label || item is BunifuLabel || item is Button || item is BunifuButton)
                 {
                     // Buscar por name en la tabla junto con el id y setear el text del idioma seleccionado
-
+                    item.Text = _businessIdioma.GetTraduccion(idioma, item.Name).Data;
                 }
             }
         }
 
+        protected string SearchTraduccion(string controlName, EntityIdioma idioma = null)
+        {
+            return _businessIdioma.GetTraduccion(idioma ?? _sessionManager.Idioma, controlName).Data;
+        }
 
     }
 }

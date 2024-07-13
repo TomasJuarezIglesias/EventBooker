@@ -39,7 +39,7 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
-            this.bunifuLabel4 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.LblIdioma = new Bunifu.UI.WinForms.BunifuLabel();
             this.ComboBoxIdiomas = new System.Windows.Forms.ComboBox();
             this.LblErrorPassword = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuPictureBox2 = new Bunifu.UI.WinForms.BunifuPictureBox();
@@ -47,10 +47,10 @@
             this.BtnIngresar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.TxtPassword = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.LblContraseña = new Bunifu.UI.WinForms.BunifuLabel();
             this.TxtUsername = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.LblUsuario = new Bunifu.UI.WinForms.BunifuLabel();
+            this.LblInicioSesion = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuPanel2 = new Bunifu.UI.WinForms.BunifuPanel();
             this.bunifuPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox2)).BeginInit();
@@ -67,7 +67,7 @@
             this.bunifuPanel1.BorderColor = System.Drawing.Color.DimGray;
             this.bunifuPanel1.BorderRadius = 3;
             this.bunifuPanel1.BorderThickness = 1;
-            this.bunifuPanel1.Controls.Add(this.bunifuLabel4);
+            this.bunifuPanel1.Controls.Add(this.LblIdioma);
             this.bunifuPanel1.Controls.Add(this.ComboBoxIdiomas);
             this.bunifuPanel1.Controls.Add(this.LblErrorPassword);
             this.bunifuPanel1.Controls.Add(this.bunifuPictureBox2);
@@ -75,31 +75,31 @@
             this.bunifuPanel1.Controls.Add(this.BtnIngresar);
             this.bunifuPanel1.Controls.Add(this.bunifuPictureBox1);
             this.bunifuPanel1.Controls.Add(this.TxtPassword);
-            this.bunifuPanel1.Controls.Add(this.bunifuLabel3);
+            this.bunifuPanel1.Controls.Add(this.LblContraseña);
             this.bunifuPanel1.Controls.Add(this.TxtUsername);
-            this.bunifuPanel1.Controls.Add(this.bunifuLabel2);
-            this.bunifuPanel1.Controls.Add(this.bunifuLabel1);
+            this.bunifuPanel1.Controls.Add(this.LblUsuario);
+            this.bunifuPanel1.Controls.Add(this.LblInicioSesion);
             this.bunifuPanel1.Location = new System.Drawing.Point(258, 110);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = true;
             this.bunifuPanel1.Size = new System.Drawing.Size(617, 391);
             this.bunifuPanel1.TabIndex = 0;
             // 
-            // bunifuLabel4
+            // LblIdioma
             // 
-            this.bunifuLabel4.AllowParentOverrides = false;
-            this.bunifuLabel4.AutoEllipsis = false;
-            this.bunifuLabel4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel4.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel4.Location = new System.Drawing.Point(473, 12);
-            this.bunifuLabel4.Name = "bunifuLabel4";
-            this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel4.Size = new System.Drawing.Size(51, 21);
-            this.bunifuLabel4.TabIndex = 11;
-            this.bunifuLabel4.Text = "Idioma:";
-            this.bunifuLabel4.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel4.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.LblIdioma.AllowParentOverrides = false;
+            this.LblIdioma.AutoEllipsis = false;
+            this.LblIdioma.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LblIdioma.CursorType = System.Windows.Forms.Cursors.Default;
+            this.LblIdioma.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblIdioma.Location = new System.Drawing.Point(473, 12);
+            this.LblIdioma.Name = "LblIdioma";
+            this.LblIdioma.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LblIdioma.Size = new System.Drawing.Size(51, 21);
+            this.LblIdioma.TabIndex = 11;
+            this.LblIdioma.Text = "Idioma:";
+            this.LblIdioma.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.LblIdioma.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // ComboBoxIdiomas
             // 
@@ -346,20 +346,20 @@
             this.TxtPassword.UseSystemPasswordChar = true;
             this.TxtPassword.WordWrap = true;
             // 
-            // bunifuLabel3
+            // LblContraseña
             // 
-            this.bunifuLabel3.AllowParentOverrides = false;
-            this.bunifuLabel3.AutoEllipsis = false;
-            this.bunifuLabel3.CursorType = null;
-            this.bunifuLabel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel3.Location = new System.Drawing.Point(177, 216);
-            this.bunifuLabel3.Name = "bunifuLabel3";
-            this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel3.Size = new System.Drawing.Size(82, 21);
-            this.bunifuLabel3.TabIndex = 2;
-            this.bunifuLabel3.Text = "Contraseña:";
-            this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel3.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.LblContraseña.AllowParentOverrides = false;
+            this.LblContraseña.AutoEllipsis = false;
+            this.LblContraseña.CursorType = null;
+            this.LblContraseña.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblContraseña.Location = new System.Drawing.Point(177, 216);
+            this.LblContraseña.Name = "LblContraseña";
+            this.LblContraseña.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LblContraseña.Size = new System.Drawing.Size(82, 21);
+            this.LblContraseña.TabIndex = 2;
+            this.LblContraseña.Text = "Contraseña:";
+            this.LblContraseña.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.LblContraseña.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // TxtUsername
             // 
@@ -435,37 +435,38 @@
             this.TxtUsername.UseSystemPasswordChar = false;
             this.TxtUsername.WordWrap = true;
             // 
-            // bunifuLabel2
+            // LblUsuario
             // 
-            this.bunifuLabel2.AllowParentOverrides = false;
-            this.bunifuLabel2.AutoEllipsis = false;
-            this.bunifuLabel2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel2.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel2.Location = new System.Drawing.Point(177, 125);
-            this.bunifuLabel2.Name = "bunifuLabel2";
-            this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(57, 21);
-            this.bunifuLabel2.TabIndex = 1;
-            this.bunifuLabel2.Text = "Usuario:";
-            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.LblUsuario.AllowParentOverrides = false;
+            this.LblUsuario.AutoEllipsis = false;
+            this.LblUsuario.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LblUsuario.CursorType = System.Windows.Forms.Cursors.Default;
+            this.LblUsuario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblUsuario.Location = new System.Drawing.Point(177, 125);
+            this.LblUsuario.Name = "LblUsuario";
+            this.LblUsuario.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LblUsuario.Size = new System.Drawing.Size(57, 21);
+            this.LblUsuario.TabIndex = 1;
+            this.LblUsuario.Text = "Usuario:";
+            this.LblUsuario.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.LblUsuario.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuLabel1
+            // LblInicioSesion
             // 
-            this.bunifuLabel1.AllowParentOverrides = false;
-            this.bunifuLabel1.AutoEllipsis = false;
-            this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.bunifuLabel1.Location = new System.Drawing.Point(212, 55);
-            this.bunifuLabel1.Name = "bunifuLabel1";
-            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(191, 45);
-            this.bunifuLabel1.TabIndex = 0;
-            this.bunifuLabel1.Text = "Iniciar Sesión";
-            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.LblInicioSesion.AllowParentOverrides = false;
+            this.LblInicioSesion.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LblInicioSesion.AutoEllipsis = false;
+            this.LblInicioSesion.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LblInicioSesion.CursorType = System.Windows.Forms.Cursors.Default;
+            this.LblInicioSesion.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.LblInicioSesion.Location = new System.Drawing.Point(212, 55);
+            this.LblInicioSesion.Name = "LblInicioSesion";
+            this.LblInicioSesion.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LblInicioSesion.Size = new System.Drawing.Size(191, 45);
+            this.LblInicioSesion.TabIndex = 0;
+            this.LblInicioSesion.Text = "Iniciar Sesión";
+            this.LblInicioSesion.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
+            this.LblInicioSesion.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // bunifuPanel2
             // 
@@ -505,17 +506,17 @@
 
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
         private Bunifu.UI.WinForms.BunifuTextBox TxtUsername;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
+        private Bunifu.UI.WinForms.BunifuLabel LblUsuario;
+        private Bunifu.UI.WinForms.BunifuLabel LblInicioSesion;
         private Bunifu.UI.WinForms.BunifuTextBox TxtPassword;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel3;
+        private Bunifu.UI.WinForms.BunifuLabel LblContraseña;
         private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox1;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton BtnIngresar;
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel2;
         private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox2;
         private Bunifu.UI.WinForms.BunifuLabel LblErrorUsuario;
         private Bunifu.UI.WinForms.BunifuLabel LblErrorPassword;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel4;
+        private Bunifu.UI.WinForms.BunifuLabel LblIdioma;
         private System.Windows.Forms.ComboBox ComboBoxIdiomas;
     }
 }

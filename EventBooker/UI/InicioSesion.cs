@@ -43,13 +43,13 @@ namespace UI
 
             if (string.IsNullOrEmpty(TxtUsername.Text))
             {
-                ShowLabelError("Debe ingresar usuario",LblErrorUsuario);   
+                ShowLabelError("Debe ingresar usuario",LblErrorUsuario, "LblErrorUsuario", ComboBoxIdiomas.SelectedItem as EntityIdioma);   
                 inputError = true;
             }
             
             if (string.IsNullOrEmpty(TxtPassword.Text))
             {
-                ShowLabelError("Debe ingresar contraseña", LblErrorPassword);
+                ShowLabelError("Debe ingresar contraseña", LblErrorPassword, "LblErrorPassword", ComboBoxIdiomas.SelectedItem as EntityIdioma);
                 inputError = true;
             }
 

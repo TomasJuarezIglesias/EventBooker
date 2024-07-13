@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,6 +30,19 @@ namespace DataAccess
             }
 
             return idiomas;
+        }
+
+        public string SelectTraduccion(EntityIdioma idioma, string controlName)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@In_IdIdioma", SqlDbType.Int){ Value = idioma.Id },
+                new SqlParameter("@In_NombreControl", SqlDbType.NVarChar){ Value = controlName }
+            };
+
+            DataTable data = connection.Read("SP_SelectTraduccion", parameters);
+
+            return data.Rows[0]["Traduccion"].ToString();
         }
 
     }
