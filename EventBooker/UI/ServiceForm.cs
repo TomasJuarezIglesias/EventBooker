@@ -18,7 +18,7 @@ namespace UI
     public partial class ServiceForm : Form, IObserver
     {
         protected readonly BusinessIdioma _businessIdioma;
-        protected readonly SessionManager _sessionManager;
+        protected SessionManager _sessionManager;
         public ServiceForm()
         {
             StartPosition = FormStartPosition.CenterScreen;
@@ -60,17 +60,17 @@ namespace UI
             }
         }
 
-        protected void RevisarRespuestaServicio<T>(BusinessResponse<T> respuesta)
+        protected void RevisarRespuestaServicio<T>(BusinessResponse<T> respuesta, EntityIdioma idioma = null)
         {
             if (!respuesta.Ok)
             {
-                MessageBox.Show(respuesta.Mensaje, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(SearchTraduccion(respuesta.Mensaje, idioma), "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
 
             if (respuesta.Ok && !string.IsNullOrEmpty(respuesta.Mensaje))
             {
-                MessageBox.Show(respuesta.Mensaje, "Great!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(SearchTraduccion(respuesta.Mensaje, idioma), "Great!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }
@@ -80,8 +80,10 @@ namespace UI
             ChangeTranslation(idioma);
         }
 
-        protected void ChangeTranslation(EntityIdioma idioma, Control.ControlCollection collectionPanel = null)
+        protected void ChangeTranslation(EntityIdioma idioma = null, Control.ControlCollection collectionPanel = null)
         {
+            if(idioma == null) idioma = _sessionManager.Idioma;
+
             Control.ControlCollection controlCollection = collectionPanel ?? Controls;
 
             foreach (Control item in controlCollection)

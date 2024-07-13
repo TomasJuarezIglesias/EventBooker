@@ -17,17 +17,14 @@ namespace UI
 {
     public partial class InicioSesion : ServiceForm
     {
-        private SessionManager _sessionManager;
         private readonly BusinessUser _businessUser;
         private List<EntityUser> _ListaErrorLogeo;
 
-        private BusinessIdioma _businessIdioma;
         public InicioSesion()
         {
             InitializeComponent();
             _businessUser = new BusinessUser();
             _ListaErrorLogeo = new List<EntityUser>();  
-            _businessIdioma = new BusinessIdioma();
             FillIdiomas();
         }
 
@@ -60,7 +57,7 @@ namespace UI
             {
                 BusinessResponse<EntityUser> response = _businessUser.VerifyCredentials(TxtUsername.Text, TxtPassword.Text);
 
-                RevisarRespuestaServicio(response);
+                RevisarRespuestaServicio(response, ComboBoxIdiomas.SelectedItem as EntityIdioma);
 
                 if (response.Data?.IsBlock == true) return;
 
@@ -72,7 +69,7 @@ namespace UI
                     if (_ListaErrorLogeo.Where(users => users.Id == response.Data.Id).Count() == 3)
                     {
 
-                        RevisarRespuestaServicio(_businessUser.BlockUser(response.Data));
+                        RevisarRespuestaServicio(_businessUser.BlockUser(response.Data), ComboBoxIdiomas.SelectedItem as EntityIdioma);
                     }
                 }
 
@@ -90,7 +87,7 @@ namespace UI
             }
             catch (Exception ex)
             {
-                RevisarRespuestaServicio(new BusinessResponse<bool>(false,false,ex.Message));
+                Console.WriteLine(ex.Message);
             }
             
         }

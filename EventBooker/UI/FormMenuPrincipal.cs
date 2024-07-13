@@ -19,7 +19,7 @@ namespace UI
             InitializeComponent();
             CustomView();
             OpenChildForm(new FormInicio());
-            ChangeTranslation(_sessionManager.Idioma);
+            ChangeTranslation();
             CheckPermissions();
         }
 

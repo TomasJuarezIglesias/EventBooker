@@ -26,9 +26,9 @@ namespace Business
             bool ok = user?.Password == CryptoManager.EncryptString(password) && user?.Username == username;
 
             string mensaje =
-                user?.Username != username ? "Usuario Incorrecto" :
-                user.IsBlock ? "Usuario Bloqueado" :
-                !ok ? "Contraseña Incorrecta" :
+                user?.Username != username ? "MessageUsuarioIncorrecto" :
+                user.IsBlock ? "MessageUsuarioBloqueado" :
+                !ok ? "MessageContraseñaIncorecta" :
                 string.Empty;
 
             ok = user?.IsBlock == true ? false : ok;
@@ -43,17 +43,17 @@ namespace Business
 
         public BusinessResponse<bool> ChangePassword(EntityUser user, string actualPassword, string newPassword, string newPasswordRep)
         {
-            if (newPassword != newPasswordRep) return new BusinessResponse<bool>(false, false, "Las nuevas contraseñas no coinciden");
+            if (newPassword != newPasswordRep) return new BusinessResponse<bool>(false, false, "MessageNuevasContraseñasNoCoinciden");
 
-            if (!RegexValidationService.IsValidPassword(newPassword)) return new BusinessResponse<bool>(false, false, "La contraseña debe contener mínimo 8 caracteres, una mayúscula y al menos un numero");
+            if (!RegexValidationService.IsValidPassword(newPassword)) return new BusinessResponse<bool>(false, false, "MessageValidacionContraseña");
 
-            if (user.Password != CryptoManager.EncryptString(actualPassword)) return new BusinessResponse<bool>(false, false, "Contraseñas no coinciden");
+            if (user.Password != CryptoManager.EncryptString(actualPassword)) return new BusinessResponse<bool>(false, false, "MessageContraseñasNoCoinciden");
 
             user.Password = CryptoManager.EncryptString(newPassword);
 
             bool ok = dataAccess.Update(user);
 
-            return new BusinessResponse<bool>(ok, ok, !ok ? "Error al modificar contraseña" : "Contraseña modificada correctamente");
+            return new BusinessResponse<bool>(ok, ok, !ok ? "MessageErrorAlModificar" : "MessageModificadoCorrectamente");
         }
 
         public BusinessResponse<bool> BlockUser(EntityUser user)
@@ -61,7 +61,7 @@ namespace Business
             user.IsBlock = true;
             bool ok = dataAccess.Update(user);
 
-            return new BusinessResponse<bool>(false, ok, ok ? "El usuario ha sido bloqueado por exceder número de intentos fallidos" : "Error al bloquear usuario");
+            return new BusinessResponse<bool>(false, ok, ok ? "MessageUsuarioBloqueado" : "MessageErrorAlBloquearUsuario");
         }
 
         public BusinessResponse<bool> UnblockUser(EntityUser user)
@@ -71,7 +71,7 @@ namespace Business
 
             bool ok = dataAccess.Update(user);
 
-            return new BusinessResponse<bool>(ok, ok, ok ? "Desbloqueado correctamente" : "No se pudo desbloquear");
+            return new BusinessResponse<bool>(ok, ok, ok ? "MessageDesbloqueadoCorrectamente" : "MessageNoSePudoDesbloquear");
         }
 
         public BusinessResponse<List<EntityUser>> GetAll()
@@ -85,21 +85,21 @@ namespace Business
 
             bool ok = dataAccess.Insert(user);
 
-            return new BusinessResponse<bool>(ok, ok, !ok ? $"Ya existe usuario con dni: {user.Dni}" : "Usuario creado correctamente");
+            return new BusinessResponse<bool>(ok, ok, !ok ? $"MessageUsuarioExistenteConDni" : "MessageCreadoCorrectamente");
         }
 
         public BusinessResponse<bool> Update(EntityUser user)
         {
             bool ok = dataAccess.Update(user);
 
-            return new BusinessResponse<bool>(ok, ok, !ok ? $"Ya existe usuario con dni: {user.Dni}" : "Usuario modificado correctamente");
+            return new BusinessResponse<bool>(ok, ok, !ok ? $"MessageUsuarioExistenteConDni" : "MessageModificadoCorrectamente");
         }
 
         public BusinessResponse<bool> Delete(Entity entity)
         {
             bool ok = dataAccess.Delete(entity);
 
-            return new BusinessResponse<bool>(ok, ok, !ok ? "No existe" : "Eliminado correctamente");
+            return new BusinessResponse<bool>(ok, ok, !ok ? "MessageErrorAlEliminar" : "MessageEliminadoCorrectamente");
         }
         
     }

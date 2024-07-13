@@ -25,6 +25,7 @@ namespace UI
             InitializeComponent();
             _BusinessUser = new BusinessUser();
             _BusinessPerfil = new BusinessPerfil();
+            ChangeTranslation();
             FillDataGridView();
             HidePanelData();
         }
@@ -63,7 +64,7 @@ namespace UI
             }
             catch (Exception)
             {
-                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "Debe seleccionar un usuario"));
+                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "MessageDebeSeleccionarUsuario"));
             }
             
         }
@@ -74,7 +75,7 @@ namespace UI
 
             if (CmbPerfiles.SelectedIndex == -1)
             {
-                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "Debe seleccionar Perfil"));
+                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "MessageDebeSeleccionarPerfil"));
                 return;
             }
 
@@ -136,13 +137,13 @@ namespace UI
 
             if (user is null)
             {
-                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "Debe seleccionar un usuario"));
+                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "MessageDebeSeleccionarUsuario"));
                 return;
             }
 
             DialogResult result = MessageBox.Show(
-            $"¿Está seguro de que desea Desbloquear el usuario {user.Username}?",
-            $"Confirmar Desbloquear",
+            $"{SearchTraduccion("MessageDeseaDesbloquearUsuario")}",
+            $"{SearchTraduccion("CaptionConfirmarDesbloquear")}",
             MessageBoxButtons.YesNo,
             MessageBoxIcon.Question);
 
@@ -161,8 +162,8 @@ namespace UI
                 EntityUser user = DataGridViewUsuarios.SelectedRows[0].DataBoundItem as EntityUser;
 
                 DialogResult result = MessageBox.Show(
-                $"¿Está seguro de que desea eliminar el usuario {user.Username}?",
-                $"Confirmar eliminar",
+                $"{SearchTraduccion("MessageDeseaEliminarUsuario")}",
+                $"{SearchTraduccion("CaptionConfirmarEliminar")}",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
 
@@ -175,7 +176,7 @@ namespace UI
             }
             catch (Exception)
             {
-                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "Debe seleccionar un usuario"));
+                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "MessageDebeSeleccionarUsuario"));
             }
         }
 
@@ -210,8 +211,8 @@ namespace UI
             DataGridViewUsuarios.Columns["Username"].HeaderText = "Usuario";
             DataGridViewUsuarios.Columns["IsBlock"].HeaderText = "Bloqueado";
 
-            LblCantidadUsuarios.Text = $"Cantidad de usuarios: {users.Count}";
-            LblUsuariosBloqueados.Text = $"Usuarios Bloqueados: {users.Where(user => user.IsBlock).Count()}";
+            LblCantidadUsuarios.Text = $"{SearchTraduccion("LblCantidadUsuarios")} {users.Count}";
+            LblUsuariosBloqueados.Text = $"{SearchTraduccion("LblUsuariosBloqueados")} {users.Where(user => user.IsBlock).Count()}";
 
         }
 
@@ -270,37 +271,37 @@ namespace UI
 
             if (string.IsNullOrEmpty(TxtNombre.Text))
             {
-                ShowLabelError("Debe Ingresar el nombre", LblErrorNombre);
+                ShowLabelError("Debe Ingresar el nombre", LblErrorNombre, "LblErrorNombre");
                 ok = false;
             }
 
             if (string.IsNullOrEmpty(TxtApellido.Text))
             {
-                ShowLabelError("Debe Ingresar el apellido", LblErrorApellido);
+                ShowLabelError("Debe Ingresar el apellido", LblErrorApellido, "LblErrorApellido");
                 ok = false;
             }
 
             if (string.IsNullOrEmpty(TxtDni.Text))
             {
-                ShowLabelError("Debe ingresar dni", LblErrorDni);
+                ShowLabelError("Debe ingresar dni", LblErrorDni, "LblErrorDni");
                 ok = false;
             }
 
             if (!string.IsNullOrEmpty(TxtDni.Text) && !RegexValidationService.IsValidDni(TxtDni.Text))
             {
-                ShowLabelError("Formato del dni incorrecto", LblErrorDni);
+                ShowLabelError("Formato del dni incorrecto", LblErrorDni, "MessageFormatoDniIncorrecto");
                 ok = false;
             }
 
             if (string.IsNullOrEmpty(TxtMail.Text))
             {
-                ShowLabelError("Debe ingresar mail", LblErrorMail);
+                ShowLabelError("Debe ingresar mail", LblErrorMail, "LblErrorMail");
                 ok = false;
             }
 
             if (!string.IsNullOrEmpty(TxtMail.Text) && !RegexValidationService.IsValidEmail(TxtMail.Text))
             {
-                ShowLabelError("Formato del mail incorrecto", LblErrorMail);
+                ShowLabelError("Formato del mail incorrecto", LblErrorMail, "MessageFormatoMailIncorrecto");
                 ok = false;
             }
 
