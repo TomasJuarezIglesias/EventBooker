@@ -1211,7 +1211,7 @@
             this.LblCantidadUsuarios.AutoEllipsis = false;
             this.LblCantidadUsuarios.CursorType = null;
             this.LblCantidadUsuarios.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.LblCantidadUsuarios.Location = new System.Drawing.Point(356, 36);
+            this.LblCantidadUsuarios.Location = new System.Drawing.Point(544, 36);
             this.LblCantidadUsuarios.Name = "LblCantidadUsuarios";
             this.LblCantidadUsuarios.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.LblCantidadUsuarios.Size = new System.Drawing.Size(162, 21);
@@ -1227,7 +1227,7 @@
             this.LblUsuariosBloqueados.AutoEllipsis = false;
             this.LblUsuariosBloqueados.CursorType = null;
             this.LblUsuariosBloqueados.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.LblUsuariosBloqueados.Location = new System.Drawing.Point(558, 36);
+            this.LblUsuariosBloqueados.Location = new System.Drawing.Point(544, 9);
             this.LblUsuariosBloqueados.Name = "LblUsuariosBloqueados";
             this.LblUsuariosBloqueados.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.LblUsuariosBloqueados.Size = new System.Drawing.Size(162, 21);

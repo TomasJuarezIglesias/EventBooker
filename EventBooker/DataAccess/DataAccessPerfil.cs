@@ -56,6 +56,11 @@ namespace DataAccess
 
             perfil.Id = _connection.WriteWithReturn("SP_CreatePerfil", parameters);
 
+            if (perfil.Id == -1)
+            {
+                return false;
+            }
+
             foreach (IPermiso permiso in perfil.Permisos)
             {
                 parameters = new SqlParameter[]
@@ -81,6 +86,11 @@ namespace DataAccess
             };
 
             ok = _connection.Write("SP_UpdatePerfil", parameters);
+
+            if (!ok)
+            {
+                return false;
+            }
 
             parameters = new SqlParameter[]
             {

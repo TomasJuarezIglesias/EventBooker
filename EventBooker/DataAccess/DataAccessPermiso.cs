@@ -139,6 +139,11 @@ namespace DataAccess
 
             familiaPermisos.Id = _connection.WriteWithReturn("SP_CreateFamilia", parameters);
 
+            if (familiaPermisos.Id == -1)
+            {
+                return false;
+            }
+
             foreach (IPermiso permiso in familiaPermisos.Permisos)
             {
                 parameters = new SqlParameter[]
@@ -167,6 +172,11 @@ namespace DataAccess
             };
 
             ok = _connection.Write("SP_UpdateFamilia", parameters);
+
+            if (!ok)
+            {
+                return false;
+            }
 
             parameters = new SqlParameter[]
             {
