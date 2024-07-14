@@ -208,8 +208,13 @@ namespace UI
             DataGridViewUsuarios.Columns["Password"].Visible = false;
 
             // Cambio de nombre de columnas
-            DataGridViewUsuarios.Columns["Username"].HeaderText = "Usuario";
-            DataGridViewUsuarios.Columns["IsBlock"].HeaderText = "Bloqueado";
+            DataGridViewUsuarios.Columns["Username"].HeaderText = SearchTraduccion("DGVColumnaUsuario");
+            DataGridViewUsuarios.Columns["IsBlock"].HeaderText = SearchTraduccion("DGVColumnaBloqueado");
+            DataGridViewUsuarios.Columns["Dni"].HeaderText = SearchTraduccion("DGVColumnaDni");
+            DataGridViewUsuarios.Columns["Nombre"].HeaderText = SearchTraduccion("DGVColumnaNombre");
+            DataGridViewUsuarios.Columns["Apellido"].HeaderText = SearchTraduccion("DGVColumnaApellido");
+            DataGridViewUsuarios.Columns["Mail"].HeaderText = SearchTraduccion("DGVColumnaMail");
+            DataGridViewUsuarios.Columns["Perfil"].HeaderText = SearchTraduccion("DGVColumnaDescripcion");
 
             LblCantidadUsuarios.Text = $"{SearchTraduccion("LblCantidadUsuarios")} {users.Count}";
             LblUsuariosBloqueados.Text = $"{SearchTraduccion("LblUsuariosBloqueados")} {users.Where(user => user.IsBlock).Count()}";

@@ -24,7 +24,7 @@ namespace Business
         public BusinessResponse<EntityPerfil> GetByUser(Entity user)
         {
             EntityPerfil perfil = _dataAccessPerfil.SelectByUser(user);
-            perfil.Permisos = _businessPermiso.GetPermisosPerfil(user).Data;
+            perfil.Permisos = _businessPermiso.GetPermisosPerfil(perfil).Data;
 
             return new BusinessResponse<EntityPerfil>(true, perfil);
         }

@@ -163,8 +163,12 @@ namespace UI
 
             DataGridViewSalones.Columns["Id"].Visible = false;
 
-            DataGridViewSalones.Columns["PrecioCubierto"].HeaderText = "Precio Cubierto";
-            DataGridViewSalones.Columns["CantidadMinimaInvitados"].HeaderText = "Cantidad Minima Invitados";
+            DataGridViewSalones.Columns["PrecioCubierto"].HeaderText = SearchTraduccion("DGVColumnaPrecioCubierto");
+            DataGridViewSalones.Columns["CantidadMinimaInvitados"].HeaderText = SearchTraduccion("DGVColumnaCantidadMinimaInvitados");
+            DataGridViewSalones.Columns["Nombre"].HeaderText = SearchTraduccion("DGVColumnaNombre");
+            DataGridViewSalones.Columns["Ubicacion"].HeaderText = SearchTraduccion("DGVColumnaUbicacion");
+            DataGridViewSalones.Columns["Precio"].HeaderText = SearchTraduccion("DGVColumnaPrecio");
+            DataGridViewSalones.Columns["Capacidad"].HeaderText = SearchTraduccion("DGVColumnaCapacidad");
         }
 
         private void ShowPanelData()

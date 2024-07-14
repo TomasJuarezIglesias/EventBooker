@@ -172,7 +172,10 @@ namespace UI
 
         private void BtnCambiarIdioma_Click(object sender, EventArgs e)
         {
-            FormIdioma formIdioma = new FormIdioma(this);
+            FormIdioma formIdioma = new FormIdioma(new List<IObserver>{
+                this,
+                _activeForm
+            });
             formIdioma.ShowDialog();
         }
 

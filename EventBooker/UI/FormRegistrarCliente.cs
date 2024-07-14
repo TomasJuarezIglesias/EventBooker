@@ -22,10 +22,12 @@ namespace UI
 
         public FormRegistrarCliente(Action<ServiceForm> openChildForm, EntityReserva reserva)
         {
+            InitializeComponent();
+            ChangeTranslation();
+
             _openChildForm = openChildForm;
             _businessCliente = new BusinessCliente();
             _reserva = reserva;
-            InitializeComponent();
         }
 
         private void BtnRegistrarCliente_Click(object sender, EventArgs e)
@@ -57,8 +59,8 @@ namespace UI
         private void BtnVolver_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
-            $"¿Está seguro que desea volver?",
-            $"Volver",
+            $"{SearchTraduccion("MessageEstaSeguroQueDeseaVolver")}",
+            $"{SearchTraduccion("CaptionVolver")}",
             MessageBoxButtons.YesNo,
             MessageBoxIcon.Question);
 
@@ -79,62 +81,62 @@ namespace UI
                 LblErrorDni,
                 LblErrorContacto,
                 LblErrorDireccion,
-                LblErrorEmail
+                LblErrorMail
             });
 
             bool ok = true;
 
             if (string.IsNullOrEmpty(TxtNombre.Text))
             {
-                ShowLabelError("Debe Ingresar el nombre", LblErrorNombre);
+                ShowLabelError("Debe Ingresar el nombre", LblErrorNombre, "LblErrorNombre");
                 ok = false;
             }
 
             if (string.IsNullOrEmpty(TxtApellido.Text))
             {
-                ShowLabelError("Debe Ingresar el apellido", LblErrorApellido);
+                ShowLabelError("Debe Ingresar el apellido", LblErrorApellido, "LblErrorApellido");
                 ok = false;
             }
 
             if (string.IsNullOrEmpty(TxtDni.Text))
             {
-                ShowLabelError("Debe ingresar dni", LblErrorDni);
+                ShowLabelError("Debe ingresar dni", LblErrorDni, "LblErrorDni");
                 ok = false;
             }
 
             if (!string.IsNullOrEmpty(TxtDni.Text) && !RegexValidationService.IsValidDni(TxtDni.Text))
             {
-                ShowLabelError("Formato del dni incorrecto", LblErrorDni);
+                ShowLabelError("Formato del dni incorrecto", LblErrorDni, "MessageFormatoDniIncorrecto");
                 ok = false;
             }
 
             if (string.IsNullOrEmpty(TxtEmail.Text))
             {
-                ShowLabelError("Debe ingresar mail", LblErrorEmail);
+                ShowLabelError("Debe ingresar mail", LblErrorMail, "LblErrorMail");
                 ok = false;
             }
 
             if (!string.IsNullOrEmpty(TxtEmail.Text) && !RegexValidationService.IsValidEmail(TxtEmail.Text))
             {
-                ShowLabelError("Formato del mail incorrecto", LblErrorEmail);
+                ShowLabelError("Formato del mail incorrecto", LblErrorMail, "MessageFormatoMailIncorrecto");
                 ok = false;
             }
 
             if (string.IsNullOrEmpty(TxtDireccion.Text))
             {
-                ShowLabelError("Debe ingresar direccion", LblErrorDireccion);
+                ShowLabelError("Debe ingresar direccion", LblErrorDireccion, "LblErrorDireccion");
                 ok = false;
             }
 
             if(string.IsNullOrEmpty(TxtContacto.Text))
             {
-                ShowLabelError("Debe ingresar contacto", LblErrorContacto);
+                ShowLabelError("Debe ingresar contacto", LblErrorContacto, "LblErrorContacto");
                 ok = false;
             }
 
             if(!string.IsNullOrEmpty(TxtContacto.Text) && !RegexValidationService.IsValidContact(TxtContacto.Text))
             {
-                ShowLabelError("Formato del contacto incorrecto", LblErrorContacto);
+                ShowLabelError("Formato del contacto incorrecto", LblErrorContacto, "MessageFormatoContactoIncorrecto");
                 ok = false;
             }
 

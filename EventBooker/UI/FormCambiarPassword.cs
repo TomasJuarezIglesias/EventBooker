@@ -15,13 +15,13 @@ namespace UI
 {
     public partial class FormCambiarPassword : ServiceForm
     {
-        private SessionManager _sessionManager;
         private ServiceForm _formMenuPrincipal;
         private readonly BusinessUser _businessUser;
 
         public FormCambiarPassword(ServiceForm formMenuPrincipal)
         {
             InitializeComponent();
+            ChangeTranslation();
             _sessionManager = SessionManager.GetInstance();
             _businessUser = new BusinessUser();
             _formMenuPrincipal = formMenuPrincipal;
@@ -40,19 +40,19 @@ namespace UI
 
             if (string.IsNullOrEmpty(TxtActualPass.Text))
             {
-                ShowLabelError("Debe ingresar contraseña actual", LblErrorActualPass);
+                ShowLabelError("Debe ingresar contraseña actual", LblErrorActualPass, "LblErrorActualPass");
                 inputError = true;
             }
 
             if (string.IsNullOrEmpty(TxtNewPass.Text))
             {
-                ShowLabelError("Debe ingresar nueva contraseña", LblErrorNewPass);
+                ShowLabelError("Debe ingresar nueva contraseña", LblErrorNewPass, "LblErrorNewPass");
                 inputError = true;
             }
 
             if (string.IsNullOrEmpty(TxtNewPassRep.Text))
             {
-                ShowLabelError("Debe repetir la nueva contraseña", LblErrorNewPassRep);
+                ShowLabelError("Debe repetir la nueva contraseña", LblErrorNewPassRep, "LblErrorNewPassRep");
                 inputError = true;
             }
 

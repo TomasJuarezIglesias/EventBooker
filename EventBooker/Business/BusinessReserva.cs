@@ -26,14 +26,14 @@ namespace Business
         {
             bool ok = _dataAccessReserva.Insert(reserva);
 
-            return new BusinessResponse<bool>(ok, ok, ok ? "Reserva registrada con éxito" : "Error al registrar la reserva");
+            return new BusinessResponse<bool>(ok, ok, ok ? "MessageReservaRegistradaConExito" : "MessageErrorRegistrarReserva");
         }
 
         public BusinessResponse<bool> Update(EntityReserva reserva)
         {
             bool ok = _dataAccessReserva.Update(reserva);
 
-            return new BusinessResponse<bool>(ok, ok, ok ? "Reserva modificada correctamente" : "Error al modificar la reserva");
+            return new BusinessResponse<bool>(ok, ok, ok ? "MessageModificadoCorrectamente" : "MessageErrorAlModificar");
         }
     }
 }

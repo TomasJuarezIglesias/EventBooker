@@ -21,6 +21,8 @@ namespace UI
         public FormSeleccionarSalon(Action<ServiceForm> openChildForm, EntityReserva reserva)
         {
             InitializeComponent();
+            ChangeTranslation();
+
             this.openChildForm = openChildForm;
             _businessSalon = new BusinessSalon();
             _reserva = reserva is null ? new EntityReserva() : reserva;
@@ -55,19 +57,19 @@ namespace UI
         {
             if (CmbSalon.SelectedIndex == -1)
             {
-                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "Debe seleccionar salón"));
+                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "MessageDebeSeleccionarSalon"));
                 return;
             }
 
             if (DateTimePickerFecha.Value.Date < DateTime.Now.Date)
             {
-                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "Debe seleccionar una fecha mayor a la actual"));
+                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "MessageDebeSeleccionarFechaMayor"));
                 return;
             }
 
             if (CmbTurnos.SelectedIndex == -1)
             {
-                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "Debe seleccionar turno"));
+                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "MessageDebeSeleccionarTurno"));
                 return;
             }
 
@@ -92,12 +94,12 @@ namespace UI
         {
             EntitySalon salon = CmbSalon.SelectedItem as EntitySalon;
 
-            LblNombre.Text = $"Nombre: {salon.Nombre}";
-            LblUbicacion.Text = $"Ubicación: {salon.Ubicacion}";
-            LblPrecio.Text = $"Precio: ${salon.Precio}";
-            LblPrecioCubierto.Text = $"Precio Cubierto: ${salon.PrecioCubierto}";
-            LblCapacidad.Text = $"Capacidad: {salon.Capacidad}";
-            LblCantidadMinimaInvitados.Text = $"Cantidad Minima Invitados: {salon.CantidadMinimaInvitados}";
+            LblNombreSalon.Text = $"{SearchTraduccion("LblNombre")} {salon.Nombre}";
+            LblUbicacion.Text = $"{SearchTraduccion("LblUbicacion")} {salon.Ubicacion}";
+            LblPrecio.Text = $"{SearchTraduccion("LblPrecio")} ${salon.Precio}";
+            LblPrecioCubierto.Text = $"{SearchTraduccion("LblPrecioCubierto")} ${salon.PrecioCubierto}";
+            LblCapacidad.Text = $"{SearchTraduccion("LblCapacidad")} {salon.Capacidad}";
+            LblCantidadMinimaInvitados.Text = $"{SearchTraduccion("LblCantidadMinimaInvitados")} {salon.CantidadMinimaInvitados}";
         }
     }
 }

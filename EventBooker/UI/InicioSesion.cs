@@ -23,6 +23,7 @@ namespace UI
         public InicioSesion()
         {
             InitializeComponent();
+            this.KeyPreview = true;
             _businessUser = new BusinessUser();
             _ListaErrorLogeo = new List<EntityUser>();  
             FillIdiomas();
@@ -108,6 +109,14 @@ namespace UI
             IPublisher publisher = new LanguageManager();
             publisher.AddObserver(this);
             publisher.NotifyAll(idioma);
+        }
+
+        private void InicioSesion_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                BtnIngresar_Click(sender, e);
+            }
         }
     }
 }

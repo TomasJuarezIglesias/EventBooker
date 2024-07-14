@@ -23,6 +23,8 @@ namespace UI
         public FormSeleccionarServicios(Action<ServiceForm> openChildForm, EntityReserva reserva)
         {
             InitializeComponent();
+            ChangeTranslation();
+
             this.openChildForm = openChildForm;
             _businessServicio = new BusinessServicio();
             _serviciosSeleccionados = new List<EntityServicio>();
@@ -33,7 +35,7 @@ namespace UI
 
         private void BtnSeleccionar_Click(object sender, EventArgs e)
         {
-            RevisarRespuestaServicio(new BusinessResponse<bool>(true, true, "Servicios Seleccionados correctamente"));
+            RevisarRespuestaServicio(new BusinessResponse<bool>(true, true, "MessageServiciosSeleccionadosCorrectamente"));
             _reserva.Servicios = _serviciosSeleccionados;
             this.Close();
             openChildForm(new FormRegistrarReserva(openChildForm, _reserva));
@@ -111,14 +113,14 @@ namespace UI
                 valorTotal += servicio.Valor;
             }
 
-            LblValores.Text += $"\r\nValor Total: ${valorTotal}";
+            LblValores.Text += $"\r\n{SearchTraduccion("MessageValorTotal")} ${valorTotal}";
         }
 
         private void BtnVolver_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
-            $"¿Está seguro que desea volver?",
-            $"Volver",
+            $"{SearchTraduccion("MessageEstaSeguroQueDeseaVolver")}",
+            $"{SearchTraduccion("CaptionVolver")}",
             MessageBoxButtons.YesNo,
             MessageBoxIcon.Question);
 

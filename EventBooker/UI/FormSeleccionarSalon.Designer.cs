@@ -31,22 +31,22 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSeleccionarSalon));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
-            this.bunifuLabel4 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.LblInformacionSalon = new Bunifu.UI.WinForms.BunifuLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.LblCantidadMinimaInvitados = new Bunifu.UI.WinForms.BunifuLabel();
             this.LblCapacidad = new Bunifu.UI.WinForms.BunifuLabel();
             this.LblPrecioCubierto = new Bunifu.UI.WinForms.BunifuLabel();
             this.LblPrecio = new Bunifu.UI.WinForms.BunifuLabel();
             this.LblUbicacion = new Bunifu.UI.WinForms.BunifuLabel();
-            this.LblNombre = new Bunifu.UI.WinForms.BunifuLabel();
+            this.LblNombreSalon = new Bunifu.UI.WinForms.BunifuLabel();
             this.CmbTurnos = new System.Windows.Forms.ComboBox();
-            this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.LblTurno = new Bunifu.UI.WinForms.BunifuLabel();
             this.DateTimePickerFecha = new System.Windows.Forms.DateTimePicker();
-            this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.LblFecha = new Bunifu.UI.WinForms.BunifuLabel();
             this.CmbSalon = new System.Windows.Forms.ComboBox();
-            this.bunifuLabel5 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.LblSalon = new Bunifu.UI.WinForms.BunifuLabel();
             this.BtnSeleccionar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.LblSeleccionarSalon = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -60,37 +60,37 @@
             this.bunifuPanel1.BorderColor = System.Drawing.Color.Transparent;
             this.bunifuPanel1.BorderRadius = 3;
             this.bunifuPanel1.BorderThickness = 1;
-            this.bunifuPanel1.Controls.Add(this.bunifuLabel4);
+            this.bunifuPanel1.Controls.Add(this.LblInformacionSalon);
             this.bunifuPanel1.Controls.Add(this.panel1);
             this.bunifuPanel1.Controls.Add(this.CmbTurnos);
-            this.bunifuPanel1.Controls.Add(this.bunifuLabel3);
+            this.bunifuPanel1.Controls.Add(this.LblTurno);
             this.bunifuPanel1.Controls.Add(this.DateTimePickerFecha);
-            this.bunifuPanel1.Controls.Add(this.bunifuLabel2);
+            this.bunifuPanel1.Controls.Add(this.LblFecha);
             this.bunifuPanel1.Controls.Add(this.CmbSalon);
-            this.bunifuPanel1.Controls.Add(this.bunifuLabel5);
+            this.bunifuPanel1.Controls.Add(this.LblSalon);
             this.bunifuPanel1.Controls.Add(this.BtnSeleccionar);
-            this.bunifuPanel1.Controls.Add(this.bunifuLabel1);
+            this.bunifuPanel1.Controls.Add(this.LblSeleccionarSalon);
             this.bunifuPanel1.Location = new System.Drawing.Point(68, 63);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = true;
             this.bunifuPanel1.Size = new System.Drawing.Size(765, 485);
             this.bunifuPanel1.TabIndex = 5;
             // 
-            // bunifuLabel4
+            // LblInformacionSalon
             // 
-            this.bunifuLabel4.AllowParentOverrides = false;
-            this.bunifuLabel4.AutoEllipsis = false;
-            this.bunifuLabel4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel4.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel4.Font = new System.Drawing.Font("Segoe UI", 18F);
-            this.bunifuLabel4.Location = new System.Drawing.Point(30, 150);
-            this.bunifuLabel4.Name = "bunifuLabel4";
-            this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel4.Size = new System.Drawing.Size(236, 32);
-            this.bunifuLabel4.TabIndex = 26;
-            this.bunifuLabel4.Text = "Información del salón:";
-            this.bunifuLabel4.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel4.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.LblInformacionSalon.AllowParentOverrides = false;
+            this.LblInformacionSalon.AutoEllipsis = false;
+            this.LblInformacionSalon.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LblInformacionSalon.CursorType = System.Windows.Forms.Cursors.Default;
+            this.LblInformacionSalon.Font = new System.Drawing.Font("Segoe UI", 18F);
+            this.LblInformacionSalon.Location = new System.Drawing.Point(30, 150);
+            this.LblInformacionSalon.Name = "LblInformacionSalon";
+            this.LblInformacionSalon.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LblInformacionSalon.Size = new System.Drawing.Size(236, 32);
+            this.LblInformacionSalon.TabIndex = 26;
+            this.LblInformacionSalon.Text = "Información del salón:";
+            this.LblInformacionSalon.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.LblInformacionSalon.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // panel1
             // 
@@ -100,7 +100,7 @@
             this.panel1.Controls.Add(this.LblPrecioCubierto);
             this.panel1.Controls.Add(this.LblPrecio);
             this.panel1.Controls.Add(this.LblUbicacion);
-            this.panel1.Controls.Add(this.LblNombre);
+            this.panel1.Controls.Add(this.LblNombreSalon);
             this.panel1.Location = new System.Drawing.Point(30, 188);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
@@ -187,21 +187,21 @@
             this.LblUbicacion.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.LblUbicacion.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // LblNombre
+            // LblNombreSalon
             // 
-            this.LblNombre.AllowParentOverrides = false;
-            this.LblNombre.AutoEllipsis = false;
-            this.LblNombre.Cursor = System.Windows.Forms.Cursors.Default;
-            this.LblNombre.CursorType = System.Windows.Forms.Cursors.Default;
-            this.LblNombre.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.LblNombre.Location = new System.Drawing.Point(35, 24);
-            this.LblNombre.Name = "LblNombre";
-            this.LblNombre.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.LblNombre.Size = new System.Drawing.Size(61, 21);
-            this.LblNombre.TabIndex = 20;
-            this.LblNombre.Text = "Nombre:";
-            this.LblNombre.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.LblNombre.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.LblNombreSalon.AllowParentOverrides = false;
+            this.LblNombreSalon.AutoEllipsis = false;
+            this.LblNombreSalon.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LblNombreSalon.CursorType = System.Windows.Forms.Cursors.Default;
+            this.LblNombreSalon.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.LblNombreSalon.Location = new System.Drawing.Point(35, 24);
+            this.LblNombreSalon.Name = "LblNombreSalon";
+            this.LblNombreSalon.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LblNombreSalon.Size = new System.Drawing.Size(61, 21);
+            this.LblNombreSalon.TabIndex = 20;
+            this.LblNombreSalon.Text = "Nombre:";
+            this.LblNombreSalon.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.LblNombreSalon.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // CmbTurnos
             // 
@@ -216,21 +216,21 @@
             this.CmbTurnos.Size = new System.Drawing.Size(156, 21);
             this.CmbTurnos.TabIndex = 24;
             // 
-            // bunifuLabel3
+            // LblTurno
             // 
-            this.bunifuLabel3.AllowParentOverrides = false;
-            this.bunifuLabel3.AutoEllipsis = false;
-            this.bunifuLabel3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel3.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bunifuLabel3.Location = new System.Drawing.Point(536, 101);
-            this.bunifuLabel3.Name = "bunifuLabel3";
-            this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel3.Size = new System.Drawing.Size(44, 21);
-            this.bunifuLabel3.TabIndex = 23;
-            this.bunifuLabel3.Text = "Turno:";
-            this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel3.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.LblTurno.AllowParentOverrides = false;
+            this.LblTurno.AutoEllipsis = false;
+            this.LblTurno.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LblTurno.CursorType = System.Windows.Forms.Cursors.Default;
+            this.LblTurno.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.LblTurno.Location = new System.Drawing.Point(536, 101);
+            this.LblTurno.Name = "LblTurno";
+            this.LblTurno.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LblTurno.Size = new System.Drawing.Size(44, 21);
+            this.LblTurno.TabIndex = 23;
+            this.LblTurno.Text = "Turno:";
+            this.LblTurno.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.LblTurno.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // DateTimePickerFecha
             // 
@@ -241,21 +241,21 @@
             this.DateTimePickerFecha.TabIndex = 22;
             this.DateTimePickerFecha.Value = new System.DateTime(2024, 6, 15, 17, 55, 6, 0);
             // 
-            // bunifuLabel2
+            // LblFecha
             // 
-            this.bunifuLabel2.AllowParentOverrides = false;
-            this.bunifuLabel2.AutoEllipsis = false;
-            this.bunifuLabel2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel2.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bunifuLabel2.Location = new System.Drawing.Point(266, 101);
-            this.bunifuLabel2.Name = "bunifuLabel2";
-            this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(43, 21);
-            this.bunifuLabel2.TabIndex = 21;
-            this.bunifuLabel2.Text = "Fecha:";
-            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.LblFecha.AllowParentOverrides = false;
+            this.LblFecha.AutoEllipsis = false;
+            this.LblFecha.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LblFecha.CursorType = System.Windows.Forms.Cursors.Default;
+            this.LblFecha.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.LblFecha.Location = new System.Drawing.Point(266, 101);
+            this.LblFecha.Name = "LblFecha";
+            this.LblFecha.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LblFecha.Size = new System.Drawing.Size(43, 21);
+            this.LblFecha.TabIndex = 21;
+            this.LblFecha.Text = "Fecha:";
+            this.LblFecha.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.LblFecha.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // CmbSalon
             // 
@@ -268,21 +268,21 @@
             this.CmbSalon.TabIndex = 20;
             this.CmbSalon.SelectionChangeCommitted += new System.EventHandler(this.CmbSalon_SelectionChangeCommitted);
             // 
-            // bunifuLabel5
+            // LblSalon
             // 
-            this.bunifuLabel5.AllowParentOverrides = false;
-            this.bunifuLabel5.AutoEllipsis = false;
-            this.bunifuLabel5.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel5.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel5.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bunifuLabel5.Location = new System.Drawing.Point(30, 101);
-            this.bunifuLabel5.Name = "bunifuLabel5";
-            this.bunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel5.Size = new System.Drawing.Size(42, 21);
-            this.bunifuLabel5.TabIndex = 19;
-            this.bunifuLabel5.Text = "Salon:";
-            this.bunifuLabel5.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel5.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.LblSalon.AllowParentOverrides = false;
+            this.LblSalon.AutoEllipsis = false;
+            this.LblSalon.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LblSalon.CursorType = System.Windows.Forms.Cursors.Default;
+            this.LblSalon.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.LblSalon.Location = new System.Drawing.Point(30, 101);
+            this.LblSalon.Name = "LblSalon";
+            this.LblSalon.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LblSalon.Size = new System.Drawing.Size(42, 21);
+            this.LblSalon.TabIndex = 19;
+            this.LblSalon.Text = "Salon:";
+            this.LblSalon.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.LblSalon.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // BtnSeleccionar
             // 
@@ -374,21 +374,21 @@
             this.BtnSeleccionar.UseDefaultRadiusAndThickness = true;
             this.BtnSeleccionar.Click += new System.EventHandler(this.BtnSeleccionar_Click);
             // 
-            // bunifuLabel1
+            // LblSeleccionarSalon
             // 
-            this.bunifuLabel1.AllowParentOverrides = false;
-            this.bunifuLabel1.AutoEllipsis = false;
-            this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 20.25F);
-            this.bunifuLabel1.Location = new System.Drawing.Point(30, 29);
-            this.bunifuLabel1.Name = "bunifuLabel1";
-            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(254, 45);
-            this.bunifuLabel1.TabIndex = 0;
-            this.bunifuLabel1.Text = "Seleccionar Salón";
-            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.LblSeleccionarSalon.AllowParentOverrides = false;
+            this.LblSeleccionarSalon.AutoEllipsis = false;
+            this.LblSeleccionarSalon.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LblSeleccionarSalon.CursorType = System.Windows.Forms.Cursors.Default;
+            this.LblSeleccionarSalon.Font = new System.Drawing.Font("Segoe UI", 20.25F);
+            this.LblSeleccionarSalon.Location = new System.Drawing.Point(30, 29);
+            this.LblSeleccionarSalon.Name = "LblSeleccionarSalon";
+            this.LblSeleccionarSalon.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LblSeleccionarSalon.Size = new System.Drawing.Size(254, 45);
+            this.LblSeleccionarSalon.TabIndex = 0;
+            this.LblSeleccionarSalon.Text = "Seleccionar Salón";
+            this.LblSeleccionarSalon.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.LblSeleccionarSalon.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // FormSeleccionarSalon
             // 
@@ -412,21 +412,21 @@
         #endregion
 
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel4;
+        private Bunifu.UI.WinForms.BunifuLabel LblInformacionSalon;
         private System.Windows.Forms.Panel panel1;
         private Bunifu.UI.WinForms.BunifuLabel LblCantidadMinimaInvitados;
         private Bunifu.UI.WinForms.BunifuLabel LblCapacidad;
         private Bunifu.UI.WinForms.BunifuLabel LblPrecioCubierto;
         private Bunifu.UI.WinForms.BunifuLabel LblPrecio;
         private Bunifu.UI.WinForms.BunifuLabel LblUbicacion;
-        private Bunifu.UI.WinForms.BunifuLabel LblNombre;
+        private Bunifu.UI.WinForms.BunifuLabel LblNombreSalon;
         private System.Windows.Forms.ComboBox CmbTurnos;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel3;
+        private Bunifu.UI.WinForms.BunifuLabel LblTurno;
         private System.Windows.Forms.DateTimePicker DateTimePickerFecha;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
+        private Bunifu.UI.WinForms.BunifuLabel LblFecha;
         private System.Windows.Forms.ComboBox CmbSalon;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel5;
+        private Bunifu.UI.WinForms.BunifuLabel LblSalon;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton BtnSeleccionar;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
+        private Bunifu.UI.WinForms.BunifuLabel LblSeleccionarSalon;
     }
 }

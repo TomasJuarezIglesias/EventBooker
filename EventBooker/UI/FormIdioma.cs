@@ -17,14 +17,14 @@ namespace UI
     {
         private IPublisher _publisher;
 
-        public FormIdioma(IObserver observadorMenuPrincipal)
+        public FormIdioma(List<IObserver> observadores)
         {
             InitializeComponent();
 
             // Instancio el publisher con los observadores
             _publisher = new LanguageManager();
             _publisher.AddObserver(this);
-            _publisher.AddObserver(observadorMenuPrincipal);
+            observadores.ForEach(o => _publisher.AddObserver(o));
 
             FillData();
             ChangeTranslation();
@@ -58,6 +58,12 @@ namespace UI
         {
             // Notifico cambio de idioma
             _publisher.NotifyAll(CmbIdioma.SelectedItem as EntityIdioma);
+        }
+
+        private void FormIdioma_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // Notifico cambio de idioma
+            _publisher.NotifyAll(_sessionManager.Idioma);
         }
     }
 }

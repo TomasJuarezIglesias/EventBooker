@@ -42,36 +42,37 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.LblCambiarContrasenia = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.BtnChangePassword = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.LblErrorNewPassRep = new Bunifu.UI.WinForms.BunifuLabel();
             this.TxtNewPassRep = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.bunifuLabel6 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.LblRepetirNuevaContrasenia = new Bunifu.UI.WinForms.BunifuLabel();
             this.LblErrorNewPass = new Bunifu.UI.WinForms.BunifuLabel();
             this.TxtNewPass = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.LblIngresarNuevaContrasenia = new Bunifu.UI.WinForms.BunifuLabel();
             this.LblErrorActualPass = new Bunifu.UI.WinForms.BunifuLabel();
             this.TxtActualPass = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.LblIngresarContraseniaActual = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // bunifuLabel1
+            // LblCambiarContrasenia
             // 
-            this.bunifuLabel1.AllowParentOverrides = false;
-            this.bunifuLabel1.AutoEllipsis = false;
-            this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 20.25F);
-            this.bunifuLabel1.Location = new System.Drawing.Point(248, 21);
-            this.bunifuLabel1.Name = "bunifuLabel1";
-            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(293, 45);
-            this.bunifuLabel1.TabIndex = 0;
-            this.bunifuLabel1.Text = "Cambiar Contraseña";
-            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.LblCambiarContrasenia.AllowParentOverrides = false;
+            this.LblCambiarContrasenia.AutoEllipsis = false;
+            this.LblCambiarContrasenia.AutoSize = false;
+            this.LblCambiarContrasenia.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LblCambiarContrasenia.CursorType = System.Windows.Forms.Cursors.Default;
+            this.LblCambiarContrasenia.Font = new System.Drawing.Font("Segoe UI", 20.25F);
+            this.LblCambiarContrasenia.Location = new System.Drawing.Point(248, 21);
+            this.LblCambiarContrasenia.Name = "LblCambiarContrasenia";
+            this.LblCambiarContrasenia.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LblCambiarContrasenia.Size = new System.Drawing.Size(293, 45);
+            this.LblCambiarContrasenia.TabIndex = 0;
+            this.LblCambiarContrasenia.Text = "Cambiar Contraseña";
+            this.LblCambiarContrasenia.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
+            this.LblCambiarContrasenia.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // bunifuPanel1
             // 
@@ -85,14 +86,14 @@
             this.bunifuPanel1.Controls.Add(this.BtnChangePassword);
             this.bunifuPanel1.Controls.Add(this.LblErrorNewPassRep);
             this.bunifuPanel1.Controls.Add(this.TxtNewPassRep);
-            this.bunifuPanel1.Controls.Add(this.bunifuLabel6);
+            this.bunifuPanel1.Controls.Add(this.LblRepetirNuevaContrasenia);
             this.bunifuPanel1.Controls.Add(this.LblErrorNewPass);
             this.bunifuPanel1.Controls.Add(this.TxtNewPass);
-            this.bunifuPanel1.Controls.Add(this.bunifuLabel3);
+            this.bunifuPanel1.Controls.Add(this.LblIngresarNuevaContrasenia);
             this.bunifuPanel1.Controls.Add(this.LblErrorActualPass);
             this.bunifuPanel1.Controls.Add(this.TxtActualPass);
-            this.bunifuPanel1.Controls.Add(this.bunifuLabel2);
-            this.bunifuPanel1.Controls.Add(this.bunifuLabel1);
+            this.bunifuPanel1.Controls.Add(this.LblIngresarContraseniaActual);
+            this.bunifuPanel1.Controls.Add(this.LblCambiarContrasenia);
             this.bunifuPanel1.Location = new System.Drawing.Point(68, 63);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = true;
@@ -281,20 +282,20 @@
             this.TxtNewPassRep.UseSystemPasswordChar = true;
             this.TxtNewPassRep.WordWrap = true;
             // 
-            // bunifuLabel6
+            // LblRepetirNuevaContrasenia
             // 
-            this.bunifuLabel6.AllowParentOverrides = false;
-            this.bunifuLabel6.AutoEllipsis = false;
-            this.bunifuLabel6.CursorType = null;
-            this.bunifuLabel6.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bunifuLabel6.Location = new System.Drawing.Point(30, 277);
-            this.bunifuLabel6.Name = "bunifuLabel6";
-            this.bunifuLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel6.Size = new System.Drawing.Size(176, 21);
-            this.bunifuLabel6.TabIndex = 13;
-            this.bunifuLabel6.Text = "Repetir nueva contraseña";
-            this.bunifuLabel6.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel6.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.LblRepetirNuevaContrasenia.AllowParentOverrides = false;
+            this.LblRepetirNuevaContrasenia.AutoEllipsis = false;
+            this.LblRepetirNuevaContrasenia.CursorType = null;
+            this.LblRepetirNuevaContrasenia.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.LblRepetirNuevaContrasenia.Location = new System.Drawing.Point(30, 277);
+            this.LblRepetirNuevaContrasenia.Name = "LblRepetirNuevaContrasenia";
+            this.LblRepetirNuevaContrasenia.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LblRepetirNuevaContrasenia.Size = new System.Drawing.Size(176, 21);
+            this.LblRepetirNuevaContrasenia.TabIndex = 13;
+            this.LblRepetirNuevaContrasenia.Text = "Repetir nueva contraseña";
+            this.LblRepetirNuevaContrasenia.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.LblRepetirNuevaContrasenia.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // LblErrorNewPass
             // 
@@ -388,20 +389,20 @@
             this.TxtNewPass.UseSystemPasswordChar = true;
             this.TxtNewPass.WordWrap = true;
             // 
-            // bunifuLabel3
+            // LblIngresarNuevaContrasenia
             // 
-            this.bunifuLabel3.AllowParentOverrides = false;
-            this.bunifuLabel3.AutoEllipsis = false;
-            this.bunifuLabel3.CursorType = null;
-            this.bunifuLabel3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bunifuLabel3.Location = new System.Drawing.Point(30, 201);
-            this.bunifuLabel3.Name = "bunifuLabel3";
-            this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel3.Size = new System.Drawing.Size(183, 21);
-            this.bunifuLabel3.TabIndex = 10;
-            this.bunifuLabel3.Text = "Ingresar nueva contraseña";
-            this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel3.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.LblIngresarNuevaContrasenia.AllowParentOverrides = false;
+            this.LblIngresarNuevaContrasenia.AutoEllipsis = false;
+            this.LblIngresarNuevaContrasenia.CursorType = null;
+            this.LblIngresarNuevaContrasenia.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.LblIngresarNuevaContrasenia.Location = new System.Drawing.Point(30, 201);
+            this.LblIngresarNuevaContrasenia.Name = "LblIngresarNuevaContrasenia";
+            this.LblIngresarNuevaContrasenia.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LblIngresarNuevaContrasenia.Size = new System.Drawing.Size(183, 21);
+            this.LblIngresarNuevaContrasenia.TabIndex = 10;
+            this.LblIngresarNuevaContrasenia.Text = "Ingresar nueva contraseña";
+            this.LblIngresarNuevaContrasenia.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.LblIngresarNuevaContrasenia.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // LblErrorActualPass
             // 
@@ -495,21 +496,21 @@
             this.TxtActualPass.UseSystemPasswordChar = true;
             this.TxtActualPass.WordWrap = true;
             // 
-            // bunifuLabel2
+            // LblIngresarContraseniaActual
             // 
-            this.bunifuLabel2.AllowParentOverrides = false;
-            this.bunifuLabel2.AutoEllipsis = false;
-            this.bunifuLabel2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel2.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bunifuLabel2.Location = new System.Drawing.Point(30, 125);
-            this.bunifuLabel2.Name = "bunifuLabel2";
-            this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(182, 21);
-            this.bunifuLabel2.TabIndex = 1;
-            this.bunifuLabel2.Text = "Ingresar contraseña actual";
-            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.LblIngresarContraseniaActual.AllowParentOverrides = false;
+            this.LblIngresarContraseniaActual.AutoEllipsis = false;
+            this.LblIngresarContraseniaActual.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LblIngresarContraseniaActual.CursorType = System.Windows.Forms.Cursors.Default;
+            this.LblIngresarContraseniaActual.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.LblIngresarContraseniaActual.Location = new System.Drawing.Point(30, 125);
+            this.LblIngresarContraseniaActual.Name = "LblIngresarContraseniaActual";
+            this.LblIngresarContraseniaActual.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LblIngresarContraseniaActual.Size = new System.Drawing.Size(182, 21);
+            this.LblIngresarContraseniaActual.TabIndex = 1;
+            this.LblIngresarContraseniaActual.Text = "Ingresar contraseña actual";
+            this.LblIngresarContraseniaActual.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.LblIngresarContraseniaActual.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // FormCambiarPassword
             // 
@@ -529,17 +530,17 @@
 
         #endregion
 
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
+        private Bunifu.UI.WinForms.BunifuLabel LblCambiarContrasenia;
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
+        private Bunifu.UI.WinForms.BunifuLabel LblIngresarContraseniaActual;
         private Bunifu.UI.WinForms.BunifuTextBox TxtActualPass;
         private Bunifu.UI.WinForms.BunifuTextBox TxtNewPass;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel3;
+        private Bunifu.UI.WinForms.BunifuLabel LblIngresarNuevaContrasenia;
         private Bunifu.UI.WinForms.BunifuLabel LblErrorActualPass;
         private Bunifu.UI.WinForms.BunifuLabel LblErrorNewPass;
         private Bunifu.UI.WinForms.BunifuLabel LblErrorNewPassRep;
         private Bunifu.UI.WinForms.BunifuTextBox TxtNewPassRep;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel6;
+        private Bunifu.UI.WinForms.BunifuLabel LblRepetirNuevaContrasenia;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton BtnChangePassword;
     }
 }

@@ -55,24 +55,24 @@
             this.LblErrorNombreTitular = new Bunifu.UI.WinForms.BunifuLabel();
             this.LblErrorNumeroTarjeta = new Bunifu.UI.WinForms.BunifuLabel();
             this.DateTimePickerVencimiento = new System.Windows.Forms.DateTimePicker();
-            this.bunifuLabel8 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.LblFechaVencimiento = new Bunifu.UI.WinForms.BunifuLabel();
             this.TxtNombreTitular = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.bunifuLabel7 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.LblNombreTitular = new Bunifu.UI.WinForms.BunifuLabel();
             this.CmbTipoTarjeta = new System.Windows.Forms.ComboBox();
-            this.bunifuLabel6 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.LblTipoTarjeta = new Bunifu.UI.WinForms.BunifuLabel();
             this.TxtNumeroTarjeta = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.bunifuLabel5 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel4 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.LblNumeroTarjeta = new Bunifu.UI.WinForms.BunifuLabel();
+            this.LblCostos = new Bunifu.UI.WinForms.BunifuLabel();
             this.LblTotal = new Bunifu.UI.WinForms.BunifuLabel();
             this.LblDeposit = new Bunifu.UI.WinForms.BunifuLabel();
             this.CmbMedioPago = new System.Windows.Forms.ComboBox();
-            this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.LblMedioDePago = new Bunifu.UI.WinForms.BunifuLabel();
             this.BtnCancelar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.BtnCollectDeposit = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.TxtSearchText = new Bunifu.UI.WinForms.BunifuTextBox();
             this.DataGridViewReservas = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.LblBuscarReserva = new Bunifu.UI.WinForms.BunifuLabel();
+            this.LblCobrarSenia = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuPanel1.SuspendLayout();
             this.PanelCobro.SuspendLayout();
             this.PanelTarjeta.SuspendLayout();
@@ -92,8 +92,8 @@
             this.bunifuPanel1.Controls.Add(this.PanelCobro);
             this.bunifuPanel1.Controls.Add(this.TxtSearchText);
             this.bunifuPanel1.Controls.Add(this.DataGridViewReservas);
-            this.bunifuPanel1.Controls.Add(this.bunifuLabel2);
-            this.bunifuPanel1.Controls.Add(this.bunifuLabel1);
+            this.bunifuPanel1.Controls.Add(this.LblBuscarReserva);
+            this.bunifuPanel1.Controls.Add(this.LblCobrarSenia);
             this.bunifuPanel1.Location = new System.Drawing.Point(68, 63);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = true;
@@ -147,7 +147,7 @@
             this.BtnBuscar.IdleIconLeftImage = null;
             this.BtnBuscar.IdleIconRightImage = null;
             this.BtnBuscar.IndicateFocus = false;
-            this.BtnBuscar.Location = new System.Drawing.Point(393, 61);
+            this.BtnBuscar.Location = new System.Drawing.Point(428, 61);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BtnBuscar.OnDisabledState.BorderRadius = 1;
@@ -195,11 +195,11 @@
             this.PanelCobro.BackColor = System.Drawing.Color.Transparent;
             this.PanelCobro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PanelCobro.Controls.Add(this.PanelTarjeta);
-            this.PanelCobro.Controls.Add(this.bunifuLabel4);
+            this.PanelCobro.Controls.Add(this.LblCostos);
             this.PanelCobro.Controls.Add(this.LblTotal);
             this.PanelCobro.Controls.Add(this.LblDeposit);
             this.PanelCobro.Controls.Add(this.CmbMedioPago);
-            this.PanelCobro.Controls.Add(this.bunifuLabel3);
+            this.PanelCobro.Controls.Add(this.LblMedioDePago);
             this.PanelCobro.Controls.Add(this.BtnCancelar);
             this.PanelCobro.Controls.Add(this.BtnCollectDeposit);
             this.PanelCobro.Location = new System.Drawing.Point(13, 326);
@@ -214,16 +214,16 @@
             this.PanelTarjeta.Controls.Add(this.LblErrorNombreTitular);
             this.PanelTarjeta.Controls.Add(this.LblErrorNumeroTarjeta);
             this.PanelTarjeta.Controls.Add(this.DateTimePickerVencimiento);
-            this.PanelTarjeta.Controls.Add(this.bunifuLabel8);
+            this.PanelTarjeta.Controls.Add(this.LblFechaVencimiento);
             this.PanelTarjeta.Controls.Add(this.TxtNombreTitular);
-            this.PanelTarjeta.Controls.Add(this.bunifuLabel7);
+            this.PanelTarjeta.Controls.Add(this.LblNombreTitular);
             this.PanelTarjeta.Controls.Add(this.CmbTipoTarjeta);
-            this.PanelTarjeta.Controls.Add(this.bunifuLabel6);
+            this.PanelTarjeta.Controls.Add(this.LblTipoTarjeta);
             this.PanelTarjeta.Controls.Add(this.TxtNumeroTarjeta);
-            this.PanelTarjeta.Controls.Add(this.bunifuLabel5);
-            this.PanelTarjeta.Location = new System.Drawing.Point(130, -1);
+            this.PanelTarjeta.Controls.Add(this.LblNumeroTarjeta);
+            this.PanelTarjeta.Location = new System.Drawing.Point(135, -1);
             this.PanelTarjeta.Name = "PanelTarjeta";
-            this.PanelTarjeta.Size = new System.Drawing.Size(435, 147);
+            this.PanelTarjeta.Size = new System.Drawing.Size(430, 147);
             this.PanelTarjeta.TabIndex = 38;
             // 
             // LblErrorTipoTarjeta
@@ -285,21 +285,21 @@
             this.DateTimePickerVencimiento.Size = new System.Drawing.Size(131, 20);
             this.DateTimePickerVencimiento.TabIndex = 43;
             // 
-            // bunifuLabel8
+            // LblFechaVencimiento
             // 
-            this.bunifuLabel8.AllowParentOverrides = false;
-            this.bunifuLabel8.AutoEllipsis = false;
-            this.bunifuLabel8.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel8.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel8.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bunifuLabel8.Location = new System.Drawing.Point(257, 82);
-            this.bunifuLabel8.Name = "bunifuLabel8";
-            this.bunifuLabel8.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel8.Size = new System.Drawing.Size(131, 21);
-            this.bunifuLabel8.TabIndex = 42;
-            this.bunifuLabel8.Text = "Fecha Vencimiento";
-            this.bunifuLabel8.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel8.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.LblFechaVencimiento.AllowParentOverrides = false;
+            this.LblFechaVencimiento.AutoEllipsis = false;
+            this.LblFechaVencimiento.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LblFechaVencimiento.CursorType = System.Windows.Forms.Cursors.Default;
+            this.LblFechaVencimiento.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.LblFechaVencimiento.Location = new System.Drawing.Point(257, 82);
+            this.LblFechaVencimiento.Name = "LblFechaVencimiento";
+            this.LblFechaVencimiento.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LblFechaVencimiento.Size = new System.Drawing.Size(131, 21);
+            this.LblFechaVencimiento.TabIndex = 42;
+            this.LblFechaVencimiento.Text = "Fecha Vencimiento";
+            this.LblFechaVencimiento.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.LblFechaVencimiento.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // TxtNombreTitular
             // 
@@ -375,21 +375,21 @@
             this.TxtNombreTitular.UseSystemPasswordChar = false;
             this.TxtNombreTitular.WordWrap = true;
             // 
-            // bunifuLabel7
+            // LblNombreTitular
             // 
-            this.bunifuLabel7.AllowParentOverrides = false;
-            this.bunifuLabel7.AutoEllipsis = false;
-            this.bunifuLabel7.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel7.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel7.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bunifuLabel7.Location = new System.Drawing.Point(12, 82);
-            this.bunifuLabel7.Name = "bunifuLabel7";
-            this.bunifuLabel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel7.Size = new System.Drawing.Size(128, 21);
-            this.bunifuLabel7.TabIndex = 40;
-            this.bunifuLabel7.Text = "Nombre del titular";
-            this.bunifuLabel7.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel7.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.LblNombreTitular.AllowParentOverrides = false;
+            this.LblNombreTitular.AutoEllipsis = false;
+            this.LblNombreTitular.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LblNombreTitular.CursorType = System.Windows.Forms.Cursors.Default;
+            this.LblNombreTitular.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.LblNombreTitular.Location = new System.Drawing.Point(12, 82);
+            this.LblNombreTitular.Name = "LblNombreTitular";
+            this.LblNombreTitular.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LblNombreTitular.Size = new System.Drawing.Size(128, 21);
+            this.LblNombreTitular.TabIndex = 40;
+            this.LblNombreTitular.Text = "Nombre del titular";
+            this.LblNombreTitular.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.LblNombreTitular.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // CmbTipoTarjeta
             // 
@@ -403,21 +403,21 @@
             this.CmbTipoTarjeta.Size = new System.Drawing.Size(131, 21);
             this.CmbTipoTarjeta.TabIndex = 39;
             // 
-            // bunifuLabel6
+            // LblTipoTarjeta
             // 
-            this.bunifuLabel6.AllowParentOverrides = false;
-            this.bunifuLabel6.AutoEllipsis = false;
-            this.bunifuLabel6.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel6.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel6.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bunifuLabel6.Location = new System.Drawing.Point(257, 10);
-            this.bunifuLabel6.Name = "bunifuLabel6";
-            this.bunifuLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel6.Size = new System.Drawing.Size(99, 21);
-            this.bunifuLabel6.TabIndex = 38;
-            this.bunifuLabel6.Text = "Tipo de tarjeta";
-            this.bunifuLabel6.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel6.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.LblTipoTarjeta.AllowParentOverrides = false;
+            this.LblTipoTarjeta.AutoEllipsis = false;
+            this.LblTipoTarjeta.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LblTipoTarjeta.CursorType = System.Windows.Forms.Cursors.Default;
+            this.LblTipoTarjeta.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.LblTipoTarjeta.Location = new System.Drawing.Point(257, 10);
+            this.LblTipoTarjeta.Name = "LblTipoTarjeta";
+            this.LblTipoTarjeta.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LblTipoTarjeta.Size = new System.Drawing.Size(99, 21);
+            this.LblTipoTarjeta.TabIndex = 38;
+            this.LblTipoTarjeta.Text = "Tipo de tarjeta";
+            this.LblTipoTarjeta.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.LblTipoTarjeta.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // TxtNumeroTarjeta
             // 
@@ -493,37 +493,37 @@
             this.TxtNumeroTarjeta.UseSystemPasswordChar = false;
             this.TxtNumeroTarjeta.WordWrap = true;
             // 
-            // bunifuLabel5
+            // LblNumeroTarjeta
             // 
-            this.bunifuLabel5.AllowParentOverrides = false;
-            this.bunifuLabel5.AutoEllipsis = false;
-            this.bunifuLabel5.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel5.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel5.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bunifuLabel5.Location = new System.Drawing.Point(12, 10);
-            this.bunifuLabel5.Name = "bunifuLabel5";
-            this.bunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel5.Size = new System.Drawing.Size(127, 21);
-            this.bunifuLabel5.TabIndex = 37;
-            this.bunifuLabel5.Text = "Número de tarjeta";
-            this.bunifuLabel5.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel5.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.LblNumeroTarjeta.AllowParentOverrides = false;
+            this.LblNumeroTarjeta.AutoEllipsis = false;
+            this.LblNumeroTarjeta.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LblNumeroTarjeta.CursorType = System.Windows.Forms.Cursors.Default;
+            this.LblNumeroTarjeta.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.LblNumeroTarjeta.Location = new System.Drawing.Point(12, 10);
+            this.LblNumeroTarjeta.Name = "LblNumeroTarjeta";
+            this.LblNumeroTarjeta.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LblNumeroTarjeta.Size = new System.Drawing.Size(127, 21);
+            this.LblNumeroTarjeta.TabIndex = 37;
+            this.LblNumeroTarjeta.Text = "Número de tarjeta";
+            this.LblNumeroTarjeta.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.LblNumeroTarjeta.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuLabel4
+            // LblCostos
             // 
-            this.bunifuLabel4.AllowParentOverrides = false;
-            this.bunifuLabel4.AutoEllipsis = false;
-            this.bunifuLabel4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel4.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bunifuLabel4.Location = new System.Drawing.Point(3, 67);
-            this.bunifuLabel4.Name = "bunifuLabel4";
-            this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel4.Size = new System.Drawing.Size(47, 21);
-            this.bunifuLabel4.TabIndex = 35;
-            this.bunifuLabel4.Text = "Costos";
-            this.bunifuLabel4.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel4.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.LblCostos.AllowParentOverrides = false;
+            this.LblCostos.AutoEllipsis = false;
+            this.LblCostos.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LblCostos.CursorType = System.Windows.Forms.Cursors.Default;
+            this.LblCostos.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.LblCostos.Location = new System.Drawing.Point(3, 67);
+            this.LblCostos.Name = "LblCostos";
+            this.LblCostos.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LblCostos.Size = new System.Drawing.Size(47, 21);
+            this.LblCostos.TabIndex = 35;
+            this.LblCostos.Text = "Costos";
+            this.LblCostos.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.LblCostos.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // LblTotal
             // 
@@ -532,7 +532,7 @@
             this.LblTotal.Cursor = System.Windows.Forms.Cursors.Default;
             this.LblTotal.CursorType = System.Windows.Forms.Cursors.Default;
             this.LblTotal.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.LblTotal.Location = new System.Drawing.Point(13, 119);
+            this.LblTotal.Location = new System.Drawing.Point(3, 119);
             this.LblTotal.Name = "LblTotal";
             this.LblTotal.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.LblTotal.Size = new System.Drawing.Size(37, 21);
@@ -548,7 +548,7 @@
             this.LblDeposit.Cursor = System.Windows.Forms.Cursors.Default;
             this.LblDeposit.CursorType = System.Windows.Forms.Cursors.Default;
             this.LblDeposit.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.LblDeposit.Location = new System.Drawing.Point(13, 92);
+            this.LblDeposit.Location = new System.Drawing.Point(3, 92);
             this.LblDeposit.Name = "LblDeposit";
             this.LblDeposit.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.LblDeposit.Size = new System.Drawing.Size(37, 21);
@@ -566,25 +566,25 @@
             "Tarjeta"});
             this.CmbMedioPago.Location = new System.Drawing.Point(3, 36);
             this.CmbMedioPago.Name = "CmbMedioPago";
-            this.CmbMedioPago.Size = new System.Drawing.Size(121, 21);
+            this.CmbMedioPago.Size = new System.Drawing.Size(126, 21);
             this.CmbMedioPago.TabIndex = 31;
             this.CmbMedioPago.SelectionChangeCommitted += new System.EventHandler(this.CmbMedioPago_SelectionChangeCommitted);
             // 
-            // bunifuLabel3
+            // LblMedioDePago
             // 
-            this.bunifuLabel3.AllowParentOverrides = false;
-            this.bunifuLabel3.AutoEllipsis = false;
-            this.bunifuLabel3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel3.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bunifuLabel3.Location = new System.Drawing.Point(3, 9);
-            this.bunifuLabel3.Name = "bunifuLabel3";
-            this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel3.Size = new System.Drawing.Size(107, 21);
-            this.bunifuLabel3.TabIndex = 30;
-            this.bunifuLabel3.Text = "Medio de pago:";
-            this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel3.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.LblMedioDePago.AllowParentOverrides = false;
+            this.LblMedioDePago.AutoEllipsis = false;
+            this.LblMedioDePago.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LblMedioDePago.CursorType = System.Windows.Forms.Cursors.Default;
+            this.LblMedioDePago.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.LblMedioDePago.Location = new System.Drawing.Point(3, 9);
+            this.LblMedioDePago.Name = "LblMedioDePago";
+            this.LblMedioDePago.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LblMedioDePago.Size = new System.Drawing.Size(107, 21);
+            this.LblMedioDePago.TabIndex = 30;
+            this.LblMedioDePago.Text = "Medio de pago:";
+            this.LblMedioDePago.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.LblMedioDePago.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // BtnCancelar
             // 
@@ -793,7 +793,7 @@
             this.TxtSearchText.IconRight = null;
             this.TxtSearchText.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtSearchText.Lines = new string[0];
-            this.TxtSearchText.Location = new System.Drawing.Point(181, 61);
+            this.TxtSearchText.Location = new System.Drawing.Point(221, 61);
             this.TxtSearchText.MaxLength = 32767;
             this.TxtSearchText.MinimumSize = new System.Drawing.Size(1, 1);
             this.TxtSearchText.Modified = false;
@@ -870,7 +870,7 @@
             this.DataGridViewReservas.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.DataGridViewReservas.CurrentTheme.BackColor = System.Drawing.Color.White;
             this.DataGridViewReservas.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.DataGridViewReservas.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.Gray;
+            this.DataGridViewReservas.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
             this.DataGridViewReservas.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
             this.DataGridViewReservas.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.DataGridViewReservas.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
@@ -891,7 +891,7 @@
             this.DataGridViewReservas.DefaultCellStyle = dataGridViewCellStyle3;
             this.DataGridViewReservas.EnableHeadersVisualStyles = false;
             this.DataGridViewReservas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.DataGridViewReservas.HeaderBackColor = System.Drawing.Color.Gray;
+            this.DataGridViewReservas.HeaderBackColor = System.Drawing.Color.DodgerBlue;
             this.DataGridViewReservas.HeaderBgColor = System.Drawing.Color.Empty;
             this.DataGridViewReservas.HeaderForeColor = System.Drawing.Color.White;
             this.DataGridViewReservas.Location = new System.Drawing.Point(13, 96);
@@ -907,37 +907,37 @@
             this.DataGridViewReservas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewReservas_CellClick);
             this.DataGridViewReservas.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DataGridViewReservas_DataBindingComplete);
             // 
-            // bunifuLabel2
+            // LblBuscarReserva
             // 
-            this.bunifuLabel2.AllowParentOverrides = false;
-            this.bunifuLabel2.AutoEllipsis = false;
-            this.bunifuLabel2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel2.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel2.Font = new System.Drawing.Font("Segoe UI", 18F);
-            this.bunifuLabel2.Location = new System.Drawing.Point(13, 58);
-            this.bunifuLabel2.Name = "bunifuLabel2";
-            this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(157, 32);
-            this.bunifuLabel2.TabIndex = 1;
-            this.bunifuLabel2.Text = "Buscar reserva:";
-            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.LblBuscarReserva.AllowParentOverrides = false;
+            this.LblBuscarReserva.AutoEllipsis = false;
+            this.LblBuscarReserva.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LblBuscarReserva.CursorType = System.Windows.Forms.Cursors.Default;
+            this.LblBuscarReserva.Font = new System.Drawing.Font("Segoe UI", 18F);
+            this.LblBuscarReserva.Location = new System.Drawing.Point(13, 58);
+            this.LblBuscarReserva.Name = "LblBuscarReserva";
+            this.LblBuscarReserva.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LblBuscarReserva.Size = new System.Drawing.Size(157, 32);
+            this.LblBuscarReserva.TabIndex = 1;
+            this.LblBuscarReserva.Text = "Buscar reserva:";
+            this.LblBuscarReserva.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.LblBuscarReserva.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuLabel1
+            // LblCobrarSenia
             // 
-            this.bunifuLabel1.AllowParentOverrides = false;
-            this.bunifuLabel1.AutoEllipsis = false;
-            this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 20.25F);
-            this.bunifuLabel1.Location = new System.Drawing.Point(13, 10);
-            this.bunifuLabel1.Name = "bunifuLabel1";
-            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(173, 45);
-            this.bunifuLabel1.TabIndex = 0;
-            this.bunifuLabel1.Text = "Cobrar seña";
-            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.LblCobrarSenia.AllowParentOverrides = false;
+            this.LblCobrarSenia.AutoEllipsis = false;
+            this.LblCobrarSenia.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LblCobrarSenia.CursorType = System.Windows.Forms.Cursors.Default;
+            this.LblCobrarSenia.Font = new System.Drawing.Font("Segoe UI", 20.25F);
+            this.LblCobrarSenia.Location = new System.Drawing.Point(13, 10);
+            this.LblCobrarSenia.Name = "LblCobrarSenia";
+            this.LblCobrarSenia.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LblCobrarSenia.Size = new System.Drawing.Size(173, 45);
+            this.LblCobrarSenia.TabIndex = 0;
+            this.LblCobrarSenia.Text = "Cobrar seña";
+            this.LblCobrarSenia.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.LblCobrarSenia.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // FormCollectDeposit
             // 
@@ -964,10 +964,10 @@
 
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton BtnCollectDeposit;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
+        private Bunifu.UI.WinForms.BunifuLabel LblBuscarReserva;
+        private Bunifu.UI.WinForms.BunifuLabel LblCobrarSenia;
         private Bunifu.UI.WinForms.BunifuDataGridView DataGridViewReservas;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel3;
+        private Bunifu.UI.WinForms.BunifuLabel LblMedioDePago;
         private Bunifu.UI.WinForms.BunifuTextBox TxtSearchText;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton BtnCancelar;
         private System.Windows.Forms.Panel PanelCobro;
@@ -977,14 +977,14 @@
         private Bunifu.UI.WinForms.BunifuLabel LblDeposit;
         private System.Windows.Forms.Panel PanelTarjeta;
         private Bunifu.UI.WinForms.BunifuTextBox TxtNumeroTarjeta;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel5;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel4;
+        private Bunifu.UI.WinForms.BunifuLabel LblNumeroTarjeta;
+        private Bunifu.UI.WinForms.BunifuLabel LblCostos;
         private System.Windows.Forms.DateTimePicker DateTimePickerVencimiento;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel8;
+        private Bunifu.UI.WinForms.BunifuLabel LblFechaVencimiento;
         private Bunifu.UI.WinForms.BunifuTextBox TxtNombreTitular;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel7;
+        private Bunifu.UI.WinForms.BunifuLabel LblNombreTitular;
         private System.Windows.Forms.ComboBox CmbTipoTarjeta;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel6;
+        private Bunifu.UI.WinForms.BunifuLabel LblTipoTarjeta;
         private Bunifu.UI.WinForms.BunifuLabel LblErrorNombreTitular;
         private Bunifu.UI.WinForms.BunifuLabel LblErrorNumeroTarjeta;
         private Bunifu.UI.WinForms.BunifuLabel LblErrorTipoTarjeta;

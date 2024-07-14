@@ -169,6 +169,13 @@ namespace UI
             DataGridViewClientes.DataSource = clientes;
 
             DataGridViewClientes.Columns["Id"].Visible = false;
+
+            DataGridViewClientes.Columns["Dni"].HeaderText = SearchTraduccion("DGVColumnaDni");
+            DataGridViewClientes.Columns["Nombre"].HeaderText = SearchTraduccion("DGVColumnaNombre");
+            DataGridViewClientes.Columns["Apellido"].HeaderText = SearchTraduccion("DGVColumnaApellido");
+            DataGridViewClientes.Columns["Direccion"].HeaderText = SearchTraduccion("DGVColumnaDireccion");
+            DataGridViewClientes.Columns["Email"].HeaderText = SearchTraduccion("DGVColumnaMail");
+            DataGridViewClientes.Columns["Contacto"].HeaderText = SearchTraduccion("DGVColumnaContacto");
         }
 
         private void CheckShowDireccion_CheckedChanged(object sender, EventArgs e)

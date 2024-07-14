@@ -24,6 +24,7 @@ namespace UI
         public FormRegistrarReserva(Action<ServiceForm> openChildForm, EntityReserva reserva = null)
         {
             InitializeComponent();
+            ChangeTranslation();
 
             // Intancio Business
             _businessCliente = new BusinessCliente();
@@ -71,8 +72,8 @@ namespace UI
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
-            $"¿Está seguro de que desea cancelar el proceso de reserva?",
-            $"Cancelar Reserva",
+            $"{SearchTraduccion("MessageCancelarProcesoReserva")}",
+            $"{SearchTraduccion("CaptionCancelar")}",
             MessageBoxButtons.YesNo,
             MessageBoxIcon.Question);
 
@@ -100,9 +101,9 @@ namespace UI
 
             _reserva.Cliente = cliente;
 
-            LblNombre.Text = $"Nombre: {cliente.Nombre} {cliente.Apellido}";
-            LblDni.Text = $"Dni: {cliente.Dni}";
-            LblContacto.Text = $"Contacto: {cliente.Contacto}";
+            LblNombre.Text = $"{SearchTraduccion("LblNombre")} {cliente.Nombre} {cliente.Apellido}";
+            LblDni.Text = $"{SearchTraduccion("LblDni")} {cliente.Dni}";
+            LblContacto.Text = $"{SearchTraduccion("LblContacto")} {cliente.Contacto}";
 
             CmbClientes.Text = string.Empty;
             MostrarDatos();
@@ -145,9 +146,9 @@ namespace UI
 
             if (_reserva?.Salon != null)
             {
-                LblUbicacion.Text = $"Ubicación: {_reserva.Salon.Ubicacion}";
-                LblFecha.Text = $"Fecha: {_reserva.Fecha.ToString("dd/MM/yyyy")} Turno: {_reserva.Turno}";
-                LblCapacidad.Text = $"Cantidad Mínima Invitados: {_reserva.Salon.CantidadMinimaInvitados} Capacidad máxima: {_reserva.Salon.Capacidad}";
+                LblUbicacion.Text = $"{SearchTraduccion("LblUbicacion")} {_reserva.Salon.Ubicacion}";
+                LblFecha.Text = $"{SearchTraduccion("LblFecha")} {_reserva.Fecha.ToString("dd/MM/yyyy")} {SearchTraduccion("LblTurno")} {_reserva.Turno}";
+                LblCapacidad.Text = $"{SearchTraduccion("LblCantidadMinimaInvitados")} {_reserva.Salon.CantidadMinimaInvitados} {SearchTraduccion("LblCapacidadMaxima")} {_reserva.Salon.Capacidad}";
 
                 PanelCliente.Visible = true;
 
@@ -170,18 +171,18 @@ namespace UI
                 PanelServicios.Visible = true;
                 BtnRegistrarReserva.Enabled = true;
 
-                LblNombre.Text = $"Nombre: {_reserva.Cliente.Nombre} {_reserva.Cliente.Apellido}";
-                LblDni.Text = $"Dni: {_reserva.Cliente.Dni}";
-                LblContacto.Text = $"Contacto: {_reserva.Cliente.Contacto}";
+                LblNombre.Text = $"{SearchTraduccion("LblNombre")} {_reserva.Cliente.Nombre} {_reserva.Cliente.Apellido}";
+                LblDni.Text = $"{SearchTraduccion("LblDni")} {_reserva.Cliente.Dni}";
+                LblContacto.Text = $"{SearchTraduccion("LblContacto")} {_reserva.Cliente.Contacto}";
             }
 
             // Muestra los servicios seleccionados con el valor
             if (_reserva?.Servicios?.Count > 0)
             {
-                LblServicios.Text = $"Lista servicios: \r\n";
+                LblServiciosSinSeleccionados.Text = $"{SearchTraduccion("LblListaServicios")} \r\n";
                 foreach (var servicio in _reserva.Servicios)
                 {
-                    LblServicios.Text += $"{servicio.Descripcion} - ${servicio.Valor} \r\n";
+                    LblServiciosSinSeleccionados.Text += $"{servicio.Descripcion} - ${servicio.Valor} \r\n";
                 }
 
                 PanelListaServicios.Visible = true;
@@ -213,8 +214,8 @@ namespace UI
 
             double costoSenia = costoTotal == 0 ? 0 : ((30 * costoTotal) / 100);
 
-            LblCostoTotal.Text = $"Costo total: ${costoTotal}";
-            LblCostoSenia.Text = $"Costo Seña: ${costoSenia}";
+            LblCostoTotal.Text = $"{SearchTraduccion("LblCostoTotal")} ${costoTotal}";
+            LblCostoSenia.Text = $"{SearchTraduccion("LblCostoSenia")} ${costoSenia}";
         }
 
         private bool ValidateInputs()
@@ -229,13 +230,13 @@ namespace UI
 
             if (string.IsNullOrEmpty(TxtDescripcion.Text))
             {
-                ShowLabelError("Debe ingresar descripción del evento", LblErrorDescripcion);
+                ShowLabelError("Debe ingresar descripción del evento", LblErrorDescripcion, "LblErrorDescripcionEvento");
                 ok = false;
             }
 
             if (NumInvitados.Value > _reserva.Salon.Capacidad || NumInvitados.Value < _reserva.Salon.CantidadMinimaInvitados)
             {
-                ShowLabelError($"Fuera de rango de la capacidad", LblErrorCantidadInvitados);
+                ShowLabelError($"Fuera de rango de la capacidad", LblErrorCantidadInvitados, "LblErrorCantidadInvitados");
                 ok = false;
             }
 

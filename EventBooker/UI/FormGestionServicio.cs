@@ -146,6 +146,9 @@ namespace UI
             DataGridViewServicios.DataSource = servicios;
 
             DataGridViewServicios.Columns["Id"].Visible = false;
+
+            DataGridViewServicios.Columns["Descripcion"].HeaderText = SearchTraduccion("DGVColumnaDescripcion");
+            DataGridViewServicios.Columns["Valor"].HeaderText = SearchTraduccion("DGVColumnaValor");
         }
 
         private void ShowPanelData()

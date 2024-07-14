@@ -25,9 +25,9 @@ namespace UI
         public FormCollectDeposit()
         {
             InitializeComponent();
+            ChangeTranslation();
 
             _businessReserva = new BusinessReserva();
-
 
             // Configuro inicio del form
             PanelCobro.Visible = false;
@@ -66,13 +66,13 @@ namespace UI
 
             if (CmbMedioPago.SelectedIndex == -1)
             {
-                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "Debe seleccionar medio de pago"));
+                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "MessageDebeSeleccionarMedioPago"));
                 return;
             }
 
             DialogResult result = MessageBox.Show(
-            $"¿Está seguro que desea realizar el cobro de la seña?",
-            $"Confirmar Cobro",
+            $"{SearchTraduccion("MessageDeseaRealizarCobroSenia")}",
+            $"{SearchTraduccion("CaptionConfirmarCobro")}",
             MessageBoxButtons.YesNo,
             MessageBoxIcon.Question);
 
@@ -85,7 +85,7 @@ namespace UI
 
                 BusinessResponse<bool> response = _businessReserva.Update(reserva);
 
-                RevisarRespuestaServicio(new BusinessResponse<bool>(response.Ok, response.Ok, response.Ok ? "Se ha realizado el pago de la seña correctamente" : "Pago rechazado"));
+                RevisarRespuestaServicio(new BusinessResponse<bool>(response.Ok, response.Ok, response.Ok ? "MessagePagoRealizadoSenia" : "MessagePagoRechazado"));
 
                 FillDataGridView();
                 PanelCobro.Visible = false;
@@ -94,7 +94,7 @@ namespace UI
                 string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
                 // Path completo para guardar el PDF
-                string filePath = Path.Combine(desktopPath, $"comprobante_reserva_{reserva.Fecha.ToString("dd_MM_yyyyy")}_{reserva.Turno}.pdf");
+                string filePath = Path.Combine(desktopPath, $"{SearchTraduccion("MessageComprobanteReserva")}{reserva.Fecha.ToString("dd_MM_yyyyy")}_{reserva.Turno}.pdf");
 
                 // Generar comprobante de reserva
                 GenerarComprobanteDeReserva(reserva, filePath);
@@ -128,6 +128,12 @@ namespace UI
             DataGridViewReservas.Columns["Estado"].Visible = false;
 
             DataGridViewReservas.Columns["Cliente"].Width = 200;
+
+            DataGridViewReservas.Columns["Cliente"].HeaderText = SearchTraduccion("DGVColumnaCliente");
+            DataGridViewReservas.Columns["Descripcion"].HeaderText = SearchTraduccion("DGVColumnaDescripcion");
+            DataGridViewReservas.Columns["Fecha"].HeaderText = SearchTraduccion("DGVColumnaFecha");
+            DataGridViewReservas.Columns["Turno"].HeaderText = SearchTraduccion("DGVColumnaTurno");
+            DataGridViewReservas.Columns["Invitados"].HeaderText = SearchTraduccion("DGVColumnaInvitados");
         }
 
         private void DataGridViewReservas_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -148,6 +154,13 @@ namespace UI
             TxtNumeroTarjeta.Text = string.Empty;
             DateTimePickerVencimiento.Value = DateTime.Now;
 
+            HideLabelError(new List<BunifuLabel>
+            {
+                LblErrorNumeroTarjeta,
+                LblErrorNombreTitular,
+                LblErrorTipoTarjeta
+            });
+
             CalcularCostos(reserva);
         }
 
@@ -166,8 +179,8 @@ namespace UI
 
             double costoSenia = costoTotal == 0 ? 0 : ((30 * costoTotal) / 100);
 
-            LblTotal.Text = $"Total: ${costoTotal}";
-            LblDeposit.Text = $"Seña: ${costoSenia}";
+            LblTotal.Text = $"{SearchTraduccion("LblTotal")} ${costoTotal}";
+            LblDeposit.Text = $"{SearchTraduccion("LblDeposit")} ${costoSenia}";
         }
 
         private void CmbMedioPago_SelectionChangeCommitted(object sender, EventArgs e)
@@ -188,25 +201,25 @@ namespace UI
 
             if (string.IsNullOrEmpty(TxtNumeroTarjeta.Text))
             {
-                ShowLabelError("Debe ingresar número de tarjeta", LblErrorNumeroTarjeta);
+                ShowLabelError("Debe ingresar número de tarjeta", LblErrorNumeroTarjeta, "LblErrorNumeroTarjeta");
                 ok = false;
             }
 
             if (!string.IsNullOrEmpty(TxtNumeroTarjeta.Text) && !RegexValidationService.IsValidCard(TxtNumeroTarjeta.Text))
             {
-                ShowLabelError("Tarjeta no valida, verifique los datos", LblErrorNumeroTarjeta);
+                ShowLabelError("Tarjeta no valida, verifique los datos", LblErrorNumeroTarjeta, "MessageVerificarDatosTarjeta");
                 ok = false;
             }
 
             if (string.IsNullOrEmpty(TxtNombreTitular.Text))
             {
-                ShowLabelError("Debe ingresar nombre del titular", LblErrorNombreTitular);
+                ShowLabelError("Debe ingresar nombre del titular", LblErrorNombreTitular, "LblErrorNombreTitular");
                 ok = false;
             }
 
             if (CmbTipoTarjeta.SelectedIndex == -1)
             {
-                ShowLabelError("Debe seleccionar tipo de tarjeta", LblErrorTipoTarjeta);
+                ShowLabelError("Debe seleccionar tipo de tarjeta", LblErrorTipoTarjeta, "LblErrorTipoTarjeta");
                 ok = false;
             }
 
@@ -217,7 +230,7 @@ namespace UI
         {
             // Crear un nuevo documento PDF
             PdfDocument document = new PdfDocument();
-            document.Info.Title = "Comprobante de Reserva";
+            document.Info.Title = $"{SearchTraduccion("MessageComprobanteReservaTitulo")}";
 
             // Crear una nueva página
             PdfPage page = document.AddPage();
@@ -229,34 +242,34 @@ namespace UI
             XFont fontRegular = new XFont("Verdana", 12, XFontStyleEx.Regular);
 
             // Escribir el título
-            gfx.DrawString("Comprobante de Reserva", fontTitle, XBrushes.Black, new XRect(0, 40, page.Width, 40), XStringFormats.TopCenter);
+            gfx.DrawString($"{SearchTraduccion("MessageComprobanteReservaTitulo")}", fontTitle, XBrushes.Black, new XRect(0, 40, page.Width, 40), XStringFormats.TopCenter);
 
             int yPosition = 100;
             // Escribir la información de la reserva
-            gfx.DrawString($"Información de la reserva:", fontSubtitle, XBrushes.Black, 40, yPosition);
+            gfx.DrawString($"{SearchTraduccion("MessageInformacionReserva")}", fontSubtitle, XBrushes.Black, 40, yPosition);
             yPosition += 20;
-            gfx.DrawString($"Fecha: {reserva.Fecha.ToString("dd/MM/yyyy")}", fontRegular, XBrushes.Black, 40, yPosition);
+            gfx.DrawString($"{SearchTraduccion("LblFecha")} {reserva.Fecha.ToString("dd/MM/yyyy")}", fontRegular, XBrushes.Black, 40, yPosition);
             yPosition += 20;
-            gfx.DrawString($"Turno: {reserva.Turno}", fontRegular, XBrushes.Black, 40, yPosition);
+            gfx.DrawString($"{SearchTraduccion("LblTurno")} {reserva.Turno}", fontRegular, XBrushes.Black, 40, yPosition);
             yPosition += 20;
-            gfx.DrawString($"Salón: {reserva.Salon.Nombre} - {reserva.Salon.Ubicacion}", fontRegular, XBrushes.Black, 40, yPosition);
+            gfx.DrawString($"{SearchTraduccion("LblSalon")}: {reserva.Salon.Nombre} - {reserva.Salon.Ubicacion}", fontRegular, XBrushes.Black, 40, yPosition);
             yPosition += 20;
-            gfx.DrawString($"Costo del Salón: ${reserva.Salon.Precio}", fontRegular, XBrushes.Black, 40, yPosition);
+            gfx.DrawString($"{SearchTraduccion("MessageCostoSalon")} ${reserva.Salon.Precio}", fontRegular, XBrushes.Black, 40, yPosition);
 
             // Escribir la descripción del evento
             yPosition += 40;
-            gfx.DrawString($"Descripción del evento:", fontSubtitle, XBrushes.Black, 40, yPosition);
+            gfx.DrawString($"{SearchTraduccion("LblDescripcionEvento")}", fontSubtitle, XBrushes.Black, 40, yPosition);
             yPosition += 20;
-            gfx.DrawString($"Descripción del Evento: {reserva.Descripcion}", fontRegular, XBrushes.Black, 40, yPosition);
+            gfx.DrawString($"{SearchTraduccion("LblDescripcionEvento")} {reserva.Descripcion}", fontRegular, XBrushes.Black, 40, yPosition);
             yPosition += 20;
-            gfx.DrawString($"Cantidad de Invitados: {reserva.Invitados}", fontRegular, XBrushes.Black, 40, yPosition);
+            gfx.DrawString($"{SearchTraduccion("LblCantidadInvitados")} {reserva.Invitados}", fontRegular, XBrushes.Black, 40, yPosition);
             yPosition += 20;
-            gfx.DrawString($"Costo por Cubierto: ${reserva.Salon.PrecioCubierto}", fontRegular, XBrushes.Black, 40, yPosition);
+            gfx.DrawString($"{SearchTraduccion("LblPrecioCubierto")} ${reserva.Salon.PrecioCubierto}", fontRegular, XBrushes.Black, 40, yPosition);
 
 
             // Escribir los servicios solicitados
             yPosition += 40;
-            gfx.DrawString("Servicios Solicitados:", fontSubtitle, XBrushes.Black, 40, yPosition);
+            gfx.DrawString($"{SearchTraduccion("MessageServiciosSolicitados")}", fontSubtitle, XBrushes.Black, 40, yPosition);
             yPosition += 20;
 
             //Realizo calculos de costos
@@ -278,13 +291,13 @@ namespace UI
 
             // Escribir el monto abonado y el saldo pendiente
             yPosition += 20;
-            gfx.DrawString("Estado de cuenta:", fontSubtitle, XBrushes.Black, 40, yPosition);
+            gfx.DrawString($"{SearchTraduccion("MessageEstadoCuenta")}", fontSubtitle, XBrushes.Black, 40, yPosition);
             yPosition += 20;
-            gfx.DrawString($"Monto Total: ${costoTotal}", fontRegular, XBrushes.Black, 40, yPosition);
+            gfx.DrawString($"{SearchTraduccion("MessageMontoTotal")} ${costoTotal}", fontRegular, XBrushes.Black, 40, yPosition);
             yPosition += 20;
-            gfx.DrawString($"Monto Abonado: ${costoSenia}", fontRegular, XBrushes.Black, 40, yPosition);
+            gfx.DrawString($"{SearchTraduccion("MessageMontoAbonado")} ${costoSenia}", fontRegular, XBrushes.Black, 40, yPosition);
             yPosition += 20;
-            gfx.DrawString($"Saldo Pendiente: ${costoTotal - costoSenia}", fontRegular, XBrushes.Black, 40, yPosition);
+            gfx.DrawString($"{SearchTraduccion("MessageSaldoPendiente")} ${costoTotal - costoSenia}", fontRegular, XBrushes.Black, 40, yPosition);
 
             // Guardar el documento PDF
             document.Save(filePath);
