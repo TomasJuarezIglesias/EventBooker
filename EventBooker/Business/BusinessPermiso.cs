@@ -35,19 +35,19 @@ namespace Business
         public BusinessResponse<bool> CreateFamilia(IPermiso familia)
         {
             bool ok = _dataAccessPermiso.InsertFamilia(familia);
-            return new BusinessResponse<bool>(ok, ok, ok ? "Creado correctamente" : "Error al crear");
+            return new BusinessResponse<bool>(ok, ok, ok ? "MessageCreadoCorrectamente" : "MessageErrorAlCrear");
         }
 
         public BusinessResponse<bool> UpdateFamilia(IPermiso familia)
         {
             bool ok = _dataAccessPermiso.UpdateFamilia(familia);
-            return new BusinessResponse<bool>(ok, ok, ok ? "Modificado correctamente" : "Error al modificar");
+            return new BusinessResponse<bool>(ok, ok, ok ? "MessageModificadoCorrectamente" : "MessageErrorAlModificar");
         }
 
         public BusinessResponse<bool> DeleteFamilia(IPermiso familia)
         {
             bool ok = _dataAccessPermiso.DeleteFamilia(familia);
-            return new BusinessResponse<bool>(ok, ok, ok ? "Eliminado correctamente" : "Familia asignada a un perfil");
+            return new BusinessResponse<bool>(ok, ok, ok ? "MessageEliminadoCorrectamente" : "MessageFamiliaAsignadaAPerfil");
         }
     }
 }

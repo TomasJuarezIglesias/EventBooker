@@ -48,17 +48,17 @@
             this.PanelData = new System.Windows.Forms.Panel();
             this.LblErrorValor = new Bunifu.UI.WinForms.BunifuLabel();
             this.TxtValor = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.bunifuLabel6 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.LblValor = new Bunifu.UI.WinForms.BunifuLabel();
             this.LblErrorDescripcion = new Bunifu.UI.WinForms.BunifuLabel();
             this.BtnCancelar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.BtnGuardar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.LblDescripcion = new Bunifu.UI.WinForms.BunifuLabel();
             this.TxtDescripcion = new Bunifu.UI.WinForms.BunifuTextBox();
             this.BtnEliminar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.BtnModificar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.BtnCrear = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.DataGridViewServicios = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.LblGestionServicios = new Bunifu.UI.WinForms.BunifuLabel();
             this.PanelData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewServicios)).BeginInit();
             this.SuspendLayout();
@@ -67,11 +67,11 @@
             // 
             this.PanelData.Controls.Add(this.LblErrorValor);
             this.PanelData.Controls.Add(this.TxtValor);
-            this.PanelData.Controls.Add(this.bunifuLabel6);
+            this.PanelData.Controls.Add(this.LblValor);
             this.PanelData.Controls.Add(this.LblErrorDescripcion);
             this.PanelData.Controls.Add(this.BtnCancelar);
             this.PanelData.Controls.Add(this.BtnGuardar);
-            this.PanelData.Controls.Add(this.bunifuLabel2);
+            this.PanelData.Controls.Add(this.LblDescripcion);
             this.PanelData.Controls.Add(this.TxtDescripcion);
             this.PanelData.Location = new System.Drawing.Point(1, 428);
             this.PanelData.Name = "PanelData";
@@ -171,21 +171,21 @@
             this.TxtValor.UseSystemPasswordChar = false;
             this.TxtValor.WordWrap = true;
             // 
-            // bunifuLabel6
+            // LblValor
             // 
-            this.bunifuLabel6.AllowParentOverrides = false;
-            this.bunifuLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuLabel6.AutoEllipsis = false;
-            this.bunifuLabel6.CursorType = null;
-            this.bunifuLabel6.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bunifuLabel6.Location = new System.Drawing.Point(383, 32);
-            this.bunifuLabel6.Name = "bunifuLabel6";
-            this.bunifuLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel6.Size = new System.Drawing.Size(40, 21);
-            this.bunifuLabel6.TabIndex = 27;
-            this.bunifuLabel6.Text = "Valor:";
-            this.bunifuLabel6.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel6.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.LblValor.AllowParentOverrides = false;
+            this.LblValor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.LblValor.AutoEllipsis = false;
+            this.LblValor.CursorType = null;
+            this.LblValor.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.LblValor.Location = new System.Drawing.Point(383, 32);
+            this.LblValor.Name = "LblValor";
+            this.LblValor.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LblValor.Size = new System.Drawing.Size(40, 21);
+            this.LblValor.TabIndex = 27;
+            this.LblValor.Text = "Valor:";
+            this.LblValor.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.LblValor.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // LblErrorDescripcion
             // 
@@ -386,22 +386,22 @@
             this.BtnGuardar.UseDefaultRadiusAndThickness = true;
             this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
-            // bunifuLabel2
+            // LblDescripcion
             // 
-            this.bunifuLabel2.AllowParentOverrides = false;
-            this.bunifuLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuLabel2.AutoEllipsis = false;
-            this.bunifuLabel2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel2.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bunifuLabel2.Location = new System.Drawing.Point(10, 32);
-            this.bunifuLabel2.Name = "bunifuLabel2";
-            this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(84, 21);
-            this.bunifuLabel2.TabIndex = 15;
-            this.bunifuLabel2.Text = "Descripción:";
-            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.LblDescripcion.AllowParentOverrides = false;
+            this.LblDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.LblDescripcion.AutoEllipsis = false;
+            this.LblDescripcion.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LblDescripcion.CursorType = System.Windows.Forms.Cursors.Default;
+            this.LblDescripcion.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.LblDescripcion.Location = new System.Drawing.Point(10, 32);
+            this.LblDescripcion.Name = "LblDescripcion";
+            this.LblDescripcion.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LblDescripcion.Size = new System.Drawing.Size(84, 21);
+            this.LblDescripcion.TabIndex = 15;
+            this.LblDescripcion.Text = "Descripción:";
+            this.LblDescripcion.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.LblDescripcion.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // TxtDescripcion
             // 
@@ -824,22 +824,22 @@
             this.DataGridViewServicios.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             this.DataGridViewServicios.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DataGridViewServicios_DataBindingComplete);
             // 
-            // bunifuLabel1
+            // LblGestionServicios
             // 
-            this.bunifuLabel1.AllowParentOverrides = false;
-            this.bunifuLabel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.bunifuLabel1.AutoEllipsis = false;
-            this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 20.25F);
-            this.bunifuLabel1.Location = new System.Drawing.Point(11, 26);
-            this.bunifuLabel1.Name = "bunifuLabel1";
-            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(287, 45);
-            this.bunifuLabel1.TabIndex = 31;
-            this.bunifuLabel1.Text = "Gestión de servicios";
-            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.LblGestionServicios.AllowParentOverrides = false;
+            this.LblGestionServicios.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.LblGestionServicios.AutoEllipsis = false;
+            this.LblGestionServicios.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LblGestionServicios.CursorType = System.Windows.Forms.Cursors.Default;
+            this.LblGestionServicios.Font = new System.Drawing.Font("Segoe UI", 20.25F);
+            this.LblGestionServicios.Location = new System.Drawing.Point(11, 26);
+            this.LblGestionServicios.Name = "LblGestionServicios";
+            this.LblGestionServicios.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LblGestionServicios.Size = new System.Drawing.Size(287, 45);
+            this.LblGestionServicios.TabIndex = 31;
+            this.LblGestionServicios.Text = "Gestión de servicios";
+            this.LblGestionServicios.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.LblGestionServicios.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // FormGestionServicio
             // 
@@ -852,7 +852,7 @@
             this.Controls.Add(this.BtnModificar);
             this.Controls.Add(this.BtnCrear);
             this.Controls.Add(this.DataGridViewServicios);
-            this.Controls.Add(this.bunifuLabel1);
+            this.Controls.Add(this.LblGestionServicios);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormGestionServicio";
             this.Text = "FormGestionServicio";
@@ -869,16 +869,16 @@
         private System.Windows.Forms.Panel PanelData;
         private Bunifu.UI.WinForms.BunifuLabel LblErrorValor;
         private Bunifu.UI.WinForms.BunifuTextBox TxtValor;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel6;
+        private Bunifu.UI.WinForms.BunifuLabel LblValor;
         private Bunifu.UI.WinForms.BunifuLabel LblErrorDescripcion;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton BtnCancelar;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton BtnGuardar;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
+        private Bunifu.UI.WinForms.BunifuLabel LblDescripcion;
         private Bunifu.UI.WinForms.BunifuTextBox TxtDescripcion;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton BtnEliminar;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton BtnModificar;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton BtnCrear;
         private Bunifu.UI.WinForms.BunifuDataGridView DataGridViewServicios;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
+        private Bunifu.UI.WinForms.BunifuLabel LblGestionServicios;
     }
 }

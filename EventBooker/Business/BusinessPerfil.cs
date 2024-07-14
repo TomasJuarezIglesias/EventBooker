@@ -44,19 +44,19 @@ namespace Business
         public BusinessResponse<bool> Create(EntityPerfil perfil)
         {
             bool ok = _dataAccessPerfil.Insert(perfil);
-            return new BusinessResponse<bool>(ok, ok, ok ? "Creado correctamente" : "Error al crear");
+            return new BusinessResponse<bool>(ok, ok, ok ? "MessageCreadoCorrectamente" : "MessageErrorAlCrear");
         }
 
         public BusinessResponse<bool> Update(EntityPerfil perfil)
         {
             bool ok = _dataAccessPerfil.Update(perfil);
-            return new BusinessResponse<bool>(ok, ok, ok ? "Modificado correctamente" : "Error al modificar");
+            return new BusinessResponse<bool>(ok, ok, ok ? "MessageModificadoCorrectamente" : "MessageErrorAlModificar");
         }
 
         public BusinessResponse<bool> Delete(EntityPerfil perfil)
         {
             bool ok = _dataAccessPerfil.Delete(perfil);
-            return new BusinessResponse<bool>(ok, ok, ok ? "Eliminado correctamente" : "Perfil asignado a un usuario");
+            return new BusinessResponse<bool>(ok, ok, ok ? "MessageEliminadoCorrectamente" : "MessagePerfilAsignadoAUsuario");
         }
 
     } 

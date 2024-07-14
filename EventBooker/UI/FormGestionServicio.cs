@@ -21,6 +21,7 @@ namespace UI
         public FormGestionServicio()
         {
             InitializeComponent();
+            ChangeTranslation();
             _businessServicio = new BusinessServicio();
             FillDataGridView();
             HidePanelData();
@@ -48,7 +49,7 @@ namespace UI
             }
             catch (Exception)
             {
-                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "Debe seleccionar un salón"));
+                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "MessageSeleccionarServicio"));
             }
         }
 
@@ -59,8 +60,8 @@ namespace UI
                 EntityServicio servicio = DataGridViewServicios.SelectedRows[0].DataBoundItem as EntityServicio;
 
                 DialogResult result = MessageBox.Show(
-                $"¿Está seguro de que desea eliminar el servicio: {servicio.Descripcion}?",
-                $"Confirmar eliminar",
+                $"{SearchTraduccion("MessageDeseaEliminarServicio")}",
+                $"{SearchTraduccion("CaptionConfirmarEliminar")}",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
 
@@ -73,7 +74,7 @@ namespace UI
             }
             catch (Exception)
             {
-                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "Debe seleccionar un salón"));
+                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "MessageSeleccionarServicio"));
             }
         }
 
@@ -198,13 +199,13 @@ namespace UI
 
             if (string.IsNullOrEmpty(TxtDescripcion.Text))
             {
-                ShowLabelError("Debe ingresar descripción", LblErrorDescripcion);
+                ShowLabelError("Debe ingresar descripción", LblErrorDescripcion, "LblErrorDescripcion");
                 ok = false;
             }
 
             if (string.IsNullOrEmpty(TxtValor.Text) || !double.TryParse(TxtValor.Text, out double _))
             {
-                ShowLabelError("Formato del valor incorrecto", LblErrorValor);
+                ShowLabelError("Formato del valor incorrecto", LblErrorValor, "LblErrorValor");
                 ok = false;
             }
 

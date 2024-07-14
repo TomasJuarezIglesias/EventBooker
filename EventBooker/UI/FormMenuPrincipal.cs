@@ -172,8 +172,8 @@ namespace UI
 
         private void BtnCambiarIdioma_Click(object sender, EventArgs e)
         {
-            FormIdioma formIdioma = new FormIdioma();
-            formIdioma.Show();
+            FormIdioma formIdioma = new FormIdioma(this);
+            formIdioma.ShowDialog();
         }
 
         private void CheckPermissions()

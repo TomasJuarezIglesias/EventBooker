@@ -90,7 +90,7 @@ namespace UI
             {
                 if (item is Panel || item is BunifuPanel) ChangeTranslation(idioma, item.Controls);
 
-                if (item is Label || item is BunifuLabel || item is Button || item is BunifuButton)
+                if (item is Label || item is BunifuLabel || item is Button || item is BunifuButton || item is CheckBox)
                 {
                     // Buscar por name en la tabla junto con el id y setear el text del idioma seleccionado
                     item.Text = _businessIdioma.GetTraduccion(idioma, item.Name).Data;

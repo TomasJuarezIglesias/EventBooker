@@ -22,8 +22,9 @@ namespace UI
 
         public FormGestionPerfiles(Action<ServiceForm> openChildForm)
         {
-            this.openChildForm = openChildForm;
             InitializeComponent();
+            this.openChildForm = openChildForm;
+            ChangeTranslation();
 
             _businessPerfil = new BusinessPerfil();
             _businessPermiso = new BusinessPermiso();
@@ -116,8 +117,8 @@ namespace UI
             EntityPerfil perfil = CmbPerfiles.SelectedItem as EntityPerfil;
 
             DialogResult result = MessageBox.Show(
-            $"¿Está seguro de que desea eliminar la familia {perfil.Descripcion}?",
-            $"Eliminar",
+            $"{SearchTraduccion("MessageDeseaEliminarPerfil")}",
+            $"{SearchTraduccion("CaptionConfirmarEliminar")}",
             MessageBoxButtons.YesNo,
             MessageBoxIcon.Question);
 
@@ -148,13 +149,13 @@ namespace UI
 
             if (string.IsNullOrEmpty(TxtNombrePerfil.Text))
             {
-                ShowLabelError("Debe ingresar nombre de perfil", LblErrorNombrePerfil);
+                ShowLabelError("Debe ingresar nombre de perfil", LblErrorNombrePerfil, "LblErrorNombrePerfil");
                 return;
             }
 
             if (EditedPerfil.Permisos.Count == 0)
             {
-                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "Debe seleccionar permisos o familias de permisos"));
+                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "MessageDebeSeleccionarPermisos"));
                 return;
             }
 
@@ -174,8 +175,8 @@ namespace UI
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
-            $"¿Está seguro de que desea cancelar el proceso?",
-            $"Cancelar",
+            $"{SearchTraduccion("MessageDeseaCancelarProceso")}",
+            $"{SearchTraduccion("CaptionCancelar")}",
             MessageBoxButtons.YesNo,
             MessageBoxIcon.Question);
 
@@ -194,7 +195,7 @@ namespace UI
 
             if (ListBoxPermisos.SelectedIndex == -1 && ListBoxFamilias.SelectedIndex == -1)
             {
-                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "Debe seleccionar permiso o familia de permisos"));
+                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "MessageDebeSeleccionarPermisos"));
                 return;
             }
 
@@ -218,7 +219,7 @@ namespace UI
 
             if (permisoExists)
             {
-                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "Ya se tiene el permiso en la familia de permisos a crear"));
+                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "MessageSeTienePermisoEnLista"));
                 return;
             }
 
@@ -247,7 +248,7 @@ namespace UI
         {
             if (ListBoxPermisosPerfil.SelectedIndex == -1)
             {
-                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "Debe seleccionar permiso o familia de permisos"));
+                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "MessageDebeSeleccionarPermisos"));
                 return;
             }
 

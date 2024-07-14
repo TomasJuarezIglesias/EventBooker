@@ -22,6 +22,7 @@ namespace UI
         public FormGestionSalon()
         {
             InitializeComponent();
+            ChangeTranslation();
             _businessSalon = new BusinessSalon();
             FillDataGridView();
             HidePanelData();
@@ -52,7 +53,7 @@ namespace UI
             }
             catch (Exception)
             {
-                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "Debe seleccionar un salón"));
+                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "MessageDebeSeleccionarSalon"));
             }
         }
 
@@ -63,8 +64,8 @@ namespace UI
                 EntitySalon salon = DataGridViewSalones.SelectedRows[0].DataBoundItem as EntitySalon;
 
                 DialogResult result = MessageBox.Show(
-                $"¿Está seguro de que desea eliminar el salón {salon.Nombre}?",
-                $"Confirmar eliminar",
+                $"{SearchTraduccion("MessageDeseaEliminarSalon")}",
+                $"{SearchTraduccion("CaptionConfirmarEliminar")}",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
 
@@ -77,7 +78,7 @@ namespace UI
             }
             catch (Exception)
             {
-                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "Debe seleccionar un salón"));
+                RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "MessageDebeSeleccionarSalon"));
             }
         }
 
@@ -225,37 +226,37 @@ namespace UI
 
             if (string.IsNullOrEmpty(TxtNombre.Text))
             {
-                ShowLabelError("Debe ingresar el nombre", LblErrorNombre);
+                ShowLabelError("Debe ingresar el nombre", LblErrorNombre, "LblErrorNombre");
                 ok = false;
             }
 
             if (string.IsNullOrEmpty(TxtUbicacion.Text))
             {
-                ShowLabelError("Debe ingresar la ubicación", LblErrorUbicacion);
+                ShowLabelError("Debe ingresar la ubicación", LblErrorUbicacion, "LblErrorUbicacion");
                 ok = false;
             }
 
             if (string.IsNullOrEmpty(TxtPrecio.Text) || !double.TryParse(TxtPrecio.Text, out double _))
             {
-                ShowLabelError("Formato del precio incorrecto", LblErrorPrecio);
+                ShowLabelError("Formato del precio incorrecto", LblErrorPrecio, "LblErrorPrecio");
                 ok = false;
             }
 
             if (string.IsNullOrEmpty(TxtPrecioCubierto.Text) || !double.TryParse(TxtPrecioCubierto.Text, out double _))
             {
-                ShowLabelError("Formato del precio por cubierto incorrecto", LblErrorPrecioCubierto);
+                ShowLabelError("Formato del precio por cubierto incorrecto", LblErrorPrecioCubierto, "LblErrorPrecioCubierto");
                 ok = false;
             }
 
             if (NumCapacidad.Value <= 0)
             {
-                ShowLabelError("Capacidad incorrecta", LblErrorCapacidad);
+                ShowLabelError("Capacidad incorrecta", LblErrorCapacidad, "LblErrorCapacidad");
                 ok = false;
             }
 
             if (NumCantidadMinimaInvitados.Value <= 0 || NumCapacidad.Value < NumCantidadMinimaInvitados.Value)
             {
-                ShowLabelError("Cantidad minima de invitados incorrecta", LblErrorCantidadMinimaInvitados);
+                ShowLabelError("Cantidad minima de invitados incorrecta", LblErrorCantidadMinimaInvitados, "LblErrorCantidadMinimaInvitados");
                 ok = false;
             }
 

@@ -26,21 +26,21 @@ namespace Business
         {
             bool ok = _dataAccess.Insert(servicio);
 
-            return new BusinessResponse<bool>(ok, ok, ok ? "Creado correctamente" : "Error al crear");
+            return new BusinessResponse<bool>(ok, ok, ok ? "MessageCreadoCorrectamente" : "MessageErrorAlCrear");
         }
 
         public BusinessResponse<bool> Update(EntityServicio servicio)
         {
             bool ok = _dataAccess.Update(servicio);
 
-            return new BusinessResponse<bool>(ok, ok, ok ? "Modificado correctamente" : "Error al modificar");
+            return new BusinessResponse<bool>(ok, ok, ok ? "MessageModificadoCorrectamente" : "MessageErrorAlModificar");
         }
 
         public BusinessResponse<bool> Delete(Entity entity)
         {
             bool ok = _dataAccess.Delete(entity);
 
-            return new BusinessResponse<bool>(ok, ok, ok ? "Eliminado correctamente" : "Error al eliminar");
+            return new BusinessResponse<bool>(ok, ok, ok ? "MessageEliminadoCorrectamente" : "MessageErrorAlEliminar");
         }
 
     }
