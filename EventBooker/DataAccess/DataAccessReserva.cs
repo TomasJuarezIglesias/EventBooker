@@ -129,6 +129,16 @@ namespace DataAccess
             return ok;
         }
 
+        public DataTable GetReporteMes(DateTime fecha)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@In_Fecha", SqlDbType.Date){ Value = fecha }
+            };
+
+            return _connection.Read("SP_GenerarReporteReservasMes", parameters);
+        }
+
 
     }
 }

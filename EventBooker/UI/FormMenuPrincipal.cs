@@ -45,6 +45,7 @@ namespace UI
             PanelAdministrador.Visible = false;
             PanelMaestros.Visible = false;
             PanelCobranza.Visible = false;
+            PanelReportes.Visible = false;
         }
 
         private void ShowSubmenu(Panel subMenu)
@@ -70,6 +71,9 @@ namespace UI
 
             if (PanelCobranza.Visible)
                 PanelCobranza.Visible = false;
+
+            if(PanelReportes.Visible)
+                PanelReportes.Visible = false;
         }
 
         private void BtnAdministrador_Click(object sender, EventArgs e)
@@ -85,6 +89,11 @@ namespace UI
         private void BtnCobranza_Click(object sender, EventArgs e)
         {
             ShowSubmenu(PanelCobranza);
+        }
+
+        private void BtnReportes_Click(object sender, EventArgs e)
+        {
+            ShowSubmenu(PanelReportes);
         }
 
         // Inicio
@@ -144,7 +153,26 @@ namespace UI
             HideSubmenu();
         }
 
+        // Reportes
+
+        private void BtnInformeReservasDelMes_Click(object sender, EventArgs e)
+        {
+            HideSubmenu();
+            FormReporteReservasMes formReporteReservasMes = new FormReporteReservasMes();
+            formReporteReservasMes.ShowDialog();
+        }
+
         // Usuario
+
+        private void BtnCambiarIdioma_Click(object sender, EventArgs e)
+        {
+            HideSubmenu();
+            FormIdioma formIdioma = new FormIdioma(new List<IObserver>{
+                this,
+                _activeForm
+            });
+            formIdioma.ShowDialog();
+        }
 
         private void BtnCambiarPassword_Click(object sender, EventArgs e)
         {
@@ -170,15 +198,6 @@ namespace UI
             }
         }
 
-        private void BtnCambiarIdioma_Click(object sender, EventArgs e)
-        {
-            FormIdioma formIdioma = new FormIdioma(new List<IObserver>{
-                this,
-                _activeForm
-            });
-            formIdioma.ShowDialog();
-        }
-
         private void CheckPermissions()
         {
             BtnAdministrador.Visible = _sessionManager.HasPermission(1);
@@ -187,5 +206,6 @@ namespace UI
             BtnCobranza.Visible = _sessionManager.HasPermission(4);
             BtnReportes.Visible = _sessionManager.HasPermission(5);
         }
+
     }
 }

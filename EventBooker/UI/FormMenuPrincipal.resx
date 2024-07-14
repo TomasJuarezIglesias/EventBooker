@@ -217,6 +217,24 @@
         qixIbCoqROkAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="BtnAyuda.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAANgAAAAnCAYAAABt5IYhAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACZSURBVHhe7dOhEYBAEMDAL/e+ZsqgABg8DuJWrIrOmplj
+        730B/3reWm8B+IfBIGQwCBkMQgaDkMEgZDAIGQxCBoOQwSBkMAgZDEIGg5DBIGQwCBkMQgaDkMEgZDAI
+        GQxCBoOQwSBkMAgZDEIGg5DBIGQwCBkMQgaDkMEgZDAIGQxCBoOQwSBkMAgZDEIGg9CamfMtAN/MzHkD
+        qixIbCoqROkAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="BtnInformeReservasDelMes.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAANgAAAAnCAYAAABt5IYhAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACXSURBVHhe7dOhEYAwAARBSk+fKSMFALEMMudWrPnXd40x
+        5usGjps7sL8DOEBgEBIYhAQGIYFBSGAQEhiEBAYhgUFIYBASGIQEBiGBQUhgEBIYhAQGIYFBSGAQEhiE
+        BAYhgUFIYBASGIQEBiGBQUhgEBIYhAQGIYFBSGAQEhiEBAYhgUFIYBASGIQEBiGBQWgHtr4jcMJYD7ow
+        J4dgZWzXAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="BtnCambiarIdioma.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAANgAAAAnCAYAAABt5IYhAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -236,15 +254,6 @@
 </value>
   </data>
   <data name="BtnCerrarSesion.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAANgAAAAnCAYAAABt5IYhAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACZSURBVHhe7dOhEYBAEMDAL/e+ZsqgABg8DuJWrIrOmplj
-        730B/3reWm8B+IfBIGQwCBkMQgaDkMEgZDAIGQxCBoOQwSBkMAgZDEIGg5DBIGQwCBkMQgaDkMEgZDAI
-        GQxCBoOQwSBkMAgZDEIGg5DBIGQwCBkMQgaDkMEgZDAIGQxCBoOQwSBkMAgZDEIGg9CamfMtAN/MzHkD
-        qixIbCoqROkAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="BtnAyuda.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAANgAAAAnCAYAAABt5IYhAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACZSURBVHhe7dOhEYBAEMDAL/e+ZsqgABg8DuJWrIrOmplj

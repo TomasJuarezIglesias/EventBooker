@@ -2,6 +2,7 @@
 using Entities;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,6 +35,11 @@ namespace Business
             bool ok = _dataAccessReserva.Update(reserva);
 
             return new BusinessResponse<bool>(ok, ok, ok ? "MessageModificadoCorrectamente" : "MessageErrorAlModificar");
+        }
+
+        public BusinessResponse<DataTable> GenerarReporteMes(DateTime fecha)
+        {
+            return new BusinessResponse<DataTable>(true, _dataAccessReserva.GetReporteMes(fecha));
         }
     }
 }
