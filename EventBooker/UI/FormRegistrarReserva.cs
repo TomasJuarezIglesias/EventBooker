@@ -230,13 +230,13 @@ namespace UI
 
             if (string.IsNullOrEmpty(TxtDescripcion.Text))
             {
-                ShowLabelError("Debe ingresar descripción del evento", LblErrorDescripcion, "LblErrorDescripcionEvento");
+                ShowLabelError(LblErrorDescripcion, "LblErrorDescripcionEvento");
                 ok = false;
             }
 
             if (NumInvitados.Value > _reserva.Salon.Capacidad || NumInvitados.Value < _reserva.Salon.CantidadMinimaInvitados)
             {
-                ShowLabelError($"Fuera de rango de la capacidad", LblErrorCantidadInvitados, "LblErrorCantidadInvitados");
+                ShowLabelError(LblErrorCantidadInvitados, "LblErrorCantidadInvitados");
                 ok = false;
             }
 

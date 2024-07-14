@@ -149,7 +149,7 @@ namespace UI
 
             if (string.IsNullOrEmpty(TxtNombrePerfil.Text))
             {
-                ShowLabelError("Debe ingresar nombre de perfil", LblErrorNombrePerfil, "LblErrorNombrePerfil");
+                ShowLabelError(LblErrorNombrePerfil, "LblErrorNombrePerfil");
                 return;
             }
 

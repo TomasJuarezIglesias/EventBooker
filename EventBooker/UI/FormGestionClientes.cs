@@ -242,55 +242,55 @@ namespace UI
 
             if (string.IsNullOrEmpty(TxtNombre.Text))
             {
-                ShowLabelError("Debe Ingresar el nombre", LblErrorNombre, "LblErrorNombre");
+                ShowLabelError(LblErrorNombre, "LblErrorNombre");
                 ok = false;
             }
 
             if (string.IsNullOrEmpty(TxtApellido.Text))
             {
-                ShowLabelError("Debe Ingresar el apellido", LblErrorApellido, "LblErrorApellido");
+                ShowLabelError(LblErrorApellido, "LblErrorApellido");
                 ok = false;
             }
 
             if (string.IsNullOrEmpty(TxtDni.Text))
             {
-                ShowLabelError("Debe ingresar dni", LblErrorDni, "LblErrorDni");
+                ShowLabelError(LblErrorDni, "LblErrorDni");
                 ok = false;
             }
 
             if (!string.IsNullOrEmpty(TxtDni.Text) && !RegexValidationService.IsValidDni(TxtDni.Text))
             {
-                ShowLabelError("Formato del dni incorrecto", LblErrorDni, "MessageFormatoDniIncorrecto");
+                ShowLabelError(LblErrorDni, "MessageFormatoDniIncorrecto");
                 ok = false;
             }
 
             if (string.IsNullOrEmpty(TxtEmail.Text))
             {
-                ShowLabelError("Debe ingresar mail", LblErrorMail, "LblErrorMail");
+                ShowLabelError(LblErrorMail, "LblErrorMail");
                 ok = false;
             }
 
             if (!string.IsNullOrEmpty(TxtEmail.Text) && !RegexValidationService.IsValidEmail(TxtEmail.Text))
             {
-                ShowLabelError("Formato del mail incorrecto", LblErrorMail, "MessageFormatoMailIncorrecto");
+                ShowLabelError(LblErrorMail, "MessageFormatoMailIncorrecto");
                 ok = false;
             }
 
             if (string.IsNullOrEmpty(TxtDireccion.Text))
             {
-                ShowLabelError("Debe ingresar direccion", LblErrorDireccion, "LblErrorDireccion");
+                ShowLabelError(LblErrorDireccion, "LblErrorDireccion");
                 ok = false;
             }
 
             if (string.IsNullOrEmpty(TxtContacto.Text))
             {
-                ShowLabelError("Debe ingresar contacto", LblErrorContacto, "LblErrorContacto");
+                ShowLabelError(LblErrorContacto, "LblErrorContacto");
                 ok = false;
             }
 
             if (!string.IsNullOrEmpty(TxtContacto.Text) && !RegexValidationService.IsValidContact(TxtContacto.Text))
             {
-                ShowLabelError("Formato del contacto incorrecto", LblErrorContacto, "MessageFormatoContactoIncorrecto");
+                ShowLabelError(LblErrorContacto, "MessageFormatoContactoIncorrecto");
                 ok = false;
             }
 

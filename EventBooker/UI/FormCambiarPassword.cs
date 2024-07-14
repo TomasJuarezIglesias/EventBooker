@@ -40,19 +40,19 @@ namespace UI
 
             if (string.IsNullOrEmpty(TxtActualPass.Text))
             {
-                ShowLabelError("Debe ingresar contraseña actual", LblErrorActualPass, "LblErrorActualPass");
+                ShowLabelError(LblErrorActualPass, "LblErrorActualPass");
                 inputError = true;
             }
 
             if (string.IsNullOrEmpty(TxtNewPass.Text))
             {
-                ShowLabelError("Debe ingresar nueva contraseña", LblErrorNewPass, "LblErrorNewPass");
+                ShowLabelError(LblErrorNewPass, "LblErrorNewPass");
                 inputError = true;
             }
 
             if (string.IsNullOrEmpty(TxtNewPassRep.Text))
             {
-                ShowLabelError("Debe repetir la nueva contraseña", LblErrorNewPassRep, "LblErrorNewPassRep");
+                ShowLabelError(LblErrorNewPassRep, "LblErrorNewPassRep");
                 inputError = true;
             }
 

@@ -230,37 +230,37 @@ namespace UI
 
             if (string.IsNullOrEmpty(TxtNombre.Text))
             {
-                ShowLabelError("Debe ingresar el nombre", LblErrorNombre, "LblErrorNombre");
+                ShowLabelError(LblErrorNombre, "LblErrorNombre");
                 ok = false;
             }
 
             if (string.IsNullOrEmpty(TxtUbicacion.Text))
             {
-                ShowLabelError("Debe ingresar la ubicación", LblErrorUbicacion, "LblErrorUbicacion");
+                ShowLabelError(LblErrorUbicacion, "LblErrorUbicacion");
                 ok = false;
             }
 
             if (string.IsNullOrEmpty(TxtPrecio.Text) || !double.TryParse(TxtPrecio.Text, out double _))
             {
-                ShowLabelError("Formato del precio incorrecto", LblErrorPrecio, "LblErrorPrecio");
+                ShowLabelError(LblErrorPrecio, "LblErrorPrecio");
                 ok = false;
             }
 
             if (string.IsNullOrEmpty(TxtPrecioCubierto.Text) || !double.TryParse(TxtPrecioCubierto.Text, out double _))
             {
-                ShowLabelError("Formato del precio por cubierto incorrecto", LblErrorPrecioCubierto, "LblErrorPrecioCubierto");
+                ShowLabelError(LblErrorPrecioCubierto, "LblErrorPrecioCubierto");
                 ok = false;
             }
 
             if (NumCapacidad.Value <= 0)
             {
-                ShowLabelError("Capacidad incorrecta", LblErrorCapacidad, "LblErrorCapacidad");
+                ShowLabelError(LblErrorCapacidad, "LblErrorCapacidad");
                 ok = false;
             }
 
             if (NumCantidadMinimaInvitados.Value <= 0 || NumCapacidad.Value < NumCantidadMinimaInvitados.Value)
             {
-                ShowLabelError("Cantidad minima de invitados incorrecta", LblErrorCantidadMinimaInvitados, "LblErrorCantidadMinimaInvitados");
+                ShowLabelError(LblErrorCantidadMinimaInvitados, "LblErrorCantidadMinimaInvitados");
                 ok = false;
             }
 

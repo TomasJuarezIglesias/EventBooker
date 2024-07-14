@@ -148,7 +148,7 @@ namespace UI
 
             if (string.IsNullOrEmpty(TxtNombreFamilia.Text))
             {
-                ShowLabelError("Debe ingresar nombre de familia", LblErrorNombreFamilia, "LblErrorNombreFamilia");
+                ShowLabelError(LblErrorNombreFamilia, "LblErrorNombreFamilia");
                 return;
             }
 

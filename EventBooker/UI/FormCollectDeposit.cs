@@ -201,25 +201,25 @@ namespace UI
 
             if (string.IsNullOrEmpty(TxtNumeroTarjeta.Text))
             {
-                ShowLabelError("Debe ingresar número de tarjeta", LblErrorNumeroTarjeta, "LblErrorNumeroTarjeta");
+                ShowLabelError(LblErrorNumeroTarjeta, "LblErrorNumeroTarjeta");
                 ok = false;
             }
 
             if (!string.IsNullOrEmpty(TxtNumeroTarjeta.Text) && !RegexValidationService.IsValidCard(TxtNumeroTarjeta.Text))
             {
-                ShowLabelError("Tarjeta no valida, verifique los datos", LblErrorNumeroTarjeta, "MessageVerificarDatosTarjeta");
+                ShowLabelError(LblErrorNumeroTarjeta, "MessageVerificarDatosTarjeta");
                 ok = false;
             }
 
             if (string.IsNullOrEmpty(TxtNombreTitular.Text))
             {
-                ShowLabelError("Debe ingresar nombre del titular", LblErrorNombreTitular, "LblErrorNombreTitular");
+                ShowLabelError(LblErrorNombreTitular, "LblErrorNombreTitular");
                 ok = false;
             }
 
             if (CmbTipoTarjeta.SelectedIndex == -1)
             {
-                ShowLabelError("Debe seleccionar tipo de tarjeta", LblErrorTipoTarjeta, "LblErrorTipoTarjeta");
+                ShowLabelError(LblErrorTipoTarjeta, "LblErrorTipoTarjeta");
                 ok = false;
             }
 

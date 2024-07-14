@@ -40,15 +40,9 @@ namespace UI
             ResumeLayout(false);
         }
 
-        protected void ShowLabelError(string mensaje, BunifuLabel label, string NombreControl = null, EntityIdioma idioma = null)
+        protected void ShowLabelError(BunifuLabel label, string NombreControl = null, EntityIdioma idioma = null)
         {
-            if (NombreControl != null)
-            {
-                label.Text = SearchTraduccion(NombreControl, idioma);
-                label.Visible = true;
-                return;
-            }
-            label.Text = mensaje;
+            label.Text = SearchTraduccion(NombreControl, idioma);
             label.Visible = true;
         }
 
@@ -82,7 +76,7 @@ namespace UI
 
         protected void ChangeTranslation(EntityIdioma idioma = null, Control.ControlCollection collectionPanel = null)
         {
-            if(idioma == null) idioma = _sessionManager.Idioma;
+            if (idioma == null) idioma = _sessionManager.Idioma;
 
             Control.ControlCollection controlCollection = collectionPanel ?? Controls;
 

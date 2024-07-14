@@ -276,37 +276,37 @@ namespace UI
 
             if (string.IsNullOrEmpty(TxtNombre.Text))
             {
-                ShowLabelError("Debe Ingresar el nombre", LblErrorNombre, "LblErrorNombre");
+                ShowLabelError(LblErrorNombre, "LblErrorNombre");
                 ok = false;
             }
 
             if (string.IsNullOrEmpty(TxtApellido.Text))
             {
-                ShowLabelError("Debe Ingresar el apellido", LblErrorApellido, "LblErrorApellido");
+                ShowLabelError(LblErrorApellido, "LblErrorApellido");
                 ok = false;
             }
 
             if (string.IsNullOrEmpty(TxtDni.Text))
             {
-                ShowLabelError("Debe ingresar dni", LblErrorDni, "LblErrorDni");
+                ShowLabelError(LblErrorDni, "LblErrorDni");
                 ok = false;
             }
 
             if (!string.IsNullOrEmpty(TxtDni.Text) && !RegexValidationService.IsValidDni(TxtDni.Text))
             {
-                ShowLabelError("Formato del dni incorrecto", LblErrorDni, "MessageFormatoDniIncorrecto");
+                ShowLabelError(LblErrorDni, "MessageFormatoDniIncorrecto");
                 ok = false;
             }
 
             if (string.IsNullOrEmpty(TxtMail.Text))
             {
-                ShowLabelError("Debe ingresar mail", LblErrorMail, "LblErrorMail");
+                ShowLabelError(LblErrorMail, "LblErrorMail");
                 ok = false;
             }
 
             if (!string.IsNullOrEmpty(TxtMail.Text) && !RegexValidationService.IsValidEmail(TxtMail.Text))
             {
-                ShowLabelError("Formato del mail incorrecto", LblErrorMail, "MessageFormatoMailIncorrecto");
+                ShowLabelError(LblErrorMail, "MessageFormatoMailIncorrecto");
                 ok = false;
             }
 

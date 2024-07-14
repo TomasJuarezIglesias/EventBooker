@@ -202,13 +202,13 @@ namespace UI
 
             if (string.IsNullOrEmpty(TxtDescripcion.Text))
             {
-                ShowLabelError("Debe ingresar descripción", LblErrorDescripcion, "LblErrorDescripcion");
+                ShowLabelError(LblErrorDescripcion, "LblErrorDescripcion");
                 ok = false;
             }
 
             if (string.IsNullOrEmpty(TxtValor.Text) || !double.TryParse(TxtValor.Text, out double _))
             {
-                ShowLabelError("Formato del valor incorrecto", LblErrorValor, "LblErrorValor");
+                ShowLabelError(LblErrorValor, "LblErrorValor");
                 ok = false;
             }
 
