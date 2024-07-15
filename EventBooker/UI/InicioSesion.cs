@@ -19,13 +19,17 @@ namespace UI
     {
         private readonly BusinessUser _businessUser;
         private List<EntityUser> _ListaErrorLogeo;
+        private IPublisher _publisher;
 
         public InicioSesion()
         {
             InitializeComponent();
             this.KeyPreview = true;
             _businessUser = new BusinessUser();
-            _ListaErrorLogeo = new List<EntityUser>();  
+            _ListaErrorLogeo = new List<EntityUser>();
+
+            _publisher = new LanguageManager();
+            _publisher.AddObserver(this);
             FillIdiomas();
         }
 
@@ -106,9 +110,7 @@ namespace UI
         {
             EntityIdioma idioma = ComboBoxIdiomas.SelectedItem as EntityIdioma;
 
-            IPublisher publisher = new LanguageManager();
-            publisher.AddObserver(this);
-            publisher.NotifyAll(idioma);
+            _publisher.NotifyAll(idioma);
         }
 
         private void InicioSesion_KeyDown(object sender, KeyEventArgs e)

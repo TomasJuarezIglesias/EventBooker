@@ -42,7 +42,7 @@ namespace DataAccess
 
             DataTable data = connection.Read("SP_SelectTraduccion", parameters);
 
-            return data.Rows[0]["Traduccion"].ToString();
+            return data.Rows.Count == 0 ? string.Empty : data.Rows[0]["Traduccion"].ToString();
         }
 
     }
