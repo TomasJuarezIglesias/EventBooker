@@ -23,6 +23,12 @@ namespace Business
         public BusinessResponse<EntityUser> VerifyCredentials(string username, string password)
         {
             EntityUser user = dataAccess.SelectByUsername(username);
+
+            if (user != null)
+            {
+                user.Perfil = _businessPerfil.GetByUser(user).Data;
+            }
+
             bool ok = user?.Password == CryptoManager.EncryptString(password) && user?.Username == username;
 
             string mensaje =
@@ -32,11 +38,6 @@ namespace Business
                 string.Empty;
 
             ok = user?.IsBlock == true ? false : ok;
-
-            if (ok)
-            {
-                user.Perfil = _businessPerfil.GetByUser(user).Data;
-            }
 
             return new BusinessResponse<EntityUser>(ok, user, mensaje);
         }
