@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccessBitacoraEvento.cs" />
     <Compile Include="DataAccessCliente.cs" />
     <Compile Include="DataAccessIdioma.cs" />
     <Compile Include="DataAccessPerfil.cs" />

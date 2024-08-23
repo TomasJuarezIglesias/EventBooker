@@ -13,7 +13,7 @@ namespace DataAccess
     {
         public static EntityUser MapUser(DataRow row) => new EntityUser()
         {
-            Id = Convert.ToInt32(row["Id"]),
+            Id = row.Table.Columns.Contains("IdUser") ? Convert.ToInt32(row["IdUser"]) : Convert.ToInt32(row["Id"]),
             Username = row["Username"].ToString(),
             Password = row["Password"].ToString(),
             IsBlock = Convert.ToBoolean(row["IsBlock"]),
@@ -84,6 +84,16 @@ namespace DataAccess
         {
             Id = Convert.ToInt32(row["IdPermiso"]),
             Nombre = row["Nombre"].ToString()
+        };
+
+        public static EntityBitacoraEvento MapBitacoraEvento(DataRow row) => new EntityBitacoraEvento()
+        {
+            Id = Convert.ToInt32(row["Id"]),
+            User = MapUser(row),
+            Fecha = Convert.ToDateTime(row["Fecha"]),
+            Modulo = row["Modulo"].ToString(),
+            Evento = row["Evento"].ToString(),
+            Criticidad = Convert.ToInt32(row["Criticidad"])
         };
     }
 }

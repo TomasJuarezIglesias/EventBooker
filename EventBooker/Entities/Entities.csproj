@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entity.cs" />
+    <Compile Include="EntityBitacoraEvento.cs" />
     <Compile Include="EntityCliente.cs" />
     <Compile Include="EntityIdioma.cs" />
     <Compile Include="EntityPerfil.cs" />
