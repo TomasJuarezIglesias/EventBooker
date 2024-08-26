@@ -25,17 +25,17 @@ namespace DataAccess
 
             SqlParameter[] parameters = new SqlParameter[]
             {
-                idUser != 0 ? new SqlParameter("@In_IdUser", SqlDbType.Int){ Value =  idUser} : null,
-                fechaInicio != DateTime.MinValue ? new SqlParameter("@In_FechaInicio", SqlDbType.DateTime){ Value = fechaInicio } : null,
-                fechaFin != DateTime.MinValue ? new SqlParameter("@In_FechaFin", SqlDbType.DateTime){ Value = fechaFin } : null,
-                !string.IsNullOrEmpty(modulo) ? new SqlParameter("@In_Modulo", SqlDbType.NVarChar){ Value = modulo } : null,
-                !string.IsNullOrEmpty(evento) ? new SqlParameter("@In_Evento", SqlDbType.NVarChar){ Value = evento } : null,
-                criticidad != 0 ? new SqlParameter("@In_Criticidad", SqlDbType.Int){ Value = criticidad } : null
+                new SqlParameter("@In_IdUser", SqlDbType.Int) { Value = idUser != 0 ? (object)idUser : DBNull.Value },
+                new SqlParameter("@In_FechaInicio", SqlDbType.DateTime) { Value = fechaInicio != DateTime.MinValue ? (object)fechaInicio : DBNull.Value },
+                new SqlParameter("@In_FechaFin", SqlDbType.DateTime) { Value = fechaFin != DateTime.MinValue ? (object)fechaFin : DBNull.Value },
+                new SqlParameter("@In_Modulo", SqlDbType.NVarChar) { Value = !string.IsNullOrEmpty(modulo) ? (object)modulo : DBNull.Value },
+                new SqlParameter("@In_Evento", SqlDbType.NVarChar) { Value = !string.IsNullOrEmpty(evento) ? (object)evento : DBNull.Value },
+                new SqlParameter("@In_Criticidad", SqlDbType.Int) { Value = criticidad != 0 ? (object)criticidad : DBNull.Value }
             };
 
             DataTable data = _connection.Read("SP_SelectBitacoraEvento", parameters);
 
-            foreach (DataRow row in data.Rows) 
+            foreach (DataRow row in data.Rows)
             {
                 eventos.Add(SqlMapper.MapBitacoraEvento(row));
             }
@@ -90,7 +90,7 @@ namespace DataAccess
 
             DataTable data = _connection.Read("SP_SelectUsersBitacoraEventos");
 
-            foreach(DataRow row in data.Rows)
+            foreach (DataRow row in data.Rows)
             {
                 users.Add(SqlMapper.MapUser(row));
             }

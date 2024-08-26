@@ -16,5 +16,11 @@ namespace Entities
         public string Apellido { get; set; }
         public string Mail { get; set; }
         public EntityPerfil Perfil { get; set; }
+
+
+        public override string ToString()
+        {
+            return Username; 
+        }
     }
 }

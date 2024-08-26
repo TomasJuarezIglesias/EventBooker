@@ -119,6 +119,12 @@ namespace UI
             HideSubmenu();
         }
 
+        private void BtnEventos_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormBitacoraEventos(OpenChildForm));
+            HideSubmenu();
+        }
+
         // Maestros
 
         private void BtnGestionSalon_Click(object sender, EventArgs e)
