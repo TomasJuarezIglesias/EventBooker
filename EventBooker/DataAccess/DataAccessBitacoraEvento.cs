@@ -25,12 +25,12 @@ namespace DataAccess
 
             SqlParameter[] parameters = new SqlParameter[]
             {
-                new SqlParameter("@In_IdUser", SqlDbType.Int){ Value =  idUser},
-                new SqlParameter("@In_FechaInicio", SqlDbType.DateTime){ Value = fechaInicio },
-                new SqlParameter("@In_FechaFin", SqlDbType.DateTime){ Value = fechaFin },
-                new SqlParameter("@In_Modulo", SqlDbType.NVarChar){ Value = modulo },
-                new SqlParameter("@In_Evento", SqlDbType.NVarChar){ Value = evento },
-                new SqlParameter("@In_Criticidad", SqlDbType.Int){ Value = criticidad }
+                idUser != 0 ? new SqlParameter("@In_IdUser", SqlDbType.Int){ Value =  idUser} : null,
+                fechaInicio != DateTime.MinValue ? new SqlParameter("@In_FechaInicio", SqlDbType.DateTime){ Value = fechaInicio } : null,
+                fechaFin != DateTime.MinValue ? new SqlParameter("@In_FechaFin", SqlDbType.DateTime){ Value = fechaFin } : null,
+                !string.IsNullOrEmpty(modulo) ? new SqlParameter("@In_Modulo", SqlDbType.NVarChar){ Value = modulo } : null,
+                !string.IsNullOrEmpty(evento) ? new SqlParameter("@In_Evento", SqlDbType.NVarChar){ Value = evento } : null,
+                criticidad != 0 ? new SqlParameter("@In_Criticidad", SqlDbType.Int){ Value = criticidad } : null
             };
 
             DataTable data = _connection.Read("SP_SelectBitacoraEvento", parameters);
@@ -43,5 +43,59 @@ namespace DataAccess
             return eventos;
         }
 
+        public void Insert(EntityBitacoraEvento evento)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@In_IdUser", SqlDbType.Int){ Value = evento.User.Id },
+                new SqlParameter("@In_Modulo", SqlDbType.NVarChar){ Value = evento.Modulo },
+                new SqlParameter("@In_Evento", SqlDbType.NVarChar){ Value = evento.Evento },
+                new SqlParameter("@In_Criticidad", SqlDbType.Int){ Value = evento.Criticidad }
+            };
+
+            _connection.Write("SP_CreateBitacoraEvento", parameters);
+        }
+
+        public List<string> SelectEventos()
+        {
+            List<string> eventos = new List<string>();
+
+            DataTable data = _connection.Read("SP_SelectEventosBitacoraEventos");
+
+            foreach (DataRow row in data.Rows)
+            {
+                eventos.Add(row["Eventos"].ToString());
+            }
+
+            return eventos;
+        }
+
+        public List<string> SelectModulos()
+        {
+            List<string> Modulos = new List<string>();
+
+            DataTable data = _connection.Read("SP_SelectModulosBitacoraEvento");
+
+            foreach (DataRow row in data.Rows)
+            {
+                Modulos.Add(row["Modulos"].ToString());
+            }
+
+            return Modulos;
+        }
+
+        public List<EntityUser> SelectUsers()
+        {
+            List<EntityUser> users = new List<EntityUser>();
+
+            DataTable data = _connection.Read("SP_SelectUsersBitacoraEventos");
+
+            foreach(DataRow row in data.Rows)
+            {
+                users.Add(SqlMapper.MapUser(row));
+            }
+
+            return users;
+        }
     }
 }

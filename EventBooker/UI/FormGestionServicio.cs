@@ -17,6 +17,7 @@ namespace UI
     public partial class FormGestionServicio : ServiceForm
     {
         private readonly BusinessServicio _businessServicio;
+        private string Modulo = "Maestros";
 
         public FormGestionServicio()
         {
@@ -68,6 +69,8 @@ namespace UI
                 // Verifica el resultado de la selección del usuario
                 if (result == DialogResult.Yes)
                 {
+                    RegistrarEvento(Modulo, "Eliminación de servicio", 4);
+                    
                     RevisarRespuestaServicio(_businessServicio.Delete(servicio));
                     FillDataGridView();
                 }
@@ -117,6 +120,8 @@ namespace UI
 
             if (response.Ok)
             {
+                RegistrarEvento(Modulo, BtnCrear.Visible ? "Creación de servicio" : "Modificación de servicio", 4);
+
                 FillDataGridView();
                 ShowButtons();
                 HidePanelData();

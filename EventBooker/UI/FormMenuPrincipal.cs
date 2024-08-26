@@ -14,6 +14,8 @@ namespace UI
 {
     public partial class FormMenuPrincipal : ServiceForm
     {
+        private string Modulo = "Menú Principal";
+
         public FormMenuPrincipal()
         {
             InitializeComponent();
@@ -195,6 +197,8 @@ namespace UI
                 InicioSesion inicioSesion = new InicioSesion();
                 inicioSesion.Show();
                 this.Close();
+
+                RegistrarEvento(Modulo, "Logout", 1);
             }
         }
 

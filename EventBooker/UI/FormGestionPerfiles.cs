@@ -19,6 +19,7 @@ namespace UI
         private Action<ServiceForm> openChildForm;
 
         private EntityPerfil EditedPerfil;
+        private string Modulo = "Administrador";
 
         public FormGestionPerfiles(Action<ServiceForm> openChildForm)
         {
@@ -130,6 +131,8 @@ namespace UI
 
                 if (response.Ok)
                 {
+                    RegistrarEvento(Modulo, "Eliminación de perfil", 3);
+
                     CmbPerfiles.SelectedIndex = -1;
                     HidePanelData();
                     FillData();
@@ -167,6 +170,8 @@ namespace UI
 
             if (response.Ok)
             {
+                RegistrarEvento(Modulo, EditedPerfil.Id == 0 ? "Creación de perfil" : "Modificación de perfil", 3);
+
                 FillData();
                 HidePanelData();
             }

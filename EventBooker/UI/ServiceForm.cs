@@ -19,6 +19,8 @@ namespace UI
     {
         protected readonly BusinessIdioma _businessIdioma;
         protected SessionManager _sessionManager;
+        protected readonly BusinessBitacoraEvento _businessBitacoraEvento;
+
         public ServiceForm()
         {
             StartPosition = FormStartPosition.CenterScreen;
@@ -26,6 +28,7 @@ namespace UI
             _sessionManager = SessionManager.GetInstance();
 
             _businessIdioma = new BusinessIdioma();
+            _businessBitacoraEvento = new BusinessBitacoraEvento();
             InitializeComponent();
         }
 
@@ -97,5 +100,15 @@ namespace UI
             return _businessIdioma.GetTraduccion(idioma ?? _sessionManager.Idioma, controlName).Data;
         }
 
+        protected void RegistrarEvento(string modulo, string evento, int criticidad)
+        {
+            _businessBitacoraEvento.Create(new EntityBitacoraEvento 
+            {
+                User = _sessionManager.User,
+                Modulo = modulo,
+                Evento = evento,
+                Criticidad = criticidad
+            });
+        }
     }
 }

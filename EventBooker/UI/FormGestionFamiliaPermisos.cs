@@ -19,6 +19,7 @@ namespace UI
         private Familia EditedFamily;
         private Action<ServiceForm> openChildForm;
 
+        private string Modulo = "Administrador";
         public FormGestionFamiliaPermisos(Action<ServiceForm> openChildForm)
         {
             InitializeComponent();
@@ -129,6 +130,8 @@ namespace UI
 
                 if (response.Ok)
                 {
+                    RegistrarEvento(Modulo, "Eliminación de familia de permisos", 3);
+
                     CmbFamilias.SelectedIndex = -1;
                     HidePanelData();
                     FillData();
@@ -166,6 +169,8 @@ namespace UI
 
             if (response.Ok)
             {
+                RegistrarEvento(Modulo, EditedFamily.Id == 0 ? "Creación de familia de permisos" : "Modificación de familia de permisos", 3);
+
                 FillData();
                 HidePanelData();
             }

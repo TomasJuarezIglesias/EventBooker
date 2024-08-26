@@ -20,6 +20,7 @@ namespace UI
         private readonly BusinessUser _businessUser;
         private List<EntityUser> _ListaErrorLogeo;
         private IPublisher _publisher;
+        private string Modulo = "Login";
 
         public InicioSesion()
         {
@@ -75,6 +76,10 @@ namespace UI
                     {
 
                         RevisarRespuestaServicio(_businessUser.BlockUser(response.Data), ComboBoxIdiomas.SelectedItem as EntityIdioma);
+
+                        RegistrarEvento(Modulo, "Bloqueo de usuario", 1);
+
+                        return;
                     }
                 }
 
@@ -87,6 +92,8 @@ namespace UI
                     FormMenuPrincipal menuPrincipal = new FormMenuPrincipal();
                     menuPrincipal.Show();
                     this.Hide();
+
+                    RegistrarEvento(Modulo, "Inicio de sesion", 1);
                 }
 
             }

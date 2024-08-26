@@ -64,6 +64,8 @@ namespace UI
 
             if (response.Ok)
             {
+                RegistrarEvento("Registrar Reserva", "Registro de reserva", 1);
+
                 this.Close();
                 openChildForm(new FormInicio());
             }

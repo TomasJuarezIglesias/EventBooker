@@ -22,6 +22,7 @@ namespace UI
     {
         private readonly BusinessReserva _businessReserva;
 
+        private string Modulo = "Cobranza";
         public FormCollectDeposit()
         {
             InitializeComponent();
@@ -98,6 +99,8 @@ namespace UI
 
                 // Generar comprobante de reserva
                 GenerarComprobanteDeReserva(reserva, filePath);
+
+                RegistrarEvento(Modulo, "Cobranza de seña", 2);
             }
         }
 

@@ -18,6 +18,7 @@ namespace UI
         private ServiceForm _formMenuPrincipal;
         private readonly BusinessUser _businessUser;
 
+        private string Modulo = "Menú Principal";
         public FormCambiarPassword(ServiceForm formMenuPrincipal)
         {
             InitializeComponent();
@@ -65,6 +66,8 @@ namespace UI
 
             if (response.Ok)
             {
+                RegistrarEvento(Modulo, "Cambiar contraseña", 2);
+
                 SessionManager.Logout();
                 InicioSesion inicioSesion = new InicioSesion();
                 inicioSesion.Show();

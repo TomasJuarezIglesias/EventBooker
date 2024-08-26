@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessBitacoraEvento.cs" />
     <Compile Include="BusinessCliente.cs" />
     <Compile Include="BusinessIdioma.cs" />
     <Compile Include="BusinessPerfil.cs" />

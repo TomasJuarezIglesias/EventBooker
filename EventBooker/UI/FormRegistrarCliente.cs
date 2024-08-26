@@ -50,6 +50,8 @@ namespace UI
 
             if (response.Ok)
             {
+                RegistrarEvento("Registrar Reserva", "Registrar cliente", 3);
+
                 this.Close();
                 _reserva.Cliente = cliente;
                 _openChildForm(new FormRegistrarReserva(_openChildForm, _reserva));

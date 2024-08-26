@@ -19,6 +19,7 @@ namespace UI
     {
         private BusinessUser _BusinessUser;
         private BusinessPerfil _BusinessPerfil;
+        private string Modulo = "Administrador";
 
         public FormGestionUsuarios()
         {
@@ -124,6 +125,8 @@ namespace UI
 
             if (response.Ok)
             {
+                RegistrarEvento(Modulo, BtnModificar.Visible ? "Modificacion de usuario" : "Creación de usuario", 2);
+
                 FillDataGridView();
                 ShowButtons();
                 HidePanelData();
@@ -150,6 +153,8 @@ namespace UI
             // Verifica el resultado de la selección del usuario
             if (result == DialogResult.Yes)
             {
+                RegistrarEvento(Modulo, "Desbloqueo de usuario", 1);
+
                 RevisarRespuestaServicio(_BusinessUser.UnblockUser(user));
                 FillDataGridView();
             }
@@ -170,6 +175,8 @@ namespace UI
                 // Verifica el resultado de la selección del usuario
                 if (result == DialogResult.Yes)
                 {
+                    RegistrarEvento(Modulo, "Eliminación de usuario", 1);
+
                     RevisarRespuestaServicio(_BusinessUser.Delete(user));
                     FillDataGridView();
                 }

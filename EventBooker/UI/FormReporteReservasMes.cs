@@ -91,6 +91,8 @@ namespace UI
 
                 Process.Start(filePath);
                 this.Close();
+
+                RegistrarEvento("Reportes", "Generación reporte reservas", 5);
             }
         }
     }
