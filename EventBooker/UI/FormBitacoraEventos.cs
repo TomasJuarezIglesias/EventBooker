@@ -44,11 +44,7 @@ namespace UI
                 return;
             }
 
-            if (fechaIni.Date == fechaFin.Date)
-            {
-                fechaIni = DateTime.MinValue;
-                fechaFin = DateTime.MinValue;
-            }
+            fechaFin.AddDays(1);
 
             if (user != null)
             {
