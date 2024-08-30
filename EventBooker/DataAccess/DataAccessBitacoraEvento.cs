@@ -26,8 +26,8 @@ namespace DataAccess
             SqlParameter[] parameters = new SqlParameter[]
             {
                 new SqlParameter("@In_IdUser", SqlDbType.Int) { Value = idUser != 0 ? (object)idUser : DBNull.Value },
-                new SqlParameter("@In_FechaInicio", SqlDbType.DateTime) { Value = fechaInicio != DateTime.MinValue ? (object)fechaInicio : DBNull.Value },
-                new SqlParameter("@In_FechaFin", SqlDbType.DateTime) { Value = fechaFin != DateTime.MinValue ? (object)fechaFin : DBNull.Value },
+                new SqlParameter("@In_FechaInicio", SqlDbType.Date) { Value = fechaInicio != DateTime.MinValue ? (object)fechaInicio : DBNull.Value },
+                new SqlParameter("@In_FechaFin", SqlDbType.Date) { Value = fechaFin != DateTime.MinValue ? (object)fechaFin : DBNull.Value },
                 new SqlParameter("@In_Modulo", SqlDbType.NVarChar) { Value = !string.IsNullOrEmpty(modulo) ? (object)modulo : DBNull.Value },
                 new SqlParameter("@In_Evento", SqlDbType.NVarChar) { Value = !string.IsNullOrEmpty(evento) ? (object)evento : DBNull.Value },
                 new SqlParameter("@In_Criticidad", SqlDbType.Int) { Value = criticidad != 0 ? (object)criticidad : DBNull.Value }

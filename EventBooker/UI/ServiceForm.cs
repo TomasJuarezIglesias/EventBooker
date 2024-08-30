@@ -102,13 +102,47 @@ namespace UI
 
         protected void RegistrarEvento(string modulo, string evento, int criticidad)
         {
-            _businessBitacoraEvento.Create(new EntityBitacoraEvento 
+            _businessBitacoraEvento.Create(new EntityBitacoraEvento
             {
                 User = _sessionManager.User,
                 Modulo = modulo,
                 Evento = evento,
                 Criticidad = criticidad
             });
+        }
+
+
+        // Método para convertir DataGridView a DataTable
+        protected DataTable DataGridViewToDataTable(DataGridView dataGridView)
+        {
+            DataTable dataTable = new DataTable();
+
+            // Agregar columnas al DataTable
+            foreach (DataGridViewColumn column in dataGridView.Columns)
+            {
+                dataTable.Columns.Add(column.HeaderText);
+            }
+
+            // Agregar filas al DataTable
+            foreach (DataGridViewRow row in dataGridView.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    DataRow dataRow = dataTable.NewRow();
+                    for (int i = 0; i < dataGridView.Columns.Count; i++)
+                    {
+                        dataRow[i] = row.Cells[i].Value;
+                    }
+                    dataTable.Rows.Add(dataRow);
+                }
+            }
+
+            if (dataTable.Columns.Contains("Id"))
+            {
+                dataTable.Columns.Remove("Id");
+            }
+
+            return dataTable;
         }
     }
 }

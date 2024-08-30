@@ -220,6 +220,7 @@
             this.DataGridViewEventos.Size = new System.Drawing.Size(877, 318);
             this.DataGridViewEventos.TabIndex = 38;
             this.DataGridViewEventos.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            this.DataGridViewEventos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewEventos_CellClick);
             // 
             // LblBitacoraEventos
             // 

@@ -1,6 +1,9 @@
 ﻿using Business;
 using ClosedXML.Excel;
 using Entities;
+using PdfSharp;
+using PdfSharp.Drawing;
+using PdfSharp.Pdf;
 using Services;
 using System;
 using System.Collections.Generic;
@@ -44,13 +47,8 @@ namespace UI
                 return;
             }
 
-            fechaFin.AddDays(1);
-
-            if (user != null)
-            {
-                TxtNombre.Text = user.Nombre;
-                TxtApellido.Text = user.Apellido;
-            }
+            TxtNombre.Text = user != null ? user.Nombre : string.Empty;
+            TxtApellido.Text = user != null ? user.Apellido : string.Empty;
 
 
             FillDataGridView(user is null ? 0 : user.Id, fechaIni, fechaFin, modulo, evento, criticidad);
@@ -106,7 +104,6 @@ namespace UI
 
         private void BtnImprimir_Click(object sender, EventArgs e)
         {
-            // Convertir los datos del DataGridView a un DataTable
             DataTable dataTable = DataGridViewToDataTable(DataGridViewEventos);
 
             if (dataTable.Rows.Count == 0)
@@ -116,60 +113,116 @@ namespace UI
                 return;
             }
 
-            using (var workbook = new XLWorkbook())
+            // Crear un documento PDF
+            PdfDocument pdfDocument = new PdfDocument();
+            pdfDocument.Info.Title = SearchTraduccion("LblBitacoraEventos");
+
+            // Crear una página en el documento PDF en formato horizontal (landscape)
+            PdfPage pdfPage = pdfDocument.AddPage();
+            pdfPage.Width = XUnit.FromMillimeter(297); // Ancho en milímetros para formato A4 horizontal
+            pdfPage.Height = XUnit.FromMillimeter(210); // Alto en milímetros para formato A4 horizontal
+            XGraphics graphics = XGraphics.FromPdfPage(pdfPage);
+            XFont font = new XFont("Verdana", 10, XFontStyleEx.Regular);
+            XPen borderPen = new XPen(XColors.Black, 0.5);
+
+            // Definir márgenes y altura de la celda
+            double margin = 20;
+            double cellHeight = 20;
+            double xStart = margin;
+            double yStart = margin;
+            double pageWidth = pdfPage.Width.Point - margin * 2;
+            double pageHeight = pdfPage.Height.Point - margin * 2;
+
+            // Definir el ancho fijo para la columna "Criticidad" (ajustar según sea necesario)
+            double criticidadWidth = 60;
+            double remainingWidth = pageWidth - criticidadWidth;
+            double numberOfColumns = dataTable.Columns.Count - 1; // Excluyendo la columna "Criticidad"
+            double columnWidth = numberOfColumns > 0 ? remainingWidth / numberOfColumns : 0;
+
+            // Dibujar el encabezado de la tabla con fondo gris y bordes
+            graphics.DrawRectangle(XBrushes.LightGray, xStart, yStart, pageWidth, cellHeight);
+
+            // Dibujar encabezados de columnas
+            foreach (DataColumn column in dataTable.Columns)
             {
-                var worksheet = workbook.Worksheets.Add(SearchTraduccion("LblBitacoraEventos"));
-
-                // Agregar el DataTable al worksheet
-                worksheet.Cell(1, 1).InsertTable(dataTable);
-                worksheet.AutoFilter.Clear();
-
-                // Ajusto columnas a contenidos
-                worksheet.Columns().AdjustToContents();
-
-                // Obtener la ruta del escritorio
-                string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-                string fileName = $"{SearchTraduccion("NombreArchivoBitacora")}_{DateTime.Now.ToString("yyyy_MM")}.xlsx";
-                string filePath = Path.Combine(desktopPath, fileName);
-
-                // Guardar el archivo en el escritorio
-                workbook.SaveAs(filePath);
-
-                Process.Start(filePath);
-            }
-        }
-
-        // Método para convertir DataGridView a DataTable
-        private DataTable DataGridViewToDataTable(DataGridView dataGridView)
-        {
-            DataTable dataTable = new DataTable();
-
-            // Agregar columnas al DataTable
-            foreach (DataGridViewColumn column in dataGridView.Columns)
-            {
-                dataTable.Columns.Add(column.HeaderText);
-            }
-
-            // Agregar filas al DataTable
-            foreach (DataGridViewRow row in dataGridView.Rows)
-            {
-                if (!row.IsNewRow)
+                if (column.ColumnName == "Criticidad")
                 {
-                    DataRow dataRow = dataTable.NewRow();
-                    for (int i = 0; i < dataGridView.Columns.Count; i++)
-                    {
-                        dataRow[i] = row.Cells[i].Value;
-                    }
-                    dataTable.Rows.Add(dataRow);
+                    graphics.DrawRectangle(borderPen, xStart, yStart, criticidadWidth, cellHeight);
+                    graphics.DrawString(column.ColumnName, font, XBrushes.Black, new XRect(xStart + 5, yStart + 5, criticidadWidth, cellHeight), XStringFormats.TopLeft);
+                    xStart += criticidadWidth;
+                }
+                else
+                {
+                    graphics.DrawRectangle(borderPen, xStart, yStart, columnWidth, cellHeight);
+                    graphics.DrawString(column.ColumnName, font, XBrushes.Black, new XRect(xStart + 5, yStart + 5, columnWidth, cellHeight), XStringFormats.TopLeft);
+                    xStart += columnWidth;
                 }
             }
 
-            if (dataTable.Columns.Contains("Id"))
+            yStart += cellHeight;
+            xStart = margin; // Reinicia la posición horizontal para las celdas de datos
+
+            // Dibujar las filas de la tabla con bordes
+            foreach (DataRow row in dataTable.Rows)
             {
-                dataTable.Columns.Remove("Id");
+                foreach (DataColumn column in dataTable.Columns)
+                {
+                    if (column.ColumnName == "Criticidad")
+                    {
+                        graphics.DrawRectangle(borderPen, xStart, yStart, criticidadWidth, cellHeight);
+                        graphics.DrawString(row[column].ToString(), font, XBrushes.Black, new XRect(xStart + 5, yStart + 5, criticidadWidth, cellHeight), XStringFormats.TopLeft);
+                        xStart += criticidadWidth;
+                    }
+                    else
+                    {
+                        graphics.DrawRectangle(borderPen, xStart, yStart, columnWidth, cellHeight);
+                        graphics.DrawString(row[column].ToString(), font, XBrushes.Black, new XRect(xStart + 5, yStart + 5, columnWidth, cellHeight), XStringFormats.TopLeft);
+                        xStart += columnWidth;
+                    }
+                }
+                yStart += cellHeight;
+                xStart = margin; // Reinicia la posición horizontal para la siguiente fila
+
+                // Verifica si la página se ha llenado
+                if (yStart + cellHeight > pdfPage.Height.Point - margin)
+                {
+                    pdfPage = pdfDocument.AddPage();
+                    pdfPage.Width = XUnit.FromMillimeter(297); // Ancho en milímetros para formato A4 horizontal
+                    pdfPage.Height = XUnit.FromMillimeter(210); // Alto en milímetros para formato A4 horizontal
+                    graphics = XGraphics.FromPdfPage(pdfPage);
+                    yStart = margin;
+                    xStart = margin;
+
+                    // Redefinir los tamaños de columna para la nueva página
+                    pageWidth = pdfPage.Width.Point - margin * 2;
+                    remainingWidth = pageWidth - criticidadWidth;
+                    columnWidth = numberOfColumns > 0 ? remainingWidth / numberOfColumns : 0;
+                }
             }
 
-            return dataTable;
+            // Guardar el PDF en el escritorio
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string fileName = $"{SearchTraduccion("NombreArchivoBitacora")}_{DateTime.Now.ToString("yyyy_MM_dd_hh_mm")}.pdf";
+            string filePath = Path.Combine(desktopPath, fileName);
+            pdfDocument.Save(filePath);
+
+            // Abrir el archivo PDF
+            Process.Start(filePath);
+        }
+
+        private void DataGridViewEventos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (DataGridViewEventos.SelectedRows.Count > 0)
+            {
+                // Obtén la primera fila seleccionada
+                DataGridViewRow selectedRow = DataGridViewEventos.SelectedRows[0];
+
+                EntityUser user = selectedRow.Cells[0].Value as EntityUser;
+
+                TxtNombre.Text = user.Nombre;
+                TxtApellido.Text = user.Apellido;
+            }
+
         }
     }
 }
