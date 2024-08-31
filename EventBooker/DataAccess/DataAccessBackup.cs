@@ -18,7 +18,7 @@ namespace DataAccess
 
         public void Backup(string path)
         {
-            string fileName = $"Eventbooker_Backup_{DateTime.Now.ToString("yyyy_MM_dd")}.bak";
+            string fileName = $"Eventbooker_Backup_{DateTime.Now.ToString("yyyy_MM_dd_hh_mm")}.bak";
             string fullPath = Path.Combine(path, fileName);
             string query = $"BACKUP DATABASE EventBooker TO DISK = '{fullPath}'";
 
