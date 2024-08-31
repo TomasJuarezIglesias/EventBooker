@@ -14,6 +14,7 @@ namespace UI
 {
     public partial class FormRespaldos : ServiceForm
     {
+        private string Modulo = "Administrador";
         private BusinessBackup _businessBackup;
         private Action<ServiceForm> _openChildForm;
 
@@ -50,6 +51,8 @@ namespace UI
             _businessBackup.RealizarBackup(TxtPathBackup.Text);
             TxtPathBackup.Text = string.Empty;
             BtnAplicarBackup.Enabled = false;
+
+            RegistrarEvento(Modulo, "Backup", 1);
             RevisarRespuestaServicio(new BusinessResponse<bool>(true, true, "MessageAplicadoCorrectamente"));
         }
 
@@ -74,6 +77,7 @@ namespace UI
             _openChildForm(new FormInicio());
             BtnAplicarRestore.Enabled = false;
 
+            RegistrarEvento(Modulo, "Restore", 1);
             RevisarRespuestaServicio(new BusinessResponse<bool>(true, true, "MessageAplicadoCorrectamente"));
         }
     }

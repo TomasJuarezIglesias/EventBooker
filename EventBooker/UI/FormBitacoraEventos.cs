@@ -222,7 +222,6 @@ namespace UI
                 TxtNombre.Text = user.Nombre;
                 TxtApellido.Text = user.Apellido;
             }
-
         }
     }
 }

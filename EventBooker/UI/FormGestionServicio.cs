@@ -11,6 +11,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace UI
 {
@@ -70,7 +73,7 @@ namespace UI
                 if (result == DialogResult.Yes)
                 {
                     RegistrarEvento(Modulo, "Eliminación de servicio", 4);
-                    
+
                     RevisarRespuestaServicio(_businessServicio.Delete(servicio));
                     FillDataGridView();
                 }
@@ -224,6 +227,50 @@ namespace UI
         private void DataGridViewServicios_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             DataGridViewServicios.CurrentCell = null;
+        }
+
+        private void BtnSerializacion_Click(object sender, EventArgs e)
+        {
+            using (FolderBrowserDialog folderDialog = new FolderBrowserDialog())
+            {
+                if (folderDialog.ShowDialog() == DialogResult.OK)
+                {
+                    List<EntityServicio> servicios = DataGridViewServicios.DataSource as List<EntityServicio>;
+
+                    // Serializar la lista de servicios a JSON
+                    string json = JsonConvert.SerializeObject(servicios, Newtonsoft.Json.Formatting.Indented);
+
+                    // Construir la ruta completa del archivo JSON
+                    string filePath = Path.Combine(folderDialog.SelectedPath, $"{SearchTraduccion("LblServiciosSerializar")}_{DateTime.Now.ToString("yyyy_MM_dd")}.json");
+
+                    // Guardar el archivo JSON en la ruta especificada
+                    File.WriteAllText(filePath, json);
+
+                    RegistrarEvento(Modulo, "Serializacion", 4);
+                    RevisarRespuestaServicio(new BusinessResponse<bool>(true, true, "MessageSerializadoCorrectamente"));
+                }
+            }
+        }
+
+        private void BtnDeserializar_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "JSON Files (*.json)|*.json";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string json = File.ReadAllText(openFileDialog.FileName);
+
+                    List<EntityServicio> servicios = JsonConvert.DeserializeObject<List<EntityServicio>>(json);
+
+                    DataGridViewServicios.DataSource = null;
+                    DataGridViewServicios.DataSource = servicios;
+
+                    RegistrarEvento(Modulo, "Deserializacion", 4);
+                    RevisarRespuestaServicio(new BusinessResponse<bool>(true, true, "MessageDeserializadoCorrectamente"));
+                }
+            }
         }
     }
 }
