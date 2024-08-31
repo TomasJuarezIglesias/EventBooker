@@ -149,5 +149,21 @@ namespace DataAccess
 
             return id;
         }
+
+        public void ExectQuery(string query)
+        {
+            OpenConnection();
+
+            SqlCommand sqlCommand = new SqlCommand
+            {
+                CommandType = CommandType.Text,
+                CommandText = query,
+                Connection = _connection
+            };
+
+            sqlCommand.ExecuteNonQuery();
+
+            CloseConnection();
+        }
     }
 }

@@ -388,6 +388,12 @@
     <Compile Include="FormReporteReservasMes.Designer.cs">
       <DependentUpon>FormReporteReservasMes.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRespaldos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRespaldos.Designer.cs">
+      <DependentUpon>FormRespaldos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSeleccionarSalon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -458,6 +464,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormReporteReservasMes.resx">
       <DependentUpon>FormReporteReservasMes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRespaldos.resx">
+      <DependentUpon>FormRespaldos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSeleccionarSalon.resx">
       <DependentUpon>FormSeleccionarSalon.cs</DependentUpon>

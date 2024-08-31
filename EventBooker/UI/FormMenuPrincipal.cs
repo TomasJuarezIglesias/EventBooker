@@ -125,6 +125,13 @@ namespace UI
             HideSubmenu();
         }
 
+        private void BtnRespaldo_Click(object sender, EventArgs e)
+        {
+            HideSubmenu();
+            FormRespaldos formRespaldos = new FormRespaldos(OpenChildForm);
+            formRespaldos.ShowDialog();
+        }
+
         // Maestros
 
         private void BtnGestionSalon_Click(object sender, EventArgs e)
@@ -216,6 +223,5 @@ namespace UI
             BtnCobranza.Visible = _sessionManager.HasPermission(4);
             BtnReportes.Visible = _sessionManager.HasPermission(5);
         }
-
     }
 }
