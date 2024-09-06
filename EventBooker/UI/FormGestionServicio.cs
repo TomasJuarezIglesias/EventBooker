@@ -14,6 +14,7 @@ using System.Windows.Forms;
 using System.Xml;
 using Newtonsoft.Json;
 using System.IO;
+using System.Diagnostics;
 
 namespace UI
 {
@@ -245,6 +246,8 @@ namespace UI
 
                     // Guardar el archivo JSON en la ruta especificada
                     File.WriteAllText(filePath, json);
+
+                    Process.Start("notepad.exe", filePath);
 
                     RegistrarEvento(Modulo, "Serializacion", 4);
                     RevisarRespuestaServicio(new BusinessResponse<bool>(true, true, "MessageSerializadoCorrectamente"));

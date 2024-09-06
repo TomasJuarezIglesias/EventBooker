@@ -100,6 +100,15 @@ namespace UI
             DataGridViewEventos.Columns["Modulo"].HeaderText = SearchTraduccion("DGVColumnaModulo");
             DataGridViewEventos.Columns["Evento"].HeaderText = SearchTraduccion("DGVColumnaEvento");
             DataGridViewEventos.Columns["Criticidad"].HeaderText = SearchTraduccion("DGVColumnaCriticidad");
+
+            DataGridViewEventos.Rows[0].Selected = true;
+            DataGridViewEventos.CurrentCell = DataGridViewEventos.Rows[0].Cells[0];
+
+            // Crea los argumentos para el evento CellClick
+            var cellEventArgs = new DataGridViewCellEventArgs(DataGridViewEventos.CurrentCell.ColumnIndex, DataGridViewEventos.CurrentCell.RowIndex);
+
+            // Llama al manejador del evento CellClick
+            DataGridViewEventos_CellClick(DataGridViewEventos, cellEventArgs);
         }
 
         private void BtnImprimir_Click(object sender, EventArgs e)
