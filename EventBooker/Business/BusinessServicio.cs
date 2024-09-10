@@ -22,6 +22,11 @@ namespace Business
             return new BusinessResponse<List<EntityServicio>>(true, _dataAccess.SelectAll());
         }
 
+        public BusinessResponse<List<EntityServicioHis>> GetAllHistorical(int IdServicio, DateTime FechaIni, DateTime FechaFin)
+        {
+            return new BusinessResponse<List<EntityServicioHis>>(true, _dataAccess.SelectAllHistorical(IdServicio, FechaIni, FechaFin));
+        }
+
         public BusinessResponse<bool> Create(EntityServicio servicio)
         {
             bool ok = _dataAccess.Insert(servicio);

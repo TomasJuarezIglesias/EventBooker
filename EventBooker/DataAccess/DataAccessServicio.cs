@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace DataAccess
 {
@@ -32,6 +33,27 @@ namespace DataAccess
             return servicios;
         }
 
+        public List<EntityServicioHis> SelectAllHistorical(int IdServicio, DateTime FechaIni, DateTime FechaFin)
+        {
+            List<EntityServicioHis> historicoServicios = new List<EntityServicioHis>();
+
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@In_IdServicio", SqlDbType.Int) { Value = IdServicio != 0 ? (object)IdServicio : DBNull.Value },
+                new SqlParameter("@In_FechaInicio", SqlDbType.Date) { Value = FechaFin != DateTime.MinValue ? (object)FechaIni : DBNull.Value },
+                new SqlParameter("@In_FechaFin", SqlDbType.Date) { Value = FechaFin != DateTime.MinValue ? (object)FechaFin : DBNull.Value }
+            };
+
+            DataTable data = _connection.Read("SP_SelectServicio_His", parameters);
+
+            foreach (DataRow row in data.Rows)
+            {
+                historicoServicios.Add(SqlMapper.MapServicioHis(row));
+            }
+
+            return historicoServicios;
+        }
+
         public bool Insert(EntityServicio servicio)
         {
             SqlParameter[] parameters = new SqlParameter[]
@@ -50,6 +72,7 @@ namespace DataAccess
                 new SqlParameter("@In_Id", SqlDbType.Int){ Value = servicio.Id },
                 new SqlParameter("@In_Descripcion", SqlDbType.NVarChar){ Value = servicio.Descripcion },
                 new SqlParameter("@In_Valor", SqlDbType.Money){ Value = servicio.Valor },
+                new SqlParameter("@In_IsDelete", SqlDbType.Bit){ Value = servicio.IsDelete }
             };
 
             return _connection.Write("SP_UpdateServicio", parameters);

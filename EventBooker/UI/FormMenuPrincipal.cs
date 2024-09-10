@@ -152,6 +152,12 @@ namespace UI
             HideSubmenu();
         }
 
+        private void BtnCambiosServicios_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormCambiosServicios());
+            HideSubmenu();
+        }
+
         // Registrar Reserva
 
         private void BtnRegistrarReserva_Click(object sender, EventArgs e)

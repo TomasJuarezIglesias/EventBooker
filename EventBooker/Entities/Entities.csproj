@@ -49,6 +49,7 @@
     <Compile Include="EntityReserva.cs" />
     <Compile Include="EntitySalon.cs" />
     <Compile Include="EntityServicio.cs" />
+    <Compile Include="EntityServicioHis.cs" />
     <Compile Include="EntityUser.cs" />
     <Compile Include="Familia.cs" />
     <Compile Include="IPermiso.cs" />

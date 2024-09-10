@@ -95,5 +95,16 @@ namespace DataAccess
             Evento = row["Evento"].ToString(),
             Criticidad = Convert.ToInt32(row["Criticidad"])
         };
+
+        public static EntityServicioHis MapServicioHis(DataRow row) => new EntityServicioHis()
+        {
+            Id = Convert.ToInt32(row["Id"]),
+            IdServicio = Convert.ToInt32(row["IdServicio"]),
+            Fecha = Convert.ToDateTime(row["Fecha"]),
+            Actual = Convert.ToBoolean(row["Actual"]),
+            Descripcion = row["Descripcion"].ToString(),
+            Valor = Convert.ToDouble(row["Valor"]),
+            IsDelete = Convert.ToBoolean(row["IsDelete"])
+        };
     }
 }

@@ -10,5 +10,6 @@ namespace Entities
     {
         public string Descripcion { get; set; }
         public double Valor { get; set; }
+        public bool IsDelete { get; set; }
     }
 }
