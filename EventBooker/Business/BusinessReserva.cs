@@ -18,7 +18,7 @@ namespace Business
             _dataAccessReserva = new DataAccessReserva();
         }
 
-        public BusinessResponse<List<EntityReserva>> GetAll(string estado)
+        public BusinessResponse<List<EntityReserva>> GetAll(string estado = null)
         {
             return new BusinessResponse<List<EntityReserva>>(true, _dataAccessReserva.SelectAll(estado));
         }

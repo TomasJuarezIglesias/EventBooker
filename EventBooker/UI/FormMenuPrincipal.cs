@@ -174,6 +174,13 @@ namespace UI
             HideSubmenu();
         }
 
+
+        private void BtnCobrar_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormCobrar(OpenChildForm));
+            HideSubmenu();
+        }
+
         // Reportes
 
         private void BtnInformeReservasDelMes_Click(object sender, EventArgs e)

@@ -319,6 +319,12 @@
     <Compile Include="FormCambiosServicios.Designer.cs">
       <DependentUpon>FormCambiosServicios.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCobrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCobrar.Designer.cs">
+      <DependentUpon>FormCobrar.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCollectDeposit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -437,6 +443,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCambiosServicios.resx">
       <DependentUpon>FormCambiosServicios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCobrar.resx">
+      <DependentUpon>FormCobrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCollectDeposit.resx">
       <DependentUpon>FormCollectDeposit.cs</DependentUpon>
