@@ -19,11 +19,14 @@ namespace DataAccess
             _connection = DBConnection.GetInstance();
         }
 
-        public List<EntityServicio> SelectAll()
+        public List<EntityServicio> SelectAll(int idReserva)
         {
             List<EntityServicio> servicios = new List<EntityServicio>();
 
-            DataTable data = _connection.Read("SP_SelectServicio");
+            DataTable data = 
+                idReserva == 0 
+                ? _connection.Read("SP_SelectServicio") 
+                : _connection.Read("SP_SelectReservaServicioAdicionales", new SqlParameter[] { new SqlParameter("@In_IdReserva", SqlDbType.Int) { Value = idReserva } });
 
             foreach (DataRow row in data.Rows)
             {

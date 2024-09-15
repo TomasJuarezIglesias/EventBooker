@@ -292,6 +292,7 @@
             this.BtnAñadirServiciosAdicionales.TextMarginLeft = 0;
             this.BtnAñadirServiciosAdicionales.TextPadding = new System.Windows.Forms.Padding(0);
             this.BtnAñadirServiciosAdicionales.UseDefaultRadiusAndThickness = true;
+            this.BtnAñadirServiciosAdicionales.Click += new System.EventHandler(this.BtnAñadirServiciosAdicionales_Click);
             // 
             // PanelTarjeta
             // 
@@ -615,7 +616,7 @@
             this.LblMedioDePago.Cursor = System.Windows.Forms.Cursors.Default;
             this.LblMedioDePago.CursorType = System.Windows.Forms.Cursors.Default;
             this.LblMedioDePago.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.LblMedioDePago.Location = new System.Drawing.Point(13, 64);
+            this.LblMedioDePago.Location = new System.Drawing.Point(3, 63);
             this.LblMedioDePago.Name = "LblMedioDePago";
             this.LblMedioDePago.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.LblMedioDePago.Size = new System.Drawing.Size(104, 21);

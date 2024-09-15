@@ -44,7 +44,9 @@ namespace DataAccess
         {
             Id = Convert.ToInt32(row["IdServicio"]),
             Descripcion = row["Descripcion"].ToString(),
-            Valor = Convert.ToDouble(row["Valor"])
+            Valor = Convert.ToDouble(row["Valor"]),
+            IsAdicional = !row.Table.Columns.Contains("IsAdicional") ? false :  row.IsNull("IsAdicional") ? true : Convert.ToBoolean(row["IsAdicional"]),
+            IsDelete = !row.Table.Columns.Contains("IsDelete") ? false : Convert.ToBoolean(row["IsDelete"])
         };
 
         public static EntityCliente MapCliente(DataRow row) => new EntityCliente()

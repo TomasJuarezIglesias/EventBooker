@@ -12,38 +12,53 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class FormSeleccionarServicios : ServiceForm
+    public partial class FormAgregarServicios : ServiceForm
     {
+        private string Modulo = "Cobranza";
+
         private Action<ServiceForm> openChildForm;
         private List<EntityServicio> _serviciosSeleccionados;
         private EntityReserva _reserva;
-        
         private readonly BusinessServicio _businessServicio;
+        private readonly BusinessReserva _businessReserva;
 
-        public FormSeleccionarServicios(Action<ServiceForm> openChildForm, EntityReserva reserva)
+        public FormAgregarServicios(Action<ServiceForm> openChildForm, EntityReserva reserva)
         {
             InitializeComponent();
-            ChangeTranslation();
 
             this.openChildForm = openChildForm;
-            _businessServicio = new BusinessServicio();
-            _serviciosSeleccionados = new List<EntityServicio>();
             _reserva = reserva;
+
+            // Instancio business
+            _businessServicio = new BusinessServicio();
+            _businessReserva = new BusinessReserva();
+
+            _serviciosSeleccionados = new List<EntityServicio>();
+            
             FillListCheckBox();
             MostrarValores();
         }
 
-        private void BtnSeleccionar_Click(object sender, EventArgs e)
+        private void BtnAñadirServiciosAdicionales_Click(object sender, EventArgs e)
         {
+            BusinessResponse<bool> response = _businessReserva.Update(_reserva);
+
+            if (!response.Ok)
+            {
+                RevisarRespuestaServicio(response);
+                return;
+            }
+
             RevisarRespuestaServicio(new BusinessResponse<bool>(true, true, "MessageServiciosSeleccionadosCorrectamente"));
-            _reserva.Servicios = _serviciosSeleccionados;
             this.Close();
-            openChildForm(new FormRegistrarReserva(openChildForm, _reserva));
+            openChildForm(new FormCobrar(openChildForm, _reserva));
+
+            RegistrarEvento(Modulo, "Añadir adicionales", 2);
         }
 
         private void FillListCheckBox()
         {
-            List<EntityServicio> servicios = _businessServicio.GetAll(0).Data;
+            List<EntityServicio> servicios = _businessServicio.GetAll(_reserva.Id).Data;
 
             PanelServicios.Controls.Clear();
 
@@ -62,6 +77,7 @@ namespace UI
                 if (_reserva.Servicios != null)
                 {
                     checkBox.Checked = _reserva.Servicios.Exists(s => s.Id == servicio.Id);
+                    checkBox.Enabled = servicio.IsAdicional;
                 }
 
                 // Asignar el manejador del evento OnCheckedChanged
@@ -74,7 +90,7 @@ namespace UI
                 positionY += 30;
             }
 
-            if(_reserva.Servicios != null) _serviciosSeleccionados = _reserva.Servicios;
+            if (_reserva.Servicios != null) _serviciosSeleccionados = _reserva.Servicios;
 
             MostrarValores();
         }
@@ -93,7 +109,7 @@ namespace UI
                 }
                 else
                 {
-                    _serviciosSeleccionados.Remove( _serviciosSeleccionados.FirstOrDefault(s => s.Id == servicio.Id) );
+                    _serviciosSeleccionados.Remove(_serviciosSeleccionados.FirstOrDefault(s => s.Id == servicio.Id));
                 }
 
                 MostrarValores();
@@ -105,7 +121,7 @@ namespace UI
             LblValores.AutoSize = true;
 
             LblValores.Text = string.Empty;
-            double valorTotal = 0; 
+            double valorTotal = 0;
 
             foreach (var servicio in _serviciosSeleccionados)
             {
@@ -128,8 +144,9 @@ namespace UI
             if (result == DialogResult.Yes)
             {
                 this.Close();
-                openChildForm(new FormRegistrarReserva(openChildForm, _reserva));
+                openChildForm(new FormCobrar(openChildForm, _reserva));
             }
         }
+
     }
 }

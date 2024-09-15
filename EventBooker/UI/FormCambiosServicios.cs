@@ -48,7 +48,7 @@ namespace UI
         private void FillFiltros()
         {
             CmbDescripcion.DataSource = null;
-            CmbDescripcion.DataSource = _businessServicio.GetAll().Data;
+            CmbDescripcion.DataSource = _businessServicio.GetAll(0).Data;
             CmbDescripcion.DisplayMember = "Descripcion";
 
             CmbDescripcion.SelectedIndex = -1;

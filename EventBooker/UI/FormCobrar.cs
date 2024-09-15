@@ -18,10 +18,10 @@ namespace UI
     {
         private readonly BusinessReserva _businessReserva;
 
-        private string Modulo = "Cobranza";
         private Action<ServiceForm> openChildForm;
+        private readonly EntityReserva _reserva;
 
-        public FormCobrar(Action<ServiceForm> openChildForm)
+        public FormCobrar(Action<ServiceForm> openChildForm, EntityReserva reserva = null)
         {
             InitializeComponent();
             this.openChildForm = openChildForm;
@@ -29,6 +29,7 @@ namespace UI
             ChangeTranslation();
 
             _businessReserva = new BusinessReserva();
+            _reserva = reserva;
 
             // Configuro inicio del form
             PanelCobro.Visible = false;
@@ -61,6 +62,12 @@ namespace UI
             }
         }
 
+        private void BtnAñadirServiciosAdicionales_Click(object sender, EventArgs e)
+        {
+            EntityReserva reserva = DataGridViewReservas.SelectedRows[0].DataBoundItem as EntityReserva;
+            openChildForm(new FormAgregarServicios(openChildForm, reserva));
+        }
+
         private void BtnRealizarCobro_Click(object sender, EventArgs e)
         {
             if (CmbMedioPago.Text == "Tarjeta" && !ValidateInputs()) return;
@@ -87,7 +94,24 @@ namespace UI
 
         private void DataGridViewReservas_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            DataGridViewReservas.CurrentCell = null;
+            if (_reserva is null)
+            {
+                DataGridViewReservas.CurrentCell = null;
+            }
+            else
+            {
+                foreach (DataGridViewRow row in DataGridViewReservas.Rows)
+                {
+                    // Suponiendo que tienes una columna llamada "IdReserva" en el DataGridView
+                    if (row.Cells["Id"].Value.Equals(_reserva.Id))
+                    {
+                        DataGridViewReservas.CurrentCell = row.Cells[0]; // Selecciona la primera celda de la fila
+                        ShowPanel(_reserva);
+                        break;
+                    }
+                }
+            }
+            
         }
 
         private void ChangeVisualDataGridView()
@@ -175,6 +199,5 @@ namespace UI
         {
             PanelTarjeta.Visible = CmbMedioPago.Text == "Tarjeta";
         }
-
     }
 }

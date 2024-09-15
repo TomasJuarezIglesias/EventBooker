@@ -121,7 +121,8 @@ namespace DataAccess
                     _connection.Write("SP_CreateReservaServicio", new SqlParameter[]
                     {
                         new SqlParameter("@In_IdReserva", SqlDbType.Int){ Value = reserva.Id },
-                        new SqlParameter("@In_IdServicio", SqlDbType.Int){ Value =  servicio.Id}
+                        new SqlParameter("@In_IdServicio", SqlDbType.Int){ Value =  servicio.Id},
+                        new SqlParameter("@In_IsAdicional", SqlDbType.Int){ Value = servicio.IsAdicional }
                     });
                 }
             }

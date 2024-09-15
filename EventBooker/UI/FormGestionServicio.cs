@@ -149,7 +149,7 @@ namespace UI
 
         private void FillDataGridView()
         {
-            List<EntityServicio> servicios = _businessServicio.GetAll().Data;
+            List<EntityServicio> servicios = _businessServicio.GetAll(0).Data;
 
             DataGridViewServicios.DataSource = null;
             DataGridViewServicios.DataSource = servicios;

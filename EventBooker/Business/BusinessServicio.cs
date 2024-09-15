@@ -17,9 +17,9 @@ namespace Business
             _dataAccess = new DataAccessServicio();
         }
 
-        public BusinessResponse<List<EntityServicio>> GetAll()
+        public BusinessResponse<List<EntityServicio>> GetAll(int idReserva)
         {
-            return new BusinessResponse<List<EntityServicio>>(true, _dataAccess.SelectAll());
+            return new BusinessResponse<List<EntityServicio>>(true, _dataAccess.SelectAll(idReserva));
         }
 
         public BusinessResponse<List<EntityServicioHis>> GetAllHistorical(int IdServicio, DateTime FechaIni, DateTime FechaFin)

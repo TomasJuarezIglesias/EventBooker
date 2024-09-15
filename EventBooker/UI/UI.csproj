@@ -301,6 +301,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormAgregarServicios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAgregarServicios.Designer.cs">
+      <DependentUpon>FormAgregarServicios.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBitacoraEventos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -435,6 +441,9 @@
     <Compile Include="ServiceForm.Designer.cs">
       <DependentUpon>ServiceForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormAgregarServicios.resx">
+      <DependentUpon>FormAgregarServicios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormBitacoraEventos.resx">
       <DependentUpon>FormBitacoraEventos.cs</DependentUpon>
     </EmbeddedResource>
