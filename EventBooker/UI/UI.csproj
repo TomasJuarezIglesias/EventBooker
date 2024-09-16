@@ -337,6 +337,12 @@
     <Compile Include="FormCollectDeposit.Designer.cs">
       <DependentUpon>FormCollectDeposit.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormConfirmacionCobro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConfirmacionCobro.Designer.cs">
+      <DependentUpon>FormConfirmacionCobro.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormGestionClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -458,6 +464,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCollectDeposit.resx">
       <DependentUpon>FormCollectDeposit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConfirmacionCobro.resx">
+      <DependentUpon>FormConfirmacionCobro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormGestionClientes.resx">
       <DependentUpon>FormGestionClientes.cs</DependentUpon>

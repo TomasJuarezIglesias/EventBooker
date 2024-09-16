@@ -44,6 +44,7 @@
     <Compile Include="BusinessBackup.cs" />
     <Compile Include="BusinessBitacoraEvento.cs" />
     <Compile Include="BusinessCliente.cs" />
+    <Compile Include="BusinessFactura.cs" />
     <Compile Include="BusinessIdioma.cs" />
     <Compile Include="BusinessPerfil.cs" />
     <Compile Include="BusinessPermiso.cs" />

@@ -77,6 +77,17 @@ namespace UI
                 RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "MessageDebeSeleccionarMedioPago"));
                 return;
             }
+
+            EntityReserva reserva = DataGridViewReservas.SelectedRows[0].DataBoundItem as EntityReserva;
+
+            FormConfirmacionCobro formConfirmacionCobro = new FormConfirmacionCobro(reserva, CmbMedioPago.Text);
+
+            if (DialogResult.OK == formConfirmacionCobro.ShowDialog())
+            {
+                FillDataGridView();
+                PanelCobro.Visible = false;
+            }
+
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
