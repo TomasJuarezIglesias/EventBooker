@@ -108,5 +108,15 @@ namespace DataAccess
             Valor = Convert.ToDouble(row["Valor"]),
             IsDelete = Convert.ToBoolean(row["IsDelete"])
         };
+
+        public static EntityFactura MapFactura(DataRow row) => new EntityFactura()
+        {
+            Id = Convert.ToInt32(row["NumeroFactura"]),
+            FechaEmision = Convert.ToDateTime(row["FechaEmision"]),
+            ImporteTotal = Convert.ToDouble(row["ImporteTotal"]),
+            Impuestos = Convert.ToDouble(row["Impuestos"]),
+            MetodoPago = row["MetodoPago"].ToString(),
+            Observaciones = row["Observaciones"].ToString()
+    };
     }
 }

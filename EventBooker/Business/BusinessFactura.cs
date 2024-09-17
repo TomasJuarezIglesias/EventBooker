@@ -17,6 +17,11 @@ namespace Business
             _dataAccessFactura = new DataAccessFactura();   
         }
 
+        public BusinessResponse<List<EntityFactura>> GetAll()
+        {
+            return new BusinessResponse<List<EntityFactura>>(true, _dataAccessFactura.SelectAll());
+        }
+
         public BusinessResponse<int> Create(EntityFactura factura)
         {
             return new BusinessResponse<int>(true, _dataAccessFactura.Insert(factura), "MessageAbonadoCorrectamente");

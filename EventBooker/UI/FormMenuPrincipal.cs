@@ -190,6 +190,13 @@ namespace UI
             formReporteReservasMes.ShowDialog();
         }
 
+        private void BtnGenerarFactura_Click(object sender, EventArgs e)
+        {
+            HideSubmenu();
+            FormGenerarFactura formGenerarFactura = new FormGenerarFactura();
+            formGenerarFactura.ShowDialog();
+        }
+
         // Usuario
 
         private void BtnCambiarIdioma_Click(object sender, EventArgs e)
@@ -236,5 +243,6 @@ namespace UI
             BtnCobranza.Visible = _sessionManager.HasPermission(4);
             BtnReportes.Visible = _sessionManager.HasPermission(5);
         }
+
     }
 }

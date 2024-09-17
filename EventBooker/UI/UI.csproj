@@ -343,6 +343,12 @@
     <Compile Include="FormConfirmacionCobro.Designer.cs">
       <DependentUpon>FormConfirmacionCobro.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormGenerarFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGenerarFactura.Designer.cs">
+      <DependentUpon>FormGenerarFactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormGestionClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -467,6 +473,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormConfirmacionCobro.resx">
       <DependentUpon>FormConfirmacionCobro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGenerarFactura.resx">
+      <DependentUpon>FormGenerarFactura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormGestionClientes.resx">
       <DependentUpon>FormGestionClientes.cs</DependentUpon>

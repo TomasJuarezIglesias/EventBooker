@@ -3,6 +3,7 @@ using Microsoft.SqlServer.Server;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,38 @@ namespace DataAccess
         public DataAccessFactura()
         {
             connection = DBConnection.GetInstance();
+        }
+
+        public List<EntityFactura> SelectAll()
+        {
+            List<EntityFactura> facturas = new List<EntityFactura>();
+
+            DataTable data = connection.Read("SP_SelectFacturas");
+
+            foreach (DataRow row in data.Rows) 
+            { 
+                EntityFactura factura = SqlMapper.MapFactura(row);
+
+                factura.Cliente = SqlMapper.MapCliente(row);
+                factura.Reserva = SqlMapper.MapReserva(row);
+                factura.Reserva.Salon = SqlMapper.MapSalon(row);
+
+                factura.Reserva.Servicios = new List<EntityServicio>();
+
+                DataTable dataServicios = connection.Read("SP_SelectReservaServicio", new SqlParameter[]
+                {
+                    new SqlParameter("@In_IdReserva", SqlDbType.Int){ Value = factura.Reserva.Id }
+                });
+
+                foreach (DataRow servicio in dataServicios.Rows)
+                {
+                    factura.Reserva.Servicios.Add(SqlMapper.MapServicio(servicio));
+                }
+
+                facturas.Add(factura);
+            }
+
+            return facturas;
         }
 
         public int Insert(EntityFactura factura)
