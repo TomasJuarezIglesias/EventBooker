@@ -83,22 +83,45 @@ namespace UI
                     }
                 }
 
-                if (response.Ok)
+                if (!response.Ok)
                 {
-                    if (ValidarDigitoVerificador())
-                    {
-                        EntityIdioma idioma = ComboBoxIdiomas.SelectedItem as EntityIdioma;
-
-                        _sessionManager = SessionManager.Login(response.Data, idioma);
-
-                        FormMenuPrincipal menuPrincipal = new FormMenuPrincipal();
-                        menuPrincipal.Show();
-                        this.Hide();
-
-                        RegistrarEvento(Modulo, "Inicio de sesion", 1);
-                    }
-                    
+                    return;
                 }
+
+                // Hago instancia del sesion manager con el idioma seleccionado
+                EntityIdioma idioma = ComboBoxIdiomas.SelectedItem as EntityIdioma;
+
+                _sessionManager = SessionManager.Login(response.Data, idioma);
+
+                //Validacion digito verificador
+                if (!ValidarDigitoVerificador())
+                {
+                    if (!_sessionManager.HasPermission(1))
+                    {
+                        FormSistemaNoDisponible sistemaNodisponible = new FormSistemaNoDisponible();
+                        sistemaNodisponible.ShowDialog();
+
+                        SessionManager.Logout();
+                        return;
+                    }
+                    else 
+                    {
+                        FormSolucionDV formSolucionDV = new FormSolucionDV();
+
+                        if (formSolucionDV.ShowDialog() != DialogResult.OK)
+                        {
+                            SessionManager.Logout();
+                            return;
+                        }
+                    }
+                }
+
+                // Ingreso al menu principal
+                FormMenuPrincipal menuPrincipal = new FormMenuPrincipal();
+                menuPrincipal.Show();
+                this.Hide();
+
+                RegistrarEvento(Modulo, "Inicio de sesion", 1);
 
             }
             catch (Exception ex)
