@@ -65,7 +65,7 @@ namespace UI
             if (response.Ok)
             {
                 RegistrarEvento("Registrar Reserva", "Registro de reserva", 1);
-
+                UpdateDigitoVerificador();
                 this.Close();
                 openChildForm(new FormInicio());
             }

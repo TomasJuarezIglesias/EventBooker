@@ -74,7 +74,7 @@ namespace UI
                 if (result == DialogResult.Yes)
                 {
                     RegistrarEvento(Modulo, "Eliminación de salón", 2);
-                    
+                    UpdateDigitoVerificador();
                     RevisarRespuestaServicio(_businessSalon.Delete(salon));
                     FillDataGridView();
                 }
@@ -133,6 +133,7 @@ namespace UI
             if (response.Ok)
             {
                 RegistrarEvento(Modulo, BtnCrear.Visible ? "Creación de salón" : "Modificación de salón", 3);
+                UpdateDigitoVerificador();
 
                 FillDataGridView();
                 ShowButtons();

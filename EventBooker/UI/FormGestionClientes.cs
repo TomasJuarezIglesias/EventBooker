@@ -77,6 +77,7 @@ namespace UI
                 if (result == DialogResult.Yes)
                 {
                     RegistrarEvento(Modulo, "Eliminación de cliente", 4);
+                    UpdateDigitoVerificador();
 
                     RevisarRespuestaServicio(_businessCliente.Delete(cliente));
                     FillDataGridView();
@@ -134,7 +135,7 @@ namespace UI
             if (response.Ok)
             {
                 RegistrarEvento(Modulo, BtnCrear.Visible ? "Creación de cliente" : "Modificación de cliente", 4);
-
+                UpdateDigitoVerificador();
                 FillDataGridView();
                 ShowButtons();
                 HidePanelData();

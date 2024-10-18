@@ -50,6 +50,7 @@ namespace UI
             }
 
             RevisarRespuestaServicio(new BusinessResponse<bool>(true, true, "MessageServiciosSeleccionadosCorrectamente"));
+            UpdateDigitoVerificador();
             this.Close();
             openChildForm(new FormCobrar(openChildForm, _reserva));
 

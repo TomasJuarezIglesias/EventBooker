@@ -76,6 +76,7 @@ namespace UI
                     RegistrarEvento(Modulo, "Eliminación de servicio", 4);
 
                     RevisarRespuestaServicio(_businessServicio.Delete(servicio));
+                    UpdateDigitoVerificador();
                     FillDataGridView();
                 }
             }
@@ -124,6 +125,7 @@ namespace UI
 
             if (response.Ok)
             {
+                UpdateDigitoVerificador();
                 RegistrarEvento(Modulo, BtnCrear.Visible ? "Creación de servicio" : "Modificación de servicio", 4);
 
                 FillDataGridView();

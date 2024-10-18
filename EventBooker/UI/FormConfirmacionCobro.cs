@@ -39,7 +39,7 @@ namespace UI
 
             BusinessResponse<int> response = _businessFactura.Create(_factura);
             RevisarRespuestaServicio(response);
-
+            UpdateDigitoVerificador();
             RegistrarEvento("Cobranza", "Cobranza de evento", 1);
             this.DialogResult = DialogResult.OK;
             this.Close();

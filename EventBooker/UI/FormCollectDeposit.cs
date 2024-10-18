@@ -85,7 +85,7 @@ namespace UI
                 reserva.Estado = "Confirmado";
 
                 BusinessResponse<bool> response = _businessReserva.Update(reserva);
-
+                UpdateDigitoVerificador();
                 RevisarRespuestaServicio(new BusinessResponse<bool>(response.Ok, response.Ok, response.Ok ? "MessagePagoRealizadoSenia" : "MessagePagoRechazado"));
 
                 FillDataGridView();

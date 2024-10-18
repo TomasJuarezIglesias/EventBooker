@@ -45,7 +45,7 @@ namespace DataAccess
             Id = Convert.ToInt32(row["IdServicio"]),
             Descripcion = row["Descripcion"].ToString(),
             Valor = Convert.ToDouble(row["Valor"]),
-            IsAdicional = !row.Table.Columns.Contains("IsAdicional") ? false :  row.IsNull("IsAdicional") ? true : Convert.ToBoolean(row["IsAdicional"]),
+            IsAdicional = !row.Table.Columns.Contains("IsAdicional") ? false : row.IsNull("IsAdicional") ? true : Convert.ToBoolean(row["IsAdicional"]),
             IsDelete = !row.Table.Columns.Contains("IsDelete") ? false : Convert.ToBoolean(row["IsDelete"])
         };
 
@@ -117,6 +117,13 @@ namespace DataAccess
             Impuestos = Convert.ToDouble(row["Impuestos"]),
             MetodoPago = row["MetodoPago"].ToString(),
             Observaciones = row["Observaciones"].ToString()
-    };
+        };
+    
+        public static EntityDigitoVerificador MapDigitoVerificador(DataRow row) => new EntityDigitoVerificador()
+        {
+            Id = Convert.ToInt32(row["Id"]),
+            DVH = row["DVH"].ToString(),
+            DVV = row["DVV"].ToString()
+        };
     }
 }

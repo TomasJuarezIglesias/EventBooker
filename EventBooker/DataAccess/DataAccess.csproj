@@ -44,6 +44,7 @@
     <Compile Include="DataAccessBackup.cs" />
     <Compile Include="DataAccessBitacoraEvento.cs" />
     <Compile Include="DataAccessCliente.cs" />
+    <Compile Include="DataAccessDigitoVerificador.cs" />
     <Compile Include="DataAccessFactura.cs" />
     <Compile Include="DataAccessIdioma.cs" />
     <Compile Include="DataAccessPerfil.cs" />

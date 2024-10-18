@@ -20,6 +20,7 @@ namespace UI
         protected readonly BusinessIdioma _businessIdioma;
         protected SessionManager _sessionManager;
         protected readonly BusinessBitacoraEvento _businessBitacoraEvento;
+        private readonly BusinessDigitoVerificador _businessDigitoVerificador;
 
         public ServiceForm()
         {
@@ -29,6 +30,7 @@ namespace UI
 
             _businessIdioma = new BusinessIdioma();
             _businessBitacoraEvento = new BusinessBitacoraEvento();
+            _businessDigitoVerificador = new BusinessDigitoVerificador();
             InitializeComponent();
         }
 
@@ -143,6 +145,20 @@ namespace UI
             }
 
             return dataTable;
+        }
+
+        protected bool ValidarDigitoVerificador()
+        {
+            EntityDigitoVerificador digitoVerificadorCalculado = _businessDigitoVerificador.Calcular().Data;
+            EntityDigitoVerificador digitoVerificadorDB = _businessDigitoVerificador.Get().Data;
+
+            return string.Equals( digitoVerificadorCalculado.DVH, digitoVerificadorDB.DVH ) 
+                && string .Equals(digitoVerificadorCalculado.DVV, digitoVerificadorDB.DVV);
+        }
+
+        protected void UpdateDigitoVerificador()
+        {
+            _businessDigitoVerificador.Update();
         }
     }
 }

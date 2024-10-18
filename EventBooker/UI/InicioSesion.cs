@@ -85,15 +85,19 @@ namespace UI
 
                 if (response.Ok)
                 {
-                    EntityIdioma idioma = ComboBoxIdiomas.SelectedItem as EntityIdioma;
+                    if (ValidarDigitoVerificador())
+                    {
+                        EntityIdioma idioma = ComboBoxIdiomas.SelectedItem as EntityIdioma;
 
-                    _sessionManager = SessionManager.Login(response.Data, idioma);
+                        _sessionManager = SessionManager.Login(response.Data, idioma);
 
-                    FormMenuPrincipal menuPrincipal = new FormMenuPrincipal();
-                    menuPrincipal.Show();
-                    this.Hide();
+                        FormMenuPrincipal menuPrincipal = new FormMenuPrincipal();
+                        menuPrincipal.Show();
+                        this.Hide();
 
-                    RegistrarEvento(Modulo, "Inicio de sesion", 1);
+                        RegistrarEvento(Modulo, "Inicio de sesion", 1);
+                    }
+                    
                 }
 
             }
