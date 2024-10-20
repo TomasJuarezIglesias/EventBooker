@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class FormSolucionDV : ServiceForm
+    public partial class FormReparacionDV : ServiceForm
     {
         private BusinessBackup _businessBackup;
 
-        public FormSolucionDV()
+        public FormReparacionDV()
         {
             InitializeComponent();
             ChangeTranslation();

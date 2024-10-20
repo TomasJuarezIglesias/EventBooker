@@ -448,11 +448,11 @@
     <Compile Include="FormSistemaNoDisponible.Designer.cs">
       <DependentUpon>FormSistemaNoDisponible.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormSolucionDV.cs">
+    <Compile Include="FormReparacionDV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSolucionDV.Designer.cs">
-      <DependentUpon>FormSolucionDV.cs</DependentUpon>
+    <Compile Include="FormReparacionDV.Designer.cs">
+      <DependentUpon>FormReparacionDV.cs</DependentUpon>
     </Compile>
     <Compile Include="InicioSesion.cs">
       <SubType>Form</SubType>
@@ -540,8 +540,8 @@
     <EmbeddedResource Include="FormSistemaNoDisponible.resx">
       <DependentUpon>FormSistemaNoDisponible.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSolucionDV.resx">
-      <DependentUpon>FormSolucionDV.cs</DependentUpon>
+    <EmbeddedResource Include="FormReparacionDV.resx">
+      <DependentUpon>FormReparacionDV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InicioSesion.resx">
       <DependentUpon>InicioSesion.cs</DependentUpon>

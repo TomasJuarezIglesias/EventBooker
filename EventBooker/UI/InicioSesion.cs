@@ -106,7 +106,7 @@ namespace UI
                     }
                     else 
                     {
-                        FormSolucionDV formSolucionDV = new FormSolucionDV();
+                        FormReparacionDV formSolucionDV = new FormReparacionDV();
 
                         if (formSolucionDV.ShowDialog() != DialogResult.OK)
                         {
