@@ -15,14 +15,19 @@ namespace UI
     public partial class FormMenuPrincipal : ServiceForm
     {
         private string Modulo = "Menú Principal";
+        private readonly ServiceForm loginForm;
+        private bool LogoutClose = false;
 
-        public FormMenuPrincipal()
+        public FormMenuPrincipal(ServiceForm login)
         {
             InitializeComponent();
             CustomView();
             OpenChildForm(new FormInicio());
             ChangeTranslation();
             CheckPermissions();
+
+            loginForm = login;
+            this.FormClosing += new FormClosingEventHandler(FormMenuPrincipal_FormClosing);
         }
 
         private ServiceForm _activeForm = null;
@@ -227,8 +232,9 @@ namespace UI
             if (result == DialogResult.Yes)
             {
                 SessionManager.Logout();
-                InicioSesion inicioSesion = new InicioSesion();
-                inicioSesion.Show();
+                loginForm.Show();
+
+                LogoutClose = true;
                 this.Close();
 
                 RegistrarEvento(Modulo, "Logout", 1);
@@ -244,5 +250,12 @@ namespace UI
             BtnReportes.Visible = _sessionManager.HasPermission(5);
         }
 
+        private void FormMenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!LogoutClose)
+            {
+                loginForm.Close();
+            }
+        }
     }
 }

@@ -116,13 +116,14 @@ namespace UI
                     }
                 }
 
+                TxtUsername.Text = string.Empty;
+                TxtPassword.Text = string.Empty;
+
                 // Ingreso al menu principal
-                FormMenuPrincipal menuPrincipal = new FormMenuPrincipal();
+                FormMenuPrincipal menuPrincipal = new FormMenuPrincipal(this);
                 menuPrincipal.Show();
                 this.Hide();
-
                 RegistrarEvento(Modulo, "Inicio de sesion", 1);
-
             }
             catch (Exception ex)
             {
