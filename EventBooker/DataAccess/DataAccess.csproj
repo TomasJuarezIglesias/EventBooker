@@ -55,9 +55,6 @@
     <Compile Include="DataAccessServicio.cs" />
     <Compile Include="DataAccessUser.cs" />
     <Compile Include="DbConnection.cs" />
-    <Compile Include="DbInstaler.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlMapper.cs" />
   </ItemGroup>
