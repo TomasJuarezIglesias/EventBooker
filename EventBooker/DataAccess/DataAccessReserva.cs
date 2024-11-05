@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -138,6 +139,11 @@ namespace DataAccess
             };
 
             return _connection.Read("SP_GenerarReporteReservasMes", parameters);
+        }
+
+        public DataTable GetProximosEventos()
+        {
+            return _connection.Read("SP_SelectProximosEventos");
         }
 
 

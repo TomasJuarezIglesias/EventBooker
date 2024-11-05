@@ -41,5 +41,10 @@ namespace Business
         {
             return new BusinessResponse<DataTable>(true, _dataAccessReserva.GetReporteMes(fecha));
         }
+
+        public BusinessResponse<DataTable> ProximosEventos()
+        {
+            return new BusinessResponse<DataTable>(true, _dataAccessReserva.GetProximosEventos());
+        }
     }
 }
