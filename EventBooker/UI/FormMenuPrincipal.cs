@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -201,6 +202,18 @@ namespace UI
             FormGenerarFactura formGenerarFactura = new FormGenerarFactura();
             formGenerarFactura.ShowDialog();
         }
+
+        // Ayuda en linea
+        private void BtnAyuda_Click(object sender, EventArgs e)
+        {
+            string pdfPath = Path.Combine(Application.StartupPath, "Resources", "AyudaEnLinea.pdf");
+
+            if (File.Exists(pdfPath))
+            {
+                System.Diagnostics.Process.Start(pdfPath);
+            }
+        }
+
 
         // Usuario
 

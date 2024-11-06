@@ -587,6 +587,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\AyudaEnLinea.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\Icono.png" />
   </ItemGroup>
   <ItemGroup>
