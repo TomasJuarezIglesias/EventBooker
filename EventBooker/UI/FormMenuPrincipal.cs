@@ -80,7 +80,7 @@ namespace UI
             if (PanelCobranza.Visible)
                 PanelCobranza.Visible = false;
 
-            if(PanelReportes.Visible)
+            if (PanelReportes.Visible)
                 PanelReportes.Visible = false;
         }
 
@@ -210,7 +210,12 @@ namespace UI
 
             if (File.Exists(pdfPath))
             {
-                System.Diagnostics.Process.Start(pdfPath);
+                var startInfo = new System.Diagnostics.ProcessStartInfo
+                {
+                    FileName = pdfPath,
+                    UseShellExecute = true
+                };
+                System.Diagnostics.Process.Start(startInfo);
             }
         }
 
