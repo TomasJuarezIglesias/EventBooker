@@ -47,6 +47,7 @@
     <Compile Include="BusinessDigitoVerificador.cs" />
     <Compile Include="BusinessFactura.cs" />
     <Compile Include="BusinessIdioma.cs" />
+    <Compile Include="BusinessNotificacion.cs" />
     <Compile Include="BusinessPerfil.cs" />
     <Compile Include="BusinessPermiso.cs" />
     <Compile Include="BusinessReserva.cs" />

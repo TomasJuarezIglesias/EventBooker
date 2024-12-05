@@ -9,6 +9,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,6 +23,7 @@ namespace UI
         protected SessionManager _sessionManager;
         protected readonly BusinessBitacoraEvento _businessBitacoraEvento;
         private readonly BusinessDigitoVerificador _businessDigitoVerificador;
+        private readonly BusinessNotificacion _businessNotificacion;
 
         public ServiceForm()
         {
@@ -31,7 +34,10 @@ namespace UI
             _businessIdioma = new BusinessIdioma();
             _businessBitacoraEvento = new BusinessBitacoraEvento();
             _businessDigitoVerificador = new BusinessDigitoVerificador();
+            _businessNotificacion = new BusinessNotificacion();
+
             InitializeComponent();
+            SendPromotion();
         }
 
         private void InitializeComponent()
@@ -152,13 +158,62 @@ namespace UI
             EntityDigitoVerificador digitoVerificadorCalculado = _businessDigitoVerificador.Calcular().Data;
             EntityDigitoVerificador digitoVerificadorDB = _businessDigitoVerificador.Get().Data;
 
-            return string.Equals( digitoVerificadorCalculado.DVH, digitoVerificadorDB.DVH ) 
-                && string .Equals(digitoVerificadorCalculado.DVV, digitoVerificadorDB.DVV);
+            return string.Equals(digitoVerificadorCalculado.DVH, digitoVerificadorDB.DVH)
+                && string.Equals(digitoVerificadorCalculado.DVV, digitoVerificadorDB.DVV);
         }
 
         protected void UpdateDigitoVerificador()
         {
             _businessDigitoVerificador.Update();
         }
+
+        private void SendPromotion()
+        {
+            _businessNotificacion.Create();
+
+            List<EntityCliente> clientes = _businessNotificacion.GetAll().Data;
+
+            if (clientes.Count <= 0)
+            {
+                return;
+            }
+
+            foreach (EntityCliente cliente in clientes)
+            {
+                // Configuración del mensaje
+                MailMessage mail = new MailMessage();
+                mail.From = new MailAddress("mailRemitente");
+                mail.To.Add(cliente.Email);
+                mail.Subject = "20% OFF En Eventos";
+
+                // Personalizar el cuerpo con el nombre y apellido del cliente
+                mail.Body = $"<h1>¡Felicidades {cliente.Nombre} {cliente.Apellido}!</h1>" +
+                            "<p>Has recibido un <strong>20% de descuento</strong> para tu próximo evento en el <em>Salón de eventos Azaila</em>.</p>" +
+                            "<p>Aprovecha esta oportunidad única para celebrar con nosotros.</p>" +
+                            "<p>¡Te esperamos!</p>";
+                mail.IsBodyHtml = true;
+
+                // Configuración del cliente SMTP
+                SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587)
+                {
+                    Credentials = new NetworkCredential("mailRemitente", "mypass"),
+                    EnableSsl = true
+                };
+
+                try
+                {
+                    // Enviar el correo
+                    smtp.Send(mail);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+                
+            }
+
+            _businessNotificacion.Update();
+        }
+
     }
 }

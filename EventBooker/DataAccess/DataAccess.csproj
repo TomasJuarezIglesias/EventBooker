@@ -48,6 +48,7 @@
     <Compile Include="DataAccessDigitoVerificador.cs" />
     <Compile Include="DataAccessFactura.cs" />
     <Compile Include="DataAccessIdioma.cs" />
+    <Compile Include="DataAccessNotificacion.cs" />
     <Compile Include="DataAccessPerfil.cs" />
     <Compile Include="DataAccessPermiso.cs" />
     <Compile Include="DataAccessReserva.cs" />
